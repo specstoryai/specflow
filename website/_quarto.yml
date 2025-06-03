@@ -27,6 +27,10 @@ website:
             text: Videos
           - href: reference/index.qmd
             text: Reference
+    right:
+      - icon: github
+        href: https://github.com/specstoryai/specflow
+        aria-label: GitHub
   page-footer:
     center: |
       &copy; 2025 SpecStory - Intent is the new source code
