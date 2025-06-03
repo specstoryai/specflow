@@ -1,24 +1,24 @@
 ---
-title: "SpecFlow Reference"
-subtitle: "Complete documentation of the SpecFlow methodology"
+title: "Specflow Reference"
+subtitle: "Complete documentation of the Specflow methodology"
 ---
 
-## Comprehensive SpecFlow Guide
+## Comprehensive Specflow Guide
 
-This reference provides detailed documentation for every aspect of the SpecFlow methodology. Whether you're implementing your first project or optimizing your hundredth, you'll find the guidance you need here.
+This reference provides detailed documentation for every aspect of the Specflow methodology. Whether you're implementing your first project or optimizing your hundredth, you'll find the guidance you need here.
 
 ## Reference Sections
 
-### [Core Concepts](concepts.qmd)
-Fundamental principles and terminology that underpin SpecFlow.
+### Core Concepts
+Fundamental principles and terminology that underpin Specflow.
 
 - Intent vs. Implementation
 - The Planning Paradox
 - Human-AI Task Distribution
 - Context Preservation Strategies
 
-### [Phase Details](phases.qmd)
-In-depth exploration of each SpecFlow phase.
+### Phase Details
+In-depth exploration of each Specflow phase.
 
 - Phase 1: Intent Capture Techniques
 - Phase 2: Roadmap Creation Patterns
@@ -26,7 +26,7 @@ In-depth exploration of each SpecFlow phase.
 - Phase 4: Execution Best Practices
 - Phase 5: Refinement Methodologies
 
-### [Templates & Tools](templates.qmd)
+### Templates & Tools
 Ready-to-use templates and tools for your projects.
 
 - Intent Document Templates
@@ -34,15 +34,15 @@ Ready-to-use templates and tools for your projects.
 - Task Tracking Systems
 - Prompt Engineering Templates
 
-### [Best Practices](best-practices.qmd)
-Proven techniques from successful SpecFlow implementations.
+### Best Practices
+Proven techniques from successful Specflow implementations.
 
 - Common Patterns
 - Anti-Patterns to Avoid
 - Optimization Strategies
 - Team Collaboration
 
-### [Troubleshooting](troubleshooting.qmd)
+### Troubleshooting
 Solutions to common challenges and issues.
 
 - When Plans Go Wrong
@@ -50,13 +50,13 @@ Solutions to common challenges and issues.
 - AI Limitation Workarounds
 - Recovery Strategies
 
-### [Advanced Topics](advanced.qmd)
-Taking SpecFlow to the next level.
+### Advanced Topics
+Taking Specflow to the next level.
 
 - Multi-Agent Orchestration
 - Complex System Design
 - Performance Optimization
-- Scaling SpecFlow
+- Scaling Specflow
 
 ## Quick Links
 
@@ -64,35 +64,38 @@ Taking SpecFlow to the next level.
 
 ::: {.g-col-12 .g-col-md-6}
 ### For Beginners
-- [SpecFlow Glossary](glossary.qmd)
-- [FAQ](faq.qmd)
-- [Quick Start Checklist](checklist.qmd)
+- Specflow Glossary
+- FAQ
+- Quick Start Checklist
 :::
 
 ::: {.g-col-12 .g-col-md-6}
 ### For Experts
-- [API Reference](api.qmd)
-- [Integration Guide](integrations.qmd)
-- [Contributing to SpecFlow](contributing.qmd)
+- API Reference
+- Integration Guide
+- Contributing to Specflow
 :::
 
 :::
 
 ## How to Use This Reference
 
-1. **New to SpecFlow?** Start with [Core Concepts](concepts.qmd)
-2. **Implementing a project?** Use the [Templates & Tools](templates.qmd)
-3. **Stuck on something?** Check [Troubleshooting](troubleshooting.qmd)
-4. **Looking to improve?** Study [Best Practices](best-practices.qmd)
+1. **New to Specflow?** Start with Core Concepts
+2. **Implementing a project?** Use the Templates & Tools
+3. **Stuck on something?** Check Troubleshooting
+4. **Looking to improve?** Study Best Practices
 
 ## Version History
 
 | Version | Date | Changes |
 |---------|------|---------|
-| 1.0 | 2024-01 | Initial release |
-| 1.1 | 2024-02 | Added team collaboration patterns |
-| 1.2 | 2024-03 | Enhanced AI integration guides |
+| 1.0 | 2025-06 | Initial release |
 
 ---
 
-*This reference is continuously updated based on community feedback and real-world implementations.*
+::: {.callout-note}
+## Reference Documentation Coming Soon
+We're currently developing comprehensive reference documentation for all aspects of the Specflow methodology. Check back soon for detailed guides, templates, and best practices.
+:::
+
+*This reference is continuously updated based on community feedback and real-world implementation.*

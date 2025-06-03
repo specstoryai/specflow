@@ -1,4 +1,4 @@
-/* SpecFlow Simple Theme */
+/* Specflow Simple Theme */
 
 :root {
   /* Primary Color */
@@ -249,22 +249,71 @@ th {
 
 /* Navigation */
 .navbar {
-  border-bottom: 1px solid #e1e4e8;
-  padding: var(--sf-spacing-md) 0;
+  background-color: var(--sf-primary);
+  border-bottom: none;
+  padding: var(--sf-spacing-sm) 0;
+  min-height: 48px;
+}
+
+.navbar-container {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-brand {
   font-weight: 700;
   font-size: 1.5rem;
-  color: var(--sf-primary);
+  color: white;
+  line-height: 1.5;
+}
+
+.navbar-brand:hover {
+  color: white;
+  opacity: 0.9;
+}
+
+/* Logo styling */
+.navbar-logo {
+  height: 24px;
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.navbar-brand img {
+  height: 24px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.navbar-nav {
+  align-items: center;
 }
 
 .navbar-nav .nav-link {
   font-weight: 500;
-  color: var(--sf-text);
+  color: white;
+  line-height: 1.5;
+  padding: 0.5rem 1rem;
 }
 
 .navbar-nav .nav-link:hover {
+  color: white;
+  opacity: 0.8;
+}
+
+/* Dropdown menu styling */
+.navbar-nav .dropdown-menu {
+  background-color: white;
+  border: 1px solid #e1e4e8;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+  color: var(--sf-text);
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+  background-color: var(--sf-bg-accent);
   color: var(--sf-primary);
 }
 

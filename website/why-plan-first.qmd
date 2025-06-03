@@ -1,6 +1,6 @@
 ---
 title: "Why Plan First, Act Second Wins"
-subtitle: "The philosophy that powers effective AI-assisted development"
+subtitle: "The philosophy that powers effective agent-first software development"
 ---
 
 ## The Blueprint Principle
@@ -61,9 +61,9 @@ graph TD
 ```
 :::
 
-### With SpecFlow: The Highway Approach
+### With Specflow: The Highway Approach
 
-Planning creates a highway to your destination. You know where you're going, how to get there, and what success looks like. You still have to drive, but you're not lost.
+Flexible planning creates a highway to your destination. You know where you're going, how to get there, and what success looks like. You still have to drive, but you're not lost.
 
 ::: {.text-center}
 ```{mermaid}
@@ -115,12 +115,16 @@ Counterintuitively, spending time planning **saves** time overall:
 | Integration | 6 hours | 1 hour | +5 hours |
 | **Total** | **26 hours** | **8 hours** | **18 hours (69%)** |
 
-## Illustrative Example: Building a Task Management API
+## Illustrative Example: Building a Task Mgmt API
 
 ::: {.columns}
 
 ::: {.column width="48%"}
 ### ❌ The Unplanned Approach
+
+::: {style="background-color: #fee2e2; padding: 0.75rem; border-radius: 0.5rem; margin-bottom: 1rem; text-align: center; font-weight: bold;"}
+⏱️ Total Time: 7+ days of confusion
+:::
 
 **Day 1**: "AI, create a task management API"
 
@@ -135,22 +139,17 @@ Counterintuitively, spending time planning **saves** time overall:
 - Result: Teams added, but permission system is confused
 
 **Day 4-7**: Endless fixes, refactoring, and "one more thing" requests...
-
-<br>
-<br>
-<br>
-<br>
-
-::: {style="background-color: #fee2e2; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem; text-align: center; font-weight: bold;"}
-⏱️ Total Time: 7+ days of confusion
-:::
 :::
 
 ::: {.column width="4%"}
 :::
 
 ::: {.column width="48%"}
-### ✅ The SpecFlow Approach
+### ✅ The Specflow Approach
+
+::: {style="background-color: #d1fae5; padding: 0.75rem; border-radius: 0.5rem; margin-bottom: 1rem; text-align: center; font-weight: bold;"}
+⏱️ Total Time: 8 hours (1 day)
+:::
 
 **Hour 1-2**: Define Intent & Create Roadmap
 
@@ -167,24 +166,43 @@ Counterintuitively, spending time planning **saves** time overall:
 - Phase 4: Documentation & deployment
 
 **Result**: Complete, integrated system
-
-::: {style="background-color: #d1fae5; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem; text-align: center; font-weight: bold;"}
-⏱️ Total Time: 8 hours (1 day)
-:::
 :::
 
 :::
 
 ## The Neuroscience of Planning
 
-Research shows that planning activates the prefrontal cortex - the brain's executive center. This:
+Research shows that planning activates the prefrontal cortex - the brain's executive center[^1]. When we engage in planning activities, this region lights up in brain scans, but in a focused and efficient way[^2]. 
 
-1. **Improves decision-making** by considering multiple options
-2. **Reduces cognitive load** during execution
-3. **Increases success rates** by anticipating obstacles
-4. **Enhances learning** through structured reflection
+Here's what happens in your brain when you plan:
 
-When we plan first, we're literally using our brains more effectively.
+### 🧠 Better Decision-Making
+
+Planning engages the part of your brain responsible for weighing options and thinking ahead[^3]. Instead of reacting impulsively, you tap into your brain's ability to simulate different scenarios and choose the best path forward[^4].
+
+### 💡 Reduced Mental Overload
+
+Ever feel mentally exhausted from constant decision-making? Planning reduces this "cognitive load" dramatically[^5]. By making decisions upfront, you free your brain to focus on execution rather than constantly figuring out what to do next[^6].
+
+### 🎯 Higher Success Rates
+
+Your brain is wired to anticipate problems - planning activates this natural ability[^8]. Research shows that "if-then planning" (if X happens, I'll do Y) significantly improves goal achievement by preparing your brain for obstacles before they appear[^9].
+
+### 📈 Accelerated Learning
+
+Structured planning creates feedback loops that enhance learning[^11]. Your brain processes information more efficiently when it has a framework to organize new knowledge against.
+
+> **The Bottom Line**: When we plan first, we're not just being organized - we're literally using our brains the way evolution designed them to work. The prefrontal cortex evolved specifically for this kind of forward-thinking, and Specflow taps directly into this biological advantage.
+
+[^1]: [Prefrontal cortex and neural mechanisms of executive function](https://www.nature.com/articles/s41583-021-00474-4)
+[^2]: [The science behind effective daily planning](https://www.usealign.com/blog/science-behind-effective-daily-planning)
+[^3]: [Executive Dysfunction and the Prefrontal Cortex](https://pubmed.ncbi.nlm.nih.gov/33969450/)
+[^4]: [How Planning Can Help You Make Better Decisions](https://www.linkedin.com/pulse/how-planning-can-help-you-make-better-decisions-mohamed-sanih)
+[^5]: [The Effect of Planning, Strategy Learning, and Working Memory Capacity on Mental Workload](https://www.nature.com/articles/s41598-019-54243-6)
+[^6]: [The science behind effective daily planning](https://www.usealign.com/blog/science-behind-effective-daily-planning)
+[^8]: [How to Anticipate Problems with If-Then Planning](https://www.success.com/how-to-anticipate-problems-with-if-then-planning/)
+[^9]: [How Planning Can Help You Make Better Decisions](https://www.linkedin.com/pulse/how-planning-can-help-you-make-better-decisions-mohamed-sanih)
+[^11]: [Well-Being as a Cognitive Load Reducing Agent](https://www.frontiersin.org/articles/10.3389/feduc.2019.00121/full)
 
 ## Common Objections (And Why They're Wrong)
 
@@ -194,31 +212,33 @@ When we plan first, we're literally using our brains more effectively.
 
 ### "Requirements Always Change"
 
-**Reality**: SpecFlow embraces change through iterative refinement. A plan isn't carved in stone - it's a living document that evolves with your understanding.
+**Reality**: Specflow embraces change through iterative refinement. A plan isn't carved in stone - it's a living document that evolves with your understanding.
 
 ### "AI Should Figure It Out"
 
 **Reality**: AI is a powerful tool, not a mind reader. The quality of output directly correlates with the quality of input. Better planning = better prompts = better results.
 
-## The SpecFlow Advantage
+## The Specflow Advantage
 
 When you plan first:
 
-- ✓ **You control the narrative** - AI follows your lead, not the other way around
-- ✓ **You build with confidence** - Each step reinforces your vision
-- ✓ **You ship faster** - Less rework means quicker delivery
-- ✓ **You sleep better** - Knowing your project is on solid foundations
+::: {.features}
+-  **You control the narrative** - AI follows your lead, not the other way around
+-  **You build with confidence** - Each step reinforces your vision
+-  **You ship faster** - Less rework means quicker delivery
+-  **You sleep better** - Knowing your project is on solid foundations
+:::
 
-## Start Planning Today
+## Start Today
 
-Ready to experience the power of planning-first development?
+Ready to experience the power of Specflow development?
 
 1. **Define your intent** - What are you really trying to build?
 2. **Create a roadmap** - Break it into manageable phases
 3. **Execute systematically** - Let your plan guide your prompts
 4. **Refine continuously** - Learn and adjust as you go
 
-[Get Started with SpecFlow →](getting-started.qmd){.btn .btn-primary}
+[Get Started with Specflow →](getting-started.qmd){.btn .btn-primary}
 
 ---
 

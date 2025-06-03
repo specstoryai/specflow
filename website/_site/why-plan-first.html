@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Why Plan First, Act Second Wins – SpecFlow</title>
+<title>Why Plan First, Act Second Wins –</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -84,8 +84,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">SpecFlow</span>
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/specflow_light.svg" alt="Specflow" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -99,12 +99,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link active" href="./why-plan-first.html" aria-current="page"> 
 <span class="menu-text">Why Plan First</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./getting-started.html"> 
@@ -117,7 +117,11 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-learn">    
         <li>
     <a class="dropdown-item" href="./examples/index.html">
- <span class="dropdown-text">Examples</span></a>
+ <span class="dropdown-text">Project Examples</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./videos.html">
+ <span class="dropdown-text">Videos</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./reference/index.html">
@@ -145,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-cost-of-pure-improvisation" id="toc-the-cost-of-pure-improvisation" class="nav-link" data-scroll-target="#the-cost-of-pure-improvisation">The Cost of Pure Improvisation</a>
   <ul class="collapse">
   <li><a href="#without-planning-the-vibe-driven-approach" id="toc-without-planning-the-vibe-driven-approach" class="nav-link" data-scroll-target="#without-planning-the-vibe-driven-approach">Without Planning: The Vibe Driven Approach</a></li>
-  <li><a href="#with-specflow-the-highway-approach" id="toc-with-specflow-the-highway-approach" class="nav-link" data-scroll-target="#with-specflow-the-highway-approach">With SpecFlow: The Highway Approach</a></li>
+  <li><a href="#with-specflow-the-highway-approach" id="toc-with-specflow-the-highway-approach" class="nav-link" data-scroll-target="#with-specflow-the-highway-approach">With Specflow: The Highway Approach</a></li>
   </ul></li>
   <li><a href="#the-power-of-structured-thinking" id="toc-the-power-of-structured-thinking" class="nav-link" data-scroll-target="#the-power-of-structured-thinking">The Power of Structured Thinking</a>
   <ul class="collapse">
@@ -153,16 +157,22 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#context-is-king" id="toc-context-is-king" class="nav-link" data-scroll-target="#context-is-king">2. Context is King</a></li>
   <li><a href="#efficiency-through-intention" id="toc-efficiency-through-intention" class="nav-link" data-scroll-target="#efficiency-through-intention">3. Efficiency Through Intention</a></li>
   </ul></li>
-  <li><a href="#illustrative-example-building-a-task-management-api" id="toc-illustrative-example-building-a-task-management-api" class="nav-link" data-scroll-target="#illustrative-example-building-a-task-management-api">Illustrative Example: Building a Task Management API</a></li>
-  <li><a href="#the-neuroscience-of-planning" id="toc-the-neuroscience-of-planning" class="nav-link" data-scroll-target="#the-neuroscience-of-planning">The Neuroscience of Planning</a></li>
+  <li><a href="#illustrative-example-building-a-task-mgmt-api" id="toc-illustrative-example-building-a-task-mgmt-api" class="nav-link" data-scroll-target="#illustrative-example-building-a-task-mgmt-api">Illustrative Example: Building a Task Mgmt API</a></li>
+  <li><a href="#the-neuroscience-of-planning" id="toc-the-neuroscience-of-planning" class="nav-link" data-scroll-target="#the-neuroscience-of-planning">The Neuroscience of Planning</a>
+  <ul class="collapse">
+  <li><a href="#better-decision-making" id="toc-better-decision-making" class="nav-link" data-scroll-target="#better-decision-making">🧠 Better Decision-Making</a></li>
+  <li><a href="#reduced-mental-overload" id="toc-reduced-mental-overload" class="nav-link" data-scroll-target="#reduced-mental-overload">💡 Reduced Mental Overload</a></li>
+  <li><a href="#higher-success-rates" id="toc-higher-success-rates" class="nav-link" data-scroll-target="#higher-success-rates">🎯 Higher Success Rates</a></li>
+  <li><a href="#accelerated-learning" id="toc-accelerated-learning" class="nav-link" data-scroll-target="#accelerated-learning">📈 Accelerated Learning</a></li>
+  </ul></li>
   <li><a href="#common-objections-and-why-theyre-wrong" id="toc-common-objections-and-why-theyre-wrong" class="nav-link" data-scroll-target="#common-objections-and-why-theyre-wrong">Common Objections (And Why They’re Wrong)</a>
   <ul class="collapse">
   <li><a href="#planning-slows-me-down" id="toc-planning-slows-me-down" class="nav-link" data-scroll-target="#planning-slows-me-down">“Planning Slows Me Down”</a></li>
   <li><a href="#requirements-always-change" id="toc-requirements-always-change" class="nav-link" data-scroll-target="#requirements-always-change">“Requirements Always Change”</a></li>
   <li><a href="#ai-should-figure-it-out" id="toc-ai-should-figure-it-out" class="nav-link" data-scroll-target="#ai-should-figure-it-out">“AI Should Figure It Out”</a></li>
   </ul></li>
-  <li><a href="#the-specflow-advantage" id="toc-the-specflow-advantage" class="nav-link" data-scroll-target="#the-specflow-advantage">The SpecFlow Advantage</a></li>
-  <li><a href="#start-planning-today" id="toc-start-planning-today" class="nav-link" data-scroll-target="#start-planning-today">Start Planning Today</a></li>
+  <li><a href="#the-specflow-advantage" id="toc-the-specflow-advantage" class="nav-link" data-scroll-target="#the-specflow-advantage">The Specflow Advantage</a></li>
+  <li><a href="#start-today" id="toc-start-today" class="nav-link" data-scroll-target="#start-today">Start Today</a></li>
   </ul>
 </nav>
     </div>
@@ -172,7 +182,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Why Plan First, Act Second Wins</h1>
-<p class="subtitle lead">The philosophy that powers effective AI-assisted development</p>
+<p class="subtitle lead">The philosophy that powers effective agent-first software development</p>
 </div>
 
 
@@ -258,8 +268,8 @@ graph TD
 </div>
 </section>
 <section id="with-specflow-the-highway-approach" class="level3">
-<h3 class="anchored" data-anchor-id="with-specflow-the-highway-approach">With SpecFlow: The Highway Approach</h3>
-<p>Planning creates a highway to your destination. You know where you’re going, how to get there, and what success looks like. You still have to drive, but you’re not lost.</p>
+<h3 class="anchored" data-anchor-id="with-specflow-the-highway-approach">With Specflow: The Highway Approach</h3>
+<p>Flexible planning creates a highway to your destination. You know where you’re going, how to get there, and what success looks like. You still have to drive, but you’re not lost.</p>
 <div class="text-center">
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -356,12 +366,15 @@ graph TD
 </table>
 </section>
 </section>
-<section id="illustrative-example-building-a-task-management-api" class="level2">
-<h2 class="anchored" data-anchor-id="illustrative-example-building-a-task-management-api">Illustrative Example: Building a Task Management API</h2>
+<section id="illustrative-example-building-a-task-mgmt-api" class="level2">
+<h2 class="anchored" data-anchor-id="illustrative-example-building-a-task-mgmt-api">Illustrative Example: Building a Task Mgmt API</h2>
 <div class="columns">
 <div class="column" style="width:48%;">
 <section id="the-unplanned-approach" class="level3">
 <h3 class="anchored" data-anchor-id="the-unplanned-approach">❌ The Unplanned Approach</h3>
+<div style="background-color: #fee2e2; padding: 0.75rem; border-radius: 0.5rem; margin-bottom: 1rem; text-align: center; font-weight: bold;">
+<p>⏱️ Total Time: 7+ days of confusion</p>
+</div>
 <p><strong>Day 1</strong>: “AI, create a task management API”</p>
 <ul>
 <li>Result: Basic CRUD endpoints, no authentication</li>
@@ -375,16 +388,15 @@ graph TD
 <li>Result: Teams added, but permission system is confused</li>
 </ul>
 <p><strong>Day 4-7</strong>: Endless fixes, refactoring, and “one more thing” requests…</p>
-<p><br> <br> <br> <br></p>
-<div style="background-color: #fee2e2; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem; text-align: center; font-weight: bold;">
-<p>⏱️ Total Time: 7+ days of confusion</p>
-</div>
 </section>
 </div><div class="column" style="width:4%;">
 
 </div><div class="column" style="width:48%;">
 <section id="the-specflow-approach" class="level3">
-<h3 class="anchored" data-anchor-id="the-specflow-approach">✅ The SpecFlow Approach</h3>
+<h3 class="anchored" data-anchor-id="the-specflow-approach">✅ The Specflow Approach</h3>
+<div style="background-color: #d1fae5; padding: 0.75rem; border-radius: 0.5rem; margin-bottom: 1rem; text-align: center; font-weight: bold;">
+<p>⏱️ Total Time: 8 hours (1 day)</p>
+</div>
 <p><strong>Hour 1-2</strong>: Define Intent &amp; Create Roadmap</p>
 <ul>
 <li>Multi-tenant task management system</li>
@@ -401,23 +413,33 @@ graph TD
 <li>Phase 4: Documentation &amp; deployment</li>
 </ul>
 <p><strong>Result</strong>: Complete, integrated system</p>
-<div style="background-color: #d1fae5; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem; text-align: center; font-weight: bold;">
-<p>⏱️ Total Time: 8 hours (1 day)</p>
-</div>
 </section>
 </div>
 </div>
 </section>
 <section id="the-neuroscience-of-planning" class="level2">
 <h2 class="anchored" data-anchor-id="the-neuroscience-of-planning">The Neuroscience of Planning</h2>
-<p>Research shows that planning activates the prefrontal cortex - the brain’s executive center. This:</p>
-<ol type="1">
-<li><strong>Improves decision-making</strong> by considering multiple options</li>
-<li><strong>Reduces cognitive load</strong> during execution</li>
-<li><strong>Increases success rates</strong> by anticipating obstacles</li>
-<li><strong>Enhances learning</strong> through structured reflection</li>
-</ol>
-<p>When we plan first, we’re literally using our brains more effectively.</p>
+<p>Research shows that planning activates the prefrontal cortex - the brain’s executive center<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. When we engage in planning activities, this region lights up in brain scans, but in a focused and efficient way<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>Here’s what happens in your brain when you plan:</p>
+<section id="better-decision-making" class="level3">
+<h3 class="anchored" data-anchor-id="better-decision-making">🧠 Better Decision-Making</h3>
+<p>Planning engages the part of your brain responsible for weighing options and thinking ahead<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Instead of reacting impulsively, you tap into your brain’s ability to simulate different scenarios and choose the best path forward<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+</section>
+<section id="reduced-mental-overload" class="level3">
+<h3 class="anchored" data-anchor-id="reduced-mental-overload">💡 Reduced Mental Overload</h3>
+<p>Ever feel mentally exhausted from constant decision-making? Planning reduces this “cognitive load” dramatically<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. By making decisions upfront, you free your brain to focus on execution rather than constantly figuring out what to do next<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.</p>
+</section>
+<section id="higher-success-rates" class="level3">
+<h3 class="anchored" data-anchor-id="higher-success-rates">🎯 Higher Success Rates</h3>
+<p>Your brain is wired to anticipate problems - planning activates this natural ability<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. Research shows that “if-then planning” (if X happens, I’ll do Y) significantly improves goal achievement by preparing your brain for obstacles before they appear<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>.</p>
+</section>
+<section id="accelerated-learning" class="level3">
+<h3 class="anchored" data-anchor-id="accelerated-learning">📈 Accelerated Learning</h3>
+<p>Structured planning creates feedback loops that enhance learning<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>. Your brain processes information more efficiently when it has a framework to organize new knowledge against.</p>
+<blockquote class="blockquote">
+<p><strong>The Bottom Line</strong>: When we plan first, we’re not just being organized - we’re literally using our brains the way evolution designed them to work. The prefrontal cortex evolved specifically for this kind of forward-thinking, and Specflow taps directly into this biological advantage.</p>
+</blockquote>
+</section>
 </section>
 <section id="common-objections-and-why-theyre-wrong" class="level2">
 <h2 class="anchored" data-anchor-id="common-objections-and-why-theyre-wrong">Common Objections (And Why They’re Wrong)</h2>
@@ -427,7 +449,7 @@ graph TD
 </section>
 <section id="requirements-always-change" class="level3">
 <h3 class="anchored" data-anchor-id="requirements-always-change">“Requirements Always Change”</h3>
-<p><strong>Reality</strong>: SpecFlow embraces change through iterative refinement. A plan isn’t carved in stone - it’s a living document that evolves with your understanding.</p>
+<p><strong>Reality</strong>: Specflow embraces change through iterative refinement. A plan isn’t carved in stone - it’s a living document that evolves with your understanding.</p>
 </section>
 <section id="ai-should-figure-it-out" class="level3">
 <h3 class="anchored" data-anchor-id="ai-should-figure-it-out">“AI Should Figure It Out”</h3>
@@ -435,32 +457,48 @@ graph TD
 </section>
 </section>
 <section id="the-specflow-advantage" class="level2">
-<h2 class="anchored" data-anchor-id="the-specflow-advantage">The SpecFlow Advantage</h2>
+<h2 class="anchored" data-anchor-id="the-specflow-advantage">The Specflow Advantage</h2>
 <p>When you plan first:</p>
+<div class="features">
 <ul>
-<li>✓ <strong>You control the narrative</strong> - AI follows your lead, not the other way around</li>
-<li>✓ <strong>You build with confidence</strong> - Each step reinforces your vision</li>
-<li>✓ <strong>You ship faster</strong> - Less rework means quicker delivery</li>
-<li>✓ <strong>You sleep better</strong> - Knowing your project is on solid foundations</li>
+<li><strong>You control the narrative</strong> - AI follows your lead, not the other way around</li>
+<li><strong>You build with confidence</strong> - Each step reinforces your vision</li>
+<li><strong>You ship faster</strong> - Less rework means quicker delivery</li>
+<li><strong>You sleep better</strong> - Knowing your project is on solid foundations</li>
 </ul>
+</div>
 </section>
-<section id="start-planning-today" class="level2">
-<h2 class="anchored" data-anchor-id="start-planning-today">Start Planning Today</h2>
-<p>Ready to experience the power of planning-first development?</p>
+<section id="start-today" class="level2">
+<h2 class="anchored" data-anchor-id="start-today">Start Today</h2>
+<p>Ready to experience the power of Specflow development?</p>
 <ol type="1">
 <li><strong>Define your intent</strong> - What are you really trying to build?</li>
 <li><strong>Create a roadmap</strong> - Break it into manageable phases</li>
 <li><strong>Execute systematically</strong> - Let your plan guide your prompts</li>
 <li><strong>Refine continuously</strong> - Learn and adjust as you go</li>
 </ol>
-<p><a href="./getting-started.html" class="btn btn-primary">Get Started with SpecFlow →</a></p>
+<p><a href="./getting-started.html" class="btn btn-primary">Get Started with Specflow →</a></p>
 <hr>
 <p><em>Remember: The best time to plan was before you started. The second best time is now.</em></p>
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p><a href="https://www.nature.com/articles/s41583-021-00474-4">Prefrontal cortex and neural mechanisms of executive function</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://www.usealign.com/blog/science-behind-effective-daily-planning">The science behind effective daily planning</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><a href="https://pubmed.ncbi.nlm.nih.gov/33969450/">Executive Dysfunction and the Prefrontal Cortex</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p><a href="https://www.linkedin.com/pulse/how-planning-can-help-you-make-better-decisions-mohamed-sanih">How Planning Can Help You Make Better Decisions</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p><a href="https://www.nature.com/articles/s41598-019-54243-6">The Effect of Planning, Strategy Learning, and Working Memory Capacity on Mental Workload</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p><a href="https://www.usealign.com/blog/science-behind-effective-daily-planning">The science behind effective daily planning</a><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p><a href="https://www.success.com/how-to-anticipate-problems-with-if-then-planning/">How to Anticipate Problems with If-Then Planning</a><a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p><a href="https://www.linkedin.com/pulse/how-planning-can-help-you-make-better-decisions-mohamed-sanih">How Planning Can Help You Make Better Decisions</a><a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p><a href="https://www.frontiersin.org/articles/10.3389/feduc.2019.00121/full">Well-Being as a Cognitive Load Reducing Agent</a><a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -867,7 +905,7 @@ graph TD
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© 2024 SpecFlow - Building software with structured intent</p>
+<p>© 2025 SpecStory - Intent is the new source code</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

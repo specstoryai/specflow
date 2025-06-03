@@ -1,0 +1,101 @@
+---
+title: "Videos"
+subtitle: "Learn Specflow through visual demonstrations and tutorials"
+---
+
+## Getting Started Videos
+
+::: {style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 3rem 0;"}
+
+::: {style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border: 1px solid #e1e4e8;"}
+### 🎬 Introduction to Specflow
+**Duration**: 5 minutes
+
+A quick overview of the Specflow methodology and why it matters for AI-assisted development.
+
+*Coming soon*
+:::
+
+::: {style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border: 1px solid #e1e4e8;"}
+### 📝 Your First Specflow Project
+**Duration**: 15 minutes
+
+Walk through creating your first project using the Specflow methodology from start to finish.
+
+*Coming soon*
+:::
+
+:::
+
+## Deep Dives
+
+::: {style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 3rem 0;"}
+
+::: {style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border: 1px solid #e1e4e8;"}
+### 🎯 Mastering Intent Capture
+**Duration**: 10 minutes
+
+Learn how to articulate your project vision in a way that AI agents can understand and execute.
+
+*Coming soon*
+:::
+
+::: {style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border: 1px solid #e1e4e8;"}
+### 🗺️ Creating Effective Roadmaps
+**Duration**: 12 minutes
+
+Discover how to break down complex projects into manageable phases that build on each other.
+
+*Coming soon*
+:::
+
+:::
+
+## Real-World Applications
+
+::: {style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 3rem 0;"}
+
+::: {style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border: 1px solid #e1e4e8;"}
+### 🚀 Building a SaaS MVP
+**Duration**: 30 minutes
+
+Watch as we build a complete SaaS MVP using Specflow, from initial concept to deployed application.
+
+*Coming soon*
+:::
+
+::: {style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border: 1px solid #e1e4e8;"}
+### 🔧 Refactoring Legacy Code
+**Duration**: 20 minutes
+
+See how Specflow helps manage complex refactoring projects with AI assistance.
+
+*Coming soon*
+:::
+
+:::
+
+## Community Tutorials
+
+Have you created a Specflow tutorial? We'd love to feature it here! Submit your video through our community channels.
+
+---
+
+::: {style="background-color: #e0f2fe; padding: 2rem; border-radius: 8px; text-align: center; margin: 3rem 0;"}
+### 📹 Want to see specific topics covered?
+
+[Request a Video Topic](#){.btn .btn-primary}
+
+We're actively creating new video content. Your feedback helps us prioritize what to create next.
+:::
+
+## Stay Updated
+
+Subscribe to our channel to get notified when new videos are published:
+
+- **YouTube**: [Specflow Channel](#) *(Coming soon)*
+- **Newsletter**: Get video updates in your inbox
+
+---
+
+*Video library launching soon. Check back regularly for new content!*

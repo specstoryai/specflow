@@ -1,37 +1,59 @@
 ---
-title: "About SpecFlow"
-subtitle: "Understanding the methodology behind structured AI-assisted software development"
+title: "About Specflow"
+subtitle: "Understanding the methodology behind structured agent-first software development"
 ---
 
-## What is SpecFlow?
+::: {style="background-color: #fff7ed; padding: 1rem 1.5rem; border-radius: 6px; margin: 1.5rem 0; border: 1px solid #fed7aa; max-width: 800px;"}
 
-SpecFlow is a **structured pattern for prompting AI agents** to build software. It transforms the often chaotic process of AI-assisted development into a systematic, repeatable methodology that consistently delivers results aligned with your vision.
+**🚨 Not That SpecFlow** - This is not SpecFlow.org (the retired .NET testing framework). While they flowed specs into tests, we flow specs into working software through structured AI collaboration.
 
-## The Problem We Solve
+:::
+
+## What is it?
+
+Specflow is a **structured but flexible process** for building software with AI agents. It transforms the often chaotic process of agent-first development into a systematic, repeatable methodology that consistently delivers results aligned with your vision.
+
+## The Problems It Solves
 
 Building software with AI agents presents unique challenges:
 
-### 1. The Intent Gap
-**Problem**: There's often a significant gap between what you envision and what AI produces.
+::: {.panel-tabset}
 
-**Solution**: SpecFlow starts with explicit intent capture, ensuring your vision is clearly articulated before any code is written.
+### 🎯 Intent Gap
 
-### 2. The Context Loss
-**Problem**: AI agents lose context between prompts, leading to inconsistent or contradictory outputs.
+**The Problem**  
+There's often a significant gap between what you envision and what AI produces. You know what you want, but the AI delivers something different.
 
-**Solution**: SpecFlow maintains context through structured documentation and progressive refinement.
+**The Solution**  
+Specflow starts with explicit intent capture, ensuring your vision is clearly articulated before any code is written. This creates alignment from the start.
 
-### 3. The Coordination Challenge
-**Problem**: Multiple AI interactions often produce fragmented, incompatible pieces.
+### 💭 Context Loss
 
-**Solution**: SpecFlow provides a roadmap that ensures all pieces work together toward a unified goal.
+**The Problem**  
+AI agents lose context between prompts, leading to inconsistent or contradictory outputs. Each interaction feels like starting from scratch.
 
-### 4. The Efficiency Paradox
-**Problem**: AI can generate code quickly but often requires extensive rework.
+**The Solution**  
+Specflow maintains context through structured documentation and progressive refinement. Your AI assistant always knows where you are in the journey.
 
-**Solution**: SpecFlow's planning-first approach reduces rework by getting it right from the start.
+### 🧩 Coordination Challenge
 
-## The SpecFlow Methodology
+**The Problem**  
+Multiple AI interactions often produce fragmented, incompatible pieces. The left hand doesn't know what the right hand is doing.
+
+**The Solution**  
+Specflow provides a roadmap that ensures all pieces work together toward a unified goal. Every component is designed to integrate seamlessly.
+
+### ⚡ Efficiency Paradox
+
+**The Problem**  
+AI can generate code quickly but often requires extensive rework. Fast generation leads to slow overall progress.
+
+**The Solution**  
+Specflow's planning-first approach reduces rework by getting it right from the start. Spend time upfront to save multiples later.
+
+:::
+
+## The Specflow Methodology
 
 ### Core Components
 
@@ -63,63 +85,91 @@ Building software with AI agents presents unique challenges:
 ## Key Principles
 
 ### Plan First, Act Second
-Just as architects create blueprints before construction begins, SpecFlow emphasizes planning before prompting. This upfront investment pays dividends in reduced rework and better outcomes.
+Just as architects create blueprints before construction begins, Specflow emphasizes planning before prompting. This upfront investment pays dividends in reduced rework and better outcomes.
 
 ### Progressive Elaboration
 Start with high-level concepts and progressively add detail. This approach maintains flexibility while ensuring consistency.
 
 ### Human-AI Synergy
-Recognize that humans and AI have complementary strengths. SpecFlow optimizes task assignment to leverage both effectively.
+Recognize that humans and AI have complementary strengths. Specflow optimizes task assignment to leverage both effectively.
 
 ### Context Preservation
 Maintain a clear thread from initial intent through final implementation. Every decision and output traces back to the original vision.
 
-## Who Benefits from SpecFlow?
+## Who Benefits from Specflow?
 
-### Software Developers
-- Build features faster with AI assistance
-- Maintain code quality and consistency
-- Reduce debugging and rework time
+::: {style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;"}
 
-### Product Managers
-- Translate product vision into technical implementation
-- Ensure features match requirements
-- Track progress systematically
+::: {style="padding: 1.25rem; background: #f8f9fa; border-radius: 8px; border: 1px solid #e1e4e8; box-shadow: 0 2px 4px rgba(0,0,0,0.05);"}
+### 👩‍💻 Software Developers
+**Accelerate your workflow**
 
-### Technical Leaders
-- Scale development capacity with AI
-- Maintain architectural integrity
-- Improve team productivity
+- ✓ Build features faster
+- ✓ Maintain code quality
+- ✓ Reduce debugging time
 
-### AI Enthusiasts
-- Get better results from AI tools
-- Learn structured prompting techniques
-- Build more ambitious projects
+*Ship with confidence*
+:::
 
-## The SpecFlow Difference
+::: {style="padding: 1.25rem; background: #f8f9fa; border-radius: 8px; border: 1px solid #e1e4e8; box-shadow: 0 2px 4px rgba(0,0,0,0.05);"}
+### 📊 Product Managers
+**Bridge vision and execution**
 
-Traditional AI prompting is like giving directions without a map. SpecFlow provides the map, the route, and the navigation system.
+- ✓ Translate vision to code
+- ✓ Ensure feature alignment
+- ✓ Track progress clearly
 
-| Traditional Approach | SpecFlow Approach |
+*Deliver what matters*
+:::
+
+::: {style="padding: 1.25rem; background: #f8f9fa; border-radius: 8px; border: 1px solid #e1e4e8; box-shadow: 0 2px 4px rgba(0,0,0,0.05);"}
+### 🚀 Technical Leaders
+**Scale your team's impact**
+
+- ✓ Expand AI capacity
+- ✓ Maintain architecture
+- ✓ Boost productivity
+
+*Lead teams that ship*
+:::
+
+::: {style="padding: 1.25rem; background: #f8f9fa; border-radius: 8px; border: 1px solid #e1e4e8; box-shadow: 0 2px 4px rgba(0,0,0,0.05);"}
+### 🤖 AI Enthusiasts
+**Master AI development**
+
+- ✓ Better AI results
+- ✓ Structured prompting
+- ✓ Ambitious projects
+
+*Unlock AI potential*
+:::
+
+:::
+
+## The Specflow Difference
+
+Traditional AI prompting is like giving directions without a map. Specflow provides the map, the route, and the navigation system.
+
+| 🔮 One-Click Magic | 🧠 SpecFlow Method |
 |---------------------|-------------------|
-| Ad-hoc prompting | Structured methodology |
-| Hope for alignment | Ensure alignment |
-| Reactive fixes | Proactive planning |
-| Context switching | Context preservation |
-| Variable quality | Consistent results |
+| Black box generation | Transparent, step-by-step reasoning |
+| Instant code, uncertain outcomes | Iterative planning with predictable results |
+| No memory of your intent | Project memory that evolves with each decision |
+| You prompt, it dumps | You collaborate, it builds |
+| Fast to demo, fragile to scale | Built for real-world architecture and iteration |
 
 ## Getting Started
 
 Ready to transform your AI-assisted development process? 
 
 - [**Read the Getting Started Guide**](getting-started.qmd) for a step-by-step introduction
-- [**Explore Examples**](examples/index.qmd) to see SpecFlow in action
+- [**Explore Examples**](examples/index.qmd) to see Specflow in action
 - [**Study the Reference**](reference/index.qmd) for detailed methodology documentation
 
 ## Join the Movement
 
-SpecFlow is more than a methodology - it's a community of developers who believe in building software better. Whether you're creating a simple script or architecting a complex system, SpecFlow helps you harness the power of AI while maintaining control over the outcome.
+Specflow is a methodology born from the desire to build software better with AI. Whether you're creating a multi-faceted script or architecting a complex system, Specflow helps you harness the power of AI while maintaining control over the outcome.
 
 ---
 
-*SpecFlow: Where human intent meets AI capability.*
+*Specflow: Structure for building software with today’s agents.*

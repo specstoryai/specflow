@@ -1,31 +1,23 @@
 ---
-title: "SpecFlow Examples"
-subtitle: "Real-world applications of the SpecFlow methodology"
-listing:
-  contents: 
-    - "*.qmd"
-    - "!index.qmd"
-  type: grid
-  categories: true
-  fields: [title, subtitle, categories]
-  sort: "date desc"
+title: "Specflow Examples"
+subtitle: "Real-world applications of the Specflow methodology"
 ---
 
 ## Learn by Example
 
-The best way to understand SpecFlow is to see it in action. These examples showcase different project types and complexity levels, demonstrating how the methodology adapts to various scenarios.
+The best way to understand Specflow is to see it in action. These examples showcase different project types and complexity levels, demonstrating how the methodology adapts to various scenarios.
 
 ## Example Categories
 
 ### 🚀 Quick Start Projects
-Perfect for your first SpecFlow experience. These can be completed in a few hours.
+Perfect for your first Specflow experience. These can be completed in a few hours.
 
 - **CLI Tools**: Command-line applications with clear inputs/outputs
 - **Scripts**: Automation scripts and utilities
 - **Simple APIs**: Basic REST endpoints
 
 ### 🏗️ Full Applications
-More complex projects that showcase SpecFlow's power at scale.
+More complex projects that showcase Specflow's power at scale.
 
 - **Web Applications**: Full-stack applications with UI and backend
 - **Data Pipelines**: ETL processes and data transformations
@@ -41,8 +33,8 @@ Pushing the boundaries of what's possible with AI assistance.
 ## Featured Examples
 
 ::: {.callout-tip}
-## New to SpecFlow?
-Start with the **Personal Todo CLI** example. It's simple enough to complete in an afternoon but comprehensive enough to demonstrate all five SpecFlow phases.
+## New to Specflow?
+Start with the **Personal Todo CLI** example. It's simple enough to complete in an afternoon but comprehensive enough to demonstrate all five Specflow phases.
 :::
 
 ### Browse All Examples
@@ -58,4 +50,7 @@ Each example includes:
 
 ---
 
-*Select an example below to explore the full SpecFlow process from intent to implementation.*
+::: {.callout-note}
+## Examples Coming Soon
+We're currently preparing detailed examples to showcase the Specflow methodology in action. Check back soon for complete walkthroughs of real projects.
+:::

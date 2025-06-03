@@ -1,11 +1,11 @@
 ---
-title: "Getting Started with SpecFlow"
-subtitle: "Your step-by-step guide to structured AI-assisted development"
+title: "Getting Started with Specflow"
+subtitle: "Your step-by-step guide to structured agent-first software development"
 ---
 
-## Welcome to SpecFlow
+## Welcome to Specflow
 
-This guide will walk you through your first SpecFlow project. By the end, you'll understand how to transform a vague idea into a well-executed software project using AI assistance.
+This guide will walk you through your first Specflow project. By the end, you'll understand how to transform a vague idea into a well-executed software project using AI assistance.
 
 ## Prerequisites
 
@@ -16,18 +16,29 @@ Before starting, you'll need:
 - 30-60 minutes for your first project
 - An open mind about planning before coding
 
-## The Five Phases of SpecFlow
+## The Five Phases of Specflow
 
-```mermaid
-graph TD
-    A[1. Intent Capture] --> B[2. Roadmap Creation]
-    B --> C[3. Task Decomposition]
-    C --> D[4. Collaborative Execution]
-    D --> E[5. Continuous Refinement]
-    E --> D
+::: {.text-center}
+```{mermaid}
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f9f9f9'}}}%%
+graph LR
+    A[Intent<br/>Capture] --> B[Roadmap<br/>Creation]
+    B --> C[Task<br/>Decomposition]
+    C --> D[Collaborative<br/>Execution]
+    D --> E[Continuous<br/>Refinement]
+    E --> |Iterate| D
+    
+    style A fill:#e0f2fe
+    style B fill:#e0f2fe
+    style C fill:#e0f2fe
+    style D fill:#e0f2fe
+    style E fill:#d1fae5
 ```
+:::
 
-## Phase 1: Intent Capture (10-15 minutes)
+## Phase 1: Intent - Define Your Goal (10-15 minutes)
+
+**What & Why** - Start with clarity about what you're building and why it matters.
 
 ### Step 1.1: Define Your Vision
 
@@ -103,7 +114,9 @@ I want one unified view.
 - No native mobile apps
 ```
 
-## Phase 2: Roadmap Creation (10-15 minutes)
+## Phase 2: Roadmap - Plan Your Phases (10-15 minutes)
+
+**Milestones** - Break your vision into manageable phases with clear goals.
 
 ### Step 2.1: Identify Major Phases
 
@@ -159,7 +172,9 @@ For each phase, define:
 **Dependencies**: Phase 3 complete
 ```
 
-## Phase 3: Task Decomposition (5-10 minutes per phase)
+## Phase 3: Tasks - Break It Down (5-10 minutes per phase)
+
+**Human + AI** - Convert roadmap items into specific tasks, optimally distributed between you and AI.
 
 ### Step 3.1: Break Down Each Phase
 
@@ -195,14 +210,16 @@ Use this format:
 - Output: Basic component files
 ```
 
-## Phase 4: Collaborative Execution
+## Phase 4: Execute - Build Together
+
+**Systematic** - Work through tasks methodically with your AI partner.
 
 ### Step 4.1: Prepare Your AI Assistant
 
 Start each AI session with context:
 
 ```
-I'm building a weather dashboard using SpecFlow methodology.
+I'm building a weather dashboard using Specflow methodology.
 
 Current Status:
 - Phase: 1 (Foundation)
@@ -226,7 +243,7 @@ Please help me complete this task.
 
 ### Step 4.3: Effective AI Prompting
 
-Good SpecFlow prompts include:
+Good Specflow prompts include:
 
 - **Context**: Where you are in the project
 - **Specific ask**: What you need right now
@@ -248,7 +265,9 @@ Requirements:
 Please create a weather service module.
 ```
 
-## Phase 5: Continuous Refinement
+## Phase 5: Refine - Iterate & Learn
+
+**Improve** - Review outputs against intent and continuously improve.
 
 ### Step 5.1: Regular Check-ins
 
@@ -264,7 +283,7 @@ After each phase, ask:
 - **Medium changes**: Revise phase goals
 - **Large pivots**: Revisit intent document
 
-## Your First SpecFlow Project
+## Your First Specflow Project
 
 ### Suggested Starter Projects
 
@@ -295,27 +314,43 @@ Choose based on your experience level:
 
 ## Common Pitfalls to Avoid
 
-### Pitfall 1: Skipping Intent Capture
-**Symptom**: Constantly changing requirements
-**Solution**: Spend more time on Phase 1
+::: {style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;"}
 
-### Pitfall 2: Over-Planning
-**Symptom**: Analysis paralysis, no code written
-**Solution**: Time-box planning phases
+::: {style="padding: 1.25rem; background: #fee2e2; border-radius: 8px; border-left: 4px solid #dc2626;"}
+### 🚫 Skipping Intent
 
-### Pitfall 3: Ignoring Dependencies
-**Symptom**: Rework when pieces don't fit
-**Solution**: Respect task order
+**Symptom**: Changing requirements  
+**Fix**: Invest in Phase 1
+:::
 
-### Pitfall 4: Context Loss
-**Symptom**: AI gives inconsistent suggestions
-**Solution**: Always provide context in prompts
+::: {style="padding: 1.25rem; background: #fff7ed; border-radius: 8px; border-left: 4px solid #ea580c;"}
+### ⚠️ Over-Planning
+
+**Symptom**: Analysis paralysis  
+**Fix**: Time-box planning
+:::
+
+::: {style="padding: 1.25rem; background: #fef3c7; border-radius: 8px; border-left: 4px solid #f59e0b;"}
+### 🔀 Ignoring Dependencies
+
+**Symptom**: Pieces don't fit  
+**Fix**: Follow task order
+:::
+
+::: {style="padding: 1.25rem; background: #e0f2fe; border-radius: 8px; border-left: 4px solid #0284c7;"}
+### 💭 Context Loss
+
+**Symptom**: AI confusion  
+**Fix**: Always give context
+:::
+
+:::
 
 ## Next Steps
 
 Ready to go deeper?
 
-1. [**Explore Examples**](examples/index.qmd) - See SpecFlow in action
+1. [**Explore Examples**](examples/index.qmd) - See Specflow in action
 2. [**Read the Reference**](reference/index.qmd) - Detailed methodology guide
 3. [**Join the Community**](#) - Share your experience
 
@@ -324,7 +359,7 @@ Ready to go deeper?
 Keep this handy during your first project:
 
 ```
-SpecFlow Quick Reference
+Specflow Quick Reference
 ========================
 
 1. INTENT: What + Why + Success
@@ -338,6 +373,6 @@ Remember: Plan First, Act Second!
 
 ---
 
-*Start your SpecFlow journey today. Your future self will thank you.*
+*Start your Specflow journey today. Your future self will thank you.*
 
-[Download Starter Template](#){.btn .btn-primary} [View Example Project](examples/weather-dashboard.qmd){.btn .btn-outline-primary}
+[Download Starter Template](#){.btn .btn-primary}

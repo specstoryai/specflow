@@ -2,29 +2,34 @@ project:
   type: website
 
 website:
-  title: "SpecFlow"
+  title: " "
   description: "A structured pattern for prompting AI agents to build software - orchestrating intent, step-by-step, from what we want to what gets built."
   site-url: "https://specflow.ai"
   navbar:
     background: primary
+    logo: assets/specflow_light.svg
+    logo-alt: "Specflow"
+    title: false
     left:
       - href: index.qmd
         text: Home
-      - href: about.qmd
-        text: About
       - href: why-plan-first.qmd
         text: Why Plan First
+      - href: about.qmd
+        text: About
       - href: getting-started.qmd
         text: Getting Started
       - text: Learn
         menu:
           - href: examples/index.qmd
-            text: Examples
+            text: Project Examples
+          - href: videos.qmd
+            text: Videos
           - href: reference/index.qmd
             text: Reference
   page-footer:
     center: |
-      &copy; 2024 SpecFlow - Building software with structured intent
+      &copy; 2025 SpecStory - Intent is the new source code
 
 format:
   html:

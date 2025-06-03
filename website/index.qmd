@@ -1,14 +1,27 @@
 ---
-title: "SpecFlow: Structured Software Building with AI"
-subtitle: "Orchestrating intent, step-by-step, from what we want to what gets built"
+title: "Specflow is structure for building with software agents"
 page-layout: full
 toc: false
 ---
 
-::: {.hero-banner}
-# Build Software with Purpose and Precision
+<style>
+.quarto-title-block {
+  text-align: center;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.quarto-title h1.title {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+</style>
 
-**SpecFlow** is a structured pattern for prompting AI agents to build software that transforms high-level ideas into working code through systematic planning and execution.
+::: {.hero-banner}
+# Build with Purpose and Precision
+
+Use the **open Specflow** method to turn intent into software through structured planning and iterative execution with software agents.
 
 ::: {.hero-buttons}
 [Get Started](getting-started.qmd){.btn .btn-primary .btn-lg}
@@ -16,65 +29,186 @@ toc: false
 :::
 :::
 
-## The SpecFlow Process
+## The Core Philosophy
 
-::: {.grid}
+> "Plan first, act second. Every great building starts with a blueprint. Every successful software project starts with a plan."
 
-::: {.g-col-12 .g-col-md-4}
-### 1. Start with Intent
-Begin with your high-level idea - what you want to build. SpecFlow helps you articulate your vision clearly and completely.
+Specflow is about using today's SWE agents **effectively**. By structuring your approach, you can ensure that every prompt, every task, and every output serves your goals. 
+
+## Two Approaches to Building with AI
+
+The difference between success and frustration comes down to structure and decisions that compound. Unplanned development eventually leads to chaos while Specflow brings clarity and predictable results. 
+
+::: {.columns}
+
+::: {.column width="48%"}
+::: {style="text-align: center;"}
+### Without Structure: Chaos
 :::
 
-::: {.g-col-12 .g-col-md-4}
-### 2. Create a Roadmap
-Break down your intent into manageable phases and milestones. Plan the journey from concept to completion.
+::: {style="max-width: 400px; margin: 0 auto; text-align: center;"}
+```{mermaid}
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f9f9f9'}}}%%
+graph TD
+    A[Vague Idea] --> B[AI Prompt]
+    B --> C[Wrong Output]
+    C --> D[Try Again]
+    D --> E[More Prompts]
+    E --> F[Integration Issues]
+    F --> G[Refactor]
+    G --> H[Maybe Success?]
+    
+    B --> I[Dead End]
+    E --> J[Technical Debt]
+    
+    style C fill:#ffcccc
+    style I fill:#ffcccc
+    style J fill:#ffcccc
+    style F fill:#fff3cd
+    style G fill:#fff3cd
+```
+:::
 :::
 
-::: {.g-col-12 .g-col-md-4}
-### 3. Execute Together
-Decompose the roadmap into focused tasks that humans and AI agents can execute collaboratively, with continuous refinement.
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+::: {style="text-align: center;"}
+### With Specflow: Clarity
+:::
+
+::: {style="max-width: 400px; margin: 0 auto; text-align: center;"}
+```{mermaid}
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f9f9f9'}}}%%
+graph TD
+    A[Clear Intent] --> B[Structured Roadmap]
+    B --> C[Focused Workplans]
+    C --> D[Aligned Outputs]
+    D --> G[Refinements]
+    G --> C
+    G --> E[Integrated Solution]
+    E --> F[Success]
+    
+    style G fill:#e0f2fe
+    style F fill:#d1fae5
+```
+:::
 :::
 
 :::
 
-## Why SpecFlow?
+## The Process
 
-Traditional approaches to building software with AI often result in:
+The process is both deceptively simple and powerful. Each step builds on the previous one creating a clear path from concept to completion. 
 
-- **Misaligned outputs** that don't match your vision
-- **Wasted time** on iterations that miss the mark
-- **Fragmented results** from uncoordinated efforts
-- **Lost context** between different development phases
+::: {style="display: flex; align-items: stretch; justify-content: center; gap: 0.5rem; margin: 2rem auto; max-width: 1400px; overflow-x: auto;"}
 
-SpecFlow solves these problems by:
+::: {style="flex: 0 0 auto; width: 185px; padding: 1rem; background: #f8f9fa; border: 2px solid #02B9D9; border-radius: 8px; text-align: center;"}
+#### 1. Intent
+**Define goal**
+
+What & Why
+:::
+
+::: {style="flex: 0 0 auto; align-self: center; font-size: 1.5rem; color: #02B9D9; padding: 0 0.25rem;"}
+→
+:::
+
+::: {style="flex: 0 0 auto; width: 185px; padding: 1rem; background: #f8f9fa; border: 2px solid #02B9D9; border-radius: 8px; text-align: center;"}
+#### 2. Roadmap
+**Plan phases**
+
+Milestones
+:::
+
+::: {style="flex: 0 0 auto; align-self: center; font-size: 1.5rem; color: #02B9D9; padding: 0 0.25rem;"}
+→
+:::
+
+::: {style="flex: 0 0 auto; width: 185px; padding: 1rem; background: #f8f9fa; border: 2px solid #02B9D9; border-radius: 8px; text-align: center;"}
+#### 3. Tasks
+**Break down**
+
+Human + AI
+:::
+
+::: {style="flex: 0 0 auto; align-self: center; font-size: 1.5rem; color: #02B9D9; padding: 0 0.25rem;"}
+→
+:::
+
+::: {style="flex: 0 0 auto; width: 185px; padding: 1rem; background: #f8f9fa; border: 2px solid #02B9D9; border-radius: 8px; text-align: center;"}
+#### 4. Execute
+**Build together**
+
+Systematic
+:::
+
+::: {style="flex: 0 0 auto; align-self: center; font-size: 1.5rem; color: #02B9D9; padding: 0 0.25rem;"}
+→
+:::
+
+::: {style="flex: 0 0 auto; width: 185px; padding: 1rem; background: #f8f9fa; border: 2px solid #02B9D9; border-radius: 8px; text-align: center;"}
+#### 5. Refine
+**Iterate & learn**
+
+Improve
+:::
+
+:::
+
+## Why Specflow?
+
+Outside of prototyping, vibe driven approaches to building software with SWE Agents often result in:
+
+- **Misaligned outputs** that don't match your intent.
+- **Wasted time** on iterations that miss the mark.
+- **Fragmented results** from uncoordinated efforts.
+- **Lost context** between different development phases.
+
+Specflow solves these problems by:
 
 ::: {.features}
-- ✓ **Structured Planning**: Clear progression from idea to implementation
-- ✓ **Human-AI Collaboration**: Optimal task distribution between humans and agents
-- ✓ **Iterative Refinement**: Continuous improvement throughout the process
-- ✓ **Context Preservation**: Maintain alignment with original intent
+-  **Structured Planning**: Clear progression from idea to implementation
+-  **Human-AI Collaboration**: Optimal task distribution between humans and agents
+-  **Iterative Refinement**: Continuous improvement throughout the process
+-  **Context Preservation**: Maintain alignment with original intent
 :::
-
-## Core Philosophy
-
-> "Plan first, act second. Every great building starts with a blueprint."
-
-SpecFlow isn't just about using AI tools - it's about using them **effectively**. By structuring your approach, you ensure that every prompt, every task, and every output serves your ultimate goal.
 
 ## Get Started Today
 
-Ready to transform how you build software with AI?
+::: {style="background-color: #f8f9fa; padding: 3rem 2rem; border-radius: 8px; text-align: center; margin: 3rem 0;"}
 
-::: {.cta-section}
-[**Start with the Guide**](getting-started.qmd) - Learn the SpecFlow methodology step-by-step
+### Ready to transform how you build software with AI?
 
-[**See Examples**](examples/index.qmd) - Explore real-world SpecFlow implementations
+::: {style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 2rem;"}
 
-[**Read the Reference**](reference/index.qmd) - Deep dive into the complete methodology
+::: {style="flex: 1; min-width: 250px; max-width: 350px; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"}
+#### 📚 Learn the Method
+[**Start with the Guide**](getting-started.qmd){.btn .btn-primary style="margin-top: 1rem;"}
+
+Master the Specflow methodology with our comprehensive step-by-step guide.
+:::
+
+::: {style="flex: 1; min-width: 250px; max-width: 350px; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"}
+#### 🚀 See It In Action
+[**Explore Examples**](examples/index.qmd){.btn .btn-primary style="margin-top: 1rem;"}
+
+Real-world implementations showing Specflow from concept to completion.
+:::
+
+::: {style="flex: 1; min-width: 250px; max-width: 350px; padding: 1.5rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"}
+#### 📖 Go Deeper
+[**Read Reference**](reference/index.qmd){.btn .btn-primary style="margin-top: 1rem;"}
+
+Complete documentation for advanced techniques and best practices.
+:::
+
+:::
 :::
 
 ---
 
 ::: {.text-center .text-muted}
-SpecFlow is an open methodology for better human-AI collaboration in software development.
+Specflow is the open methodology for better human-AI collaboration in software development.
 :::

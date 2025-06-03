@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Getting Started with SpecFlow – SpecFlow</title>
+<title>Getting Started with Specflow –</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,6 +103,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<meta name="mermaid-theme" content="default">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -115,8 +119,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">SpecFlow</span>
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/specflow_light.svg" alt="Specflow" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -130,12 +134,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./why-plan-first.html"> 
 <span class="menu-text">Why Plan First</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./getting-started.html" aria-current="page"> 
@@ -148,7 +152,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="dropdown-menu" aria-labelledby="nav-menu-learn">    
         <li>
     <a class="dropdown-item" href="./examples/index.html">
- <span class="dropdown-text">Examples</span></a>
+ <span class="dropdown-text">Project Examples</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./videos.html">
+ <span class="dropdown-text">Videos</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./reference/index.html">
@@ -172,49 +180,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome-to-specflow" id="toc-welcome-to-specflow" class="nav-link active" data-scroll-target="#welcome-to-specflow">Welcome to SpecFlow</a></li>
+  <li><a href="#welcome-to-specflow" id="toc-welcome-to-specflow" class="nav-link active" data-scroll-target="#welcome-to-specflow">Welcome to Specflow</a></li>
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
-  <li><a href="#the-five-phases-of-specflow" id="toc-the-five-phases-of-specflow" class="nav-link" data-scroll-target="#the-five-phases-of-specflow">The Five Phases of SpecFlow</a></li>
-  <li><a href="#phase-1-intent-capture-10-15-minutes" id="toc-phase-1-intent-capture-10-15-minutes" class="nav-link" data-scroll-target="#phase-1-intent-capture-10-15-minutes">Phase 1: Intent Capture (10-15 minutes)</a>
+  <li><a href="#the-five-phases-of-specflow" id="toc-the-five-phases-of-specflow" class="nav-link" data-scroll-target="#the-five-phases-of-specflow">The Five Phases of Specflow</a></li>
+  <li><a href="#phase-1-intent---define-your-goal-10-15-minutes" id="toc-phase-1-intent---define-your-goal-10-15-minutes" class="nav-link" data-scroll-target="#phase-1-intent---define-your-goal-10-15-minutes">Phase 1: Intent - Define Your Goal (10-15 minutes)</a>
   <ul class="collapse">
   <li><a href="#step-1.1-define-your-vision" id="toc-step-1.1-define-your-vision" class="nav-link" data-scroll-target="#step-1.1-define-your-vision">Step 1.1: Define Your Vision</a></li>
   <li><a href="#step-1.2-document-your-intent" id="toc-step-1.2-document-your-intent" class="nav-link" data-scroll-target="#step-1.2-document-your-intent">Step 1.2: Document Your Intent</a></li>
   <li><a href="#example-weather-dashboard" id="toc-example-weather-dashboard" class="nav-link" data-scroll-target="#example-weather-dashboard">Example: Weather Dashboard</a></li>
   </ul></li>
-  <li><a href="#phase-2-roadmap-creation-10-15-minutes" id="toc-phase-2-roadmap-creation-10-15-minutes" class="nav-link" data-scroll-target="#phase-2-roadmap-creation-10-15-minutes">Phase 2: Roadmap Creation (10-15 minutes)</a>
+  <li><a href="#phase-2-roadmap---plan-your-phases-10-15-minutes" id="toc-phase-2-roadmap---plan-your-phases-10-15-minutes" class="nav-link" data-scroll-target="#phase-2-roadmap---plan-your-phases-10-15-minutes">Phase 2: Roadmap - Plan Your Phases (10-15 minutes)</a>
   <ul class="collapse">
   <li><a href="#step-2.1-identify-major-phases" id="toc-step-2.1-identify-major-phases" class="nav-link" data-scroll-target="#step-2.1-identify-major-phases">Step 2.1: Identify Major Phases</a></li>
   <li><a href="#step-2.2-create-your-roadmap" id="toc-step-2.2-create-your-roadmap" class="nav-link" data-scroll-target="#step-2.2-create-your-roadmap">Step 2.2: Create Your Roadmap</a></li>
   <li><a href="#example-roadmap-weather-dashboard" id="toc-example-roadmap-weather-dashboard" class="nav-link" data-scroll-target="#example-roadmap-weather-dashboard">Example Roadmap: Weather Dashboard</a></li>
   </ul></li>
-  <li><a href="#phase-3-task-decomposition-5-10-minutes-per-phase" id="toc-phase-3-task-decomposition-5-10-minutes-per-phase" class="nav-link" data-scroll-target="#phase-3-task-decomposition-5-10-minutes-per-phase">Phase 3: Task Decomposition (5-10 minutes per phase)</a>
+  <li><a href="#phase-3-tasks---break-it-down-5-10-minutes-per-phase" id="toc-phase-3-tasks---break-it-down-5-10-minutes-per-phase" class="nav-link" data-scroll-target="#phase-3-tasks---break-it-down-5-10-minutes-per-phase">Phase 3: Tasks - Break It Down (5-10 minutes per phase)</a>
   <ul class="collapse">
   <li><a href="#step-3.1-break-down-each-phase" id="toc-step-3.1-break-down-each-phase" class="nav-link" data-scroll-target="#step-3.1-break-down-each-phase">Step 3.1: Break Down Each Phase</a></li>
   <li><a href="#step-3.2-create-task-lists" id="toc-step-3.2-create-task-lists" class="nav-link" data-scroll-target="#step-3.2-create-task-lists">Step 3.2: Create Task Lists</a></li>
   </ul></li>
-  <li><a href="#phase-4-collaborative-execution" id="toc-phase-4-collaborative-execution" class="nav-link" data-scroll-target="#phase-4-collaborative-execution">Phase 4: Collaborative Execution</a>
+  <li><a href="#phase-4-execute---build-together" id="toc-phase-4-execute---build-together" class="nav-link" data-scroll-target="#phase-4-execute---build-together">Phase 4: Execute - Build Together</a>
   <ul class="collapse">
   <li><a href="#step-4.1-prepare-your-ai-assistant" id="toc-step-4.1-prepare-your-ai-assistant" class="nav-link" data-scroll-target="#step-4.1-prepare-your-ai-assistant">Step 4.1: Prepare Your AI Assistant</a></li>
   <li><a href="#step-4.2-execute-systematically" id="toc-step-4.2-execute-systematically" class="nav-link" data-scroll-target="#step-4.2-execute-systematically">Step 4.2: Execute Systematically</a></li>
   <li><a href="#step-4.3-effective-ai-prompting" id="toc-step-4.3-effective-ai-prompting" class="nav-link" data-scroll-target="#step-4.3-effective-ai-prompting">Step 4.3: Effective AI Prompting</a></li>
   </ul></li>
-  <li><a href="#phase-5-continuous-refinement" id="toc-phase-5-continuous-refinement" class="nav-link" data-scroll-target="#phase-5-continuous-refinement">Phase 5: Continuous Refinement</a>
+  <li><a href="#phase-5-refine---iterate-learn" id="toc-phase-5-refine---iterate-learn" class="nav-link" data-scroll-target="#phase-5-refine---iterate-learn">Phase 5: Refine - Iterate &amp; Learn</a>
   <ul class="collapse">
   <li><a href="#step-5.1-regular-check-ins" id="toc-step-5.1-regular-check-ins" class="nav-link" data-scroll-target="#step-5.1-regular-check-ins">Step 5.1: Regular Check-ins</a></li>
   <li><a href="#step-5.2-iterate-intelligently" id="toc-step-5.2-iterate-intelligently" class="nav-link" data-scroll-target="#step-5.2-iterate-intelligently">Step 5.2: Iterate Intelligently</a></li>
   </ul></li>
-  <li><a href="#your-first-specflow-project" id="toc-your-first-specflow-project" class="nav-link" data-scroll-target="#your-first-specflow-project">Your First SpecFlow Project</a>
+  <li><a href="#your-first-specflow-project" id="toc-your-first-specflow-project" class="nav-link" data-scroll-target="#your-first-specflow-project">Your First Specflow Project</a>
   <ul class="collapse">
   <li><a href="#suggested-starter-projects" id="toc-suggested-starter-projects" class="nav-link" data-scroll-target="#suggested-starter-projects">Suggested Starter Projects</a></li>
   <li><a href="#success-tips" id="toc-success-tips" class="nav-link" data-scroll-target="#success-tips">Success Tips</a></li>
   </ul></li>
-  <li><a href="#common-pitfalls-to-avoid" id="toc-common-pitfalls-to-avoid" class="nav-link" data-scroll-target="#common-pitfalls-to-avoid">Common Pitfalls to Avoid</a>
-  <ul class="collapse">
-  <li><a href="#pitfall-1-skipping-intent-capture" id="toc-pitfall-1-skipping-intent-capture" class="nav-link" data-scroll-target="#pitfall-1-skipping-intent-capture">Pitfall 1: Skipping Intent Capture</a></li>
-  <li><a href="#pitfall-2-over-planning" id="toc-pitfall-2-over-planning" class="nav-link" data-scroll-target="#pitfall-2-over-planning">Pitfall 2: Over-Planning</a></li>
-  <li><a href="#pitfall-3-ignoring-dependencies" id="toc-pitfall-3-ignoring-dependencies" class="nav-link" data-scroll-target="#pitfall-3-ignoring-dependencies">Pitfall 3: Ignoring Dependencies</a></li>
-  <li><a href="#pitfall-4-context-loss" id="toc-pitfall-4-context-loss" class="nav-link" data-scroll-target="#pitfall-4-context-loss">Pitfall 4: Context Loss</a></li>
-  </ul></li>
+  <li><a href="#common-pitfalls-to-avoid" id="toc-common-pitfalls-to-avoid" class="nav-link" data-scroll-target="#common-pitfalls-to-avoid">Common Pitfalls to Avoid</a></li>
   <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
   <li><a href="#quick-reference-card" id="toc-quick-reference-card" class="nav-link" data-scroll-target="#quick-reference-card">Quick Reference Card</a></li>
   </ul>
@@ -225,8 +227,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Getting Started with SpecFlow</h1>
-<p class="subtitle lead">Your step-by-step guide to structured AI-assisted development</p>
+<h1 class="title">Getting Started with Specflow</h1>
+<p class="subtitle lead">Your step-by-step guide to structured agent-first software development</p>
 </div>
 
 
@@ -244,8 +246,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <section id="welcome-to-specflow" class="level2">
-<h2 class="anchored" data-anchor-id="welcome-to-specflow">Welcome to SpecFlow</h2>
-<p>This guide will walk you through your first SpecFlow project. By the end, you’ll understand how to transform a vague idea into a well-executed software project using AI assistance.</p>
+<h2 class="anchored" data-anchor-id="welcome-to-specflow">Welcome to Specflow</h2>
+<p>This guide will walk you through your first Specflow project. By the end, you’ll understand how to transform a vague idea into a well-executed software project using AI assistance.</p>
 </section>
 <section id="prerequisites" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
@@ -258,16 +260,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="the-five-phases-of-specflow" class="level2">
-<h2 class="anchored" data-anchor-id="the-five-phases-of-specflow">The Five Phases of SpecFlow</h2>
-<pre class="mermaid"><code>graph TD
-    A[1. Intent Capture] --&gt; B[2. Roadmap Creation]
-    B --&gt; C[3. Task Decomposition]
-    C --&gt; D[4. Collaborative Execution]
-    D --&gt; E[5. Continuous Refinement]
-    E --&gt; D</code></pre>
+<h2 class="anchored" data-anchor-id="the-five-phases-of-specflow">The Five Phases of Specflow</h2>
+<div class="text-center">
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'theme':'base', 'themeVariables': {'primaryColor': '#f9f9f9'}}}%%
+graph LR
+    A[Intent&lt;br/&gt;Capture] --&gt; B[Roadmap&lt;br/&gt;Creation]
+    B --&gt; C[Task&lt;br/&gt;Decomposition]
+    C --&gt; D[Collaborative&lt;br/&gt;Execution]
+    D --&gt; E[Continuous&lt;br/&gt;Refinement]
+    E --&gt; |Iterate| D
+    
+    style A fill:#e0f2fe
+    style B fill:#e0f2fe
+    style C fill:#e0f2fe
+    style D fill:#e0f2fe
+    style E fill:#d1fae5
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="phase-1-intent-capture-10-15-minutes" class="level2">
-<h2 class="anchored" data-anchor-id="phase-1-intent-capture-10-15-minutes">Phase 1: Intent Capture (10-15 minutes)</h2>
+<section id="phase-1-intent---define-your-goal-10-15-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="phase-1-intent---define-your-goal-10-15-minutes">Phase 1: Intent - Define Your Goal (10-15 minutes)</h2>
+<p><strong>What &amp; Why</strong> - Start with clarity about what you’re building and why it matters.</p>
 <section id="step-1.1-define-your-vision" class="level3">
 <h3 class="anchored" data-anchor-id="step-1.1-define-your-vision">Step 1.1: Define Your Vision</h3>
 <p>Start by answering these questions:</p>
@@ -292,59 +315,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="step-1.2-document-your-intent" class="level3">
 <h3 class="anchored" data-anchor-id="step-1.2-document-your-intent">Step 1.2: Document Your Intent</h3>
 <p>Create an intent document. Here’s a template:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Project Intent: [Your Project Name]</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Vision</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">1-2 sentences describing what you're building</span><span class="co">]</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Problem Statement</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">What problem are you solving?</span><span class="co">]</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Success Criteria</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> <span class="co">[</span><span class="ot">Criterion 1</span><span class="co">]</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> <span class="co">[</span><span class="ot">Criterion 2</span><span class="co">]</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> <span class="co">[</span><span class="ot">Criterion 3</span><span class="co">]</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Constraints</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Technical: <span class="co">[</span><span class="ot">Any technical limitations</span><span class="co">]</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Time: <span class="co">[</span><span class="ot">Deadline or time budget</span><span class="co">]</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Resources: <span class="co">[</span><span class="ot">Available tools/people</span><span class="co">]</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Non-Goals</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">What this project will NOT do</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Project Intent: [Your Project Name]</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Vision</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">1-2 sentences describing what you're building</span><span class="co">]</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Problem Statement</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">What problem are you solving?</span><span class="co">]</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Success Criteria</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> <span class="co">[</span><span class="ot">Criterion 1</span><span class="co">]</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> <span class="co">[</span><span class="ot">Criterion 2</span><span class="co">]</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> <span class="co">[</span><span class="ot">Criterion 3</span><span class="co">]</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Constraints</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Technical: <span class="co">[</span><span class="ot">Any technical limitations</span><span class="co">]</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Time: <span class="co">[</span><span class="ot">Deadline or time budget</span><span class="co">]</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Resources: <span class="co">[</span><span class="ot">Available tools/people</span><span class="co">]</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Non-Goals</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">What this project will NOT do</span><span class="co">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="example-weather-dashboard" class="level3">
 <h3 class="anchored" data-anchor-id="example-weather-dashboard">Example: Weather Dashboard</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Project Intent: Personal Weather Dashboard</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Vision</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>A clean, minimalist web dashboard that shows weather </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>information for multiple cities I care about.</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Problem Statement</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>I check weather for multiple cities daily (home, </span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>office, parents' city) across different apps. </span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>I want one unified view.</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Success Criteria</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Shows current weather for 3+ cities</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Updates automatically every 30 minutes</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Works on desktop and mobile</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Loads in under 2 seconds</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Constraints</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Technical: Use free weather APIs only</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Time: Complete in one weekend</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Resources: Solo developer, modern web stack</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## Non-Goals</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No user accounts or personalization</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No weather history or predictions beyond 5 days</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No native mobile apps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Project Intent: Personal Weather Dashboard</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Vision</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>A clean, minimalist web dashboard that shows weather </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>information for multiple cities I care about.</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Problem Statement</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>I check weather for multiple cities daily (home, </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>office, parents' city) across different apps. </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>I want one unified view.</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Success Criteria</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Shows current weather for 3+ cities</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Updates automatically every 30 minutes</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Works on desktop and mobile</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Loads in under 2 seconds</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Constraints</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Technical: Use free weather APIs only</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Time: Complete in one weekend</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Resources: Solo developer, modern web stack</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## Non-Goals</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No user accounts or personalization</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No weather history or predictions beyond 5 days</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No native mobile apps</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="phase-2-roadmap-creation-10-15-minutes" class="level2">
-<h2 class="anchored" data-anchor-id="phase-2-roadmap-creation-10-15-minutes">Phase 2: Roadmap Creation (10-15 minutes)</h2>
+<section id="phase-2-roadmap---plan-your-phases-10-15-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="phase-2-roadmap---plan-your-phases-10-15-minutes">Phase 2: Roadmap - Plan Your Phases (10-15 minutes)</h2>
+<p><strong>Milestones</strong> - Break your vision into manageable phases with clear goals.</p>
 <section id="step-2.1-identify-major-phases" class="level3">
 <h3 class="anchored" data-anchor-id="step-2.1-identify-major-phases">Step 2.1: Identify Major Phases</h3>
 <p>Break your project into 3-5 major phases:</p>
@@ -361,43 +385,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="example-roadmap-weather-dashboard" class="level3">
 <h3 class="anchored" data-anchor-id="example-roadmap-weather-dashboard">Example Roadmap: Weather Dashboard</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Weather Dashboard Roadmap</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Phase 1: Foundation (2 hours)</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>**Goal**: Set up project structure and basic UI</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>**Deliverables**:</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Project scaffold (React/Next.js)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Basic component structure</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Simple styling system</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>**Dependencies**: None</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## Phase 2: Weather Integration (3 hours)</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>**Goal**: Connect to weather API and display data</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>**Deliverables**:</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Weather API integration</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>City weather components</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Auto-refresh mechanism</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>**Dependencies**: Phase 1 complete</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Phase 3: Multi-City Support (2 hours)</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>**Goal**: Support multiple cities elegantly</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>**Deliverables**:</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>City management system</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Responsive grid layout</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Local storage for preferences</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>**Dependencies**: Phase 2 complete</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## Phase 4: Polish &amp; Deploy (1 hour)</span></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>**Goal**: Refine UI and deploy to production</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>**Deliverables**:</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Loading states and error handling</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Final UI polish</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Deployed to Vercel/Netlify</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>**Dependencies**: Phase 3 complete</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Weather Dashboard Roadmap</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Phase 1: Foundation (2 hours)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>**Goal**: Set up project structure and basic UI</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>**Deliverables**:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Project scaffold (React/Next.js)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Basic component structure</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Simple styling system</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>**Dependencies**: None</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## Phase 2: Weather Integration (3 hours)</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>**Goal**: Connect to weather API and display data</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>**Deliverables**:</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Weather API integration</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>City weather components</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Auto-refresh mechanism</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>**Dependencies**: Phase 1 complete</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Phase 3: Multi-City Support (2 hours)</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>**Goal**: Support multiple cities elegantly</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>**Deliverables**:</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>City management system</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Responsive grid layout</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Local storage for preferences</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>**Dependencies**: Phase 2 complete</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## Phase 4: Polish &amp; Deploy (1 hour)</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>**Goal**: Refine UI and deploy to production</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>**Deliverables**:</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Loading states and error handling</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Final UI polish</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Deployed to Vercel/Netlify</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>**Dependencies**: Phase 3 complete</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="phase-3-task-decomposition-5-10-minutes-per-phase" class="level2">
-<h2 class="anchored" data-anchor-id="phase-3-task-decomposition-5-10-minutes-per-phase">Phase 3: Task Decomposition (5-10 minutes per phase)</h2>
+<section id="phase-3-tasks---break-it-down-5-10-minutes-per-phase" class="level2">
+<h2 class="anchored" data-anchor-id="phase-3-tasks---break-it-down-5-10-minutes-per-phase">Phase 3: Tasks - Break It Down (5-10 minutes per phase)</h2>
+<p><strong>Human + AI</strong> - Convert roadmap items into specific tasks, optimally distributed between you and AI.</p>
 <section id="step-3.1-break-down-each-phase" class="level3">
 <h3 class="anchored" data-anchor-id="step-3.1-break-down-each-phase">Step 3.1: Break Down Each Phase</h3>
 <p>For each roadmap phase, create specific tasks:</p>
@@ -410,33 +435,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="step-3.2-create-task-lists" class="level3">
 <h3 class="anchored" data-anchor-id="step-3.2-create-task-lists">Step 3.2: Create Task Lists</h3>
 <p>Use this format:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Phase 1 Tasks: Foundation</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 1.1: Project Setup [AI-Assisted]</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Initialize Next.js project with TypeScript</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Set up ESLint and Prettier</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Create folder structure</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Output: Working development environment</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 1.2: Component Architecture [Human]</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Design component hierarchy</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Create component interfaces</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Set up props types</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Output: Component structure diagram</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 1.3: Base Components [AI-Assisted]</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Create Layout component</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Create WeatherCard component shell</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Create CityGrid component</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Output: Basic component files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Phase 1 Tasks: Foundation</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 1.1: Project Setup [AI-Assisted]</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Initialize Next.js project with TypeScript</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Set up ESLint and Prettier</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Create folder structure</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Output: Working development environment</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 1.2: Component Architecture [Human]</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Design component hierarchy</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Create component interfaces</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Set up props types</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Output: Component structure diagram</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 1.3: Base Components [AI-Assisted]</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Create Layout component</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Create WeatherCard component shell</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Create CityGrid component</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Output: Basic component files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="phase-4-collaborative-execution" class="level2">
-<h2 class="anchored" data-anchor-id="phase-4-collaborative-execution">Phase 4: Collaborative Execution</h2>
+<section id="phase-4-execute---build-together" class="level2">
+<h2 class="anchored" data-anchor-id="phase-4-execute---build-together">Phase 4: Execute - Build Together</h2>
+<p><strong>Systematic</strong> - Work through tasks methodically with your AI partner.</p>
 <section id="step-4.1-prepare-your-ai-assistant" class="level3">
 <h3 class="anchored" data-anchor-id="step-4.1-prepare-your-ai-assistant">Step 4.1: Prepare Your AI Assistant</h3>
 <p>Start each AI session with context:</p>
-<pre><code>I'm building a weather dashboard using SpecFlow methodology.
+<pre><code>I'm building a weather dashboard using Specflow methodology.
 
 Current Status:
 - Phase: 1 (Foundation)
@@ -461,7 +487,7 @@ Please help me complete this task.</code></pre>
 </section>
 <section id="step-4.3-effective-ai-prompting" class="level3">
 <h3 class="anchored" data-anchor-id="step-4.3-effective-ai-prompting">Step 4.3: Effective AI Prompting</h3>
-<p>Good SpecFlow prompts include:</p>
+<p>Good Specflow prompts include:</p>
 <ul>
 <li><strong>Context</strong>: Where you are in the project</li>
 <li><strong>Specific ask</strong>: What you need right now</li>
@@ -481,8 +507,9 @@ Requirements:
 Please create a weather service module.</code></pre>
 </section>
 </section>
-<section id="phase-5-continuous-refinement" class="level2">
-<h2 class="anchored" data-anchor-id="phase-5-continuous-refinement">Phase 5: Continuous Refinement</h2>
+<section id="phase-5-refine---iterate-learn" class="level2">
+<h2 class="anchored" data-anchor-id="phase-5-refine---iterate-learn">Phase 5: Refine - Iterate &amp; Learn</h2>
+<p><strong>Improve</strong> - Review outputs against intent and continuously improve.</p>
 <section id="step-5.1-regular-check-ins" class="level3">
 <h3 class="anchored" data-anchor-id="step-5.1-regular-check-ins">Step 5.1: Regular Check-ins</h3>
 <p>After each phase, ask:</p>
@@ -502,7 +529,7 @@ Please create a weather service module.</code></pre>
 </section>
 </section>
 <section id="your-first-specflow-project" class="level2">
-<h2 class="anchored" data-anchor-id="your-first-specflow-project">Your First SpecFlow Project</h2>
+<h2 class="anchored" data-anchor-id="your-first-specflow-project">Your First Specflow Project</h2>
 <section id="suggested-starter-projects" class="level3">
 <h3 class="anchored" data-anchor-id="suggested-starter-projects">Suggested Starter Projects</h3>
 <p>Choose based on your experience level:</p>
@@ -523,28 +550,34 @@ Please create a weather service module.</code></pre>
 </section>
 <section id="common-pitfalls-to-avoid" class="level2">
 <h2 class="anchored" data-anchor-id="common-pitfalls-to-avoid">Common Pitfalls to Avoid</h2>
-<section id="pitfall-1-skipping-intent-capture" class="level3">
-<h3 class="anchored" data-anchor-id="pitfall-1-skipping-intent-capture">Pitfall 1: Skipping Intent Capture</h3>
-<p><strong>Symptom</strong>: Constantly changing requirements <strong>Solution</strong>: Spend more time on Phase 1</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+<section id="skipping-intent" class="level3" style="padding: 1.25rem; background: #fee2e2; border-radius: 8px; border-left: 4px solid #dc2626;">
+<h3 class="anchored" data-anchor-id="skipping-intent">🚫 Skipping Intent</h3>
+<p><strong>Symptom</strong>: Changing requirements<br>
+<strong>Fix</strong>: Invest in Phase 1</p>
 </section>
-<section id="pitfall-2-over-planning" class="level3">
-<h3 class="anchored" data-anchor-id="pitfall-2-over-planning">Pitfall 2: Over-Planning</h3>
-<p><strong>Symptom</strong>: Analysis paralysis, no code written <strong>Solution</strong>: Time-box planning phases</p>
+<section id="over-planning" class="level3" style="padding: 1.25rem; background: #fff7ed; border-radius: 8px; border-left: 4px solid #ea580c;">
+<h3 class="anchored" data-anchor-id="over-planning">⚠️ Over-Planning</h3>
+<p><strong>Symptom</strong>: Analysis paralysis<br>
+<strong>Fix</strong>: Time-box planning</p>
 </section>
-<section id="pitfall-3-ignoring-dependencies" class="level3">
-<h3 class="anchored" data-anchor-id="pitfall-3-ignoring-dependencies">Pitfall 3: Ignoring Dependencies</h3>
-<p><strong>Symptom</strong>: Rework when pieces don’t fit <strong>Solution</strong>: Respect task order</p>
+<section id="ignoring-dependencies" class="level3" style="padding: 1.25rem; background: #fef3c7; border-radius: 8px; border-left: 4px solid #f59e0b;">
+<h3 class="anchored" data-anchor-id="ignoring-dependencies">🔀 Ignoring Dependencies</h3>
+<p><strong>Symptom</strong>: Pieces don’t fit<br>
+<strong>Fix</strong>: Follow task order</p>
 </section>
-<section id="pitfall-4-context-loss" class="level3">
-<h3 class="anchored" data-anchor-id="pitfall-4-context-loss">Pitfall 4: Context Loss</h3>
-<p><strong>Symptom</strong>: AI gives inconsistent suggestions <strong>Solution</strong>: Always provide context in prompts</p>
+<section id="context-loss" class="level3" style="padding: 1.25rem; background: #e0f2fe; border-radius: 8px; border-left: 4px solid #0284c7;">
+<h3 class="anchored" data-anchor-id="context-loss">💭 Context Loss</h3>
+<p><strong>Symptom</strong>: AI confusion<br>
+<strong>Fix</strong>: Always give context</p>
 </section>
+</div>
 </section>
 <section id="next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
 <p>Ready to go deeper?</p>
 <ol type="1">
-<li><a href="./examples/index.html"><strong>Explore Examples</strong></a> - See SpecFlow in action</li>
+<li><a href="./examples/index.html"><strong>Explore Examples</strong></a> - See Specflow in action</li>
 <li><a href="./reference/index.html"><strong>Read the Reference</strong></a> - Detailed methodology guide</li>
 <li><a href="#"><strong>Join the Community</strong></a> - Share your experience</li>
 </ol>
@@ -552,7 +585,7 @@ Please create a weather service module.</code></pre>
 <section id="quick-reference-card" class="level2">
 <h2 class="anchored" data-anchor-id="quick-reference-card">Quick Reference Card</h2>
 <p>Keep this handy during your first project:</p>
-<pre><code>SpecFlow Quick Reference
+<pre><code>Specflow Quick Reference
 ========================
 
 1. INTENT: What + Why + Success
@@ -563,8 +596,8 @@ Please create a weather service module.</code></pre>
 
 Remember: Plan First, Act Second!</code></pre>
 <hr>
-<p><em>Start your SpecFlow journey today. Your future self will thank you.</em></p>
-<p><a href="#" class="btn btn-primary">Download Starter Template</a> <a href="examples/weather-dashboard.qmd" class="btn btn-outline-primary">View Example Project</a></p>
+<p><em>Start your Specflow journey today. Your future self will thank you.</em></p>
+<p><a href="#" class="btn btn-primary">Download Starter Template</a></p>
 
 
 </section>
@@ -976,7 +1009,7 @@ Remember: Plan First, Act Second!</code></pre>
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© 2024 SpecFlow - Building software with structured intent</p>
+<p>© 2025 SpecStory - Intent is the new source code</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;
