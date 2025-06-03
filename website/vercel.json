@@ -1,7 +1,6 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "curl -LO https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.553/quarto-1.4.553-linux-amd64.tar.gz && tar -xzf quarto-1.4.553-linux-amd64.tar.gz && export PATH=$PATH:$PWD/quarto-1.4.553/bin && quarto render",
   "outputDirectory": "_site",
-  "installCommand": "npm install",
   "framework": null,
   "rewrites": [
     {

@@ -5,8 +5,5 @@
   "scripts": {
     "build": "quarto render",
     "preview": "quarto preview"
-  },
-  "devDependencies": {
-    "@quarto/quarto-cli": "^1.4.0"
   }
 }
