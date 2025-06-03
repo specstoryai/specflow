@@ -1,0 +1,10 @@
+# Exclude Spectory directory
+.spectory/
+
+# Exclude cursor indexing ignore file
+.cursorindexingignore
+
+# Exclude workplans directory
+# workplans/ 
+
+/.quarto/

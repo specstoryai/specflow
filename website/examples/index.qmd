@@ -1,0 +1,61 @@
+---
+title: "SpecFlow Examples"
+subtitle: "Real-world applications of the SpecFlow methodology"
+listing:
+  contents: 
+    - "*.qmd"
+    - "!index.qmd"
+  type: grid
+  categories: true
+  fields: [title, subtitle, categories]
+  sort: "date desc"
+---
+
+## Learn by Example
+
+The best way to understand SpecFlow is to see it in action. These examples showcase different project types and complexity levels, demonstrating how the methodology adapts to various scenarios.
+
+## Example Categories
+
+### 🚀 Quick Start Projects
+Perfect for your first SpecFlow experience. These can be completed in a few hours.
+
+- **CLI Tools**: Command-line applications with clear inputs/outputs
+- **Scripts**: Automation scripts and utilities
+- **Simple APIs**: Basic REST endpoints
+
+### 🏗️ Full Applications
+More complex projects that showcase SpecFlow's power at scale.
+
+- **Web Applications**: Full-stack applications with UI and backend
+- **Data Pipelines**: ETL processes and data transformations
+- **Microservices**: Distributed system components
+
+### 🧪 Experimental
+Pushing the boundaries of what's possible with AI assistance.
+
+- **AI Integrations**: Projects that leverage multiple AI services
+- **Code Generation**: Meta-projects that generate other projects
+- **Novel Architectures**: Exploring new patterns and paradigms
+
+## Featured Examples
+
+::: {.callout-tip}
+## New to SpecFlow?
+Start with the **Personal Todo CLI** example. It's simple enough to complete in an afternoon but comprehensive enough to demonstrate all five SpecFlow phases.
+:::
+
+### Browse All Examples
+
+Each example includes:
+
+- **Complete Intent Document**: See how professionals define project vision
+- **Detailed Roadmap**: Phase-by-phase breakdown with time estimates
+- **Task Decomposition**: Specific tasks with AI/human assignments
+- **Actual Prompts**: Real prompts used with AI assistants
+- **Final Code**: The complete, working implementation
+- **Lessons Learned**: Insights and improvements discovered
+
+---
+
+*Select an example below to explore the full SpecFlow process from intent to implementation.*

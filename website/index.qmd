@@ -1,0 +1,80 @@
+---
+title: "SpecFlow: Structured Software Building with AI"
+subtitle: "Orchestrating intent, step-by-step, from what we want to what gets built"
+page-layout: full
+toc: false
+---
+
+::: {.hero-banner}
+# Build Software with Purpose and Precision
+
+**SpecFlow** is a structured pattern for prompting AI agents to build software that transforms high-level ideas into working code through systematic planning and execution.
+
+::: {.hero-buttons}
+[Get Started](getting-started.qmd){.btn .btn-primary .btn-lg}
+[Learn Why](why-plan-first.qmd){.btn .btn-outline-primary .btn-lg}
+:::
+:::
+
+## The SpecFlow Process
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+### 1. Start with Intent
+Begin with your high-level idea - what you want to build. SpecFlow helps you articulate your vision clearly and completely.
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### 2. Create a Roadmap
+Break down your intent into manageable phases and milestones. Plan the journey from concept to completion.
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### 3. Execute Together
+Decompose the roadmap into focused tasks that humans and AI agents can execute collaboratively, with continuous refinement.
+:::
+
+:::
+
+## Why SpecFlow?
+
+Traditional approaches to building software with AI often result in:
+
+- **Misaligned outputs** that don't match your vision
+- **Wasted time** on iterations that miss the mark
+- **Fragmented results** from uncoordinated efforts
+- **Lost context** between different development phases
+
+SpecFlow solves these problems by:
+
+::: {.features}
+- ✓ **Structured Planning**: Clear progression from idea to implementation
+- ✓ **Human-AI Collaboration**: Optimal task distribution between humans and agents
+- ✓ **Iterative Refinement**: Continuous improvement throughout the process
+- ✓ **Context Preservation**: Maintain alignment with original intent
+:::
+
+## Core Philosophy
+
+> "Plan first, act second. Every great building starts with a blueprint."
+
+SpecFlow isn't just about using AI tools - it's about using them **effectively**. By structuring your approach, you ensure that every prompt, every task, and every output serves your ultimate goal.
+
+## Get Started Today
+
+Ready to transform how you build software with AI?
+
+::: {.cta-section}
+[**Start with the Guide**](getting-started.qmd) - Learn the SpecFlow methodology step-by-step
+
+[**See Examples**](examples/index.qmd) - Explore real-world SpecFlow implementations
+
+[**Read the Reference**](reference/index.qmd) - Deep dive into the complete methodology
+:::
+
+---
+
+::: {.text-center .text-muted}
+SpecFlow is an open methodology for better human-AI collaboration in software development.
+:::
