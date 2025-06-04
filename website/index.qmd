@@ -2,7 +2,6 @@
 title: "Specflow is structure for building with software agents"
 page-layout: full
 toc: false
-description: "Transform your AI-assisted development from chaos to clarity. Specflow provides the structured methodology for building software with today's AI agents."
 image: "/assets/og-image.png"
 ---
 

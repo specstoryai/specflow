@@ -6,6 +6,10 @@ website:
   description: "Use the open Specflow method to turn intent into software through structured planning and iterative execution with software agents."
   site-url: "https://www.specflow.com"
   favicon: "assets/favicon.svg"
+  search:
+    location: navbar
+    type: overlay
+    copy-button: true
   open-graph:
     title: "Specflow - Structure for Building with AI Agents"
     description: "Use the open Specflow method to turn intent into software through structured planning and iterative execution with software agents."
