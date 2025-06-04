@@ -1,0 +1,9 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#02B9D9"/>
+  <!-- Simplified bracket design -->
+  <path d="M11 7H7V25H11V22H10V10H11V7Z" fill="white"/>
+  <path d="M21 7H25V25H21V22H22V10H21V7Z" fill="white"/>
+  <!-- Forward slash -->
+  <path d="M17.5 8L14.5 24H16.5L19.5 8H17.5Z" fill="white"/>
+</svg>

@@ -2,9 +2,20 @@ project:
   type: website
 
 website:
-  title: " "
-  description: "A structured pattern for prompting AI agents to build software - orchestrating intent, step-by-step, from what we want to what gets built."
-  site-url: "https://specflow.ai"
+  title: "Specflow is structure for building with software agents"
+  description: "Use the open Specflow method to turn intent into software through structured planning and iterative execution with software agents."
+  site-url: "https://www.specflow.com"
+  favicon: "assets/favicon.svg"
+  open-graph:
+    title: "Specflow - Structure for Building with AI Agents"
+    description: "Use the open Specflow method to turn intent into software through structured planning and iterative execution with software agents."
+    image: "https://www.specflow.com/assets/og-image.png"
+    site-name: "Specflow"
+  twitter-card:
+    title: "Specflow - Structure for Building with AI Agents"
+    description: "Use the open Specflow method to turn intent into software through structured planning and iterative execution with software agents."
+    image: "https://www.specflow.com/assets/og-image.png"
+    card-style: "summary_large_image"
   navbar:
     background: primary
     logo: assets/specflow_light.svg
@@ -33,7 +44,7 @@ website:
         aria-label: GitHub
   page-footer:
     center: |
-      &copy; 2025 SpecStory - Intent is the new source code
+      &copy; 2025 <a href="https://www.specstory.com" target="_blank">SpecStory</a> - Intent is the new source code
 
 format:
   html:
@@ -48,6 +59,12 @@ format:
     smooth-scroll: true
     mermaid:
       theme: default
+    include-in-header:
+      - text: |
+          <script>
+            window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+          </script>
+          <script defer src="/_vercel/insights/script.js"></script>
 
 
 
