@@ -5,7 +5,7 @@ website:
   title: "Specflow is structure for building with software agents"
   description: "Use the open Specflow method to turn intent into software through structured planning and iterative execution with software agents."
   site-url: "https://www.specflow.com"
-  favicon: "assets/favicon.svg"
+  favicon: "assets/favicon.ico"
   search:
     location: navbar
     type: overlay
