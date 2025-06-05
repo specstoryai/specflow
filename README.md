@@ -69,44 +69,14 @@ graph LR
 <th align="center">With Specflow: Clarity</th>
 </tr>
 <tr>
-<td width="50%">
+<td width="50%" align="center">
 
-```mermaid
-graph TD
-    A[Vague Idea] --> B[AI Prompt]
-    B --> C[Wrong Output]
-    C --> D[Try Again]
-    D --> E[More Prompts]
-    E --> F[Integration Issues]
-    F --> G[Refactor]
-    G --> H[Maybe Success?]
-    
-    B --> I[Dead End]
-    E --> J[Technical Debt]
-    
-    style C fill:#ffcccc
-    style I fill:#ffcccc
-    style J fill:#ffcccc
-    style F fill:#fff3cd
-    style G fill:#fff3cd
-```
+![Chaos - Without Structure](chaos.png)
 
 </td>
-<td width="50%">
+<td width="50%" align="center">
 
-```mermaid
-graph TD
-    A[Clear Intent] --> B[Structured Roadmap]
-    B --> C[Focused Workplans]
-    C --> D[Aligned Outputs]
-    D --> G[Refinements]
-    G --> C
-    G --> E[Integrated Solution]
-    E --> F[Success]
-    
-    style G fill:#e0f2fe
-    style F fill:#d1fae5
-```
+![Clarity - With Specflow](clarity.png)
 
 </td>
 </tr>
