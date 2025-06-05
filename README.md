@@ -1,4 +1,4 @@
-# Specflow is structure for building with software agents
+# Specflow: structure for building with software agents
 
 [![Website](https://img.shields.io/badge/website-specflow.com-blue)](https://www.specflow.com)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
@@ -69,14 +69,14 @@ graph LR
 <th align="center">With Specflow: Clarity</th>
 </tr>
 <tr>
-<td width="50%" align="center">
+<td width="50%" align="center" style="background-color: white;">
 
-<img src="chaos.svg" alt="Chaos - Without Structure" style="width: 500px; height: 650px; max-width: 100%; object-fit: contain;" />
+<img src="chaos.svg" alt="Chaos - Without Structure" style="width: 500px; height: 650px; max-width: 100%; object-fit: contain; background-color: white;" />
 
 </td>
-<td width="50%" align="center">
+<td width="50%" align="center" style="background-color: white;">
 
-<img src="clarity.svg" alt="Clarity - With Specflow" style="width: 500px; height: 650px; max-width: 100%; object-fit: contain;" />
+<img src="clarity.svg" alt="Clarity - With Specflow" style="width: 500px; height: 650px; max-width: 100%; object-fit: contain; background-color: white;" />
 
 </td>
 </tr>
