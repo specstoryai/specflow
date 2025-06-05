@@ -10,7 +10,7 @@
 
 Specflow is a **structured but flexible process methodology** for building software with AI SWE agents. It transforms the often chaotic process of agent-first development into a systematic, repeatable methodology that consistently delivers results aligned with your vision.
 
-### The Problem
+## The Problem
 
 Building software with AI agents today often results in:
 - 🎯 **Intent Gap** - What you envision vs. what AI produces
@@ -18,7 +18,7 @@ Building software with AI agents today often results in:
 - 🧩 **Coordination Chaos** - Fragmented, incompatible outputs
 - ⚡ **Efficiency Paradox** - Fast generation, extensive rework
 
-### The Solution
+## The Solution
 
 Specflow provides structure through five interconnected phases:
 
@@ -37,36 +37,36 @@ graph LR
     style E fill:#d1fae5
 ```
 
-## 📖 The Five Phases
+### 📖 The Five Phases
 
 <table>
 <tr>
-<td width="20%" align="center"><strong>Phase</strong></td>
-<td width="30%" align="center"><strong>Focus</strong></td>
+<td width="20%" align="left"><strong>Phase</strong></td>
+<td width="30%" align="left"><strong>Focus</strong></td>
 <td width="50%"><strong>Description</strong></td>
 </tr>
 <tr>
-<td align="center">1️⃣ <strong>Intent</strong></td>
+<td align="left">1️⃣ <strong>Intent</strong></td>
 <td><em>What & Why</em></td>
 <td>Start with clarity about what you're building and why it matters.</td>
 </tr>
 <tr>
-<td align="center">2️⃣ <strong>Roadmap</strong></td>
+<td align="left">2️⃣ <strong>Roadmap</strong></td>
 <td><em>Milestones</em></td>
 <td>Break your vision into manageable phases with clear goals.</td>
 </tr>
 <tr>
-<td align="center">3️⃣ <strong>Tasks</strong></td>
+<td align="left">3️⃣ <strong>Tasks</strong></td>
 <td><em>Human + AI</em></td>
 <td>Convert roadmap items into specific tasks, optimally distributed.</td>
 </tr>
 <tr>
-<td align="center">4️⃣ <strong>Execute</strong></td>
+<td align="left">4️⃣ <strong>Execute</strong></td>
 <td><em>Systematic</em></td>
 <td>Work through tasks methodically with your swe agent.</td>
 </tr>
 <tr>
-<td align="center">5️⃣ <strong>Refine</strong></td>
+<td align="left">5️⃣ <strong>Refine</strong></td>
 <td><em>Improve</em></td>
 <td>Review outputs against intent and continuously improve.</td>
 </tr>
