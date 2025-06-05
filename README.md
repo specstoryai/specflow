@@ -71,12 +71,12 @@ graph LR
 <tr>
 <td width="50%" align="center">
 
-<img src="chaos.png" alt="Chaos - Without Structure" width="500" height="650" />
+<img src="chaos.svg" alt="Chaos - Without Structure" style="width: 500px; height: 650px; max-width: 100%; object-fit: contain;" />
 
 </td>
 <td width="50%" align="center">
 
-<img src="clarity.png" alt="Clarity - With Specflow" width="500" height="650" />
+<img src="clarity.svg" alt="Clarity - With Specflow" style="width: 500px; height: 650px; max-width: 100%; object-fit: contain;" />
 
 </td>
 </tr>
