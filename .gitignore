@@ -1,10 +1,18 @@
 # Exclude Spectory directory
 .spectory/
 
+# Exclude specstory directory  
+.specstory/
+
 # Exclude cursor indexing ignore file
 .cursorindexingignore
 
 # Exclude workplans directory
-# workplans/ 
+workplans/
 
+# Exclude .DS_Store files (macOS)
+.DS_Store
+**/.DS_Store
+
+# Exclude Quarto build files
 /.quarto/
