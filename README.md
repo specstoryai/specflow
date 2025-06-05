@@ -71,12 +71,12 @@ graph LR
 <tr>
 <td width="50%" align="center">
 
-![Chaos - Without Structure](chaos.png)
+<img src="chaos.png" alt="Chaos - Without Structure" width="500" height="650" />
 
 </td>
 <td width="50%" align="center">
 
-![Clarity - With Specflow](clarity.png)
+<img src="clarity.png" alt="Clarity - With Specflow" width="500" height="650" />
 
 </td>
 </tr>
@@ -89,35 +89,7 @@ graph LR
 3. **Learn by example**: Explore [Project Examples](https://www.specflow.com/examples/)
 4. **Watch tutorials**: Check out our [Video Library](https://www.specflow.com/videos.html)
 
-## 📚 This Repository
 
-This repository contains the source code for the Specflow methodology website:
-
-```
-specflow/
-├── website/          # Quarto-based documentation site
-│   ├── *.qmd        # Content pages (Quarto Markdown)
-│   ├── assets/      # Images, logos, favicons
-│   └── _site/       # Generated static site
-└── workplans/       # Development documentation
-```
-
-### Building the Site Locally
-
-```bash
-# Prerequisites: Install Quarto
-# https://quarto.org/docs/get-started/
-
-# Clone the repository
-git clone https://github.com/specstoryai/specflow.git
-cd specflow/website
-
-# Render the site
-quarto render
-
-# Preview locally
-quarto preview
-```
 
 ## 🤝 Contributing
 
