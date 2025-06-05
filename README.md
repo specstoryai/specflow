@@ -39,20 +39,38 @@ graph LR
 
 ## 📖 The Five Phases
 
-### 1. Intent - Define Your Goal
-**What & Why** - Start with clarity about what you're building and why it matters.
-
-### 2. Roadmap - Plan Your Phases  
-**Milestones** - Break your vision into manageable phases with clear goals.
-
-### 3. Tasks - Break It Down
-**Human + AI** - Convert roadmap items into specific tasks, optimally distributed.
-
-### 4. Execute - Build Together
-**Systematic** - Work through tasks methodically with your AI partner.
-
-### 5. Refine - Iterate & Learn
-**Improve** - Review outputs against intent and continuously improve.
+<table>
+<tr>
+<td width="20%" align="center"><strong>Phase</strong></td>
+<td width="30%" align="center"><strong>Focus</strong></td>
+<td width="50%"><strong>Description</strong></td>
+</tr>
+<tr>
+<td align="center">1️⃣ <strong>Intent</strong></td>
+<td><em>What & Why</em></td>
+<td>Start with clarity about what you're building and why it matters.</td>
+</tr>
+<tr>
+<td align="center">2️⃣ <strong>Roadmap</strong></td>
+<td><em>Milestones</em></td>
+<td>Break your vision into manageable phases with clear goals.</td>
+</tr>
+<tr>
+<td align="center">3️⃣ <strong>Tasks</strong></td>
+<td><em>Human + AI</em></td>
+<td>Convert roadmap items into specific tasks, optimally distributed.</td>
+</tr>
+<tr>
+<td align="center">4️⃣ <strong>Execute</strong></td>
+<td><em>Systematic</em></td>
+<td>Work through tasks methodically with your swe agent.</td>
+</tr>
+<tr>
+<td align="center">5️⃣ <strong>Refine</strong></td>
+<td><em>Improve</em></td>
+<td>Review outputs against intent and continuously improve.</td>
+</tr>
+</table>
 
 ## 🎯 Who Benefits?
 
