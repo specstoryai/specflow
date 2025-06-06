@@ -1,0 +1,120 @@
+---
+title: "The lazy programmer's guide to AI coding. "
+description: "Score: 410 | Author: illusionst | Subreddit: r/ClaudeAI"
+author: "illusionst"
+date: "2024-09-08"
+categories: ["api-integration", "prompting", "context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">The lazy programmer's guide to AI coding. </li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by illusionst</span>
+  <span class="date">September 7, 2024</span>
+  <span class="score">410 points</span>
+  <span class="subreddit">r/ClaudeAI</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/ClaudeAI/comments/1fbp2a5/the_lazy_programmers_guide_to_ai_coding/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+I hear people complaining about Sonnet 3.5 and its struggles with writing code. I've been there too, but I think I've cracked the code (pun intended) on how to make it work like a charm almost every time. The key is to break things down into smaller, more manageable conversations instead of trying to get everything done in one go.
+
+Step 1: Act as a Software Engineer  
+First, ask the AI to be a software engineer. Pass all the relevant files and have it explain the code back to you. This is crucial because without understanding the code and the context, the AI's output will be subpar at best. It's like asking a real software engineer to fix code without giving them a chance to familiarize themselves with the codebase first.
+
+Step 2: Act as a Product Manager  
+Next, put on your product manager hat and ask the AI to do the same. This is where you lay out the new feature you want the AI to develop. Be clear, be specific, and don't be afraid to ask for a product requirement document. This helps the AI understand your requirements crystal clear.
+
+Step 3: Act as a tech lead. 
+If the feature is a bit on the complex side, consider writing pseudo code first. This gives the AI another opportunity to review the codebase, your requirements, and figure out which files and code sections need to be tweaked. It's like a practice run before the main event.
+
+Step 4: Act as a developer  
+Finally, ask the AI to write the actual code based on the pseudo code and the understanding gained from the previous steps. Once the coding is done, have the AI generate a git commit message to keep your version control history nice and tidy.
+
+Remember, always use a new chat for each new feature. Trying to cram multiple features or changing requirements mid-conversation is a recipe for confusion.  
+
+Tools I use:
+Cursor editor is a game-changer. Create prompts for different roles (software engineer, product manager, pseudo code writer) and use them as needed in your chats. When you're happy with the pseudo code, you can even pass the requirements to Cursor composer, which can write the actual code across multiple files.  
+
+I also use Cursor AI rules to give the model a heads up about my tech stack (MacOS 14 Sonoma, Cursor editor, Python, FastAPI, Postgres, etc.) and the best practices to follow while writing code.  
+
+Give it a shot, and let me know how it goes!  Good luck. 
+
+## Key Takeaways
+
+- "The key is to break things down into smaller, more manageable conversations instead of trying to get everything done in one go"
+- "Remember, always use a new chat for each new feature"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

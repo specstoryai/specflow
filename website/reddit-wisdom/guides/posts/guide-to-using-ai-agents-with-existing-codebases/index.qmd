@@ -1,0 +1,277 @@
+---
+title: "Guide to Using AI Agents with Existing Codebases"
+description: "Score: 17 | Author: gtgderek | Subreddit: r/cursor"
+author: "gtgderek"
+date: "2025-05-16"
+categories: ["vibe-coding", "multi-agent", "prompting", "context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Guide to Using AI Agents with Existing Codebases</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by gtgderek</span>
+  <span class="date">May 16, 2025</span>
+  <span class="score">17 points</span>
+  <span class="subreddit">r/cursor</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/cursor/comments/1knnmj1/guide_to_using_ai_agents_with_existing_codebases/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+After working extensively with AI on legacy applications, I've put together a practical guide to taking over human-coded applications using agentic/vibe coding.
+
+**Why AI Often Fails with Existing Codebases**
+
+When your AI gives you poor results while working with existing code, it's almost always because it lacks context. AI can write new code all day, but throw it into an existing system, and it's lost without that "mental model" of how everything fits together.
+
+The solution? Choose the right model and then, documentation, documentation, and more documentation.
+
+**Model Selection and IDE Matters**
+
+Many people struggle with vibe coding or agentic coding because they start with inferior models like OpenAI. Instead, use industry standards:
+
+- Claude 3.7: This is my workhorse and I use it into the ground through Cursor and in Claude Code with Max subscription
+- Gemini 2.5 Pro: Strong performance and the recent updates have really made it a good model to use. Great with Cursor and in Firebase Studio
+- Trae with Deepseek or Claude 3.7: If you're just starting, this is free and powerful
+- Windsurf.. just no. I loved Windsurf in October and built one of my biggest web applications using it, then in December they limited it's ability to read files, introduced flow credits, and it never recovered. With tears in my eyes, I cancelled my early adopter plan in February. Tried it a few more times and it has always been a bad experience.
+
+**Starting the Codebase Take Over**
+
+1. Begin with RepoMix
+
+Your very first step should be using RepoMix to:
+
+- Put together dependencies
+- Chart out the project
+- Map functions and features
+- Start generating documentation
+
+This gives you that initial visibility you desperately need.
+
+1. Document Database Structures
+
+- Create a database dump if it's a database-driven project (I'm guessing it is)
+- Have your AI analyze the SQL structure
+- Make sure your migration files are up-to-date and that there's no custom coding areas
+- Get the conventions for the database - is this going to be snake case, camel case, etc?
+
+1. Add Code Comments Systematically
+
+I begin by having the AI add PHP DocBlocks at the top of files
+
+Then have the AI add code context to each area: commenting what this does, what that does
+
+The thing is, bad developers like to not leave code comments - it's a way they consider themselves to be indispensable because they're the ones who know how shit works
+
+**Why Comments Matter for AI Context Windows**
+
+When AI is chunking 200 lines at a time, you want to get context with the functions and not the functions in isolation. Code with rich comments are part of that context that the AI us reading through and it makes a major difference.
+
+Every function needs context-rich comments that explain what it does and how it connects to other parts
+
+Example of good function commenting:
+
+    php/**
+     * Validates if user can edit this content.
+     * 
+     * u/param int $userId User trying to do the edit
+     * u/param int $contentId Content they want to change
+     * u/return bool True if allowed, false if not
+     * 
+     * u/related This uses UserPermissionService to check roles
+     * u/related ContentRepository pulls owner info
+     * u/business-logic Only content owners and admins can edit
+     */
+    function canUserEditContent($userId, $contentId) {
+        // Implementation...
+    }
+
+1. Use Version Control History
+
+- Start building out your project notes and memories
+- Go through changelogs
+- If you have an extensive GitHub repo, have the AI look at major feature build-outs
+- This helps understand where things are based on previous commits
+
+1. Document Project Conventions
+
+- Build out your cursor rules, file naming conventions, function conventions, folder conventions
+- Make sure you're pulling apart and identifying shared utilities
+
+**Implementation and Debugging**
+
+1. Backup and Safety Measures
+
+- Always create .bak files before modifying anything substantial
+- When working on extensive files, tell the AI to make a .bak before making changes
+- If something breaks, you can run a test to see if it's working how it's supposed to
+- Say "use this .bak as a reference" to help the AI understand what was working
+- Make sure you have extensive rules for commenting so everything you do has been commented
+
+1. Incremental Approach
+
+- Work incrementally through smaller chunks
+- Make sure you have testing scripts ready
+- Have the AI add context-rich comments to functions before modifying them
+
+1. Advanced Debugging with Logging
+
+When debugging stubborn issues, I use this approach.
+
+Example debugging conversation:
+
+    Me: This checkout function isn't working when a user has items in their cart over $1000.
+    AI: I can help debug this issue.
+    Me: This is not working. Add rotating logs for (issue/function) for the input and outputs? 
+    AI: Adds rotating logs to debug the issue:
+        [Code with logging added to the checkout function]
+    Me: Curl (your localhost link for example) check the page and then review the logs (if this is on localhost) and then fix the issue. When you think you have fixed the issue, do another curl check and log check
+       
+
+By using logging, you can see exactly what's happening inside the function, which variables have unexpected values, and where things are breaking.
+
+**Creating AI-Friendly Reference Points**
+
+- Develop "memory" files for complex subsystems
+- Create reference examples of how to properly implement features
+- Document edge cases and business logic in natural language
+- Maintain a "context.md" file that explains key architectural decisions
+
+**Dealing with Technical Debt**
+
+- Identify and document code smells and technical debt
+- Create a priority list for refactoring opportunities
+- Have the AI suggest modern patterns to replace legacy approaches
+- Document the "why" behind technical debt (sometimes it exists for good reasons)
+
+Have the Agent maintain a living document of codebase quirks and special cases and document "gotchas" and unexpected behaviors. Also, have it create a glossary of domain-specific terms and concepts
+
+The key was patience in the documentation phase rather than rushing to make changes.
+
+**Common Pitfalls**
+
+- Rushing to implementation - Spend at least twice as long understanding as implementing
+- Ignoring context - Context is everything for AI assistance
+- Trying to fix everything at once - Incremental progress is more sustainable
+- Not maintaining documentation - Keep updating as you learn
+- Overconfidence in AI capabilities - Verify everything critical
+
+### Conclusion
+
+By following this guide, you'll establish a solid foundation for taking over legacy applications with AI assistance. While this approach won't prevent all issues, it provides a systematic framework that dramatically improves your chances of success.
+
+Once your documentation is in place, the next critical steps involve:
+
+1. **Package and dependency updates** \- Modernize the codebase incrementally while ensuring the AI understands the implications of each update.
+1. **Deployment process documentation** \- Ensure the AI has full visibility into how the application moves from development to production. Document whether you're using CI/CD pipelines, container services like Docker, cloud deployment platforms like Elastic Beanstalk, or traditional hosting approaches.
+1. **Architecture mapping** \- Create comprehensive documentation of the entire product architecture, including infrastructure, services, and how components interact.
+1. **Modularization** \- Break apart complex files methodically, aiming for one or two key functions per file. This transformation makes the codebase not only more maintainable but also significantly more AI-friendly.
+
+This process transforms your legacy codebase into something the AI can not only understand but navigate through effectively. With proper context, documentation, and modularization, the AI becomes capable of performing sophisticated tasks without risking system integrity.
+
+The investment in documentation, deployment understanding, and modularization pays dividends beyond the immediate project. It creates a codebase that's easier to maintain, extend, and ultimately transition to modern architectures.
+
+The key remains patience and thoroughness in the early phases. By resisting the urge to rush implementation, you're setting yourself up for long-term success in managing and evolving even the most challenging legacy applications.
+
+**Pro Vibe tips learned from too many tears and wasted hours**
+
+1. Use"Future Vision" to prevent bad code (or as I call it spaghetti code)
+
+After the AI has fixed an issue:
+
+      1. Ask it what the issue was and how it was fixed
+      2. Ask: "If I had this issue again, what would I need to prompt to fix it?"
+      3. Document this solution
+      4. Then go back to a previous restore point or commit (right as the bug occurred)
+      5. Say: "Hey, looking at the code, please follow this approach and fix the problem..."
+
+This uses future vision to prevent spaghetti code that results from just prompting through an issue without understanding.
+
+1. Learning how to use restore points correctly is core to being good at agentic/vibe coding, such as git commits, staging changes, stashes, and restore points.
+
+Example would be to use it like a writing prompt
+
+Not sure what what to prompt to build or something? Git commit, stage, or stash your working files, do a loose prompt and see what comes back. If you like it, keep it, if you don't like it, review what it is, document your thoughts, and then restore and start again. 
+
+## Key Takeaways
+
+- "Also, have it create a glossary of domain-specific terms and concepts
+
+The key was patience in the documentation phase rather than rushing to make changes"
+- "Once your documentation is in place, the next critical steps involve:
+
+1"
+- "The key remains patience and thoroughness in the early phases"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

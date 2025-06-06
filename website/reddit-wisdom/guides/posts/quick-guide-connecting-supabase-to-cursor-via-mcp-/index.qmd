@@ -1,0 +1,132 @@
+---
+title: "Quick Guide: Connecting Supabase to Cursor via MCP (talk to your database)"
+description: "Score: 35 | Author: Relevant-Fix2159 | Subreddit: r/cursor"
+author: "Relevant-Fix2159"
+date: "2025-03-02"
+categories: ["context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Quick Guide: Connecting Supabase to Cursor via MCP (talk to your database)</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by Relevant-Fix2159</span>
+  <span class="date">March 1, 2025</span>
+  <span class="score">35 points</span>
+  <span class="subreddit">r/cursor</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/cursor/comments/1j17kgo/quick_guide_connecting_supabase_to_cursor_via_mcp/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+**Quick Guide: Connecting Supabase to Cursor via MCP**
+
+If you're trying to hook up your Supabase database with Cursor (using MCP), here's a quick, straightforward guide. This setup lets you interact directly with your database through natural language—so you can just tell Cursor Composer what you want (like querying data, adding tables, etc.) without fiddling with manual SQL every time.
+
+I struggled for hours last night because I skipped this step at first. Without this, Cursor just couldn't get accurate context from Supabase, even when I fed it the docs directly.
+
+Here's what worked for me:
+
+**Step 1: Get your Supabase connection string**
+
+- Log in at [Supabase]() and pick your project.
+- Head over to your project's connection settings.
+- You’ll see a connection string there. Replace any placeholder passwords with your actual database password.
+- Copy this entire connection string (you'll need it for Cursor).
+
+**Step 2: Add your MCP server in Cursor**
+
+- Open Cursor and navigate to Settings → Features.
+- Scroll down past the "Codebase indexing" section until you see the MCP servers area.
+- Click on **"Add New MCP Server"**.
+   * Set type as **Command**.
+   * Name it clearly (mine is just "Supabase - My App").
+   * Paste the connection string you copied from Supabase here.
+- Hit save.
+
+**Step 3: Try it out**
+
+- Now you can use Cursor Composer or similar tools to run queries directly against your Supabase database without leaving Cursor.
+- Run a quick test (like asking it for a list of tables) to make sure it's connected properly.
+
+Quick tip from experience—make sure you back up your database first. I didn't, and cleaning up mistakes afterwards took ages.
+
+Hope this saves someone else the headache!
+
+
+
+## Key Takeaways
+
+- No key quotes extracted
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

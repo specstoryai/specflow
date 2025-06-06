@@ -1,0 +1,421 @@
+---
+title: "Evolution Timeline"
+description: "Track the chronological evolution of AI coding practices from 2024 to 2025"
+format:
+  html:
+    include-in-header:
+      - text: |
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          <script src="/data/posts-data.js"></script>
+---
+
+[← Back to Reddit Wisdom](../index.html){.back-link}
+
+## AI Coding Practices Timeline
+
+Explore how the community's approach to AI-assisted development has evolved over time.
+
+<div class="timeline-controls">
+  <button class="btn btn-primary active" onclick="showView('monthly')">Monthly View</button>
+  <button class="btn btn-outline-primary" onclick="showView('quarterly')">Quarterly View</button>
+  <button class="btn btn-outline-primary" onclick="showView('phases')">Evolution Phases</button>
+</div>
+
+<canvas id="timelineChart" width="400" height="150"></canvas>
+
+## Key Milestones
+
+<div id="timelineContent" class="timeline-container">
+  <!-- Timeline content will be dynamically inserted here -->
+</div>
+
+<script>
+// Initialize variables
+let timelineData = {};
+let posts = [];
+let chart;
+
+// Wait for DOM to load
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if posts data is available
+  if (!window.postsData || !window.postsData.posts) {
+    document.getElementById('timelineContent').innerHTML = '<p class="error">Error loading timeline data. Please try refreshing the page.</p>';
+    return;
+  }
+  
+  // Load data from global variable
+  timelineData = window.postsData.timeline;
+  posts = window.postsData.posts;
+  initializeTimeline();
+});
+
+// Initialize timeline once data is loaded
+function initializeTimeline() {
+  // Group posts by month
+  const monthlyData = Object.entries(timelineData).map(([month, data]) => ({
+    month,
+    ...data
+  })).sort((a, b) => a.month.localeCompare(b.month));
+
+  // Create chart
+  const ctx = document.getElementById('timelineChart').getContext('2d');
+
+  function createMonthlyChart() {
+    if (chart) chart.destroy();
+    
+    chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: monthlyData.map(d => d.month),
+        datasets: [{
+          label: 'Posts per Month',
+          data: monthlyData.map(d => d.posts),
+          borderColor: 'rgb(75, 192, 192)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          tension: 0.1
+        }, {
+          label: 'Average Score',
+          data: monthlyData.map(d => d.avgScore),
+          borderColor: 'rgb(255, 99, 132)',
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          tension: 0.1,
+          yAxisID: 'y1'
+        }]
+      },
+    options: {
+      responsive: true,
+      interaction: {
+        mode: 'index',
+        intersect: false,
+      },
+      scales: {
+        y: {
+          type: 'linear',
+          display: true,
+          position: 'left',
+          title: {
+            display: true,
+            text: 'Number of Posts'
+          }
+        },
+        y1: {
+          type: 'linear',
+          display: true,
+          position: 'right',
+          title: {
+            display: true,
+            text: 'Average Score'
+          },
+          grid: {
+            drawOnChartArea: false,
+          }
+        }
+      },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            afterLabel: function(context) {
+              const monthData = monthlyData[context.dataIndex];
+              if (monthData.topPost) {
+                return `Top: "${monthData.topPost.title}" (${monthData.topPost.score} pts)`;
+              }
+              return '';
+            }
+          }
+        }
+      }
+    }
+    });
+  }
+
+  function createQuarterlyChart() {
+    if (chart) chart.destroy();
+    
+    // Group by quarter
+    const quarterlyData = {};
+    posts.forEach(post => {
+    const date = new Date(post.created_at);
+    const quarter = `${date.getFullYear()}-Q${Math.floor(date.getMonth() / 3) + 1}`;
+    
+    if (!quarterlyData[quarter]) {
+      quarterlyData[quarter] = { posts: 0, totalScore: 0 };
+    }
+    quarterlyData[quarter].posts++;
+    quarterlyData[quarter].totalScore += post.score;
+  });
+  
+  const quarters = Object.entries(quarterlyData)
+    .map(([quarter, data]) => ({
+      quarter,
+      posts: data.posts,
+      avgScore: Math.round(data.totalScore / data.posts)
+    }))
+    .sort((a, b) => a.quarter.localeCompare(b.quarter));
+  
+  chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: quarters.map(d => d.quarter),
+      datasets: [{
+        label: 'Posts per Quarter',
+        data: quarters.map(d => d.posts),
+        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+        borderColor: 'rgb(54, 162, 235)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Number of Posts'
+          }
+        }
+      }
+    }
+  });
+}
+
+function createPhasesChart() {
+  if (chart) chart.destroy();
+  
+  const phases = [
+    { name: 'Early Adoption\n(Late 2024)', posts: 17, color: 'rgba(255, 99, 132, 0.5)' },
+    { name: 'Growth Phase\n(Early-Mid 2025)', posts: 22, color: 'rgba(54, 162, 235, 0.5)' },
+    { name: 'Current State\n(Mid 2025)', posts: 8, color: 'rgba(75, 192, 192, 0.5)' }
+  ];
+  
+  chart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: phases.map(p => p.name),
+      datasets: [{
+        data: phases.map(p => p.posts),
+        backgroundColor: phases.map(p => p.color),
+        borderWidth: 2
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              const percentage = ((context.parsed / 47) * 100).toFixed(1);
+              return `${context.parsed} posts (${percentage}%)`;
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+// Timeline content generation
+function generateTimelineContent() {
+  const container = document.getElementById('timelineContent');
+  
+  const milestones = [
+    {
+      date: '2024-09-07',
+      title: 'The Lazy Programmer\'s Guide',
+      author: 'illusionst',
+      score: 410,
+      description: 'Introduced the foundational workflow of role-playing with AI',
+      phase: 'early'
+    },
+    {
+      date: '2024-12-20',
+      title: 'The GOAT Workflow',
+      author: 'RonaldTheRight',
+      score: 313,
+      description: 'Pioneered using large-context models for planning',
+      phase: 'early'
+    },
+    {
+      date: '2025-03-17',
+      title: 'My Cursor AI Workflow That Actually Works',
+      author: 'namanyayg',
+      score: 300,
+      description: 'Popularized .cursorrules and context from similar code',
+      phase: 'growth'
+    },
+    {
+      date: '2025-04-24',
+      title: 'Updated Cursor Vibe Coding Guide',
+      author: 'EnzeDfu',
+      score: 354,
+      description: 'Community-curated GitHub resource with 500+ stars',
+      phase: 'growth'
+    },
+    {
+      date: '2025-05-09',
+      title: 'The Ultimate Vibe Coding Guide',
+      author: 'PhraseProfessional54',
+      score: 420,
+      description: 'Most comprehensive 18-step guide for production apps',
+      phase: 'growth'
+    },
+    {
+      date: '2025-06-04',
+      title: 'Agentic Project Management',
+      author: 'sdi2200262',
+      score: 35,
+      description: 'Latest evolution with Manager/Implementation Agents',
+      phase: 'current'
+    }
+  ];
+  
+  const html = milestones.map(milestone => {
+    const phaseClass = `phase-${milestone.phase}`;
+    return `
+      <div class="timeline-item ${phaseClass}">
+        <div class="timeline-date">${new Date(milestone.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div>
+        <div class="timeline-content">
+          <h3>${milestone.title}</h3>
+          <div class="timeline-meta">
+            <span class="author">by ${milestone.author}</span>
+            <span class="score">${milestone.score} points</span>
+          </div>
+          <p>${milestone.description}</p>
+        </div>
+      </div>
+    `;
+  }).join('');
+  
+  container.innerHTML = html;
+}
+
+// View switcher
+window.showView = function(view) {
+  // Update button states
+  document.querySelectorAll('.timeline-controls button').forEach(btn => {
+    btn.classList.remove('active', 'btn-primary');
+    btn.classList.add('btn-outline-primary');
+  });
+  event.target.classList.remove('btn-outline-primary');
+  event.target.classList.add('active', 'btn-primary');
+  
+  // Update chart
+  switch(view) {
+    case 'monthly':
+      createMonthlyChart();
+      break;
+    case 'quarterly':
+      createQuarterlyChart();
+      break;
+    case 'phases':
+      createPhasesChart();
+      break;
+  }
+}
+
+  // Initialize
+  createMonthlyChart();
+  generateTimelineContent();
+}
+</script>
+
+<style>
+.timeline-controls {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.timeline-controls button {
+  margin: 0 0.5rem;
+}
+
+.timeline-container {
+  margin: 3rem 0;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--bs-border-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.5rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bs-primary);
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px var(--bs-border-color);
+}
+
+.timeline-date {
+  font-size: 0.875rem;
+  color: var(--bs-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+  background: var(--bs-light);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--bs-border-color);
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--bs-primary);
+}
+
+.timeline-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: var(--bs-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.timeline-meta .score {
+  font-weight: bold;
+  color: var(--bs-success);
+}
+
+.phase-early .timeline-item::before {
+  background: #ff6384;
+}
+
+.phase-growth .timeline-item::before {
+  background: #36a2eb;
+}
+
+.phase-current .timeline-item::before {
+  background: #4bc0c0;
+}
+
+@media (max-width: 768px) {
+  .timeline-controls button {
+    display: block;
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+}
+</style>

@@ -1,0 +1,146 @@
+---
+title: "Workflow w/multiple tools"
+description: "Score: 21 | Author: stonedoubt | Subreddit: r/ChatGPTCoding"
+author: "stonedoubt"
+date: "2024-08-30"
+categories: ["vibe-coding", "api-integration", "prompting", "context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Workflow w/multiple tools</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by stonedoubt</span>
+  <span class="date">August 29, 2024</span>
+  <span class="score">21 points</span>
+  <span class="subreddit">r/ChatGPTCoding</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/ChatGPTCoding/comments/1f4lfga/workflow_wmultiple_tools/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+I have to admit, I am not in the least bit normal in any sense of the word. I am usually working on multiple projects at once. It’s my vibe. That said, I want to start a conversation about using tools for their strengths and/or their ability to cover the gap.
+
+I have learned a few things over these last 9 months that might help someone else. My workflow is not perfect but that is more a limitation of the models at the moment.
+
+First of all, let me say that developing real apps with these tools requires development experience. You might get lucky but I doubt it. They are too prone to overwrite or straight obliterate something important or something you have worked on all day or more days… the tools are really only as good as the developer at the end of the day, in my honest opinion.
+
+====
+
+If you are starting from scratch, it is somewhat easier to guide a model through the development tasks, however, the processes still end up the same.
+
+### Context
+
+One of the promoted features of Cursor is the e indexing of your code base and the ability to add documentation.
+
+### EXISTING CODEBASE
+
+I find it very helpful to create my own global context of sorts. Rather than spamming CTRL-ENTER like a boomer, do that the first time BUT run your codebase through a linter that outputs all bugs or issues. Put that log into a file named [roadmap.md](http://roadmap.md) and add it to your project. Make sure it gets added to context.
+
+If you don’t have any new features to add and are just fixing bugs, ask the model to review the linter log, think carefully and prioritize the items from the log, group them by file, create a list and output it to [devmap.md](http://devmap.md) with a task list under each file that has a checkbox next to it. You will have to create these files, and then apply the markdown from the chat.
+
+Now, review the list. Many times, they will add some stupid shit like “create a social community”… delete that shit.
+
+Ok, the next thing is to add this at the top.
+
+    <thought>Nothing is complex. A wall is built brick by brick. Any big task is easily accomplished in well thought out steps.</thought>
+    <imperative>This is the real world. You are an expert at coding and trained beyond what a human coder can know, realistically. The human depends upon your expertise and you will only produce fully functional code that can be used in a production environment. Never use placeholder comments indicating future development. Implement the code instead and ask questions if you need more information about the implementation. Never remove functionality to fix a problem because it doesn’t make any logical sense to introduce breaking changes to fix a bug or solve a small problem. Ask questions if you need direction.</imperative>
+    <task>Start at the first item that has not been marked completed and iterate through the task list, completing each task with careful thought of how the change will impact the project as a whole. Before you begin a new task, mark previous one complete if it is not.</task>
+
+I am on the Pro plan for $20/mos with Cursor. I can code all day if I am willing to switch between my api keys and ChatGPT-4o or 3.5 Sonnet. I frequently hit token limits. This is how I defeated that issue. You can code a long time on cursors dime. It’s worth $20/month any day of the week.
+
+I hate how it works, tbh. 😂😂😂
+
+You can use this same method to have it review your codebase and give you a list of features yet to be implemented based on your prompt of the end goal. Be verbose but organized in your initial prompt. Detail is king. Use an llm to help build your prompt.
+
+If you have it create your list in conjunction with the linter log, you can knock down 2 birds with 1 stone and it makes the case for production ready code.
+
+Last but not least, the model works better without a shit ton of context. You keep context, it will have some from the initial blast. Add the context as it is needed and remove it when it isn’t. I can’t preach this enough. Manage the context and you will make your wife a happy man.
+
+### Aider
+
+Aider is just simply my favorite because of the git/diff format. Being able to undo commits is beautiful. I would argue that Aider is more capable than Cursor at most tasks for me with the workflow above but all 3 are so close it’s crazy.
+
+### ClaudeDev
+
+In terms of the composer feature of Composer, I find ClaudeDev to be much more useful. I can develop most of an app with it but context control can’t be 100% automated all the time. I love that it will ask me to open any file I tell it to. I wish I could give it a URL. Maybe I just haven’t figured that one out yet.
+
+I am in my groove now with these 3 tools but you have to be on your toes. They will still add sneaky little placeholder comments. They will duplicate methods and add unnecessary extra duplicated classes. You have to know what you are looking at and not just blindly approve or apply it. Pay attention.
+
+Hope that helps somebody. If you can improve my workflow, give it to me you dirty animal. 😎
+
+## Key Takeaways
+
+- No key quotes extracted
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

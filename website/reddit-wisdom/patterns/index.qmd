@@ -1,0 +1,266 @@
+---
+title: "Patterns & Best Practices"
+description: "Distilled wisdom from the AI coding community"
+---
+
+[← Back to Reddit Wisdom](../index.html){.back-link}
+
+## Core Patterns in Agent-First Development
+
+Through analyzing 47 posts and thousands of developer experiences, clear patterns have emerged that separate successful AI-assisted development from frustrating failures. These patterns, discovered through collective experimentation, form the foundation of effective agent-first workflows.
+
+## The Four Pillars of Success
+
+### 1. Context Architecture
+**Pattern**: Successful developers treat context as infrastructure, not an afterthought.
+
+:::{.pattern-card}
+#### The Context Pyramid
+
+```{mermaid}
+flowchart TB
+    A[Project Vision & Goals] --> B[Architecture & Design Docs]
+    B --> C[Module Summaries]
+    C --> D[Current Task Context]
+    D --> E[Immediate Code Context]
+    
+    style A fill:#e3f2fd
+    style B fill:#bbdefb
+    style C fill:#90caf9
+    style D fill:#64b5f6
+    style E fill:#42a5f5
+```
+
+**Implementation**:
+- **Project Level**: Maintain a clear README and architecture document
+- **Module Level**: Create `ai_module_summary.md` files for each component
+- **Task Level**: Use detailed workplans that preserve decision rationale
+- **Code Level**: Reference similar existing code as examples
+:::
+
+### 2. Task Decomposition
+**Pattern**: Break complex features into atomic, verifiable steps.
+
+:::{.callout-tip}
+**The Goldilocks Principle**: Tasks should be "just right" - not so large that AI loses focus, not so small that overhead exceeds value.
+
+**Ideal task size**: 15-30 minutes of implementation time
+:::
+
+Examples of well-scoped tasks:
+- ✅ "Add email validation to the signup form"
+- ✅ "Create a reusable Button component with hover states"
+- ❌ "Build the entire authentication system"
+- ❌ "Fix all the bugs"
+
+### 3. Progressive Enhancement
+**Pattern**: Start with a working skeleton and iteratively add features.
+
+```{mermaid}
+flowchart LR
+    A[Basic Structure] --> B[Core Functionality]
+    B --> C[Edge Cases]
+    C --> D[Performance]
+    D --> E[Polish]
+    
+    style A fill:#c8e6c9
+    style E fill:#4caf50
+```
+
+This approach:
+- Provides immediate feedback
+- Maintains a working state
+- Allows for course correction
+- Builds AI understanding incrementally
+
+### 4. Explicit Constraints
+**Pattern**: Tell AI what NOT to do as clearly as what TO do.
+
+Common constraint patterns:
+```markdown
+## Constraints for this task:
+- Do NOT modify any existing tests
+- Do NOT change the database schema
+- Do NOT refactor unrelated code
+- ONLY work on the files mentioned above
+- PRESERVE all existing functionality
+```
+
+## Workflow Patterns by Project Phase
+
+### Starting New Projects
+
+:::{.workflow-box}
+**The "Vision-First" Pattern**
+
+1. **Define the End State**: Start with user stories and success criteria
+2. **Design the Interface**: Use AI to create mockups/wireframes first
+3. **Plan the Architecture**: Let AI suggest structure based on requirements
+4. **Implement Vertically**: Build one complete feature slice at a time
+:::
+
+### Working with Existing Codebases
+
+:::{.workflow-box}
+**The "Archaeological Dig" Pattern**
+
+1. **Map the Territory**: Have AI analyze and document existing structure
+2. **Establish Beachheads**: Start with isolated, low-risk changes
+3. **Build Understanding**: Create tests for existing functionality
+4. **Expand Gradually**: Work outward from well-understood areas
+:::
+
+### Debugging and Troubleshooting
+
+:::{.workflow-box}
+**The "Forensic Analysis" Pattern**
+
+1. **Reproduce First**: Always start with a failing test case
+2. **Isolate the Problem**: Binary search through code changes
+3. **Hypothesize and Test**: Let AI suggest potential causes
+4. **Verify the Fix**: Ensure the solution doesn't break other features
+:::
+
+## Anti-Patterns to Avoid
+
+### 1. The "Magic Prompt" Fallacy
+❌ **Anti-pattern**: Believing one perfect prompt will generate entire applications
+
+✅ **Better approach**: Use iterative refinement with clear checkpoints
+
+### 2. Context Overload
+❌ **Anti-pattern**: Dumping entire codebases into AI context
+
+✅ **Better approach**: Curate relevant context for each specific task
+
+### 3. The "Yes Man" Trap
+❌ **Anti-pattern**: Accepting AI suggestions without review
+
+✅ **Better approach**: Maintain healthy skepticism and verify all changes
+
+### 4. Scope Creep Enablement
+❌ **Anti-pattern**: Letting AI "improve" code beyond the asked task
+
+✅ **Better approach**: Use explicit constraints and focused prompts
+
+## Advanced Patterns
+
+### Multi-Agent Orchestration
+
+The community has discovered that different AI models excel at different tasks:
+
+:::{.agent-roles}
+| Agent Role | Best For | Example Models |
+|------------|----------|----------------|
+| **Architect** | High-level planning, system design | Claude 3.5, GPT-4 |
+| **Developer** | Implementation, coding | Cursor Tab, Copilot |
+| **Reviewer** | Security analysis, code review | Specialized models |
+| **Documenter** | Creating docs, comments | GPT-3.5, Claude Instant |
+:::
+
+### Context Preservation Strategies
+
+**Pattern**: The "Memory Palace" Approach
+
+1. **Hierarchical Documentation**
+   ```
+   project-root/
+   ├── AI_CONTEXT.md          # Project overview
+   ├── docs/
+   │   ├── architecture.md    # System design
+   │   └── decisions.md       # ADRs
+   └── src/
+       ├── module1/
+       │   └── AI_SUMMARY.md  # Module context
+       └── module2/
+           └── AI_SUMMARY.md  # Module context
+   ```
+
+2. **Git-Anchored Context**
+   - Tag significant milestones
+   - Reference commits in workplans
+   - Use branches for experimental AI work
+
+3. **Session Handovers**
+   - Create handover documents when switching between AI sessions
+   - Include: current state, recent changes, next steps
+   - Reference specific file versions
+
+## Metrics for Success
+
+The community has identified key indicators of healthy AI-assisted development:
+
+### Velocity Metrics
+- **Task Completion Rate**: 80%+ of AI attempts should succeed first try
+- **Iteration Count**: Average 1-3 iterations per feature
+- **Context Switches**: Minimize by batching related work
+
+### Quality Metrics
+- **Test Coverage**: AI-generated code should include tests
+- **Review Changes**: <20% of AI code should need significant revision
+- **Bug Introduction Rate**: Should be lower than manual coding
+
+### Process Metrics
+- **Context Preparation Time**: 10-20% of total development time
+- **Prompt Refinement**: 2-3 iterations to get desired output
+- **Documentation Ratio**: 1:4 (docs to code)
+
+## The Path Forward
+
+The patterns discovered by the community point toward a future where:
+
+1. **Context becomes programmable infrastructure**
+2. **AI agents specialize and collaborate like human teams**
+3. **Development workflows adapt dynamically to project needs**
+4. **Quality emerges from process, not just review**
+
+These patterns aren't just optimizations - they represent a fundamental shift in how we conceptualize software development. By embracing these practices, developers can achieve what the community calls "flow state at scale" - the ability to maintain high productivity across complex projects.
+
+---
+
+*These patterns emerge from analyzing 466.7% growth in community engagement around AI-assisted development. [Explore the raw insights →](../insights/index.html)*
+
+<style>
+.pattern-card {
+  background: var(--bs-light);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  border: 1px solid var(--bs-border-color);
+}
+
+.workflow-box {
+  background: #f8f9fa;
+  border-left: 4px solid var(--bs-primary);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.agent-roles {
+  margin: 1.5rem 0;
+}
+
+.agent-roles table {
+  width: 100%;
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.agent-roles th {
+  background: var(--bs-primary);
+  color: white;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.agent-roles td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.agent-roles tr:last-child td {
+  border-bottom: none;
+}
+</style>

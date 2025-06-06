@@ -1,0 +1,118 @@
+---
+title: "My Workflow using Gemini 2.5 Pro as CTO"
+description: "Score: 43 | Author: BennyHungry | Subreddit: r/cursor"
+author: "BennyHungry"
+date: "2025-04-08"
+categories: ["api-integration", "context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">My Workflow using Gemini 2.5 Pro as CTO</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by BennyHungry</span>
+  <span class="date">April 8, 2025</span>
+  <span class="score">43 points</span>
+  <span class="subreddit">r/cursor</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/cursor/comments/1juhi7j/my_workflow_using_gemini_25_pro_as_cto/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+Just wrote all this for a DM (without LLM for some fucking reason) explaining my current workflow and how I onboarded Gemini 2.5 Pro as my CTO. Figured I’d share-
+
+Step 1- Tell Gemini 2.5 pro EVERYTHING. Your experience, what you want to make, problem you’re solving, have it ask you questions, your budget, timeline, runway, burn rate, tech stack, evaluate the viability, and just talk to it for a while about the project. Explain the full context and that you are the non-technical, human founder, 2.5 pro is to act as an experienced, expert (B2C or B2B) CTO, and Cursor is your developer (I use 3.7 with thinking). You may have to define the roles a bit as well like telling it that cursor implements all code and runs all terminal commands, you/founder are in charge of major decisions, UI, UX, all manual testing, and configurations (vervel, firebase, App Stores, etc), and then 2.5 is in charge of giving expert instructions to both you the founder and the dev Cursor as needed. 
+
+Step 2- tell 2.5 pro that its first task as CTO is to help you create a “living” product requirements document and a “living” CTO briefing document (you can prob combine this into one if ur starting from scratch). Have it make you templates for these and have it fill in what it knows already and have it ask you questions to fill in any gaps in the templates. You’ll want to keep these in google docs or somewhere and keep them updated as things change. You’ll upload these into any new Gemini chats you start as the project grows - try to start a new chat for each new feature or piece of the project you’re focusing on. Also, create a new cursor chat at the same time you create new Gemini chats to keep them aligned, focused, and consistent. Make sure it helps you prioritize too. Yes Boomers, this plan will include API key security (but maybe specifically research and request “industry standard” tactics and testing just in case). 
+
+Step 3- have CTO (Gemini) assign you and Cursor tasks based on the previously established priorities. It should give a section addressing you specifically on what to do manually (downloading, configuring, testing, acquiring logs, sharing screenshots) and a section you can copy/paste into cursor.  Read it to A) learn, and B) see if there are any files or other things you should include in the context for cursor you think might help or tasks you need to complete before cursor can do its thing. 
+
+Step 4- copy/paste everything back and forth between Cursor and Gemini as needed, especially if testing fails. In my experience so far, 2.5 pro is really good at catching Cursor mistakes faster and instructing them how to correct, what error logging to add, etc. I’m finding it works much better and faster than simply asking (or threatening) Cursor again because Gemini can analyze what Cursor did previously and instantly create a much more focused and detailed instructions to Cursor on the types of things to look for, what code to implement, what error logging to add/check, commands to run? dependencies to add or whatever.
+
+Other stuff:
+-use screenshots to better show the problem/struggle 
+
+-ask it to teach you 
+
+-just like managing humans, it fucking sucks sometimes. this shit requires a ton of patience and perseverance. I’ve literally cried. 
+ 
+-evolve and adapt the workflow as the tools and project change. If you get stuck after maybe a couple days or when you feel like quitting, don’t be afraid to switch it up and experiment with new chatGPT or grok 3 or whatever the hot young thing is at the time. it seems like these LLM’s are a bit like humans and have different strengths and perspectives, plus we know they’re constantly (usually) getting better. The same roadblock today might not exist next month so stay on top of it. 
+
+This is just my current method, not saying it’s for everyone or every use case. But I’m non-technical and it’s got me pretty far (B2C MVP built, nearing official beta. Cursor is the only IDE I’ve used - first got it in mid February).  Will I have issues scaling? Probably, but that’s a great problem to have and I have faith both me and the tools will continue improving rapidly. 
+
+## Key Takeaways
+
+- "It should give a section addressing you specifically on what to do manually (downloading, configuring, testing, acquiring logs, sharing screenshots) and a section you can copy/paste into cursor"
+- "Read it to A) learn, and B) see if there are any files or other things you should include in the context for cursor you think might help or tasks you need to complete before cursor can do its thing"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

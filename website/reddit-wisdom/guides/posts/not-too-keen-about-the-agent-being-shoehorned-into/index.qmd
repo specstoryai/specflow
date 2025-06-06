@@ -1,0 +1,110 @@
+---
+title: "Not too keen about the \"Agent\" being shoehorned into my workflow"
+description: "Score: 27 | Author: 7ven7o | Subreddit: r/cursor"
+author: "7ven7o"
+date: "2025-03-04"
+categories: ["multi-agent", "prompting", "context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Not too keen about the \</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by 7ven7o</span>
+  <span class="date">March 3, 2025</span>
+  <span class="score">27 points</span>
+  <span class="subreddit">r/cursor</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/cursor/comments/1j2m1bo/not_too_keen_about_the_agent_being_shoehorned/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+When you start a new chat, the default mode is "Agent." Doesn't matter what you had before, and there is no option to set the default mode you'd actually want.
+
+I use the agent very sparingly, for two main reasons:
+
+- I like to iterate before committing to an important change in my code, and it's slow and disruptive to have the agent start replacing code in my editor on every query. Furthermore, I sometimes realize I've either forgotten to include an important piece of context, and need to requery. Sometimes, while watching the AI generate new code, I realize that I need to phrase my query a little differently, or be more specific about what I want, or sometimes I even realize that what I want is something that's actually a little different from what I was already querying for, and so I'll go back and edit the prompt to requery. I do this for the largest and most important changes I have to make, this is where most of my AI credits go, and obviously, I opt for the "Ask" mode for this task over the "Agent".
+
+- The code insertion system isn't reliable enough. Often, when the AI has come up with large swaths of new code, the inserter thinks those swaths are supposed to replace unedited functions in the document. Oftentimes, when the AI has come up with new code, maybe a different iteration of an idea, and I decide I liked the original one better so I undo and try to reapply the previous iteration, the inserter either changes nothing or deletes almost everything for some reason, so I have to requery before getting the inserter to work properly again, or make the edits manually. It's for this reason I do not trust the "Agent" for important work, because I feel like I might miss something and end up deleting something important.
+
+At the moment I only use it for simple tasks I know it can one-shot, or to make simple changes across multiple files.
+
+Anyway, I suspect the cursor team is focusing on pushing their "Agent" feature, in order to hone in on the "universal access to creation" vision, but it's just not there yet, certainly not reliable enough to make the default mode, and in the time it needs to get to that level I'd appreciate it if it didn't get in the way of the creative process.
+
+## Key Takeaways
+
+- "Furthermore, I sometimes realize I've either forgotten to include an important piece of context, and need to requery"
+- "I do this for the largest and most important changes I have to make, this is where most of my AI credits go, and obviously, I opt for the "Ask" mode for this task over the "Agent""
+- "It's for this reason I do not trust the "Agent" for important work, because I feel like I might miss something and end up deleting something important"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

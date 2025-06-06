@@ -1,0 +1,162 @@
+---
+title: "Bolt vs. v0 vs. Cursor: A Beginner’s Guide to AI Coding Tools"
+description: "Score: 49 | Author: kevinkernx | Subreddit: r/cursor"
+author: "kevinkernx"
+date: "2024-11-22"
+categories: ["api-integration", "prompting"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Bolt vs. v0 vs. Cursor: A Beginner’s Guide to AI Coding Tools</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by kevinkernx</span>
+  <span class="date">November 22, 2024</span>
+  <span class="score">49 points</span>
+  <span class="subreddit">r/cursor</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/cursor/comments/1gx5cxk/bolt_vs_v0_vs_cursor_a_beginners_guide_to_ai/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+Hi,
+
+I've seen many people struggle with understanding the differences between AI tools like Bolt, v0, and Cursor. Since I've been using all of them for several months now (with subscriptions to all except v0), I’m going to summarize their key points here.
+
+https://preview.redd.it/r7z3kinhqf2e1.png?width=1920&format=png&auto=webp&s=dddc0019e7bed70f20b293ff7d3229b095c3d947
+
+**Bolt:**
+
+Bolt is an awesome tool I use it since day 1. You can quickly build your own specs in GPT/claude and fire it at bolt. You will get really good results. The team behind Bolt is also super fast at adding new features and improvements.
+
+If you need to start a lot of projects like doing demos or building multiple apps in a month then bolt is a viable tool.
+
+But if you're working on an existing codebase, keep in mind that it’s mostly a generator right now. At some point, you might hit a wall.
+
+They’ve added helpful features like "Lock" and "Target File," but as someone coding 8 hours a day, you’ll need more consistency to keep things smooth.
+
+Also, Bolt and v0 work better with React than for example with some other framework like Nuxt/Vue. I’ve tested the same app repeatedly, and it always ran into issues with Nuxt. So, Vue/Nuxt support isn’t quite there yet, which also applies to most code generators.
+
+Deployments: Netlify Prefered
+
+**v0:**
+
+A few days ago, I would have said that v0, compared to Bolt, is stronger in building frontends (the shiny interface the user sees when opening an app or website).
+
+This seems to be because they heavily rely on shadcn, a very popular framework-agnostic component design library. With this focus on the framework, you can consistently achieve a decent UI.
+
+Since v0 announced full stack a few days ago include acquire grep (which means having a database of over 500k+ github repos) it will be similar in features like bolt.
+
+Deployments: Vercel Prefered
+
+**Cursor:**
+
+First of all, Cursor is a programming IDE (a fork of Visual Studio), not a browser-based all-in-one code generator.
+
+Learning a programming IDE is very different from picking up software like Blender or Adobe Photoshop. For example, if you learn Blender, you'll spend months creating 3D renders. Not only will you master the tool, but you'll also be able to produce incredible 3D scenes.
+
+The catch is you master the tool (Cursor), but you still don't know how to code. This is what frustrates people without programming knowledge.
+
+On the other hand if you an experienced dev, Cursor will the main Tool you will be working with. Although, as I said, you can quickstart projects in v0 and bolt, but at least you will end up in the cursor.
+
+With cursor you can add your own codebase like adding Nuxt UI or any specific framework. Adding extensions. Using file references and so on. Here is a thread which can help you: [https://twitter.com/kregenrek/status/1850950546955387006](https://twitter.com/kregenrek/status/1850950546955387006)
+
+Deployments: Anywhere
+
+**Summary:**
+
+Think of it like this: Bolt and v0 is like Canva. It’s great for everyone and gets fast results, but it’s not super customizable.
+
+And thats good - especially for beginners or certain use cases.
+
+And Cursor is like Figma a very customizable, pluggable Design Tool especially for developers.
+
+Even tough it seems that bolt and v0 are beginner friendly. Learn to code! They are like slot machines that give you a big win and a dopamine rush at the start.
+
+And then boom, you get stuck and every step now feels like someone has put some big stones in your way.
+
+Also, when you are building a prototype, there are a lot of layers to consider. It is not just about building the shiny user interface and some logic. You have to deal with connecting all the pieces together, using APIs, backend, frontend and database.
+
+But!
+
+You learn much faster with AI because you can ask it anything and learn from the goal to the language itself. That's a pretty quick boost I've seen for beginners. So if you wanna go fast hit you project up with something like bolt new or v0 which gives you a good starting point. Then use this project and extend it in cursor.
+
+it is important that you compensate for your lack of programming skills with better prompting and file referencing.
+
+Hope this helps.
+
+## Key Takeaways
+
+- "it is important that you compensate for your lack of programming skills with better prompting and file referencing"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

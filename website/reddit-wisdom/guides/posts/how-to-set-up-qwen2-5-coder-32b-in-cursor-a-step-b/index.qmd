@@ -1,0 +1,128 @@
+---
+title: "How to Set Up Qwen2.5-Coder-32B in Cursor: A Step-by-Step Guide"
+description: "Score: 29 | Author: Wei_Will | Subreddit: r/cursor"
+author: "Wei_Will"
+date: "2024-11-20"
+categories: ["api-integration"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">How to Set Up Qwen2.5-Coder-32B in Cursor: A Step-by-Step Guide</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by Wei_Will</span>
+  <span class="date">November 19, 2024</span>
+  <span class="score">29 points</span>
+  <span class="subreddit">r/cursor</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/cursor/comments/1gvgbrz/how_to_set_up_qwen25coder32b_in_cursor_a/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+I've been seeing a lot of buzz on Reddit and X about Qwen2.5-Coder-32B-Instruct lately. Developers are raving about it as one of the strongest open-source programming models out there. It reportedly outperformed GPT-4o in 9 out of 12 major coding benchmarks! To enhance my development experience, I decided to integrate it into Cursor. If you're a Cursor member, you can use the Composer and tab completion features seamlessly. Here’s a straightforward guide with screenshots to get you started:
+
+1. **Add the Model**: Once added, you can select Qwen2.5-Coder-32B-Instruct in the Composer chat.
+1. **Create an API Key**: Head over to the Alibaba Cloud Bailian platform and create a new API key. The option is in the upper right corner—it's a bit hidden.
+1. **Configure Cursor**: Open the Cursor settings and add a custom model. Enter the model name: `qwen2.5-coder-32b-instruct`. Make sure to disable other models to avoid validation issues. After verification, you can re-enable the other models.
+1. **Enter Base URL and API Key**: Input the Base URL and API key, then click the “Verify” button. If there are no error messages, your configuration is successful. If you encounter errors, double-check that other models are disabled and that your API key is correct.
+1. **Skip Custom Key (if applicable)**: If you’re on a trial or Pro account, you might see an option to skip using a custom key. You can choose “Dismiss” to bypass this.
+1. **Re-enable Other Models**: Don't forget to enable your other commonly used models. Just a heads-up: even on a Pro account, using o1-preview incurs charges at $0.30 per request. Proceed with caution if you're not looking to spend!
+1. **Free Plan for New Users**: Alibaba Cloud Bailian offers a free plan for new users for the first six months. You can check the specific models in the model square for details on free quotas and validity periods.
+
+Happy coding!
+
+https://preview.redd.it/bjmit8uv7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=60558f76136633f2752bb7949c58b058be5f30c3
+
+https://preview.redd.it/jx2snd8f7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=8a0ea6efd2029c97c6726ae6b04d669750ba2e36
+
+https://preview.redd.it/nd1vzc8f7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=a888b00b2b657cc5ae0db9a485ca2e16935646d8
+
+https://preview.redd.it/x5pooe8f7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=dc0b196be2253997bb5eca07044516b9ef557118
+
+https://preview.redd.it/wcpg4e8f7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=7fd68c93d4fdd68612e8fc60e2c80d0813a397c8
+
+https://preview.redd.it/tl0mce8f7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=5599c03bbe69947cdf42a80f782370c05ec9ff3a
+
+https://preview.redd.it/oqknde8f7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=f819408c197f55050ad5a796ebaf5345a907b492
+
+https://preview.redd.it/os6yie8f7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=fdffe1a8c510239eb9af545605079a1a62eccd38
+
+https://preview.redd.it/4esnjh8f7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=4c00f432a8e471302e5ad62c3a69b22bdd1df360
+
+
+
+## Key Takeaways
+
+- "**Re-enable Other Models**: Don't forget to enable your other commonly used models"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

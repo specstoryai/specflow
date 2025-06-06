@@ -1,0 +1,188 @@
+{
+  "summaryAccuracy": {
+    "timeline": {
+      "claimedPosts": 47,
+      "actualPosts": 47,
+      "match": true
+    },
+    "dateRange": {
+      "claimed": {
+        "start": "2024-01-04",
+        "end": "2025-06-04"
+      },
+      "actual": {
+        "start": "2024-01-04",
+        "end": "2025-06-04"
+      },
+      "match": true
+    },
+    "subredditDistribution": {
+      "claimed": {
+        "cursor": 25,
+        "ChatGPTCoding": 14,
+        "ClaudeAI": 5
+      },
+      "actual": {
+        "cursor": 25,
+        "ClaudeAI": 5,
+        "ZedEditor": 1,
+        "GitHubCopilot": 1,
+        "ChatGPTCoding": 14,
+        "webdev": 1
+      },
+      "match": true
+    },
+    "topPosts": {
+      "claimed": [],
+      "actual": [
+        {
+          "title": "The Ultimate Vibe Coding Guide",
+          "author": "PhraseProfessional54",
+          "score": 420,
+          "subreddit": "ClaudeAI",
+          "url": "https://reddit.com/r/ClaudeAI/comments/1kivv0w/the_ultimate_vibe_coding_guide/",
+          "created_at": "2025-05-09 23:01:18.000000"
+        },
+        {
+          "title": "The lazy programmer's guide to AI coding. ",
+          "author": "illusionst",
+          "score": 410,
+          "subreddit": "ClaudeAI",
+          "url": "https://reddit.com/r/ClaudeAI/comments/1fbp2a5/the_lazy_programmers_guide_to_ai_coding/",
+          "created_at": "2024-09-07 23:56:56.000000"
+        },
+        {
+          "title": "Updated my cursor vibe coding guide (500 stars)",
+          "author": "EnzeDfu",
+          "score": 354,
+          "subreddit": "cursor",
+          "url": "https://reddit.com/r/cursor/comments/1k6zosu/updated_my_cursor_vibe_coding_guide_500_stars/",
+          "created_at": "2025-04-24 18:33:34.000000"
+        },
+        {
+          "title": "The GOAT workflow",
+          "author": "RonaldTheRight",
+          "score": 313,
+          "subreddit": "ChatGPTCoding",
+          "url": "https://reddit.com/r/ChatGPTCoding/comments/1hinwsr/the_goat_workflow/",
+          "created_at": "2024-12-20 11:45:43.000000"
+        },
+        {
+          "title": "The Ultimate Vibe Coding Guide",
+          "author": "PhraseProfessional54",
+          "score": 300,
+          "subreddit": "cursor",
+          "url": "https://reddit.com/r/cursor/comments/1kisbaq/the_ultimate_vibe_coding_guide/",
+          "created_at": "2025-05-09 20:22:33.000000"
+        },
+        {
+          "title": "My Cursor AI Workflow That Actually Works",
+          "author": "namanyayg",
+          "score": 300,
+          "subreddit": "cursor",
+          "url": "https://reddit.com/r/cursor/comments/1jd4s83/my_cursor_ai_workflow_that_actually_works/",
+          "created_at": "2025-03-17 04:42:42.000000"
+        },
+        {
+          "title": "A \"Just use API\" Guide",
+          "author": "Historical-Internal3",
+          "score": 190,
+          "subreddit": "ClaudeAI",
+          "url": "https://reddit.com/r/ClaudeAI/comments/1heibgb/a_just_use_api_guide/",
+          "created_at": "2024-12-15 01:56:45.000000"
+        },
+        {
+          "title": "Guide on how you can think about selecting models by Cursor team",
+          "author": "MironPuzanov",
+          "score": 167,
+          "subreddit": "cursor",
+          "url": "https://reddit.com/r/cursor/comments/1km9spy/guide_on_how_you_can_think_about_selecting_models/",
+          "created_at": "2025-05-14 08:07:50.000000"
+        },
+        {
+          "title": "Cursor IDE: Setup and Workflow in Larger Projects",
+          "author": "Kirmark",
+          "score": 137,
+          "subreddit": "cursor",
+          "url": "https://reddit.com/r/cursor/comments/1ikq9m6/cursor_ide_setup_and_workflow_in_larger_projects/",
+          "created_at": "2025-02-08 15:52:12.000000"
+        },
+        {
+          "title": "Maximizing Cursor AI – What’s Your Best Workflow Hack?",
+          "author": "AIAppHacker",
+          "score": 134,
+          "subreddit": "cursor",
+          "url": "https://reddit.com/r/cursor/comments/1ipqiyg/maximizing_cursor_ai_whats_your_best_workflow_hack/",
+          "created_at": "2025-02-15 01:31:34.000000"
+        }
+      ],
+      "discrepancies": []
+    },
+    "metrics": {
+      "growthRate": {
+        "claimed": "517%",
+        "calculated": "466.7%",
+        "variance": "50.3%"
+      }
+    }
+  },
+  "additionalInsights": [
+    "Outlier post: \"The Ultimate Vibe Coding Guide\" scored 300 (3x above cursor average)",
+    "Outlier post: \"Updated my cursor vibe coding guide (500 stars)\" scored 354 (3x above cursor average)",
+    "Outlier post: \"My Cursor AI Workflow That Actually Works\" scored 300 (3x above cursor average)",
+    "Outlier post: \"The GOAT workflow\" scored 313 (3x above ChatGPTCoding average)",
+    "Most prolific contributors: namanyayg (4 posts), punkouter23 (3 posts)"
+  ],
+  "extractedQuotes": [
+    {
+      "post": "The Ultimate Vibe Coding Guide",
+      "score": 420,
+      "quote": "Through these 6 months and with a lot of fun projects personal and some production-level projects and after more than 2500+ prompts, I learned a lot of tips and tricks that make the development process much easier and faster and makes and help you vibe without so much pain when the codebase gets bigger and I wanted to make a guide for anyone who is new to this and want literally everything in one post and refer to it whenever need any guidance on what to do.  Define Your Vision Clearly\n\n**Start with a strong, detailed vision of what you want to build and how it should work"
+    },
+    {
+      "post": "The lazy programmer's guide to AI coding. ",
+      "score": 410,
+      "quote": "Step 1: Act as a Software Engineer  \nFirst, ask the AI to be a software engineer.  Pass all the relevant files and have it explain the code back to you"
+    },
+    {
+      "post": "Updated my cursor vibe coding guide (500 stars)",
+      "score": 354,
+      "quote": "Some weeks ago I made a game that went viral (3M+ views on X), and I decided to make a guide on my experience (4000 prompts according to my cursor bills) to build games with AI. com/EnzeD/vibe-coding)\n\nHappy to gather your feedback to test new technics and make it better"
+    },
+    {
+      "post": "The GOAT workflow",
+      "score": 313,
+      "quote": "I've been coding with AI more or less since it became a thing, and this is the first time I've actually found a workflow that can scale across larger projects (though large is relative) without turning into spaghetti. \n\nTwo disclaimers: First, this isn't the cheapest route--it makes heavy use of Cline--but it is the best"
+    },
+    {
+      "post": "The Ultimate Vibe Coding Guide",
+      "score": 300,
+      "quote": "Through these 6 months and with a lot of fun projects personal and some production-level projects and after more than 2500+ prompts, I learned a lot of tips and tricks that make the development process much easier and faster and makes and help you vibe without so much pain when the codebase gets bigger and I wanted to make a guide for anyone who is new to this and want literally everything in one post and refer to it whenever need any guidance on what to do.  Define Your Vision Clearly\n\n**Start with a strong, detailed vision of what you want to build and how it should work"
+    },
+    {
+      "post": "My Cursor AI Workflow That Actually Works",
+      "score": 300,
+      "quote": "I’ve been coding with Cursor AI since it was launched now while building my SaaS, and I’ve got some thoughts. \n\nThe internet seems split between “AI coding is a miracle” and “AI coding is garbage"
+    },
+    {
+      "post": "A \"Just use API\" Guide",
+      "score": 190,
+      "quote": "Created the below guide that hopefully will assist those who are interested in trying it out - especially those who are frustrated with the paid Anthropic monthly subscription:\n\n**What is an API. \n\n**How to Obtain an Anthropic API Key**\n\nHere's a detailed guide to getting your Anthropic API key:\n\n1"
+    },
+    {
+      "post": "Cursor IDE: Setup and Workflow in Larger Projects",
+      "score": 137,
+      "quote": "I have more than 10+ years of development experience and recently switched to coding only in Cursor IDE.  I spend about 6 hours every weekday coding in it, plus some extra time on weekends"
+    },
+    {
+      "post": "Maximizing Cursor AI – What’s Your Best Workflow Hack?",
+      "score": 134,
+      "quote": "I’m constantly trying out new ways to optimize my workflow to write code easier/faster. cursorrules` by having the agent \"self-improve\" the rules after a coding session"
+    },
+    {
+      "post": "My Cursor AI Workflow That Actually Works",
+      "score": 127,
+      "quote": "I’ve been coding with Cursor AI since it was launched, and I’ve got some thoughts. \n\nThe internet seems split between “AI coding is a miracle” and “AI coding is garbage"
+    }
+  ]
+}

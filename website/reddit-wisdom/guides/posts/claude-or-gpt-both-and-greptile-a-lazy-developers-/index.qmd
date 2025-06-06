@@ -1,0 +1,220 @@
+---
+title: "Claude or GPT? Both, and Greptile. A lazy developers guide to remain comfortably lazy while developing."
+description: "Score: 95 | Author: ThePlotTwisterr---- | Subreddit: r/ChatGPTCoding"
+author: "ThePlotTwisterr----"
+date: "2024-04-25"
+categories: ["api-integration", "prompting", "context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Claude or GPT? Both, and Greptile. A lazy developers guide to remain comfortably lazy while developing.</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by ThePlotTwisterr----</span>
+  <span class="date">April 25, 2024</span>
+  <span class="score">95 points</span>
+  <span class="subreddit">r/ChatGPTCoding</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/ChatGPTCoding/comments/1cclxfh/claude_or_gpt_both_and_greptile_a_lazy_developers/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+### Is one better than the other? 
+
+Personally, yes, I think Claude is a lot better at almost everything, but **only with sufficient prompting following Anthropic’s documentation**
+
+GPT is only better at understanding us when we are not very good at explaining what we want. That’s all about GPT is good for. So let’s get it to explain what we want for us!
+
+To provide an analogy, GPT is an educated guy who speaks great english and is very helpful.
+
+Claude is that one megamind Chinese student who tries his best but still has a small language barrier with others (in this case, humans). 
+
+The English kid is smart, helpful and educated. The Chinese kid is the same, but much more enthusiastic and cooperative, and motivated. 
+
+Both are helpful, but if the Chinese kid was speaking the same language as you, it would appear as if he’s less helpful.
+
+That’s what your problem with Claude is. Language. Specifically, XML. You’ve heard about it, but have you done it? You’re wasting your subscription if you aren’t. The difference is game changing.
+
+I see a lot of chatter about which should I use? Claude? GPT? The answer is both, for different tasks. Greptile too, but more on that down further.
+
+### Here's my workflow:
+
+1. Custom ChatGPT Claude Prompt Generator using Anthropic's prompt engineering documentation in uploaded reference material to craft prompts for Claude from my natural language.
+
+1. GPT generates XML formatted and structured instructions and tasks for Claude to easily digest and provide optimal output.
+
+### Step 1: 
+Flesh out an idea and ask Opus to create a detailed explanation of the task at hand and propose a potential workflow to build a solution.
+
+### Step 2: 
+Feed Opus' idea to my ChatGPT prompt generator and have it produce a prompt in XML format with code snippets as example outputs, roles (you are a senior software dev), and structured tasks and contexts.
+
+*ChatGPT is surprisingly good at generating Claude XML if you give it the documentation.*
+
+### Step 3: 
+Get Sonnet to generate the initial solution and code with the ChatGPT formatted prompt.
+
+### Step 4:
+Feed the Sonnet code back to my ChatGPT Prompt to construct an XML prompt asking Claude to verify the code against the initial Sonnet prompt and review any errors, improvements, inaccuracies or other observations.
+
+### Step 5: 
+Feed the validation prompt, the initial prompt, and the code into Opus. The XML formatted GPT prompt is actually essential for making sure Opus understands what each file is and what to do with it.
+
+### Step 6: 
+Use Opus to regenerate certain parts of code or observations for improvement it has made in Sonnets code, with many-shot approach. Verify against chatGPT in a non-custom chat for an additional review of Opus changes (usually not helpful, but sometimes it spots something Claude can use to improve its code)
+
+### Step 7: 
+If any issues are not making progress, just fix and touch them up myself.
+
+### Step 8: 
+Verify the finished code between a Non-custom GPT and Opus simultaneously, multiple times.
+
+### Step 9: 
+Document all of your steps in this process, feed the original idea to Opus, your documented steps, your desired output, and your entire codebase and ask it produce:
+
+*a summary and explanation of this code within the context of its role in the project and the code structure outlined, and for an audience that consists of AI who will use the explanation to expand the codebase without prior knowledge of this file but recognising its existence and compatibility considerations* or something along those lines.
+
+### Step Infinity: 
+Use this summary as context for working on a fresh module or area of your code when repeating the process :)
+
+### Greptile:
+
+To review a completed code base, use Greptile. Not Cursor, not aids (or whatever else it's called), not Codeium. Currently, codebases with these GPT or Claude assisted platforms will fuck with the quality of your output, and I haven’t figured out a way to avoid that. Multiple files, specifically. 
+
+It's worth aggregating everything into one or two files and then modularising it manually later. 
+You can denote each file in the aggregated file by headers and include the code base in your prompt is denoted by header files in an aggregated compilation.
+
+Greptile is the only platform that can actually productively use an entire code base. I highly suggest using Greptile at all advanced stages in your projects development, as Claude and GPT are not even close to Greptiles ability to contextualise code. Greptile can help generate prompts with contextual reminders.
+
+Greptile frequently identifies things for Claude or GPT to collaborate on fixing.
+
+### Notes
+
+You'll know that the models can't do much more for you when they both start suggesting the same minor improvements. They'll usually suggest different improvements, which is good.
+
+I find that ChatGPT can sometimes spot things Opus can't, but using that information I can instruct Opus to correct the problem and it does so better than GPT.
+
+In summary, GPT and Opus are a strong tag team at planning, small logical revisions and debugging, but you're wasting tokens using Opus to generate code, and you're wasting time using GPT to generate code.
+
+I don't really care what benchmarks say, because the benchmarked GPT models are definitely not what you get with a GPT subscription or API key.
+
+Anthropic's public models seem to be more aligned with their benchmarked models. Perhaps context window is key, or perhaps quality of training data surpasses quantity of training data, and perhaps the benchmarks we have currently are not as applicable for assisting developers who aren't PhD AI researchers conducting benchmark tests.
+
+Claude just has more energy. He's like that guy who wants to help and puts his hand up to answer questions in class. GPT acts like I'm not paying it enough to be at work. 
+
+Even if GPT was benchmarked significantly higher than Claude, you're still going to get more done with the enthusiastic guy.
+
+### Collaboration 
+
+They also work very well together if you explain that you are using both of them to collaborate on a project.
+
+They seem to understand the pitfalls and areas to focus on when they know an AI generated code from a prompt that they generated for that AI.
+
+The context of being paired with each other in collaboration allows GPT to understand why Claude generated code that is different to how it would have generated code, given the prompt it had generated.
+
+For example, for GPT: "You are collaborating with Claude. You generated this prompt for Claude, and Claude responded with this output" somewhere in your GPT prompts.
+
+Sonnet is quite capable and fast, too. For less complex projects, even Haiku is very reliable.
+
+- Opus acts as a project director and supervisor. 
+- GPT acts as a manager. 
+- Sonnet and Haiku act as the developers. 
+- Greptile acts as an external auditor
+
+### Confidence:
+
+When generating solutions with Opus or GPT, ask for a confidence score based on a number of factors relevant to your project, and ask Opus to elaborate on why the confidence score out of 100 is low or high. Make sure to inform Opus uncertainty of hallucinations are a confidence score crusher. **Every time**
+
+### Example CustomGPT with some knowledge files:
+
+https://pastebin.com/5tn0Ayxv
+
+This is an example of a practical solution with some knowledge files, see my comment below for a baseline to create your own specific GPT from.
+
+You want to condense the system prompt and information to only what is necessary. For GPT, less is more.
+
+You can try this example here:
+
+https://chat.openai.com/g/g-F3UCT7Sa7-claude-code-gen-prompt-generator
+
+It does not include custom api reference or prompt examples. They should be specific for your task.
+
+Note: Your knowledge base should be in markdown format, in txt files.
+
+## Key Takeaways
+
+- "I see a lot of chatter about which should I use"
+- "The XML formatted GPT prompt is actually essential for making sure Opus understands what each file is and what to do with it"
+- "They should be specific for your task"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

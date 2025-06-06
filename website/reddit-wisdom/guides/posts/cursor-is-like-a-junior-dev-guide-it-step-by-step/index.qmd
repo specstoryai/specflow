@@ -1,0 +1,163 @@
+---
+title: "Cursor is like a junior dev, guide it step by step"
+description: "Score: 112 | Author: eastwindtoday | Subreddit: r/cursor"
+author: "eastwindtoday"
+date: "2025-04-22"
+categories: ["api-integration", "prompting"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Cursor is like a junior dev, guide it step by step</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by eastwindtoday</span>
+  <span class="date">April 22, 2025</span>
+  <span class="score">112 points</span>
+  <span class="subreddit">r/cursor</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/cursor/comments/1k5826a/cursor_is_like_a_junior_dev_guide_it_step_by_step/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+Cursor can feel like magic at first. You write some code and it autocompletes, writes functions, even explains bugs. But once you start using it to build more serious projects everything breaks. It starts steering off from what you asked it to build.
+
+This is when most of us give up or waste hours trying to fix all the messy code it wrote.
+
+But it doesn't have to be that way. What actually works is treating Cursor like a junior dev. It's fast, but it needs clear direction. If you guide it step by step it becomes an incredibly powerful tool that helps you ship faster.
+
+Here's how I try to do that:
+
+**1. Define what the user should be able to do**
+
+Before anything, I write down what the final outcome is. I don’t start with what I want to code. I start with what the user should experience.
+
+This gives me a clear goal to work toward. Every feature I build has to move closer to that outcome.
+
+You can use Notion, Google Docs, or just your standard notes app for this. Here are a bunch of [free Notion templates](https://www.notion.com/templates/collections/top-free-product-requirements-templates-in-notion) you can use.
+
+**2. Break the feature into small tasks**
+
+I split the full feature into smaller steps. Each one should be something Cursor can do in a single go.
+
+That might be setting up a route, handling state, connecting an API, or saving to a database. I keep the scope tight so if something goes wrong, I know exactly where the problem is.
+
+This also helps me test as I go. I can catch mistakes early instead of trying to debug a huge mess at the end.
+
+**3. Write clear instructions for each step**
+
+Before asking Cursor to write anything, I describe exactly what the step should do. I include inputs, outputs, and where the code should go.
+
+The more detail I give, the less it messes up. I don’t leave anything to guesswork.
+
+When I want to save time and get more details, I use [Devplan](https://www.devplan.com/) which is free to use. It turns my idea into a full product plan with dev tasks, user stories, and templates. Then I just feed each task into Cursor one at a time.
+
+**4. Set up Cursor rules before coding**
+
+One of the most underrated features is [Cursor rules](https://cursor.directory/rules). These guide the AI to follow specific patterns in your project.
+
+You can add rules for naming conventions, libraries to use, file structure, or even how to handle error messages.
+
+Doing this once saves you from re-explaining the same things across prompts.
+
+**5. Test each step as soon as it’s built**
+
+After Cursor writes code, I don’t wait. I test it right away. If there’s an issue, I isolate it and rerun the prompt with the specific problem.
+
+When debugging, I prefer Claude or GPT-4 for thinking through errors. I paste in the bug, describe what I expected, and ask what went wrong.
+
+This is better than just telling Cursor “fix it” it gives you actual insight and often fixes the root cause instead of patching symptoms.
+
+**6. Keep moving one step at a time**
+
+The biggest mistake is trying to do too much in one prompt. I stick to the system:
+
+1. give it one specific task
+1. review the output
+1. test
+1. move to the next one
+
+I don’t ask it to build a dashboard or backend all at once. I stay in control and let Cursor support me, not replace me.
+
+This is what made Cursor actually useful for shipping real products.
+
+Guide it like a junior dev, use the right tools at the right steps, and you’ll avoid the chaos and finish strong.
+
+## Key Takeaways
+
+- "Define what the user should be able to do**
+
+Before anything, I write down what the final outcome is"
+- "I start with what the user should experience"
+- "Each one should be something Cursor can do in a single go"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

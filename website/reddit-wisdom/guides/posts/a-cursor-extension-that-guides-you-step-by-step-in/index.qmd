@@ -1,0 +1,120 @@
+---
+title: "A Cursor extension that guides you step by step in building apps and coding with AI"
+description: "Score: 28 | Author: ivposure | Subreddit: r/cursor"
+author: "ivposure"
+date: "2025-03-01"
+categories: ["multi-agent"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">A Cursor extension that guides you step by step in building apps and coding with AI</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by ivposure</span>
+  <span class="date">February 28, 2025</span>
+  <span class="score">28 points</span>
+  <span class="subreddit">r/cursor</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/cursor/comments/1j0cvyu/a_cursor_extension_that_guides_you_step_by_step/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+I’ve built a Cursor extension that guides you step by step in building apps from scratch with AI. It’s designed to help you learn coding with Cursor in a practical way.
+
+The extension doesn’t just provide instructions but also interacts with Cursor’s chat.
+
+Right now, there are four projects you can implement with the extension:
+
+1. Real-Time Camera Filter App – A simple browser-based application that accesses your camera and applies Instagram-like filters to photos or video streams in real time.
+
+1. Console Chat with LLM – A “Hello, World!”-style project where you build a simple console application to chat with an LLM.
+
+1. Agent “All Dry” – A fun project that teaches you how to build an image-processing app using a diffusion model and an AI agent
+
+1. Zendesk Support Helper – A practical project where you build an AI assistant that suggests answers to Zendesk tickets based on previous data using RAG (Retrieval-Augmented Generation). This could be especially useful for customer support.
+
+More projects are on the way.
+
+You can find the extension on the marketplace (it's free): [https://marketplace.visualstudio.com/items?itemName=ai-dl.enlighter](https://marketplace.visualstudio.com/items?itemName=ai-dl.enlighter) 
+
+I’d really appreciate any feedback on both the extension itself and the content. Let me know what you think!
+
+https://reddit.com/link/1j0cvyu/video/qwpb77exxwle1/player
+
+
+
+## Key Takeaways
+
+- No key quotes extracted
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

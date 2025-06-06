@@ -1,0 +1,196 @@
+---
+title: "Absolutely Loving the workflow ever since i added these instructions to the cursor rules"
+description: "Score: 21 | Author: Sherisabre | Subreddit: r/cursor"
+author: "Sherisabre"
+date: "2024-12-29"
+categories: ["multi-agent"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Absolutely Loving the workflow ever since i added these instructions to the cursor rules</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by Sherisabre</span>
+  <span class="date">December 29, 2024</span>
+  <span class="score">21 points</span>
+  <span class="subreddit">r/cursor</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/cursor/comments/1hoths8/absolutely_loving_the_workflow_ever_since_i_added/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+CusrorRules
+
+    ALWAYS update the Changelog.md under [Unreleased] when making changes and update the version number in ProjectSettings.asset (bundleVersion) when releasing a new version.
+    When Asked to Commit Staged Changes always check changelog to see if the changes in stagedfiles are represented in the changelog before commiting).
+    When releasing: Review [Unreleased] changes to determine version bump (features→minor, fixes→patch, breaking→major), move changes to new version section with date, update bundleVersion in ProjectSettings.asset, commit as "release: Version X.Y.Z", and create git tag.
+
+here is the changelog files with the instructions.which cursor automatically read and ends up following the instructions inside it as well. what i added in the cursorrules kind of pushes it in the right direction.  
+it has been automatically updating it throughout my composer agent sessions, loving it. and when making a release i just say.  
+Do the Release Workflow
+
+### #Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+### #Version Numbering
+
+This project uses a three-number versioning system (X.Y.Z):
+
+- X (Major): Breaking changes, major feature overhauls
+- Y (Minor): New features, significant improvements
+- Z (Patch): Bug fixes, minor improvements
+
+Example: Version 1.2.3
+
+- 1: Major version
+- 2: Minor version
+- 3: Patch version
+
+When to increment:
+
+- Major (X): When making incompatible changes that might break existing functionality
+- Minor (Y): When adding functionality in a backward-compatible manner
+- Patch (Z): When making backward-compatible bug fixes
+
+### #Making Changelog Entries
+
+### #For New Changes in Development:
+
+1. Add changes under the `[Unreleased]` section
+1. Categorize them under appropriate headers:
+   * `Added` for new features
+   * `Changed` for changes in existing functionality
+   * `Deprecated` for soon-to-be removed features
+   * `Removed` for removed features
+   * `Fixed` for bug fixes
+   * `Security` for vulnerability fixes
+   * `Technical` for technical changes/dependencies
+1. Keep entries concise but descriptive
+
+### #When Releasing a Version:
+
+1. Convert the `[Unreleased]` section to a version number with date (e.g., `[1.0.0] - 2024-01-20`)
+1. Create a new empty `[Unreleased]` section at the top
+
+### #General Rules:
+
+- Newest changes always go at the top of the file
+- Each version should be in descending order (newest to oldest)
+- Group related changes under the same category
+- Use bullet points for each entry
+
+### #Development Workflow:
+
+1. **For Every Code Change:**
+   * ALWAYS add an entry to the `[Unreleased]` section in this changelog
+   * Write clear, descriptive change notes
+   * Categorize changes appropriately using the headers above
+   * Commit changes with meaningful commit messages
+1. **For Version Releases:**
+   * Move `[Unreleased]` changes to a new version section with today's date
+   * Update version number in `ProjectSettings.asset` (`bundleVersion`)
+   * Create a git tag for the version
+   * Create a new empty `[Unreleased]` section at the top
+
+### #Release Process:
+
+When asked to make a release, follow these steps:
+
+1. **Review Changes:**
+   * Review all changes under `[Unreleased]`
+   * Ensure all changes are properly categorized
+   * Verify all changes are documented
+1. **Choose Version Number:**
+   * For new features: increment minor version (0.1.0 → 0.2.0)
+   * For bug fixes: increment patch version (0.1.0 → 0.1.1)
+   * For breaking changes: increment major version (0.1.0 → 1.0.0)
+1. **Update Files:**
+   * Move `[Unreleased]` changes to new version section with today's date
+   * Update version in `ProjectSettings.asset` (`bundleVersion`)
+   * Create new empty `[Unreleased]` section
+1. **Commit and Tag:**
+   * Commit all changes with message "release: Version X.Y.Z"
+   * Create a git tag for the version (e.g., `v0.2.0`)
+
+### #[Unreleased]
+
+
+
+## Key Takeaways
+
+- No key quotes extracted
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

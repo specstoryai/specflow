@@ -1,0 +1,324 @@
+---
+title: "Top Contributors"
+description: "Meet the community leaders shaping AI coding practices"
+format:
+  html:
+    include-in-header:
+      - text: |
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          <script src="/data/posts-data.js"></script>
+---
+
+[← Back to Reddit Wisdom](../index.html){.back-link}
+
+## Community Leaders & Contributors
+
+These are the individuals who have contributed the most impactful guides and workflows to the AI coding community.
+
+<div class="contributor-stats">
+  <div class="stat-card">
+    <div class="stat-value">41</div>
+    <div class="stat-label">Unique Contributors</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value">5</div>
+    <div class="stat-label">Power Users (3+ posts)</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value">86.7</div>
+    <div class="stat-label">Avg Score per Post</div>
+  </div>
+</div>
+
+## Hall of Fame
+
+<div id="contributorsContainer" class="contributors-grid">
+  <!-- Contributors will be dynamically loaded here -->
+</div>
+
+## Contribution Timeline
+
+<canvas id="contributionTimeline" width="400" height="200"></canvas>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if posts data is available
+  if (!window.postsData || !window.postsData.posts) {
+    document.getElementById('contributorsContainer').innerHTML = '<p class="error">Error loading contributors data. Please try refreshing the page.</p>';
+    return;
+  }
+
+  const posts = window.postsData.posts;
+  const contributors = window.postsData.contributors;
+
+// Sort contributors by total score
+const sortedContributors = Object.entries(contributors)
+  .map(([author, stats]) => ({ author, ...stats }))
+  .sort((a, b) => b.totalScore - a.totalScore)
+  .slice(0, 20); // Top 20 contributors
+
+// Display contributors
+const container = document.getElementById('contributorsContainer');
+const html = sortedContributors.map((contributor, index) => {
+  const rankClass = index < 3 ? 'top-contributor' : '';
+  const rankEmoji = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '';
+  
+  return `
+    <div class="contributor-card ${rankClass}">
+      <div class="contributor-rank">${rankEmoji} #${index + 1}</div>
+      <h3>${contributor.author}</h3>
+      <div class="contributor-stats">
+        <div class="stat">
+          <span class="stat-value">${contributor.posts}</span>
+          <span class="stat-label">Posts</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">${contributor.totalScore}</span>
+          <span class="stat-label">Total Score</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">${contributor.avgScore}</span>
+          <span class="stat-label">Avg Score</span>
+        </div>
+      </div>
+      ${contributor.topPost ? `
+        <div class="top-post">
+          <div class="top-post-label">Top Post:</div>
+          <a href="${contributor.topPost.url}" target="_blank">
+            "${contributor.topPost.title}"
+            <span class="post-score">(${contributor.topPost.score} points)</span>
+          </a>
+        </div>
+      ` : ''}
+      <div class="activity-period">
+        Active: ${new Date(contributor.firstPost).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })} - 
+        ${new Date(contributor.lastPost).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+      </div>
+    </div>
+  `;
+}).join('');
+
+container.innerHTML = html;
+
+// Create contribution timeline for top contributors
+const topContributors = sortedContributors.slice(0, 5).map(c => c.author);
+
+// Group posts by month and contributor
+const timelineData = {};
+posts.forEach(post => {
+  if (topContributors.includes(post.author)) {
+    const date = new Date(post.created_at);
+    const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+    
+    if (!timelineData[monthKey]) {
+      timelineData[monthKey] = {};
+    }
+    if (!timelineData[monthKey][post.author]) {
+      timelineData[monthKey][post.author] = 0;
+    }
+    timelineData[monthKey][post.author]++;
+  }
+});
+
+const months = Object.keys(timelineData).sort();
+const datasets = topContributors.map((author, index) => ({
+  label: author,
+  data: months.map(month => timelineData[month]?.[author] || 0),
+  borderColor: [
+    'rgb(255, 99, 132)',
+    'rgb(54, 162, 235)',
+    'rgb(255, 205, 86)',
+    'rgb(75, 192, 192)',
+    'rgb(153, 102, 255)'
+  ][index],
+  backgroundColor: [
+    'rgba(255, 99, 132, 0.2)',
+    'rgba(54, 162, 235, 0.2)',
+    'rgba(255, 205, 86, 0.2)',
+    'rgba(75, 192, 192, 0.2)',
+    'rgba(153, 102, 255, 0.2)'
+  ][index]
+}));
+
+new Chart(document.getElementById('contributionTimeline'), {
+  type: 'line',
+  data: {
+    labels: months.map(m => {
+      const [year, month] = m.split('-');
+      return `${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][parseInt(month)-1]} ${year}`;
+    }),
+    datasets: datasets
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Top 5 Contributors Activity Timeline'
+      },
+      legend: {
+        position: 'bottom'
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          stepSize: 1
+        },
+        title: {
+          display: true,
+          text: 'Posts per Month'
+        }
+      }
+    }
+  }
+});
+
+}); // Close DOMContentLoaded
+</script>
+
+<style>
+.contributor-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat-card {
+  background: var(--bs-primary);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.stat-card .stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: block;
+}
+
+.stat-card .stat-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+}
+
+.contributors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.contributor-card {
+  background: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contributor-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contributor-card.top-contributor {
+  border-color: var(--bs-warning);
+  background: linear-gradient(135deg, var(--bs-body-bg) 0%, rgba(255, 193, 7, 0.05) 100%);
+}
+
+.contributor-rank {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.875rem;
+  color: var(--bs-secondary);
+}
+
+.contributor-card h3 {
+  margin: 0 0 1rem 0;
+  color: var(--bs-primary);
+  font-size: 1.25rem;
+}
+
+.contributor-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--bs-border-color);
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.contributor-stats .stat {
+  text-align: center;
+}
+
+.contributor-stats .stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--bs-primary);
+}
+
+.contributor-stats .stat-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--bs-secondary);
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+.top-post {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: var(--bs-light);
+  border-radius: 0.25rem;
+}
+
+.top-post-label {
+  font-size: 0.875rem;
+  color: var(--bs-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.top-post a {
+  color: var(--bs-body-color);
+  text-decoration: none;
+  display: block;
+}
+
+.top-post a:hover {
+  color: var(--bs-primary);
+}
+
+.post-score {
+  color: var(--bs-success);
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.activity-period {
+  font-size: 0.875rem;
+  color: var(--bs-secondary);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+canvas {
+  margin: 3rem 0;
+  max-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .contributors-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

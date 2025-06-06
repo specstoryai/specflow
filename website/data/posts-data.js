@@ -1,0 +1,1752 @@
+// Auto-generated posts data
+window.postsData = {
+  "posts": [
+    {
+      "id": "post-1-2025-06-03",
+      "csvRow": 1,
+      "title": "Agentic Project Management - My AI workflow",
+      "body": "# [Agentic Project Management](https://github.com/sdi2200262/agentic-project-management) (APM) Overview\n\nThis is not a post about vibe coding, or a tips and tricks post about what works and what doesn't. Its a post about a workflow that utilizes all the things that **do work**:\n\n* \\- **Strategic Planning**\n* \\- **Having a structured Memory System**\n* \\- **Separating workload into small, actionable tasks for LLMs to complete easily**\n* \\- **Transferring context to new \"fresh\" Agents with Handover Procedures**\n\nThese are the 4 core principles that this workflow utilizes that have been proven to work well when it comes to **tackling context drift**, and **defer hallucinations** as much as possible. So this is how it works:\n\n# Initiation Phase\n\nYou initiate a new chat session on your AI IDE (VScode with Copilot, Cursor, Windsurf etc) and paste in the **Manager Initiation Prompt**. This chat session would act as your \"Manager Agent\" in this workflow, the **general orchestrator** that would be overviewing the entire project's progress. It is preferred to use a thinking model for this chat session to utilize the CoT efficiency (good performance has been seen with Claude 3.7 & 4 Sonnet Thinking, GPT-o3 or o4-mini and also DeepSeek R1). The Initiation Prompt sets up this Agent to query you ( the User ) about your project to get a high-level contextual understanding of its task(s) and goal(s). After that you have 2 options:\n\n* you either choose to manually explain your project's requirements to the LLM, leaving the level of detail up to you\n* or you choose to proceed to a **codebase and project requirements exploration phase,** which consists of the Manager Agent querying you about the project's details and its requirements *in a strategic way that the LLM would find most efficient!*  (Recommended)\n\nThis phase usually lasts about 3-4 exchanges with the LLM.\n\nOnce it has a complete contextual understanding of your project and its goals it proceeds to create a **detailed Implementation Plan,** breaking it down to Phases, Tasks and subtasks depending on its complexity. Each Task is assigned to one or more **Implementation Agent** to complete. Phases may be assigned to **Groups of Agents.** Regardless of the structure of the Implementation Plan, the goal here is to divide the project into small actionable steps that smaller and cheaper models can complete easily ( ideally oneshot ).\n\nThe User then reviews/ modifies the Implementation Plan and when they confirm that its in their liking the Manager Agent proceeds to initiate the **Dynamic Memory Bank.** This memory system takes the [traditional Memory Bank concept](https://docs.cline.bot/prompting/cline-memory-bank) one step further! **It evolves** **as the APM framework and the User** **progress on the Implementation Plan** and adapts to its potential changes.  For example at this current stage where nothing from the Implementation Plan has been completed, the Manager Agent would go on to construct only the Memory Logs for the first Phase/Task of it, as later Phases/Tasks might change in the future. Whenever a Phase/Task has been completed the designated Memory Logs for the next one must be constructed before proceeding to its implementation.\n\nOnce these first steps have been completed the main multi-agent loop begins.\n\n# Main Loop\n\n**The User now asks the Manager Agent (MA) to construct the Task Assignment Prompt** for the first Task of the first Phase of the Implementation Plan. This markdown prompt is then copy-pasted to a new chat session which will work as our first **Implementation Agent,** as defined in our Implementation Plan. This prompt contains the task assignment, details of it, previous context required to complete it and also **a mandatory log to the designated Memory Log of said Task.** Once the Implementation Agent completes the Task or faces a serious bug/issue, they log their work to the Memory Log and report back to the User.\n\nThe User then returns to the MA and asks them to **review the recent Memory Log.** Depending on the state of the Task (success, blocked etc) and the details provided by the Implementation Agent **the MA will either provide a follow-up prompt to tackle the bug,** maybe instruct the assignment of a Debugger Agent **or confirm its validity and proceed to the creation of the Task Assignment Prompt for the next Task of the Implementation Plan.**\n\n>The Task Assignment Prompts will be passed on to all the Agents as described in the Implementation Plan, all Agents are to log their work in the Dynamic Memory Bank and the Manager is to review these Memory Logs along with their actual implementations for validity.... **until project completion!**\n\n# Context Handovers\n\nWhen using AI IDEs, **context windows of even the premium models are cut to a point where context management is essential** for actually benefiting from such a system. For this reason this is the Implementation that APM provides:\n\nWhen an Agent (Eg. Manager Agent) is nearing its context window limit, **instruct the Agent to perform a Handover Procedure** (defined in the Guides). The Agent will proceed to create **two Handover Artifacts:**\n\n* Handover\\_File.md containing all required context information for the incoming Agent replacement.\n* Handover\\_Prompt.md a light-weight context transfer prompt that actually guides the incoming Agent to utilize the Handover\\_File.md efficiently and effectively.\n\nOnce these Handover Artifacts are complete, the user proceeds to **open a new chat session** (replacement Agent) and there they paste the Handover\\_Prompt. **The replacement Agent will complete the Handover Procedure by reading the Handover\\_File as guided in the Handover\\_Prompt and then the project can continue from where it left off!!!**\n\n*Tip: LLMs will fail to inform you that they are nearing their context window limits 90% if the time. You can notice it early on from small hallucinations, or a degrade in performance. However its good practice to perform regular context Handovers to make sure no critical context is lost during sessions (Eg. every 20-30 exchanges).*\n\n# Summary\n\nThis is was a high-level description of this workflow. **It works.** Its efficient and its a less expensive alternative than many other MCP-based solutions since it avoids the MCP tool calls which count as an extra request from your subscription. In this method context retention is achieved by User input assisted through the Manager Agent!\n\nMany people have reached out with good feedback, but many felt lost and failed to understand the sequence of the critical steps of it so i made this post to explain it further as currently my documentation kinda sucks.\n\nIm currently entering my finals period so i wont be actively testing it out for the next 2-3 weeks, however ive already received important and useful advice and feedback on how to improve it even further, adding my own ideas as well.\n\nIts free. Its Open Source. Any feedback is welcome!\n\n[https://github.com/sdi2200262/agentic-project-management](https://github.com/sdi2200262/agentic-project-management)\n\nhttps://preview.redd.it/zx9veqoybs4f1.png?width=1179&format=png&auto=webp&s=6702d38382706ed2145d53f4f03124a5af598c33",
+      "author": "Cobuter_Man",
+      "score": 35,
+      "date": "2025-06-03 22:13:52.000000",
+      "created_at": "2025-06-03 22:13:52.000000",
+      "url": "https://reddit.com/r/cursor/comments/1l2p2y6/agentic_project_management_my_ai_workflow/",
+      "subreddit": "cursor",
+      "category": [
+        "vibe-coding",
+        "multi-agent",
+        "prompting",
+        "context-management"
+      ],
+      "keyQuotes": [
+        "Whenever a Phase/Task has been completed the designated Memory Logs for the next one must be constructed before proceeding to its implementation",
+        "**\n\n# Context Handovers\n\nWhen using AI IDEs, **context windows of even the premium models are cut to a point where context management is essential** for actually benefiting from such a system",
+        "**\n\n*Tip: LLMs will fail to inform you that they are nearing their context window limits 90% if the time"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-2-2025-05-31",
+      "csvRow": 2,
+      "title": "Manifest.md (workflow_state.md) + GitSHA’s = God Mode",
+      "body": "After a long day fighting with Cursor flaking out on a massive monolithic script I hadn’t decomposed yet, I kept seeing it drop code blocks, delete whole files, and struggle to make \\_bak files to prevent regressions.\n\nEventually, I hit a wall. The backups it was generating weren’t consistent. It was restoring old work we’d already revised past. Context was getting scrambled. I was getting frustrated.\n\nSo I tried one last thing:\n\n>I told Cursor to **explicitly make a backup** before and after each task.\n\n>As it started churning through planning and ramping up for the task… I saw something weird:\n\nIt made a **Git commit**. On its own. Directly to the repo.  \n  \nI thought:\n\n>“If Cursor is already committing, why don’t I **track those commit SHAs** right inside my .cursor/manifest.md (or workflow\\_state.md) alongside each task?”\n\n  \n**But why Aaron?! Why track the GitSHA's?**\n\nFor point in time reference silly! Point 👏 in 👏 time 👏 reference!   \n  \nNot just for *you* to roll back. For **the AI** to *understand*, compare, and rebase context like a goddamn memory surgeon. By embedding GitSHAs directly into the manifest beside each task, I’m not just tracking what got done, I’m anchoring it in time. Now when a feature fails or needs to be revisited, I don’t guess, no Cmd + Z panic hoping I get back to the right state after hours of work. I jump straight to the SHA from the last working phase, see exactly what was there, and tell the AI to pick up from that moment. The manifest becomes a timeline, not just a checklist, a versioned record of intent that both I and the AI can navigate like a map.\n\n  \nExample Manifest with SHA's\n\n    ## Task: Add Auth0 Login Flow\n    \n    - [x] Install SDK  \n      - GITSHA: `abc1234`\n    - [x] Build login form  \n      - GITSHA: `def5678`\n    - [ ] Integrate backend session\n\nProject Settings Rules\n\n    - Always track GITSHA after every meaningful task completion.\n    - Add it to the manifest as a Phase Checkpoint.\n    - Reference these SHAs when debugging, testing, or asking AI to resume from previous states.",
+      "author": "aarontatlorg33k",
+      "score": 29,
+      "date": "2025-05-31 15:56:10.000000",
+      "created_at": "2025-05-31 15:56:10.000000",
+      "url": "https://reddit.com/r/cursor/comments/1l00f5y/manifestmd_workflow_statemd_gitshas_god_mode/",
+      "subreddit": "cursor",
+      "category": [
+        "context-management"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-3-2025-05-26",
+      "csvRow": 3,
+      "title": "My Workflow for Generating and Maintaining Deep Context in Cursor",
+      "body": "Hey r/cursor!\n\nI've been working with Cursor on large modular projects and wanted to share a workflow I've developed for generating comprehensive context documentation that makes AI assistance much more effective.\n\n# The Problem\n\nWhen you're deep in complex projects with multiple modules, giving Cursor (or any AI) enough context is a real headache. You usually end up with:\n\n* Insufficient context → Useless AI suggestions\n* Too much irrelevant context → Confused AI, wasted tokens\n* Manual context prep → Time-consuming, error-prone, and inconsistent\n\n# My Solution: Semi-Automated Context Generation\n\n# Step 1: Create Analysis Templates\n\nIn the root of each module, I create an `ai_module_update.md`file. This file is essentially a detailed prompt for an LLM. Here's the template:\n\n    Analyze the structure and all significant files of this project module comprehensively and create a .md file with all information about this module's functionality that would be useful for AI to quickly understand the essence and structure of the module.\n    \n    ## Must include in analysis:\n    1. Module name: [MODULE_NAME_HERE] // e.g., Admin Panel (Vue.js)\n    2. Purpose and business logic: Main purpose, what business problems it solves\n    3. Working logic: How the module functions overall, main processes and algorithms\n    4. File and folder structure: Hierarchy and organization of module files\n    5. Database table structure: Analysis based on migrations\n    6. Tech stack and library versions: Technologies, frameworks, libraries used\n    7. Architecture and code organization style: Design patterns, code organization approaches\n    8. Module routes: All routes, their purpose and controller connections\n    9. Controllers and their meaning: Analysis of all controllers and their methods\n    10. Module services and their logic: Description of all service classes and functionality\n    11. Interaction with other modules: How the module integrates with the rest of the project\n    \n    ## Analysis instructions:\n    - You can request any necessary context without limitations through available search and file analysis tools\n    - Keep requesting information until everything is absolutely clear to you\n    - Pay special attention to key files that define the module's working logic\n    - If you encounter complex or non-obvious code parts, analyze them in detail\n    \n    ## File paths for analysis:\n    - [LIST_RELEVANT_PATHS_HERE] // e.g., /src/Components/Admin, /src/Components/Blog\n\n# Step 2: Generate Documentation\n\nI feed this template to Claude or Gemini (btw Gemini Flash handles this straightforward task very well and quickly) and get a comprehensive `ai_module_summary.md` file that I save in the module root.\n\n# Step 3: Project-Level Documentation\n\nI create a similar `ai_project_update.md` in the project root that references all module summaries, then generate an `ai_project_summary.md`.\n\n# Step 4: Configure Cursor\n\nAdd these lines to `.cursorignore`:\n\n    **/ai_module_update.md\n    **/ai_project_update.md\n\nThis prevents Cursor from getting confused by the update instructions while keeping the summary files available.\n\n# Usage\n\n* **Module context**: Include the specific `ai_module_summary.md` when working on that module\n* **Global context**: Include `ai_project_summary.md` for cross-module work\n* **Updates**: Periodically regenerate summaries when functionality changes significantly\n\n# Benefits\n\n✅ **Consistent context**: Every module gets the same thorough analysis  \n✅ **Time-saving**: Generate once, use many times  \n✅ **Scalable**: Works for projects with dozens of modules  \n✅ **Up-to-date**: Easy to regenerate when code changes  \n✅ **Focused**: Cursor gets exactly the context it needs\n\n# Example Use Case\n\nWhen I need to add a feature that touches the Blog module, I just include blog's `ai_module_summary.md` in my Cursor prompt. The AI immediately understands the module's structure, database schema, routes, and business logic without me having to manually explain anything.\n\nHas anyone else tried similar approaches?\n\n**TL;DR**: Created template files that generate comprehensive module documentation via AI, then feed those summaries to Cursor for much better context awareness in modular projects.",
+      "author": "Temporary_Category93",
+      "score": 17,
+      "date": "2025-05-26 03:57:46.000000",
+      "created_at": "2025-05-26 03:57:46.000000",
+      "url": "https://reddit.com/r/cursor/comments/1kvl1aw/my_workflow_for_generating_and_maintaining_deep/",
+      "subreddit": "cursor",
+      "category": [
+        "prompting",
+        "context-management"
+      ],
+      "keyQuotes": [
+        "This file is essentially a detailed prompt for an LLM",
+        "## Must include in analysis:\n    1"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-4-2025-05-16",
+      "csvRow": 4,
+      "title": "Guide to Using AI Agents with Existing Codebases",
+      "body": "After working extensively with AI on legacy applications, I've put together a practical guide to taking over human-coded applications using agentic/vibe coding.\n\n**Why AI Often Fails with Existing Codebases**\n\nWhen your AI gives you poor results while working with existing code, it's almost always because it lacks context. AI can write new code all day, but throw it into an existing system, and it's lost without that \"mental model\" of how everything fits together.\n\nThe solution? Choose the right model and then, documentation, documentation, and more documentation.\n\n**Model Selection and IDE Matters**\n\nMany people struggle with vibe coding or agentic coding because they start with inferior models like OpenAI. Instead, use industry standards:\n\n* Claude 3.7: This is my workhorse and I use it into the ground through Cursor and in Claude Code with Max subscription\n* Gemini 2.5 Pro: Strong performance and the recent updates have really made it a good model to use. Great with Cursor and in Firebase Studio\n* Trae with Deepseek or Claude 3.7: If you're just starting, this is free and powerful\n* Windsurf.. just no. I loved Windsurf in October and built one of my biggest web applications using it, then in December they limited it's ability to read files, introduced flow credits, and it never recovered. With tears in my eyes, I cancelled my early adopter plan in February. Tried it a few more times and it has always been a bad experience.\n\n**Starting the Codebase Take Over**\n\n1. Begin with RepoMix\n\nYour very first step should be using RepoMix to:\n\n* Put together dependencies\n* Chart out the project\n* Map functions and features\n* Start generating documentation\n\nThis gives you that initial visibility you desperately need.\n\n2. Document Database Structures\n\n* Create a database dump if it's a database-driven project (I'm guessing it is)\n* Have your AI analyze the SQL structure\n* Make sure your migration files are up-to-date and that there's no custom coding areas\n* Get the conventions for the database - is this going to be snake case, camel case, etc?\n\n3. Add Code Comments Systematically\n\nI begin by having the AI add PHP DocBlocks at the top of files\n\nThen have the AI add code context to each area: commenting what this does, what that does\n\nThe thing is, bad developers like to not leave code comments - it's a way they consider themselves to be indispensable because they're the ones who know how shit works\n\n**Why Comments Matter for AI Context Windows**\n\nWhen AI is chunking 200 lines at a time, you want to get context with the functions and not the functions in isolation. Code with rich comments are part of that context that the AI us reading through and it makes a major difference.\n\nEvery function needs context-rich comments that explain what it does and how it connects to other parts\n\nExample of good function commenting:\n\n    php/**\n     * Validates if user can edit this content.\n     * \n     * u/param int $userId User trying to do the edit\n     * u/param int $contentId Content they want to change\n     * u/return bool True if allowed, false if not\n     * \n     * u/related This uses UserPermissionService to check roles\n     * u/related ContentRepository pulls owner info\n     * u/business-logic Only content owners and admins can edit\n     */\n    function canUserEditContent($userId, $contentId) {\n        // Implementation...\n    }\n\n4. Use Version Control History\n\n* Start building out your project notes and memories\n* Go through changelogs\n* If you have an extensive GitHub repo, have the AI look at major feature build-outs\n* This helps understand where things are based on previous commits\n\n5. Document Project Conventions\n\n* Build out your cursor rules, file naming conventions, function conventions, folder conventions\n* Make sure you're pulling apart and identifying shared utilities\n\n**Implementation and Debugging**\n\n1. Backup and Safety Measures\n\n* Always create .bak files before modifying anything substantial\n* When working on extensive files, tell the AI to make a .bak before making changes\n* If something breaks, you can run a test to see if it's working how it's supposed to\n* Say \"use this .bak as a reference\" to help the AI understand what was working\n* Make sure you have extensive rules for commenting so everything you do has been commented\n\n2. Incremental Approach\n\n* Work incrementally through smaller chunks\n* Make sure you have testing scripts ready\n* Have the AI add context-rich comments to functions before modifying them\n\n3. Advanced Debugging with Logging\n\nWhen debugging stubborn issues, I use this approach.\n\nExample debugging conversation:\n\n    Me: This checkout function isn't working when a user has items in their cart over $1000.\n    AI: I can help debug this issue.\n    Me: This is not working. Add rotating logs for (issue/function) for the input and outputs? \n    AI: Adds rotating logs to debug the issue:\n        [Code with logging added to the checkout function]\n    Me: Curl (your localhost link for example) check the page and then review the logs (if this is on localhost) and then fix the issue. When you think you have fixed the issue, do another curl check and log check\n       \n\nBy using logging, you can see exactly what's happening inside the function, which variables have unexpected values, and where things are breaking.\n\n**Creating AI-Friendly Reference Points**\n\n* Develop \"memory\" files for complex subsystems\n* Create reference examples of how to properly implement features\n* Document edge cases and business logic in natural language\n* Maintain a \"context.md\" file that explains key architectural decisions\n\n**Dealing with Technical Debt**\n\n* Identify and document code smells and technical debt\n* Create a priority list for refactoring opportunities\n* Have the AI suggest modern patterns to replace legacy approaches\n* Document the \"why\" behind technical debt (sometimes it exists for good reasons)\n\nHave the Agent maintain a living document of codebase quirks and special cases and document \"gotchas\" and unexpected behaviors. Also, have it create a glossary of domain-specific terms and concepts\n\nThe key was patience in the documentation phase rather than rushing to make changes.\n\n**Common Pitfalls**\n\n* Rushing to implementation - Spend at least twice as long understanding as implementing\n* Ignoring context - Context is everything for AI assistance\n* Trying to fix everything at once - Incremental progress is more sustainable\n* Not maintaining documentation - Keep updating as you learn\n* Overconfidence in AI capabilities - Verify everything critical\n\n# Conclusion\n\nBy following this guide, you'll establish a solid foundation for taking over legacy applications with AI assistance. While this approach won't prevent all issues, it provides a systematic framework that dramatically improves your chances of success.\n\nOnce your documentation is in place, the next critical steps involve:\n\n1. **Package and dependency updates** \\- Modernize the codebase incrementally while ensuring the AI understands the implications of each update.\n2. **Deployment process documentation** \\- Ensure the AI has full visibility into how the application moves from development to production. Document whether you're using CI/CD pipelines, container services like Docker, cloud deployment platforms like Elastic Beanstalk, or traditional hosting approaches.\n3. **Architecture mapping** \\- Create comprehensive documentation of the entire product architecture, including infrastructure, services, and how components interact.\n4. **Modularization** \\- Break apart complex files methodically, aiming for one or two key functions per file. This transformation makes the codebase not only more maintainable but also significantly more AI-friendly.\n\nThis process transforms your legacy codebase into something the AI can not only understand but navigate through effectively. With proper context, documentation, and modularization, the AI becomes capable of performing sophisticated tasks without risking system integrity.\n\nThe investment in documentation, deployment understanding, and modularization pays dividends beyond the immediate project. It creates a codebase that's easier to maintain, extend, and ultimately transition to modern architectures.\n\nThe key remains patience and thoroughness in the early phases. By resisting the urge to rush implementation, you're setting yourself up for long-term success in managing and evolving even the most challenging legacy applications.\n\n**Pro Vibe tips learned from too many tears and wasted hours**\n\n1. Use\"Future Vision\" to prevent bad code (or as I call it spaghetti code)\n\nAfter the AI has fixed an issue:\n\n      1. Ask it what the issue was and how it was fixed\n      2. Ask: \"If I had this issue again, what would I need to prompt to fix it?\"\n      3. Document this solution\n      4. Then go back to a previous restore point or commit (right as the bug occurred)\n      5. Say: \"Hey, looking at the code, please follow this approach and fix the problem...\"\n\nThis uses future vision to prevent spaghetti code that results from just prompting through an issue without understanding.\n\n2. Learning how to use restore points correctly is core to being good at agentic/vibe coding, such as git commits, staging changes, stashes, and restore points.\n\nExample would be to use it like a writing prompt\n\nNot sure what what to prompt to build or something? Git commit, stage, or stash your working files, do a loose prompt and see what comes back. If you like it, keep it, if you don't like it, review what it is, document your thoughts, and then restore and start again. ",
+      "author": "gtgderek",
+      "score": 17,
+      "date": "2025-05-16 00:20:42.000000",
+      "created_at": "2025-05-16 00:20:42.000000",
+      "url": "https://reddit.com/r/cursor/comments/1knnmj1/guide_to_using_ai_agents_with_existing_codebases/",
+      "subreddit": "cursor",
+      "category": [
+        "vibe-coding",
+        "multi-agent",
+        "prompting",
+        "context-management"
+      ],
+      "keyQuotes": [
+        "Also, have it create a glossary of domain-specific terms and concepts\n\nThe key was patience in the documentation phase rather than rushing to make changes",
+        "Once your documentation is in place, the next critical steps involve:\n\n1",
+        "The key remains patience and thoroughness in the early phases"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-5-2025-05-14",
+      "csvRow": 5,
+      "title": "Guide on how you can think about selecting models by Cursor team",
+      "body": "Found on Twitter from a guy who works at Cursor https://x.com/ericzakariasson/status/1922434149568430304?s=46",
+      "author": "MironPuzanov",
+      "score": 167,
+      "date": "2025-05-14 08:07:50.000000",
+      "created_at": "2025-05-14 08:07:50.000000",
+      "url": "https://reddit.com/r/cursor/comments/1km9spy/guide_on_how_you_can_think_about_selecting_models/",
+      "subreddit": "cursor",
+      "category": [
+        "general"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-6-2025-05-14",
+      "csvRow": 6,
+      "title": "Claude Code, whats your workflow?",
+      "body": "So, I was using Cursor up until last week and had an okay time with Task Master MCP. I could create a few projects from scratch. The code was terrible, but hey, I got an MVP out pretty quickly, so that was cool.   \n\nNow I've migrated to Claude Code. I've been trying to use Task Master with it, but after a few Claude iterations, it just forgets about Task Master and creates its own to-dos. It doesn't matter what I do... it just throws Task Master out the window.\n\n\nSo, I'm thinking there's gotta be a better way, cuz I can see Claude Code is great, and I'm the one hindering it.",
+      "author": "gonnaz",
+      "score": 26,
+      "date": "2025-05-14 02:28:25.000000",
+      "created_at": "2025-05-14 02:28:25.000000",
+      "url": "https://reddit.com/r/ClaudeAI/comments/1km4boi/claude_code_whats_your_workflow/",
+      "subreddit": "ClaudeAI",
+      "category": [
+        "general"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-7-2025-05-09",
+      "csvRow": 7,
+      "title": "The Ultimate Vibe Coding Guide",
+      "body": "So I have been using Cursor for more than 6 months now and I find it a very helpful and very strong tool if used correctly and thoughtfully. Through these 6 months and with a lot of fun projects personal and some production-level projects and after more than 2500+ prompts, I learned a lot of tips and tricks that make the development process much easier and faster and makes and help you vibe without so much pain when the codebase gets bigger and I wanted to make a guide for anyone who is new to this and want literally everything in one post and refer to it whenever need any guidance on what to do!:\n\n# 1. Define Your Vision Clearly\n\n**Start with a strong, detailed vision of what you want to build and how it should work.** If your input is vague or messy, the output will be too. Remember: *garbage in, garbage out*. Take time to think through your idea from both a product and user perspective. Use tools like **Gemini 2.5 Pro** in **Google AI Studio** to help structure your thoughts, outline the product goals, and map out how to bring your vision to life. The clearer your plan, the smoother the execution.\n\n**2. Plan Your UI/UX First**\n\n**Before you start building, take time to carefully plan your UI.** Use tools like [v0](https://v0.dev/) to help you visualize and experiment with layouts early. Consistency is key. Decide on your design system upfront and stick with it. Create reusable components such as buttons, loading indicators, and other common UI elements right from the start. This will save you tons of time and effort later on You can also use [\\*\\*](https://www.google.com/url?sa=E&q=https%3A%2F%2F21st.dev%2F)[https://21st.dev/\\*\\*](https://21st.dev/**); it has a ton of components with their AI prompts, you just copy-paste the prompt, it is great!\n\n# 3. Master Git & GitHub\n\n**Git is your best friend.** You must know GitHub and Git; it will save you a lot if AI messed things up, you could easily return to an older version. If you did not use Git, your codebase could be destroyed with some wrong changes. You must use it; it makes everything much easier and organized. After finishing a big feature, you must make sure to commit your code. Trust me, this will save you from a lot of disasters in the future!\n\n# 4. Choose a Popular Tech Stack\n\n**Stick to widely-used, well-documented technologies.** AI models are trained on public data. The more common the stack, the better the AI can help you write high-quality code.\n\nI personally recommend:\n\n**Next.js** (for frontend and APIs) + **Supabase** (for database and authentication) + **Tailwind CSS** (for styling) + **Vercel** (for hosting).\n\nThis combo is beginner-friendly, fast to develop with, and removes a lot of boilerplate and manual setup.\n\n# 5. Utilize Cursor Rules\n\n**Cursor Rules is your friend.** I am still using it and I think it is still the best solution to start solid. You must have very good Cursor Rules with all the tech stack you are using, instructions to the AI model, best practices, patterns, and some things to avoid. You can find a lot of templates here: [\\*\\*](https://www.google.com/url?sa=E&q=https%3A%2F%2Fcursor.directory%2F)[https://cursor.directory/\\*\\*](https://cursor.directory/**)!!\n\n# 6. Maintain an Instructions Folder\n\n**Always have an instructions folder.** It should have markdown files. It should be full of docs-example components to provide to the Ai to guide it better or use (or context7 mcp, it has a tons of documentation).\n\n# 7. Craft Detailed Prompts\n\nNow the building phase starts. You open Cursor and start giving it your prompts. Again, **garbage in, garbage out.** You must give very good prompts. If you cannot, just go plan with Gemini 2.5 Pro on Google AI Studio; make it make a very good intricate version of your prompt. It should be as detailed as possible; do not leave any room for the AI to guess, you must tell it everything.\n\n# 8. Break Down Complex Features\n\n**Do not give huge prompts** like \"build me this whole feature.\" The AI will start to hallucinate and produce shit. You must break down any feature you want to add into phases, especially when you are building a complex feature. Instead of one huge prompt, it should be broken down into 3-5 requests or even more based on your use case.\n\n# 9. Manage Chat Context Wisely\n\n**When the chat gets very big, just open a new one.** Trust me, this is the best. The AI context window is limited; if the chat is very big, it will forget everything earlier, it will forget any patterns, design and will start to produce bad outputs. Just start a new chat window then. When you open the new window, just give the AI a brief description about the feature you were working on and mention the files you were working on. Context is very important (more on that is coming..)!\n\n# 10. Don't Hesitate to Restart/Refine Prompts\n\nWhen the AI gets it wrong and goes in the wrong way or adding things that you do not want, **returning back, changing the prompt, and sending the AI again would be just much better** than completing on this shit code because AI will try to save its mistakes and will probably introduce new ones. So just return, refine the prompt, and send it again!\n\n# 11. Provide Precise Context\n\n**Providing the right context is the most important thing,** especially when your codebase gets bigger. Mentioning the right files that you know the changes will be made to will save a lot of requests and too much time for you and the AI. But you must make sure these files are relevant because too much context can overwhelm the AI too. You must always make sure to mention the right components that will provide the AI with the context it needs.\n\n# 12. Leverage Existing Components for Consistency\n\nA good trick is that you can **mention previously made components to the AI when building new ones.** The AI will pick up your patterns fast and will use the same in the new component without so much effort!\n\n# 13. Iteratively Review Code with AI\n\nAfter building each feature, you can take the code of the whole feature, copy-paste it to **Gemini 2.5 Pro** (in Google AI Studio) to check for any security vulnerabilities or bad coding patterns; it has a huge context window. Hence, it actually gives very good insights where you can then input into to **Claude** in Cursor and tell it to fix these flaws. (Tell Gemini to act as a security expert and spot any flaws. In another chat, tell it so you are an expert (in the tech stack at your tech stack), ask it for any performance issues or bad coding patterns). Yeah, it is very good at spotting them! After getting the insights from Gemini, just copy-paste it into Claude to fix any of them, then send it Gemini again until it tells you everything is 100% ok.\n\n# 14. Prioritize Security Best Practices\n\nRegarding security, because it causes a lot of backlash, here are security patterns that you must follow to ensure your website is good and has no very bad security flaws (though it won't be 100% because there will be always flaws in any website by anyone!):\n\n1. **Trusting Client Data:** Using form/URL input directly.\n   * **Fix:** **Always validate & sanitize on server; escape output.**\n2. **Secrets in Frontend:** API keys/creds in React/Next.js client code.\n   * **Fix:** **Keep secrets server-side only** (env vars, ensure .env is in .gitignore).\n3. **Weak Authorization:** Only checking if logged in, not *if allowed* to do/see something.\n   * **Fix:** **Server must verify permissions** for every action & resource.\n4. **Leaky Errors:** Showing detailed stack traces/DB errors to users.\n   * **Fix:** **Generic error messages for users; detailed logs for devs.**\n5. **No Ownership Checks (IDOR):** Letting user X access/edit user Y's data via predictable IDs.\n   * **Fix:** **Server must confirm current user owns/can access the specific resource ID.**\n6. **Ignoring DB-Level Security:** Bypassing database features like RLS for fine-grained access.\n   * **Fix:** **Define data access rules directly in your database** (e.g., RLS).\n7. **Unprotected APIs & Sensitive Data:** Missing rate limits; sensitive data unencrypted.\n   * **Fix:** **Rate limit APIs (middleware); encrypt sensitive data at rest; always use HTTPS.**\n\n# 15. Handle Errors Effectively\n\nWhen you face an error, you have two options:\n\n* Either return back and make the AI do what you asked for again, and yeah this actually works sometimes.\n* If you want to continue, just copy-paste the error from the console and tell the AI to solve it. But if it took more than three requests without solving it, the best thing to do is returning back again, tweaking your prompt, and providing the correct context as I said before. Correct prompt and right context can save sooo much effort and requests.\n\n# 16. Debug Stubborn Errors Systematically\n\nIf there is an error that the AI took so much on and seems never to get it or solve it and started to go on rabbit holes (usually after 3 requests and still did not get it right), **just tell Claude to take an overview of the components the error is coming from and list top suspects it thinks are causing the error.** And also tell it to add logs and then provide the output of them to it again. This will significantly help it find the problem and it works correctly most of the times!\n\n# 17. Be Explicit: Prevent Unwanted AI Changes\n\nClaude has this trait of adding, removing, or modifying things you did not ask for. We all hate it and it sucks. Just a simple sentence under every prompt like **(Do not fuckin change anything I did not ask for Just do only what I fuckin told you)** works very well and it is really effective!\n\n# 18. Keep a \"Common AI Mistakes\" File\n\nAlways have a file of mistakes that you find Claude doing a lot. Add them all to that file and when adding any new feature, just mention that file. This will prevent it from doing any frustrating repeated mistakes and you from repeating yourself!\n\nI know it does not sound as \"vibe coding\" anymore and does not sound as easy as all of others describe, but this is actually what you need to do in order to pull off a good project that is useful and usable for a large number of users. These are the most important tips that I learned after using Cursor for more than 6 months and building some projects using it! I hope you found it helpful and if you have any other questions I am happy to help!\n\nAlso, if you made it to here you are a legend and serious about this, so congrats bro!\n\nHappy vibing!",
+      "author": "PhraseProfessional54",
+      "score": 420,
+      "date": "2025-05-09 23:01:18.000000",
+      "created_at": "2025-05-09 23:01:18.000000",
+      "url": "https://reddit.com/r/ClaudeAI/comments/1kivv0w/the_ultimate_vibe_coding_guide/",
+      "subreddit": "ClaudeAI",
+      "category": [
+        "vibe-coding",
+        "api-integration",
+        "prompting",
+        "context-management"
+      ],
+      "keyQuotes": [
+        "Define Your Vision Clearly\n\n**Start with a strong, detailed vision of what you want to build and how it should work",
+        "Remember: *garbage in, garbage out*",
+        "** You must know GitHub and Git; it will save you a lot if AI messed things up, you could easily return to an older version"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-8-2025-05-09",
+      "csvRow": 8,
+      "title": "The Ultimate Vibe Coding Guide",
+      "body": "So I have been using Cursor for more than 6 months now and I find it a very helpful and very strong tool if used correctly and thoughtfully. Through these 6 months and with a lot of fun projects personal and some production-level projects and after more than 2500+ prompts, I learned a lot of tips and tricks that make the development process much easier and faster and makes and help you vibe without so much pain when the codebase gets bigger and I wanted to make a guide for anyone who is new to this and want literally everything in one post and refer to it whenever need any guidance on what to do!:\n\n# 1. Define Your Vision Clearly\n\n**Start with a strong, detailed vision of what you want to build and how it should work.** If your input is vague or messy, the output will be too. Remember: *garbage in, garbage out*. Take time to think through your idea from both a product and user perspective. Use tools like **Gemini 2.5 Pro** in **Google AI Studio** to help structure your thoughts, outline the product goals, and map out how to bring your vision to life. The clearer your plan, the smoother the execution.\n\n**2. Plan Your UI/UX First**\n\n**Before you start building, take time to carefully plan your UI.** Use tools like [v0](https://v0.dev/) to help you visualize and experiment with layouts early. Consistency is key. Decide on your design system upfront and stick with it. Create reusable components such as buttons, loading indicators, and other common UI elements right from the start. This will save you tons of time and effort later on You can also use [\\*\\*](https://www.google.com/url?sa=E&q=https%3A%2F%2F21st.dev%2F)[https://21st.dev/\\*\\*](https://21st.dev/**); it has a ton of components with their AI prompts, you just copy-paste the prompt, it is great!\n\n# 3. Master Git & GitHub\n\n**Git is your best friend.** You must know GitHub and Git; it will save you a lot if AI messed things up, you could easily return to an older version. If you did not use Git, your codebase could be destroyed with some wrong changes. You must use it; it makes everything much easier and organized. After finishing a big feature, you must make sure to commit your code. Trust me, this will save you from a lot of disasters in the future!\n\n# 4. Choose a Popular Tech Stack\n\n**Stick to widely-used, well-documented technologies.** AI models are trained on public data. The more common the stack, the better the AI can help you write high-quality code.\n\nI personally recommend:\n\n**Next.js** (for frontend and APIs) + **Supabase** (for database and authentication) + **Tailwind CSS** (for styling) + **Vercel** (for hosting).\n\nThis combo is beginner-friendly, fast to develop with, and removes a lot of boilerplate and manual setup.\n\n# 5. Utilize Cursor Rules\n\n**Cursor Rules is your friend.** I am still using it and I think it is still the best solution to start solid. You must have very good Cursor Rules with all the tech stack you are using, instructions to the AI model, best practices, patterns, and some things to avoid. You can find a lot of templates here: [\\*\\*](https://www.google.com/url?sa=E&q=https%3A%2F%2Fcursor.directory%2F)[https://cursor.directory/\\*\\*](https://cursor.directory/**)!!\n\n# 6. Maintain an Instructions Folder\n\n**Always have an instructions folder.** It should have markdown files. It should be full of docs-example components to provide to the Ai to guide it better or use (or context7 mcp, it has a tons of documentation).\n\n# 7. Craft Detailed Prompts\n\nNow the building phase starts. You open Cursor and start giving it your prompts. Again, **garbage in, garbage out.** You must give very good prompts. If you cannot, just go plan with Gemini 2.5 Pro on Google AI Studio; make it make a very good intricate version of your prompt. It should be as detailed as possible; do not leave any room for the AI to guess, you must tell it everything.\n\n# 8. Break Down Complex Features\n\n**Do not give huge prompts** like \"build me this whole feature.\" The AI will start to hallucinate and produce shit. You must break down any feature you want to add into phases, especially when you are building a complex feature. Instead of one huge prompt, it should be broken down into 3-5 requests or even more based on your use case.\n\n# 9. Manage Chat Context Wisely\n\n**When the chat gets very big, just open a new one.** Trust me, this is the best. The AI context window is limited; if the chat is very big, it will forget everything earlier, it will forget any patterns, design and will start to produce bad outputs. Just start a new chat window then. When you open the new window, just give the AI a brief description about the feature you were working on and mention the files you were working on. Context is very important (more on that is coming..)!\n\n# 10. Don't Hesitate to Restart/Refine Prompts\n\nWhen the AI gets it wrong and goes in the wrong way or adding things that you do not want, **returning back, changing the prompt, and sending the AI again would be just much better** than completing on this shit code because AI will try to save its mistakes and will probably introduce new ones. So just return, refine the prompt, and send it again!\n\n# 11. Provide Precise Context\n\n**Providing the right context is the most important thing,** especially when your codebase gets bigger. Mentioning the right files that you know the changes will be made to will save a lot of requests and too much time for you and the AI. But you must make sure these files are relevant because too much context can overwhelm the AI too. You must always make sure to mention the right components that will provide the AI with the context it needs.\n\n# 12. Leverage Existing Components for Consistency\n\nA good trick is that you can **mention previously made components to the AI when building new ones.** The AI will pick up your patterns fast and will use the same in the new component without so much effort!\n\n# 13. Iteratively Review Code with AI\n\nAfter building each feature, you can take the code of the whole feature, copy-paste it to **Gemini 2.5 Pro** (in Google AI Studio) to check for any security vulnerabilities or bad coding patterns; it has a huge context window. Hence, it actually gives very good insights where you can then input into to **Claude** in Cursor and tell it to fix these flaws. (Tell Gemini to act as a security expert and spot any flaws. In another chat, tell it so you are an expert (in the tech stack at your tech stack), ask it for any performance issues or bad coding patterns). Yeah, it is very good at spotting them! After getting the insights from Gemini, just copy-paste it into Claude to fix any of them, then send it Gemini again until it tells you everything is 100% ok.\n\n# 14. Prioritize Security Best Practices\n\nRegarding security, because it causes a lot of backlash, here are security patterns that you must follow to ensure your website is good and has no very bad security flaws (though it won't be 100% because there will be always flaws in any website by anyone!):\n\n1. **Trusting Client Data:** Using form/URL input directly.\n   * **Fix:** **Always validate & sanitize on server; escape output.**\n2. **Secrets in Frontend:** API keys/creds in React/Next.js client code.\n   * **Fix:** **Keep secrets server-side only** (env vars, ensure .env is in .gitignore).\n3. **Weak Authorization:** Only checking if logged in, not *if allowed* to do/see something.\n   * **Fix:** **Server must verify permissions** for every action & resource.\n4. **Leaky Errors:** Showing detailed stack traces/DB errors to users.\n   * **Fix:** **Generic error messages for users; detailed logs for devs.**\n5. **No Ownership Checks (IDOR):** Letting user X access/edit user Y's data via predictable IDs.\n   * **Fix:** **Server must confirm current user owns/can access the specific resource ID.**\n6. **Ignoring DB-Level Security:** Bypassing database features like RLS for fine-grained access.\n   * **Fix:** **Define data access rules directly in your database** (e.g., RLS).\n7. **Unprotected APIs & Sensitive Data:** Missing rate limits; sensitive data unencrypted.\n   * **Fix:** **Rate limit APIs (middleware); encrypt sensitive data at rest; always use HTTPS.**\n\n# 15. Handle Errors Effectively\n\nWhen you face an error, you have two options:\n\n* Either return back and make the AI do what you asked for again, and yeah this actually works sometimes.\n* If you want to continue, just copy-paste the error from the console and tell the AI to solve it. But if it took more than three requests without solving it, the best thing to do is returning back again, tweaking your prompt, and providing the correct context as I said before. Correct prompt and right context can save sooo much effort and requests.\n\n# 16. Debug Stubborn Errors Systematically\n\nIf there is an error that the AI took so much on and seems never to get it or solve it and started to go on rabbit holes (usually after 3 requests and still did not get it right), **just tell Claude to take an overview of the components the error is coming from and list top suspects it thinks are causing the error.** And also tell it to add logs and then provide the output of them to it again. This will significantly help it find the problem and it works correctly most of the times!\n\n# 17. Be Explicit: Prevent Unwanted AI Changes\n\nClaude has this trait of adding, removing, or modifying things you did not ask for. We all hate it and it sucks. Just a simple sentence under every prompt like **(Do not fuckin change anything I did not ask for Just do only what I fuckin told you)** works very well and it is really effective!\n\n# 18. Keep a \"Common AI Mistakes\" File\n\nAlways have a file of mistakes that you find Claude doing a lot. Add them all to that file and when adding any new feature, just mention that file. This will prevent it from doing any frustrating repeated mistakes and you from repeating yourself!\n\nI know it does not sound as \"vibe coding\" anymore and does not sound as easy as all of others describe, but this is actually what you need to do in order to pull off a good project that is useful and usable for a large number of users. These are the most important tips that I learned after using Cursor for more than 6 months and building some projects using it! I hope you found it helpful and if you have any other questions I am happy to help!\n\nAlso, if you made it to here you are a legend and serious about this, so congrats bro!\n\nHappy vibing!",
+      "author": "PhraseProfessional54",
+      "score": 300,
+      "date": "2025-05-09 20:22:33.000000",
+      "created_at": "2025-05-09 20:22:33.000000",
+      "url": "https://reddit.com/r/cursor/comments/1kisbaq/the_ultimate_vibe_coding_guide/",
+      "subreddit": "cursor",
+      "category": [
+        "vibe-coding",
+        "api-integration",
+        "prompting",
+        "context-management"
+      ],
+      "keyQuotes": [
+        "Define Your Vision Clearly\n\n**Start with a strong, detailed vision of what you want to build and how it should work",
+        "Remember: *garbage in, garbage out*",
+        "** You must know GitHub and Git; it will save you a lot if AI messed things up, you could easily return to an older version"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-9-2025-05-05",
+      "csvRow": 9,
+      "title": "God Mode: The AI-Powered Dev Workflow for Production Apps",
+      "body": "I'm a SWE who's spent the last 2 years in a committed relationship with every AI coding tool on the market. The goal: build entire products without needing to write code myself. Yes, I'm that lazy. Yes, it actually works.\n\n# What you need to know first\n\nYou don't need to code, but you should at least know what code *is*. Understanding React, Node.js, and basic version control will save you from staring blankly at error messages that might as well be written in hieroglyphics.\n\nAlso, know how to use GitHub Desktop. Not because you'll be pushing commits like a responsible developer, but because you'll need somewhere to store all those failed attempts.\n\n# Step 1: Start with Lovable for UI\n\nLovable creates UIs that make my design-challenged attempts look like crayon drawings. But here's the catch: Lovable is not *that* great for complete apps.\n\nSo just use it for static UI screens. Nothing else. No databases. No auth. Just pretty buttons that don't do anything.\n\n# Step 2: Document everything\n\nAfter connecting to GitHub and cloning locally, I open the repo in Cursor.\n\nFirst order of business: Have the AI document what we're building. Why? Because these AIs are unable to understand complete requirements, they work best in small steps. \n\n# Step 3: Build feature by feature\n\nCreate a Notion board. List all your features. Then feed them one by one to your AI assistant like you're training a particularly dim puppy.\n\nAlways ask for error handling and console logging for every feature. Yes, it's overkill. Yes, you'll thank me when everything inevitably breaks.\n\nFor auth and databases, use Supabase. Not because it's necessarily the best, but because it'll make debugging slightly less soul-crushing.\n\n# Step 4: Handling the inevitable breakdown\n\nExpect a 50% error rate. That's not pessimism; that's optimism.\n\nHere's what you need to do:\n\n* Test each feature individually\n* Check console logs (you did add those, right?)\n* Feed errors back to AI (and pray)\n\n# Step 5: Security check\n\nBefore deploying, have a powerful model review your codebase to find all those API keys you accidentally hard-coded. Use RepoMix and paste the results into Claude, O1, whatever. (If there's interest I'll write a detailed guide on this soon. Lmk)\n\n# Why this actually works\n\nThe current AI tools won't replace real devs anytime soon. They're like junior developers and mostly need close supervision.\n\nHowever, they're incredible amplifiers if you have basic knowledge. I can build in days what used to take weeks.\n\nI'm developing an AI tool myself to improve code generation quality, which feels a bit like using one robot to build a better robot. The future is weird, friends.\n\nTL;DR: Use AI builders for UI, AI coding assistants for features, more powerful models for debugging, and somehow convince people you actually know what you're doing. Works 60% of the time, every time.",
+      "author": "namanyayg",
+      "score": 39,
+      "date": "2025-05-05 20:07:44.000000",
+      "created_at": "2025-05-05 20:07:44.000000",
+      "url": "https://reddit.com/r/cursor/comments/1kfliem/god_mode_the_aipowered_dev_workflow_for/",
+      "subreddit": "cursor",
+      "category": [
+        "api-integration"
+      ],
+      "keyQuotes": [
+        "# What you need to know first\n\nYou don't need to code, but you should at least know what code *is*"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-10-2025-04-24",
+      "csvRow": 10,
+      "title": "Updated my cursor vibe coding guide (500 stars)",
+      "body": "Hello, I read most posts on this community, and I learn a lot, thank you all!  \n  \nSome weeks ago I made a game that went viral (3M+ views on X), and I decided to make a guide on my experience (4000 prompts according to my cursor bills) to build games with AI.\n\nI think it's also relevant if you want to build apps.\n\nHere it is, hope it helps [https://github.com/EnzeD/vibe-coding](https://github.com/EnzeD/vibe-coding)\n\nHappy to gather your feedback to test new technics and make it better.",
+      "author": "EnzeDfu",
+      "score": 354,
+      "date": "2025-04-24 18:33:34.000000",
+      "created_at": "2025-04-24 18:33:34.000000",
+      "url": "https://reddit.com/r/cursor/comments/1k6zosu/updated_my_cursor_vibe_coding_guide_500_stars/",
+      "subreddit": "cursor",
+      "category": [
+        "vibe-coding",
+        "prompting"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-11-2025-04-22",
+      "csvRow": 11,
+      "title": "Cursor is like a junior dev, guide it step by step",
+      "body": "Cursor can feel like magic at first. You write some code and it autocompletes, writes functions, even explains bugs. But once you start using it to build more serious projects everything breaks. It starts steering off from what you asked it to build.\n\nThis is when most of us give up or waste hours trying to fix all the messy code it wrote.\n\nBut it doesn't have to be that way. What actually works is treating Cursor like a junior dev. It's fast, but it needs clear direction. If you guide it step by step it becomes an incredibly powerful tool that helps you ship faster.\n\nHere's how I try to do that:\n\n**1. Define what the user should be able to do**\n\nBefore anything, I write down what the final outcome is. I don’t start with what I want to code. I start with what the user should experience.\n\nThis gives me a clear goal to work toward. Every feature I build has to move closer to that outcome.\n\nYou can use Notion, Google Docs, or just your standard notes app for this. Here are a bunch of [free Notion templates](https://www.notion.com/templates/collections/top-free-product-requirements-templates-in-notion) you can use.\n\n**2. Break the feature into small tasks**\n\nI split the full feature into smaller steps. Each one should be something Cursor can do in a single go.\n\nThat might be setting up a route, handling state, connecting an API, or saving to a database. I keep the scope tight so if something goes wrong, I know exactly where the problem is.\n\nThis also helps me test as I go. I can catch mistakes early instead of trying to debug a huge mess at the end.\n\n**3. Write clear instructions for each step**\n\nBefore asking Cursor to write anything, I describe exactly what the step should do. I include inputs, outputs, and where the code should go.\n\nThe more detail I give, the less it messes up. I don’t leave anything to guesswork.\n\nWhen I want to save time and get more details, I use [Devplan](https://www.devplan.com/) which is free to use. It turns my idea into a full product plan with dev tasks, user stories, and templates. Then I just feed each task into Cursor one at a time.\n\n**4. Set up Cursor rules before coding**\n\nOne of the most underrated features is [Cursor rules](https://cursor.directory/rules). These guide the AI to follow specific patterns in your project.\n\nYou can add rules for naming conventions, libraries to use, file structure, or even how to handle error messages.\n\nDoing this once saves you from re-explaining the same things across prompts.\n\n**5. Test each step as soon as it’s built**\n\nAfter Cursor writes code, I don’t wait. I test it right away. If there’s an issue, I isolate it and rerun the prompt with the specific problem.\n\nWhen debugging, I prefer Claude or GPT-4 for thinking through errors. I paste in the bug, describe what I expected, and ask what went wrong.\n\nThis is better than just telling Cursor “fix it” it gives you actual insight and often fixes the root cause instead of patching symptoms.\n\n**6. Keep moving one step at a time**\n\nThe biggest mistake is trying to do too much in one prompt. I stick to the system:\n\n1. give it one specific task\n2. review the output\n3. test\n4. move to the next one\n\nI don’t ask it to build a dashboard or backend all at once. I stay in control and let Cursor support me, not replace me.\n\nThis is what made Cursor actually useful for shipping real products.\n\nGuide it like a junior dev, use the right tools at the right steps, and you’ll avoid the chaos and finish strong.",
+      "author": "eastwindtoday",
+      "score": 112,
+      "date": "2025-04-22 14:44:14.000000",
+      "created_at": "2025-04-22 14:44:14.000000",
+      "url": "https://reddit.com/r/cursor/comments/1k5826a/cursor_is_like_a_junior_dev_guide_it_step_by_step/",
+      "subreddit": "cursor",
+      "category": [
+        "api-integration",
+        "prompting"
+      ],
+      "keyQuotes": [
+        "Define what the user should be able to do**\n\nBefore anything, I write down what the final outcome is",
+        "I start with what the user should experience",
+        "Each one should be something Cursor can do in a single go"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-12-2025-04-16",
+      "csvRow": 12,
+      "title": "ELI5: AI-assisted coding workflow in Zed?",
+      "body": "I don't mind being the \"dumb guy\" asking dumb questions. So here we go.\n\nI'm old school, coming from Vim. I'm trialing Zed mainly as a Vim alternative, and so far, so good. I really like it! I've been coding for a long time and I've been avoiding AI assisted coding. I've had bad experiences with Copilot in VSCode and NeoVim, as well as bad experiences with ChatGPT.\n\nI have zero interest in Cursor due to *reasons*. That's off topic and I'm not interested in discussing why in this thread.\n\nI don't really \"get it\" when it comes to the AI workflow. Everything else is great; with my thousands of lines of custom keymap and configuration, Zed is doing exactly what I want it to do and I've coerced it into fitting my mental model, for the most part at least.\n\nI've looked for blog posts and YouTube videos covering how to, ahem, \"vibe code\", and they're all in Cursor. Zed related content barely scratches the surface and, at best, merely mentions that Zed has AI features, but doesn't demonstrate them.\n\nI know how to code, but I don't really know how to incorporate AI into my workflow. Assume I know nothing and I'm using Zed... **what should I do?** Sure, I've read the documentation covering the inline assistant and a context editor, but I don't really \"get it,\" if that makes sense. I don't know *how to effectively promp* or *when to effectively use* these features. I haven't experienced any productivity boost because I don't really know how to take advantage of these tools.\n\nIt's kind of like knowing how the chess pieces move, but now knowing how to play the game.\n\nI'm currently using the free Zed tier of Claude just for demo purposes. I'm not too terribly worried about the quality of the AI's output for now, knowing that I'm on a free tier and can swap out the underlying model later. I'm still not too sure what to do with the in-line assist, not sure what to do with the context editor sidebar, and I don't know what I don't know. \n\nI'm also willing to bet that I'm not the only one wondering how to use Zed *effectively*. So here I am, unashamed at my ignorance, asking for guidance. A step-by-step tutorial for a small, contrived app that shows off Zed's intended AI workflow would be amazing. Also, examples for working with an existing code base (more common in the real world) would also be amazing.\n\nIf there's a better place to ask this, please let me know. Thanks!",
+      "author": "gplusplus314",
+      "score": 17,
+      "date": "2025-04-16 16:25:51.000000",
+      "created_at": "2025-04-16 16:25:51.000000",
+      "url": "https://reddit.com/r/ZedEditor/comments/1k0olhi/eli5_aiassisted_coding_workflow_in_zed/",
+      "subreddit": "ZedEditor",
+      "category": [
+        "vibe-coding",
+        "context-management"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-13-2025-04-16",
+      "csvRow": 13,
+      "title": "Structured Workflow for “Vibe Coding” Fullstack Apps",
+      "body": "\nThere's a lot of hype surrounding \"vibe coding” and a lot of bogus claims. \n\nBut that doesn't mean there aren't workflows out there that can positively augment your development workflow.\n\nThat's why I spent a couple weeks researching the best techniques and workflow tips and put them to the test by building a full-featured, full-stack app with them.\n\nBelow, you'll find my honest review and the workflow that I found that really worked while using Cursor with Google's Gemini 2.5 Pro, and a solid UI template.\n\n![](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iqdjccdyp0uiia3l3zvf.png)\n\nBy the way, I came up with this workflow by testing and building a full-stack personal finance app in my spare time, tweaking and improving the process the entire time. Then, after landing on a good template and workflow, I rebuilt the app again and recorded it entirely, from start to deployments, in a ~3 hour long youtube video: https://www.youtube.com/watch?v=WYzEROo7reY \n\nAlso, if you’re interested in seeing all the rules and prompts and plans in the actual project I used, you can check out the [tutorial video's accompanying repo](https://github.com/wasp-lang/vibe-coding-video). \n\nThis is a summary of the key approaches to implementing this workflow.\n\n## Step 1: Laying the Foundation\n\nThere are a lot of moving parts in modern full-stack web apps. Trying to get your LLM to glue it all together for you cohesively just doesn't work.\n\nThat's why you should give your AI helper a helping hand by starting with a solid foundation and leveraging the tools we have at our disposal. \n\nIn practical terms this means using stuff like:\n1. UI Component Libraries\n2. Boilerplate templates\n3. Full-stack frameworks with batteries-included\n\nComponent libraries and templates are great ways to give the LLM a known foundation to build upon. It also takes the guess work out of styling and helps those styles be consistent as the app grows.\n\nUsing a full-stack framework with batteries-included, such as [Wasp](https://wasp.sh) for JavaScript (React, Node.js, Prisma) or [Laravel](https://laravel.com/) for PHP, takes the complexity out of piecing the different parts of the stack together. Since these frameworks are opinionated, they've chosen a set of tools that work well together, and the have the added benefit of doing a lot of work under-the-hood. In the end, the AI can focus on just the business logic of the app. \n\nTake Wasp's main config file, for example (see below). All you or the LLM has to do is define your backend operations, and the framework takes care of managing the server setup and configuration for you. On top of that, this config file acts as a central \"source of truth\" the LLM can always reference to see how the app is defined as it builds new features.\n\n```ts\napp vibeCodeWasp {\n  wasp: { version: \"^0.16.3\" },\n  title: \"Vibe Code Workflow\",\n  auth: {\n    userEntity: User,\n    methods: {\n      email: {},\n      google: {},\n      github: {},\n    },\n  },\n  client: {\n    rootComponent: import Main from \"@src/main\",\n    setupFn: import QuerySetup from \"@src/config/querySetup\",\n  },\n}\n\nroute LoginRoute { path: \"/login\", to: Login }\npage Login {\n  component: import { Login } from \"@src/features/auth/login\"\n}\n\nroute EnvelopesRoute { path: \"/envelopes\", to: EnvelopesPage }\npage EnvelopesPage {\n  authRequired: true,\n  component: import { EnvelopesPage } from \"@src/features/envelopes/EnvelopesPage.tsx\"\n}\n\nquery getEnvelopes {\n  fn: import { getEnvelopes } from \"@src/features/envelopes/operations.ts\",\n  entities: [Envelope, BudgetProfile, UserBudgetProfile] // Need BudgetProfile to check ownership\n}\n\naction createEnvelope {\n  fn: import { createEnvelope } from \"@src/features/envelopes/operations.ts\",\n  entities: [Envelope, BudgetProfile, UserBudgetProfile] // Need BudgetProfile to link\n}\n\n//...\n```\n\n## Step 2: Getting the Most Out of Your AI Assistant\n\nOnce you've got a solid foundation to work with, you need create a comprehensive set of rules for your editor and LLM to follow.\n\nTo arrive at a solid set of rules you need to:\n1. Start building something\n2. Look out for times when the LLM (repeatedly) *doesn't meet your expectations* and define rules for them\n3. Constantly ask the LLM to help you improve your workflow\n\n## Defining Rules\nDifferent IDE's and coding tools have different naming conventions for the rules you define, but they all function more or less the same way (I used Cursor for this project so I'll be referring to Cursor's conventions here).\n\nCursor deprecated their `.cursorrules` config file in favor of a  `.cursor/rules/` directory with multiple files. In this set of rules, you can pack in general rules that align with your coding style, and project-specific rules (e.g. conventions, operations, auth).\n\nThe key here is to provide structured context for the LLM so that it doesn't have to rely on broader knowledge.\n\nWhat does that mean exactly? It means telling the LLM about the current project and template you'll be building on, what conventions it should use, and how it should deal with common issues (e.g. the examples picture above, which are taken from the [tutorial video's accompanying repo](https://github.com/wasp-lang/vibe-coding-video). \n\nYou can also add general strategies to rules files that you can manually reference in chat windows. For example, I often like telling the LLM to \"think about 3 different strategies/approaches, pick the best one, and give your rationale for why you chose it.\" So I created a rule for it, `7-possible-solutions-thinking.mdc`, and I pass it in whenever I want to use it, saving myself from typing the same thing over and over. \n\n## Using AI to Critique and Improve Your Workflow\nAside from this, I view the set of rules as a fluid object. As I worked on my apps, I started with a set of rules and iterated on them to get the kind of output I was looking for. This meant adding new rules to deal with common errors the LLM would introduce, or to overcome project-specific issues that didn't meet the general expectations of the LLM. \n\nAs I amended these rules, I would also take time to use the LLM as a source of feedback, asking it to critique my current workflow and find ways I could improve it. \n\nThis meant passing in my rules files into context, along with other documents like Plans and READMEs, and ask it to look for areas where we could improve them, using the past chat sessions as context as well.\n\nA lot of time this just means asking the LLM something like: \n> Can you review <document> for breadth and clarity and think of a few ways it could be improved, if necessary. Remember, these documents are to be used as context for AI-assisted coding workflows.\n\n## Step 3: Defining the \"What\" and the \"How\" (PRD & Plan)\n\nAn extremely important step in all this is the initial prompts you use to guide the generation of the Product Requirement Doc (PRD) and the step-by-step actionable plan you create from it.\n\nThe PRD is basically just a detailed guideline for how the app should look and behave, and some guidelines for how it should be implemented.\n\nAfter generating the PRD, we ask the LLM to generate a step-by-step actionable plan that will implement the app in phases using a modified **vertical slice method** suitable for LLM-assisted development.\n\nThe vertical slice implementation is important because it instructs the LLM to develop the app in full-stack \"slices\" -- from DB to UI -- in increasingly complexity. That might look like developing a super simple version of a full-stack feature in an early phase, and then adding more complexity to that feature in the later phases.\n\n**This approach highlights a common recurring theme in this workflow: build a simple, solid foundation and increasing add on complexity in focused chunks**\n\nAfter the initial generation of each of these docs, I will often ask the LLM to review it's own work and look for possible ways to improve the documents based on the project structure and the fact that it will be used for assisted coding. Sometimes it finds seem interesting improvements, or at the very least it finds redundant information it can remove.\n\nHere is an example prompt for generating the step-by-step plan (all example prompts used in the walkthrough video can be found in the [accompanying repo](https://github.com/wasp-lang/vibe-coding-video/)):\n\n> From this PRD, create an actionable, step-by-step plan using a modified vertical slice implmentation approach that's suitable for LLM-assisted coding. Before you create the plan, think about a few different plan styles that would be suitable for this project and the implmentation style before selecting the best one. Give your reasoning for why you think we should use this plan style. Remember that we will constantly refer to this plan to guide our coding implementation so it should be well structured, concise, and actionable, while still providing enough information to guide the LLM.\n\n## Step 4: Building End-to-End - Vertical Slices in Action\n\nAs mentioned above, the vertical slice approach lends itself well to building with full-stack frameworks because of the heavy-lifting they can do for you and the LLM.\n\nRather than trying to define all your database models from the start, for example, this approach tackles the simplest form of a full-stack feature individually, and then builds upon them in later phases. This means, in an early phase, we might only define the database models needed for Authentication, then its related server-side functions, and the UI for it like Login forms and pages. \n\n(Check out a graphic of a vertical slice implementation approach [here](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cyvbcp8xrihvz71pg6kb.png))\n\nIn my Wasp project, that flow for implementing a phase/feature looked a lot like: \n-> Define necessary DB entities in `schema.prisma` for that feature only\n-> Define operations in the `main.wasp` file\n-> Write the server operations logic \n-> Define pages/routes in the `main.wasp` file\n-> src/features or src/components UI \n-> Connect things via Wasp hooks and other library hooks and modules (react-router-dom, recharts, tanstack-table).\n\nThis gave me and the LLM a huge advantage in being able to build the app incrementally without getting too bogged down by the amount of complexity.\n\nOnce the basis for these features was working smoothly, we could improve the complexity of them, and add on other sub-features, with little to no issues!\n\nThe other advantage this had was that, if I realised there was a feature set I wanted to add on later that didn't already exist in the plan, I could ask the LLM to review the plan and find the best time/phase within it to implement it. Sometimes that time was then at the moment, and other times it gave great recommendations for deferring the new feature idea until later. If so, we'd update the plan accordingly.\n\n# Step 5: Closing the Loop - AI-Assisted Documentation\n\nDocumentation often gets pushed to the back burner. But in an AI-assisted workflow, keeping track of why things were built a certain way and how the current implementation works becomes even more crucial. \n\nThe AI doesn't inherently \"remember\" the context from three phases ago unless you provide it. So we get the LLM to provide it for itself :)\n\nAfter completing a significant phase or feature slice defined in our Plan, I made it a habit to task the AI with documenting what we just built. I even created a rule file for this task to make it easier.\n\nThe process looked something like this:\n- Gather the key files related to the implemented feature (e.g., relevant sections of main.wasp, schema.prisma, the operations.ts file, UI component files).\n- Provide the relevant sections of the PRD and the Plan that described the feature.\n- Reference the rule file with the Doc creation task\n- Have it review the Doc for breadth and clarity\n\nWhat's important is to have it focus on the core logic, how the different parts connect (DB -> Server -> Client), and any key decisions made, referencing the specific files where the implementation details can be found.\n\nThe AI would then generate a markdown file (or update an existing one) in the `ai/docs/` directory, and this is nice for two reasons:\n1. For Humans: It created a clear, human-readable record of the feature for onboarding or future development.\n2. For the AI: It built up a knowledge base within the project that could be fed back into the AI's context in later stages. This helped maintain consistency and reduced the chances of the AI forgetting previous decisions or implementations.\n\nThis \"closing the loop\" step turns documentation from a chore into a clean way of maintaining the workflow's effectiveness. \n\n## Conclusion: Believe the Hype... Just not All of It\n\nSo, can you \"vibe code\" a complex SaaS app in just a few hours? Well, kinda, but it will probably be a boring one. \n\nBut what you can do is leverage AI to significantly augment your development process, build faster, handle complexity more effectively, and maintain better structure in your full-stack projects.\n\nThe \"Vibe Coding\" workflow I landed on after weeks of testing boils down to these core principles:\n- **Start Strong**: Use solid foundations like full-stack frameworks (Wasp) and UI libraries (Shadcn-admin) to reduce boilerplate and constrain the problem space for the AI.\n- **Teach Your AI**: Create explicit, detailed rules (.cursor/rules/) to guide the AI on project conventions, specific technologies, and common pitfalls. Don't rely on its general knowledge alone.\n- **Structure the Dialogue**: Use shared artifacts like a PRD and a step-by-step Plan (developed collaboratively with the AI) to align intent and break down work.\n- **Slice Vertically**: Implement features end-to-end in manageable, incremental slices, adding complexity gradually.\nDocument Continuously: Use the AI to help document features as you build them, maintaining project knowledge for both human and AI collaborators.\n- **Iterate and Refine**: Treat the rules, plan, and workflow itself as living documents, using the AI to help critique and improve the process.\n\nFollowing this structured approach delivered really good results and I was able to implement features in record time. With this workflow I could really build complex apps 20-50x faster than I could before. \n\nThe fact that you also have a companion that has a huge knowledge set that helps you refine ideas and test assumptions is amazing as well\n\nAlthough you can do a lot without ever touching code yourself, it still requires you, the developer, to guide, review, and understand the code. But it is a realistic, effective way to collaborate with AI assistants like Gemini 2.5 Pro in Cursor, moving beyond simple prompts to build full-features apps efficiently.\n\nIf you want to see this workflow in action from start to finish, check out the full [~3 hour YouTube walkthrough and template repo](https://www.youtube.com/watch?v=WYzEROo7reY). And if you have any other tips I missed, please let me know in the comments :)\n",
+      "author": "hottown",
+      "score": 16,
+      "date": "2025-04-16 11:06:53.000000",
+      "created_at": "2025-04-16 11:06:53.000000",
+      "url": "https://reddit.com/r/cursor/comments/1k0hpsf/structured_workflow_for_vibe_coding_fullstack_apps/",
+      "subreddit": "cursor",
+      "category": [
+        "vibe-coding",
+        "prompting",
+        "context-management"
+      ],
+      "keyQuotes": [
+        "This is a summary of the key approaches to implementing this workflow",
+        "That's why you should give your AI helper a helping hand by starting with a solid foundation and leveraging the tools we have at our disposal",
+        "The key here is to provide structured context for the LLM so that it doesn't have to rely on broader knowledge"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-14-2025-04-08",
+      "csvRow": 14,
+      "title": "My Workflow using Gemini 2.5 Pro as CTO",
+      "body": "Just wrote all this for a DM (without LLM for some fucking reason) explaining my current workflow and how I onboarded Gemini 2.5 Pro as my CTO. Figured I’d share-\n\nStep 1- Tell Gemini 2.5 pro EVERYTHING. Your experience, what you want to make, problem you’re solving, have it ask you questions, your budget, timeline, runway, burn rate, tech stack, evaluate the viability, and just talk to it for a while about the project. Explain the full context and that you are the non-technical, human founder, 2.5 pro is to act as an experienced, expert (B2C or B2B) CTO, and Cursor is your developer (I use 3.7 with thinking). You may have to define the roles a bit as well like telling it that cursor implements all code and runs all terminal commands, you/founder are in charge of major decisions, UI, UX, all manual testing, and configurations (vervel, firebase, App Stores, etc), and then 2.5 is in charge of giving expert instructions to both you the founder and the dev Cursor as needed. \n\nStep 2- tell 2.5 pro that its first task as CTO is to help you create a “living” product requirements document and a “living” CTO briefing document (you can prob combine this into one if ur starting from scratch). Have it make you templates for these and have it fill in what it knows already and have it ask you questions to fill in any gaps in the templates. You’ll want to keep these in google docs or somewhere and keep them updated as things change. You’ll upload these into any new Gemini chats you start as the project grows - try to start a new chat for each new feature or piece of the project you’re focusing on. Also, create a new cursor chat at the same time you create new Gemini chats to keep them aligned, focused, and consistent. Make sure it helps you prioritize too. Yes Boomers, this plan will include API key security (but maybe specifically research and request “industry standard” tactics and testing just in case). \n\nStep 3- have CTO (Gemini) assign you and Cursor tasks based on the previously established priorities. It should give a section addressing you specifically on what to do manually (downloading, configuring, testing, acquiring logs, sharing screenshots) and a section you can copy/paste into cursor.  Read it to A) learn, and B) see if there are any files or other things you should include in the context for cursor you think might help or tasks you need to complete before cursor can do its thing. \n\nStep 4- copy/paste everything back and forth between Cursor and Gemini as needed, especially if testing fails. In my experience so far, 2.5 pro is really good at catching Cursor mistakes faster and instructing them how to correct, what error logging to add, etc. I’m finding it works much better and faster than simply asking (or threatening) Cursor again because Gemini can analyze what Cursor did previously and instantly create a much more focused and detailed instructions to Cursor on the types of things to look for, what code to implement, what error logging to add/check, commands to run? dependencies to add or whatever.\n\n\nOther stuff:\n-use screenshots to better show the problem/struggle \n\n-ask it to teach you \n\n-just like managing humans, it fucking sucks sometimes. this shit requires a ton of patience and perseverance. I’ve literally cried. \n \n-evolve and adapt the workflow as the tools and project change. If you get stuck after maybe a couple days or when you feel like quitting, don’t be afraid to switch it up and experiment with new chatGPT or grok 3 or whatever the hot young thing is at the time. it seems like these LLM’s are a bit like humans and have different strengths and perspectives, plus we know they’re constantly (usually) getting better. The same roadblock today might not exist next month so stay on top of it. \n\nThis is just my current method, not saying it’s for everyone or every use case. But I’m non-technical and it’s got me pretty far (B2C MVP built, nearing official beta. Cursor is the only IDE I’ve used - first got it in mid February).  Will I have issues scaling? Probably, but that’s a great problem to have and I have faith both me and the tools will continue improving rapidly. ",
+      "author": "BennyHungry",
+      "score": 43,
+      "date": "2025-04-08 16:16:13.000000",
+      "created_at": "2025-04-08 16:16:13.000000",
+      "url": "https://reddit.com/r/cursor/comments/1juhi7j/my_workflow_using_gemini_25_pro_as_cto/",
+      "subreddit": "cursor",
+      "category": [
+        "api-integration",
+        "context-management"
+      ],
+      "keyQuotes": [
+        "It should give a section addressing you specifically on what to do manually (downloading, configuring, testing, acquiring logs, sharing screenshots) and a section you can copy/paste into cursor",
+        "Read it to A) learn, and B) see if there are any files or other things you should include in the context for cursor you think might help or tasks you need to complete before cursor can do its thing"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-15-2025-04-07",
+      "csvRow": 15,
+      "title": "Here’s My Cursor Workflow – What’s Yours?",
+      "body": "Over time, I’ve developed a structured, session-based workflow that helps me get the most out of Cursor. It’s designed to maintain focus, optimize context usage, and support continuous improvement.\n\n# Planning Process\n\nI start with a high-level planning document that outlines the entire project. This document evolves over time: early tasks are fleshed out with detailed steps, while long-term items remain flexible and lightweight.\n\nCursor agents generate tasks from this outline using **task atomicity**—breaking work into small, focused units that each solve a single problem. This approach lets me complete most tasks within 1–2 focused sessions.\n\nAtomic tasks help optimize context usage: they contain just enough information for the agent to act effectively without overloading the context window, reducing the chances of hallucination or scope drift.\n\n# Session-Based Development\n\nI organize my workflow around **focused sessions**. Each session has a narrow scope and time limit, which has dramatically improved the quality of outputs since I started using Cursor.\n\nI follow an **adaptive planning** philosophy: I only plan 2–3 tasks ahead and revise frequently based on discoveries or blockers. Session insights often feed directly back into the planning doc.\n\n# Starting a Session\n\nAt the beginning of a session, I tell the agent I want to start working. It loads the project context, reviews the current state, and identifies any pending improvements or relevant blockers. From there, it sets a clear initial focus.\n\nEach task tracks its **prerequisites and dependencies**, allowing the agent to optimize task order and flag anything that's currently blocked.\n\nThe agent stays explicitly focused on the task at hand throughout the session. This minimizes scope creep and enforces a clear boundary between **planning** and **execution**. If new ideas or features arise, I ask the agent to create a new task rather than shifting focus mid-session.\n\n# Ending a Session\n\nI usually end a session once a task is complete. However, if a task results in heavy file changes or complex edits, I may initiate a \"save\" and split the remainder into a new session.\n\nTo save, I use the [Aegis save command](https://buildsomething.ai/aegis/quick-start/basic-commands/#save-progress). This triggers the agent to:\n\n* Log the session,\n* Record key decisions,\n* Update task progress,\n* Generate improvement insights.\n\n# Task Lifecycle\n\nTasks flow through these states: **Planned → Active (or Hold) → Completed**. The agent naturally moves tasks between these states and updates their metadata accordingly.\n\nEach task contains structured front matter with fields like:\n\n* Title + unique ID\n* Status\n* Priority\n* Dependencies\n* Timestamps (created/updated)\n* Memory type\n* Progress tracking\n\nOptional fields (e.g. tags, assignee) can be added as needed.\n\nThe task description establishes shared understanding, the objectives define success criteria, and the steps provide actionable guidance. The progress section is continuously updated, with agent-generated notes or insights recorded for future reference.\n\nI treat each task as a **focused, self-contained conversation**. This setup ensures that both I and the agent stay aligned on what needs to be done, without overwhelming the context window.\n\n# Continuous Improvement\n\nThe agent passively tracks how time is spent, which tasks get blocked, and what decisions are made. It then suggests **process improvements**, surfacing efficiency gains for future sessions.\n\nThis workflow has radically improved how I collaborate with Cursor. It keeps things modular, focused, and adaptable—making it easier to trust the agent as a co-developer, not just a code assistant.\n\nThis whole workflow is powered by a lightweight framework I built called [Aegis](https://github.com/BuildSomethingAI/aegis-framework). It helps structure tasks, planning, and session logs in a way that plays nicely with AI agents like Cursor—without adding friction to the creative flow.\n\nHappy to answer questions or hear how others approach this!",
+      "author": "TheKidd",
+      "score": 46,
+      "date": "2025-04-07 14:57:53.000000",
+      "created_at": "2025-04-07 14:57:53.000000",
+      "url": "https://reddit.com/r/cursor/comments/1jtna0m/heres_my_cursor_workflow_whats_yours/",
+      "subreddit": "cursor",
+      "category": [
+        "multi-agent",
+        "context-management"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-16-2025-04-04",
+      "csvRow": 16,
+      "title": "Guide on MCP for GitHub Copilot",
+      "body": "GitHub Copilot just released MCP Support\n\nHere’s a guide on how you can setup your favorite developer MCP Servers such as GitHub, slack, Jira, linear, Postgres, redis and others\n\nhttps://skeet.build/docs/apps/github-copilot",
+      "author": "influbit",
+      "score": 16,
+      "date": "2025-04-04 23:07:51.000000",
+      "created_at": "2025-04-04 23:07:51.000000",
+      "url": "https://reddit.com/r/GithubCopilot/comments/1jrpena/guide_on_mcp_for_github_copilot/",
+      "subreddit": "GitHubCopilot",
+      "category": [
+        "general"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-17-2025-04-04",
+      "csvRow": 17,
+      "title": "A simple guide to setting up Gemini 2.5 Pro, free, without running into 3rd party rate limits",
+      "body": "EDIT: The Open Router integration and google ai studio key method seems like the easiest way that works for everyone, especially if you already have an openrouter account. Pasting that method here for visibility:\n\n1. Get a Google AI Studio API key from https://aistudio.google.com/apikey\n2. Plug that API key into the Google AI Studio integration on https://openrouter.ai/settings/integrations, select enabled but not \"Use as fallback\"\n3. You can now use your Openrouter key anywhere and as long as you select Gemini 2.5 Pro Experimental as your model, it will use your key. \n(4. If you also add a GCP key and have Vertex AI enabled for the project, obtained as per the instructions below, you can add that to your integrations as well, and you will have two sources of 2.5 Pro backing your Openrouter calls.)\n\nHey all,  \nAfter dealing with Openrouter and Requesty giving me constant rate limits for Gemini 2.5 Pro, I got frustrated and decided to get things set up directly through Google's APIs. I have now sent over 60 million tokens in a single day without hitting any rate limits, all for $0—an equivalent usage with Claude would have cost $180. I also had a few other engineers confirm these steps. Here's how to do it and then integrate with Roo Code--but this should work for other tools like Cline, too:\n\n# Setting Up Google Cloud\n\n1. **Create or log into your** [**Google Cloud account**](https://console.cloud.google.com/)**.**\n2. **Open the** [**Google Cloud Console**](https://console.cloud.google.com/)**.**\n3. **Create a new Google Cloud project** (I named mine \"Roo Code\").\n4. **Enable billing** for your newly created Google Cloud project.\n5. **Enable the** [**Vertex AI API**](https://cloud.google.com/vertex-ai/docs/featurestore/setup).\n6. **Enable the Gemini API** from the API overview page.\n7. In your project dashboard, navigate to **APIs & Services → Credentials**.\n8. Click **\"Create Credentials\" → \"API Key\"**.\n9. Copy the generated API key and save it securely.\n\n# Integrating with Your IDE (Example: Roo Code)\n\n1. In VSCode or Cursor, navigate to the extensions marketplace (**Shift + Cmd + X** on Mac), search for and install **\"Roo Code\"** (or your preferred tool like Cline).\n2. Open Roo Code (**Cmd + Shift + P**, then type **\"View: Show Roo Code\"**).\n3. Click to configure a new API provider, selecting **\"Google Gemini\"**.\n4. Paste the API key you saved earlier into the API key field.\n5. Select **\"google/gemini-2.5-pro-exp-03-25:free\"** as the model.\n6. Click **Save**.\n\nThere you go! Happy coding. Let me know if you run into any issues.\n\nhttps://preview.redd.it/rc4prhl0dwse1.png?width=414&format=png&auto=webp&s=77d7e3a1bbbc1d9dd4ba930ef041eb0559e9241c\n\nEdit: looks like some are having issues. A few ideas/alternatives:\n\n1. ~~Use a Vertex api key, but gemini api as provider in Roo Code.~~ There is only one key, ignore this alternative.\n2. Use vertex api as the provider in Roo Code--its just a little more complicated, you'll have to create a service account in the credentials page of the project, and paste the json in Roo Code when configuring the provider\n3. If you have an OpenRouter account, you can go to the integrations page [https://openrouter.ai/settings/integrations](https://openrouter.ai/settings/integrations) and add your vertex api key to the google vertex integration. You can also add a google ai studio api key to the Google AI Studio integration. In each setting window where you add the key, make sure it is enabled. Then, in Roo Code, you use your openrouter account, but whenever it uses Gemini 2.5 pro free, it will default to your API key, not one of theirs which is being rotated among many users.",
+      "author": "thezachlandes",
+      "score": 89,
+      "date": "2025-04-04 22:51:26.000000",
+      "created_at": "2025-04-04 22:51:26.000000",
+      "url": "https://reddit.com/r/ChatGPTCoding/comments/1jrp1tj/a_simple_guide_to_setting_up_gemini_25_pro_free/",
+      "subreddit": "ChatGPTCoding",
+      "category": [
+        "api-integration"
+      ],
+      "keyQuotes": [
+        "Here's how to do it and then integrate with Roo Code--but this should work for other tools like Cline, too:\n\n# Setting Up Google Cloud\n\n1",
+        "In each setting window where you add the key, make sure it is enabled"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-18-2025-03-24",
+      "csvRow": 18,
+      "title": "My Cursor AI Workflow That Actually Works",
+      "body": "I’ve been coding with Cursor AI since it was launched, and I’ve got some thoughts.\n\nThe internet seems split between “AI coding is a miracle” and “AI coding is garbage.” Honestly, it’s somewhere in between.\n\nSome days Cursor helps me complete tasks in record times. Other days I waste hours fighting its suggestions.\n\nAfter learning from my mistakes, I wanted to share what actually works for me as a solo developer.\n\n# Setting Up a .cursorrules File That Actually Helps\n\nThe biggest game-changer for me was creating a `.cursorrules` file. It’s basically a set of instructions that tells Cursor how to generate code for your specific project.\n\nMine core file is pretty simple — just about 10 lines covering the most common issues I’ve encountered. For example, Cursor kept giving comments rather than writing the actual code. One line in my rules file fixed it forever.\n\nHere’s what the start of my file looks like:\n\n    * Only modify code directly relevant to the specific request. Avoid changing unrelated functionality.\n    * Never replace code with placeholders like `// ... rest of the processing ...`. Always include complete code.\n    * Break problems into smaller steps. Think through each step separately before implementing.\n    * Always provide a complete PLAN with REASONING based on evidence from code and logs before making changes.\n    * Explain your OBSERVATIONS clearly, then provide REASONING to identify the exact issue. Add console logs when needed to gather more information.\n\nDon’t overthink your rules file. Start small and add to it whenever you notice Cursor making the same mistake twice. You don’t need any long or complicated rules, Cursor is using state of the art models and already knows most of what there is to know.\n\nI continue the rest of the “rules” file with a detailed technical overview of my project. I describe what the project is for, how it works, what important files are there, what are the core algorithms used, and any other details depending on the project. I used to do that manually, but now I just use my own tool to generate it.\n\n# Giving Cursor the Context It Needs\n\nMy biggest “aha moment” came when I realized Cursor works way better when it can see similar code I’ve already written.\n\nNow instead of just asking “Make a dropdown menu component,” I say “Make a dropdown menu component similar to the Select component in [u/components](https://www.reddit.com/user/components/)`/Select.tsx`.”\n\nThis tiny change made the quality of suggestions way better. The AI suddenly “gets” my coding style and project patterns. I don’t even have to tell it exactly what to reference — just pointing it to similar components helps a ton.\n\nFor larger projects, you need to start giving it more context. Ask it to create rules files inside `.cursor/rules` folder that explain the code from different angles like backend, frontend, etc.\n\n# My Daily Cursor Workflow\n\nIn the morning when I’m sharp, I plan out complex features with minimal AI help. This ensures critical code is solid.\n\nI then work with the Agent mode to actually write them one by one, in order of most difficulty. I make sure to use the “Review” button to read all the code, and keep changes small and test them live to see if they actually work.\n\nFor tedious tasks like creating standard components or writing tests, I lean heavily on Cursor. Fortunately, such boring tasks in software development are now history.\n\nFor tasks more involved with security, payment, or auth; I make sure to test fully manually and also get Cursor to write automated unit tests, because those are places where I want full peace of mind.\n\nWhen Cursor suggests something, I often ask “Can you explain why you did it this way?” This has caught numerous subtle issues before they entered my codebase.\n\n# Avoiding the Mistakes I Made\n\nIf you’re trying Cursor for the first time, here’s what I wish I’d known:\n\n* Be super cautious with AI suggestions for authentication, payment processing, or security features. I manually review these character by character.\n* When debugging with Cursor, always ask it to explain its reasoning. I’ve had it confidently “fix” bugs by introducing even worse ones.\n* Keep your questions specific. “Fix this component” won’t work. “Update the onClick handler to prevent form submission” works much better.\n* Take breaks from AI assistance. I often code without Cursor and came back with a better sense of when to use it.\n\n# Moving Forward with AI Tools\n\nDespite the frustrations, I’m still using Cursor daily. It’s like having a sometimes-helpful junior developer on your team who works really fast but needs supervision.\n\nI’ve found that being specific, providing context, and always reviewing suggestions has transformed Cursor from a risky tool into a genuine productivity booster for my solo project.\n\nThe key for me has been setting boundaries. Cursor helps me write code faster, but I’m still the one responsible for making sure that code works correctly.\n\nWhat about you? If you’re using Cursor or similar AI tools, I’d love to hear what’s working or not working in your workflow.  \n\nEDIT: ty for all the upvotes! Some things I've been doing recently:\n\n* Stop AI from hallucinating and making mistakes: https://gigamind.dev/\n\n* Guides on using AI to ship faster with production-grade quality: https://nmn.gl/blog\n  ",
+      "author": "namanyayg",
+      "score": 127,
+      "date": "2025-03-24 19:09:48.000000",
+      "created_at": "2025-03-24 19:09:48.000000",
+      "url": "https://reddit.com/r/ChatGPTCoding/comments/1jiyzro/my_cursor_ai_workflow_that_actually_works/",
+      "subreddit": "ChatGPTCoding",
+      "category": [
+        "multi-agent",
+        "context-management"
+      ],
+      "keyQuotes": [
+        "I describe what the project is for, how it works, what important files are there, what are the core algorithms used, and any other details depending on the project",
+        "This ensures critical code is solid",
+        "The key for me has been setting boundaries"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-19-2025-03-23",
+      "csvRow": 19,
+      "title": "God Mode: The AI-Powered Dev Workflow",
+      "body": "I'm a SWE who's spent the last 2 years in a committed relationship with every AI coding tool on the market. My mission? Build entire products without touching a single line of code myself. Yes, I'm that lazy. Yes, it actually works.\n\n# What you need to know first\n\nYou don't need to code, but you should at least know what code *is*. Understanding React, Node.js, and basic version control will save you from staring blankly at error messages that might as well be written in hieroglyphics.\n\nAlso, know how to use GitHub Desktop. Not because you'll be pushing commits like a responsible developer, but because you'll need somewhere to store all those failed attempts.\n\n# Step 1: Start with Lovable for UI\n\nLovable creates UIs that make my design-challenged attempts look like crayon drawings. But here's the catch: Lovable is not *that* great for complete apps.\n\nSo just use it for static UI screens. Nothing else. No databases. No auth. Just pretty buttons that don't do anything.\n\n# Step 2: Document everything\n\nAfter connecting to GitHub and cloning locally, I open the repo in Cursor ($20/month) or Cline (potentially $500/month if you enjoy financial pain).\n\nFirst order of business: Have the AI document what we're building. Why? Because these AIs are unable to understand complete requirements, they work best in small steps. They'll forget your entire project faster than I forget people's names at networking events.\n\n# Step 3: Build feature by feature\n\nCreate a Notion board. List all your features. Then feed them one by one to your AI assistant like you're training a particularly dim puppy.\n\nAlways ask for error handling and console logging for every feature. Yes, it's overkill. Yes, you'll thank me when everything inevitably breaks.\n\nFor auth and databases, use Supabase. Not because it's necessarily the best, but because it'll make debugging slightly less soul-crushing.\n\n# Step 4: Handling the inevitable breakdown\n\nExpect a 50% error rate. That's not pessimism; that's optimism.\n\nHere's what you need to do:\n\n* Test each feature individually\n* Check console logs (you did add those, right?)\n* Feed errors back to AI (and pray)\n\n# Step 5: Security check\n\nBefore deploying, have a powerful model review your codebase to find all those API keys you accidentally hard-coded. Use RepoMix and paste the results into Claude, O1, whatever. (If there's interest I'll write a detailed guide on this soon. Lmk)\n\n# Why this actually works\n\nThe current AI tools won't replace real devs anytime soon. They're like junior developers and mostly need close supervision.\n\nHowever, they're incredible amplifiers if you have basic knowledge. I can build in days what used to take weeks.\n\nI'm developing an AI tool myself to improve code generation quality, which feels a bit like using one robot to build a better robot. The future is weird, friends.\n\nTL;DR: Use AI builders for UI, AI coding assistants for features, more powerful models for debugging, and somehow convince people you actually know what you're doing. Works 60% of the time, every time.\n\nSo what's your experience been with AI coding tools? Have you found any workflows or combinations that actually work?\n\n**EDIT:** This blew up! Here's what I've been working on recently:\n\n* Stop AI from hallucinating and making mistakes: [https://gigamind.dev/](https://gigamind.dev/) \n* Guides on using AI to ship faster with production-grade quality: [https://nmn.gl/blog](https://nmn.gl/blog) ",
+      "author": "namanyayg",
+      "score": 98,
+      "date": "2025-03-23 00:38:55.000000",
+      "created_at": "2025-03-23 00:38:55.000000",
+      "url": "https://reddit.com/r/ChatGPTCoding/comments/1jhn5ao/god_mode_the_aipowered_dev_workflow/",
+      "subreddit": "ChatGPTCoding",
+      "category": [
+        "api-integration"
+      ],
+      "keyQuotes": [
+        "# What you need to know first\n\nYou don't need to code, but you should at least know what code *is*"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-20-2025-03-17",
+      "csvRow": 20,
+      "title": "My Cursor AI Workflow That Actually Works",
+      "body": "I’ve been coding with Cursor AI since it was launched now while building my SaaS, and I’ve got some thoughts.\n\nThe internet seems split between “AI coding is a miracle” and “AI coding is garbage.” Honestly, it’s somewhere in between.\n\nSome days Cursor helps me complete tasks in record times. Other days I waste hours fighting its suggestions.\n\nAfter learning from my mistakes, I wanted to share what actually works for me as a solo developer. \n\n## Setting Up a .cursorrules File That Actually Helps\n\nThe biggest game-changer for me was creating a `.cursorrules` file. It’s basically a set of instructions that tells Cursor how to generate code for your specific project.\n\nMine core file is pretty simple — just about 10 lines covering the most common issues I’ve encountered. For example, Cursor kept giving comments rather than writing the actual code. One line in my rules file fixed it forever.\n\nHere’s what the start of my file looks like:\n\n```\n* Only modify code directly relevant to the specific request. Avoid changing unrelated functionality.\n* Never replace code with placeholders like `// ... rest of the processing ...`. Always include complete code.\n* Break problems into smaller steps. Think through each step separately before implementing.\n* Always provide a complete PLAN with REASONING based on evidence from code and logs before making changes.\n* Explain your OBSERVATIONS clearly, then provide REASONING to identify the exact issue. Add console logs when needed to gather more information.\n```\n\nDon’t overthink your rules file. Start small and add to it whenever you notice Cursor making the same mistake twice. You don’t need any long or complicated rules, Cursor is using state of the art models and already knows most of what there is to know.\n\nI continue the rest of the “rules” file with a detailed technical overview of my project. I describe what the project is for, how it works, what important files are there, what are the core algorithms used, and any other details depending on the project. I used to do that manually, but now I just use my own tool to generate it.\n\n## Giving Cursor the Context It Needs\n\nMy biggest “aha moment” came when I realized Cursor works way better when it can see similar code I’ve already written.\n\nNow instead of just asking “Make a dropdown menu component,” I say “Make a dropdown menu component similar to the Select component in `u/components/Select.tsx`.”\n\nThis tiny change made the quality of suggestions way better. The AI suddenly “gets” my coding style and project patterns. I don’t even have to tell it exactly what to reference — just pointing it to similar components helps a ton.\n\nFor larger projects, you need to start giving it more context. Ask it to create rules files inside `.cursor/rules` folder that explain the code from different angles like backend, frontend, etc. \n\n## My Daily Cursor Workflow\n\nIn the morning when I’m sharp, I plan out complex features with minimal AI help. This ensures critical code is solid.\n\nI then work with the Agent mode to actually write them one by one, in order of most difficulty. I make sure to use the “Review” button to read all the code, and keep changes small and test them live to see if they actually work.\n\nFor tedious tasks like creating standard components or writing tests, I lean heavily on Cursor. Fortunately, such boring tasks in software development are now history.\n\nFor tasks more involved with security, payment, or auth; I make sure to test fully manually and also get Cursor to write automated unit tests, because those are places where I want full peace of mind.\n\nWhen Cursor suggests something, I often ask “Can you explain why you did it this way?” This has caught numerous subtle issues before they entered my codebase. \n\n## Avoiding the Mistakes I Made\n\nIf you’re trying Cursor for the first time, here’s what I wish I’d known:\n\n* Be super cautious with AI suggestions for authentication, payment processing, or security features. I manually review these character by character.\n* When debugging with Cursor, always ask it to explain its reasoning. I’ve had it confidently “fix” bugs by introducing even worse ones.\n* Keep your questions specific. “Fix this component” won’t work. “Update the onClick handler to prevent form submission” works much better.\n* Take breaks from AI assistance. I often code without Cursor and came back with a better sense of when to use it.\n\n## Moving Forward with AI Tools\n\nDespite the frustrations, I’m still using Cursor daily. It’s like having a sometimes-helpful junior developer on your team who works really fast but needs supervision.\n\nI’ve found that being specific, providing context, and always reviewing suggestions has transformed Cursor from a risky tool into a genuine productivity booster for my solo project.\n\nThe key for me has been setting boundaries. Cursor helps me write code faster, but I’m still the one responsible for making sure that code works correctly.\n\nWhat about you? If you’re using Cursor or similar AI tools, I’d love to hear what’s working or not working in your workflow.",
+      "author": "namanyayg",
+      "score": 300,
+      "date": "2025-03-17 04:42:42.000000",
+      "created_at": "2025-03-17 04:42:42.000000",
+      "url": "https://reddit.com/r/cursor/comments/1jd4s83/my_cursor_ai_workflow_that_actually_works/",
+      "subreddit": "cursor",
+      "category": [
+        "multi-agent",
+        "context-management"
+      ],
+      "keyQuotes": [
+        "I describe what the project is for, how it works, what important files are there, what are the core algorithms used, and any other details depending on the project",
+        "This ensures critical code is solid",
+        "The key for me has been setting boundaries"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-21-2025-03-05",
+      "csvRow": 21,
+      "title": "A Practical Guide to Browser Tools MCP Server: Stop Manually Copy Pasting Logs / Screenshots from Chrome into Cursor - Beginner Friendly",
+      "body": "",
+      "author": "chongdashu",
+      "score": 34,
+      "date": "2025-03-05 23:17:20.000000",
+      "created_at": "2025-03-05 23:17:20.000000",
+      "url": "https://reddit.com/r/cursor/comments/1j4h786/a_practical_guide_to_browser_tools_mcp_server/",
+      "subreddit": "cursor",
+      "category": [
+        "general"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-22-2025-03-03",
+      "csvRow": 22,
+      "title": "Not too keen about the \"Agent\" being shoehorned into my workflow",
+      "body": "When you start a new chat, the default mode is \"Agent.\" Doesn't matter what you had before, and there is no option to set the default mode you'd actually want.\n\nI use the agent very sparingly, for two main reasons:\n\n* I like to iterate before committing to an important change in my code, and it's slow and disruptive to have the agent start replacing code in my editor on every query. Furthermore, I sometimes realize I've either forgotten to include an important piece of context, and need to requery. Sometimes, while watching the AI generate new code, I realize that I need to phrase my query a little differently, or be more specific about what I want, or sometimes I even realize that what I want is something that's actually a little different from what I was already querying for, and so I'll go back and edit the prompt to requery. I do this for the largest and most important changes I have to make, this is where most of my AI credits go, and obviously, I opt for the \"Ask\" mode for this task over the \"Agent\".\n\n* The code insertion system isn't reliable enough. Often, when the AI has come up with large swaths of new code, the inserter thinks those swaths are supposed to replace unedited functions in the document. Oftentimes, when the AI has come up with new code, maybe a different iteration of an idea, and I decide I liked the original one better so I undo and try to reapply the previous iteration, the inserter either changes nothing or deletes almost everything for some reason, so I have to requery before getting the inserter to work properly again, or make the edits manually. It's for this reason I do not trust the \"Agent\" for important work, because I feel like I might miss something and end up deleting something important.\n\nAt the moment I only use it for simple tasks I know it can one-shot, or to make simple changes across multiple files.\n\nAnyway, I suspect the cursor team is focusing on pushing their \"Agent\" feature, in order to hone in on the \"universal access to creation\" vision, but it's just not there yet, certainly not reliable enough to make the default mode, and in the time it needs to get to that level I'd appreciate it if it didn't get in the way of the creative process.",
+      "author": "7ven7o",
+      "score": 27,
+      "date": "2025-03-03 16:04:01.000000",
+      "created_at": "2025-03-03 16:04:01.000000",
+      "url": "https://reddit.com/r/cursor/comments/1j2m1bo/not_too_keen_about_the_agent_being_shoehorned/",
+      "subreddit": "cursor",
+      "category": [
+        "multi-agent",
+        "prompting",
+        "context-management"
+      ],
+      "keyQuotes": [
+        "Furthermore, I sometimes realize I've either forgotten to include an important piece of context, and need to requery",
+        "I do this for the largest and most important changes I have to make, this is where most of my AI credits go, and obviously, I opt for the \"Ask\" mode for this task over the \"Agent\"",
+        "It's for this reason I do not trust the \"Agent\" for important work, because I feel like I might miss something and end up deleting something important"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-23-2025-03-01",
+      "csvRow": 23,
+      "title": "Quick Guide: Connecting Supabase to Cursor via MCP (talk to your database)",
+      "body": "**Quick Guide: Connecting Supabase to Cursor via MCP**\n\nIf you're trying to hook up your Supabase database with Cursor (using MCP), here's a quick, straightforward guide. This setup lets you interact directly with your database through natural language—so you can just tell Cursor Composer what you want (like querying data, adding tables, etc.) without fiddling with manual SQL every time.\n\nI struggled for hours last night because I skipped this step at first. Without this, Cursor just couldn't get accurate context from Supabase, even when I fed it the docs directly.\n\nHere's what worked for me:\n\n**Step 1: Get your Supabase connection string**\n\n* Log in at [Supabase]() and pick your project.\n* Head over to your project's connection settings.\n* You’ll see a connection string there. Replace any placeholder passwords with your actual database password.\n* Copy this entire connection string (you'll need it for Cursor).\n\n**Step 2: Add your MCP server in Cursor**\n\n* Open Cursor and navigate to Settings → Features.\n* Scroll down past the \"Codebase indexing\" section until you see the MCP servers area.\n* Click on **\"Add New MCP Server\"**.\n   * Set type as **Command**.\n   * Name it clearly (mine is just \"Supabase - My App\").\n   * Paste the connection string you copied from Supabase here.\n* Hit save.\n\n**Step 3: Try it out**\n\n* Now you can use Cursor Composer or similar tools to run queries directly against your Supabase database without leaving Cursor.\n* Run a quick test (like asking it for a list of tables) to make sure it's connected properly.\n\nQuick tip from experience—make sure you back up your database first. I didn't, and cleaning up mistakes afterwards took ages.\n\nHope this saves someone else the headache!\n\n",
+      "author": "Relevant-Fix2159",
+      "score": 35,
+      "date": "2025-03-01 19:28:35.000000",
+      "created_at": "2025-03-01 19:28:35.000000",
+      "url": "https://reddit.com/r/cursor/comments/1j17kgo/quick_guide_connecting_supabase_to_cursor_via_mcp/",
+      "subreddit": "cursor",
+      "category": [
+        "context-management"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-24-2025-02-28",
+      "csvRow": 24,
+      "title": "A Cursor extension that guides you step by step in building apps and coding with AI",
+      "body": "I’ve built a Cursor extension that guides you step by step in building apps from scratch with AI. It’s designed to help you learn coding with Cursor in a practical way.\n\nThe extension doesn’t just provide instructions but also interacts with Cursor’s chat.\n\nRight now, there are four projects you can implement with the extension:\n\n1. Real-Time Camera Filter App – A simple browser-based application that accesses your camera and applies Instagram-like filters to photos or video streams in real time.\n\n2. Console Chat with LLM – A “Hello, World!”-style project where you build a simple console application to chat with an LLM.\n\n3. Agent “All Dry” – A fun project that teaches you how to build an image-processing app using a diffusion model and an AI agent\n\n4. Zendesk Support Helper – A practical project where you build an AI assistant that suggests answers to Zendesk tickets based on previous data using RAG (Retrieval-Augmented Generation). This could be especially useful for customer support.\n\nMore projects are on the way.\n\nYou can find the extension on the marketplace (it's free): [https://marketplace.visualstudio.com/items?itemName=ai-dl.enlighter](https://marketplace.visualstudio.com/items?itemName=ai-dl.enlighter) \n\nI’d really appreciate any feedback on both the extension itself and the content. Let me know what you think!\n\nhttps://reddit.com/link/1j0cvyu/video/qwpb77exxwle1/player\n\n",
+      "author": "ivposure",
+      "score": 28,
+      "date": "2025-02-28 17:15:41.000000",
+      "created_at": "2025-02-28 17:15:41.000000",
+      "url": "https://reddit.com/r/cursor/comments/1j0cvyu/a_cursor_extension_that_guides_you_step_by_step/",
+      "subreddit": "cursor",
+      "category": [
+        "multi-agent"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-25-2025-02-25",
+      "csvRow": 25,
+      "title": "Those MCP totally 10x my Cursor workflow",
+      "body": "",
+      "author": "jasonzhou1993",
+      "score": 34,
+      "date": "2025-02-25 10:56:11.000000",
+      "created_at": "2025-02-25 10:56:11.000000",
+      "url": "https://reddit.com/r/cursor/comments/1ixsc8j/those_mcp_totally_10x_my_cursor_workflow/",
+      "subreddit": "cursor",
+      "category": [
+        "general"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-26-2025-02-15",
+      "csvRow": 26,
+      "title": "Maximizing Cursor AI – What’s Your Best Workflow Hack?",
+      "body": "I’ve been using the Cursor pro plan for close to **4 months now**. I’m constantly trying out new ways to optimize my workflow to write code easier/faster.\n\n**These have worked for me:**\n\n* Optimizing `.cursorrules` by having the agent \"self-improve\" the rules after a coding session.\n* Using debug statements liberally to help the agent find issues\n* I ask it to start every reply with a random animal emoji 🦊. If I no longer see the emoji then I know it’s lost context\n\n**Wins:**\n\n* The self-improvement does seem to help to a point\n* I am pretty hard core about starting new sessions an that helps a lot\n* Debug statements do help it fix issues. Without them it tends to spin out.\n\n**Losses:**\n\n* Agent mode spins out when working on less popular tech (not js or react).\n   * Firebase functions written in typescript\n   * SwiftUI code\n   * Svelte 5\n* Forgetting to use a `.cursorrules` file or the new rules/\\* in a project\n\n\n\nSo I’m super curious… what’s been your biggest challenge using Cursor or other AI coding assistants? How have you worked around that challenge?",
+      "author": "AIAppHacker",
+      "score": 134,
+      "date": "2025-02-15 01:31:34.000000",
+      "created_at": "2025-02-15 01:31:34.000000",
+      "url": "https://reddit.com/r/cursor/comments/1ipqiyg/maximizing_cursor_ai_whats_your_best_workflow_hack/",
+      "subreddit": "cursor",
+      "category": [
+        "multi-agent",
+        "context-management"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-27-2025-02-08",
+      "csvRow": 27,
+      "title": "Cursor IDE: Setup and Workflow in Larger Projects",
+      "body": "I want to share my development setup and workflow. I have more than 10+ years of development experience and recently switched to coding only in Cursor IDE. I spend about 6 hours every weekday coding in it, plus some extra time on weekends. Let me show you how I've set this up.\n\n## Writing Code Through Tests First\n\nInitially, I wrote code directly in Cursor. While this worked for small repos, it became risky in larger projects - AI-generated code could easily break existing functionality. Being overly careful defeated Cursor's primary benefit: rapid implementation with review during PR.\n\nMy colleague Dmitry suggested test-driven development. While I tried full TDD, writing many tests before implementation, while reliable, was too time-consuming. Especially when refactoring interfaces, as I had to rewrite all test cases.\n\nI found a sweet spot with 1-2 integration tests using real credentials. Write one failing test, implement the feature, and get a checkpoint. Add more tests only after the interface stabilizes. When working on feature #16, a quick test run confirms I haven't broken features #1-15.\n\nThis creates an efficient AI feedback loop. The test lets AI write code, check results, and fix issues automatically. It's faster than manual verification while keeping the code reliable, even when Cursor rewrites multiple files.\n\n## Breaking Tasks Into Small Steps\n\nFinding the right task size is the most crucial skill I've developed while working with Cursor. The test-first approach works especially well when you write a test for each small, well-defined piece of work. But what's \"small enough\"?\n\nIt is too big, and the Cursor might go off track, requiring you to roll back everything. Too small, and you'll spend more time writing tests than solving the actual problem. This sweet spot between too big and too small is the most complex skill to explain, but it's what I've been learning the most.\n\nThat's why the same task might seem impossible for one developer using Cursor but completely doable for another - even when coding purely by voice. An experienced Cursor user knows how to break down features into the right-sized steps and cover them with tests in a way that builds up the complete feature with minimal human intervention.\n\n## Preserving Thought Process as Documentation\n\nI used to rely heavily on chat history with the AI. Starting a new chat felt risky - I might lose important context or solutions, especially when breaking down an oversized task into smaller pieces. Explaining everything again in a new chat was time-consuming.\n\nNow, I save all our discussions and decisions in design documents and commit to the code. Before PR, I often refine these documents into cleaner documentation, removing some of the intermediate thinking. But by committing even the intermediate files, my colleagues can see my thought process, decision points, and reasoning if they're interested. I can also track the history of these changes.\n\nDocumenting our dialogue, overall goals, task breakdowns, and their statuses has made working with Cursor much smoother. I can freely start a new chat, add my design doc for context, and continue from any point. Chat session length no longer worries me.\n\n## Working Exclusively Through Composer Agent\n\nI started with just the chat interface - it supported more models and seemed to give better control over code changes. I was convinced that Composer Agent was just a simplified tool for junior developers learning Cursor IDE. As an experienced developer, I dismissed it as too basic for my needs.\n\nMy colleague Daniel kept suggesting I try switching completely to Composer Agent. At first, I maintained my stance - I was too \"advanced\" for such tools. But the ability to roll back to any point in our dialogue, modify the prompt, automatically restore files to that state, and try again turned out to be incredibly powerful. The integrated terminal commands and automatic result viewing made everything faster.\n\nI started using Agent mode occasionally, then more frequently. For the past month, I haven't opened chat or normal Composer mode once - I work exclusively in Composer Agent. I highly recommend trying it, even if you're a seasoned developer. It takes some getting used to, but you maintain full code control, and the benefits are worth it.\n\n## Voice Dictation to Chat Text\n\nI know this part won't resonate with everyone. Many of my developer friends are excellent typists who hate voice interfaces or work in offices where speaking isn't practical. But I've always enjoyed voice interfaces despite being a developer. For me, it just feels natural.\n\nI often work from home, and now I do all my programming in Cursor IDE with 99% of my input through voice using SuperWhisper. For me, it's a perfect setup that works incredibly well. But I understand this approach isn't universal - some developers are much more comfortable expressing themselves through text, and that's perfectly fine.\n",
+      "author": "Kirmark",
+      "score": 137,
+      "date": "2025-02-08 15:52:12.000000",
+      "created_at": "2025-02-08 15:52:12.000000",
+      "url": "https://reddit.com/r/cursor/comments/1ikq9m6/cursor_ide_setup_and_workflow_in_larger_projects/",
+      "subreddit": "cursor",
+      "category": [
+        "multi-agent",
+        "api-integration",
+        "prompting",
+        "context-management"
+      ],
+      "keyQuotes": [
+        "Starting a new chat felt risky - I might lose important context or solutions, especially when breaking down an oversized task into smaller pieces"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-28-2025-02-07",
+      "csvRow": 28,
+      "title": "A Guide to understand new .cursor/rules in 0.45 (.cursorrules)",
+      "body": "https://preview.redd.it/5j7okcqn2rhe1.png?width=1600&format=png&auto=webp&s=6bf0e0777b4416bcbdd999fa8d9d00c5419bbc46\n\nHere is a complete thread on using cursor rules in 0.45 and especially the .cursor/rules dir\n\n**Blog Post:**\n\n[https://www.instructa.ai/en/blog/how-to-use-cursor-rules-in-version-0-45](https://www.instructa.ai/en/blog/how-to-use-cursor-rules-in-version-0-45)\n\n**X Thread (+ Updates)**\n\n[https://x.com/kregenrek/status/1887574770474229802](https://x.com/kregenrek/status/1887574770474229802)\n\n**Update 1:**\n\nYou can \"stack\" your cursor  rules.\n\nIn the screenshot you can see that I have a \"global\" rule and a specific rule for extensions.\n\nyou can also see that in the reasoning step in the composer.\n\n**Sidenote:** Some User reports that it crashes cursor so use this with caution\n\nhttps://preview.redd.it/4uohiqe8nzhe1.png?width=3840&format=png&auto=webp&s=a6ac92154faf0524550572f4370f08e3308da852\n\n**Update 2:**\n\nCursor Rules supports inheritance. If you have ever worked with CSS, this should be a familiar concept.\n\nFor example, create a base .mdc rule and reference it in your other rules. Keeps everything clean and separate.\n\nhttps://preview.redd.it/7afrwoebnzhe1.png?width=2926&format=png&auto=webp&s=ebdd4b57e70420ff1d9080527aad0ee1a58ba684\n\n**Update 3:**\n\nRegarding deprecated .cursorrules. Smth. in me hopes that doesn't happen → everyone needs to migrate. In the long run, the name .cursorrules is an understatement of the agent's powerful capabilities.\n\nWorkaround: Create an \\[whateveryouwant\\].mdc (agent was just an example) file as an replacement for the .cursorrules. Add the \"\\*\" for global (missed it in the screenshot)\n\nhttps://preview.redd.it/9nqczhydnzhe1.png?width=2722&format=png&auto=webp&s=f738d76a4510f81b8f882cf9dd964f79d64c4b26",
+      "author": "kevinkernx",
+      "score": 57,
+      "date": "2025-02-07 17:16:39.000000",
+      "created_at": "2025-02-07 17:16:39.000000",
+      "url": "https://reddit.com/r/cursor/comments/1ik06ol/a_guide_to_understand_new_cursorrules_in_045/",
+      "subreddit": "cursor",
+      "category": [
+        "multi-agent"
+      ],
+      "keyQuotes": [
+        "**Sidenote:** Some User reports that it crashes cursor so use this with caution\n\nhttps://preview",
+        "If you have ever worked with CSS, this should be a familiar concept"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-29-2025-01-24",
+      "csvRow": 29,
+      "title": "Slowly come to the realisation that I want a coding workflow augmented by machine intelligence.",
+      "body": "Senior Engineer who’s resisted the urge to go for cursor or similar. But in recent months I’ve been finding it harder to resist using a local llm or chatGPT to speed things up. \n\nI don’t really want to pay for cursor so my ideal is to spin up something open source but I don’t really know where to start. Used R1 in hugging chat for a bit the other day it’s too intriguing not to explore. I’m running an M1 Mac. Any advice would be appreciated. ",
+      "author": "qwertyMu",
+      "score": 22,
+      "date": "2025-01-24 19:13:41.000000",
+      "created_at": "2025-01-24 19:13:41.000000",
+      "url": "https://reddit.com/r/ChatGPTCoding/comments/1i93dgo/slowly_come_to_the_realisation_that_i_want_a/",
+      "subreddit": "ChatGPTCoding",
+      "category": [
+        "general"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-30-2025-01-18",
+      "csvRow": 30,
+      "title": "My guide to using Styles effectively.",
+      "body": "So one of the absolute game changers introduced by Anthropic for web/desktop use for me has been styles. Yes thats right, MCP, artifacts etc are IMHO distracting token burners. That little drop down box is so useful.\n\n**First some background info**:  \nStyles are named userStyles in Claude's system prompt. Ask him and he will output the current style.  \nStyles are sent per instance as one of the nearest (most relevant) pieces of context in the system prompt, meaning he responds really well to user styles. Change the style and he will have no recollection of the style used in the previous replies.\n\n**My Ai Setup**:  \nIts a little quirky, but I have artifacts and analysis tools turned off, I don't use MCP, and I prefer web/desktop over cline or cursor etc and I never go over limits. Effective prompts, styles and project knowledge are all I use.  \nWith artifacts and analysis off, means the system prompt is heavily reduced, saving tokens and context dilution. Also I don't have to bother with Claude's frequent mistakes with artifacts and prompt based guardrails for effective artifact usage. He is a master of the chat stream, take advantage.  \nMCP requires too much management overhead to keep him on the rails. Also it bloats the chat stream and burns tokens faster, I feel it really slows me down.\n\n**Style usage advantages**:  \nStyles are so versatile they allow for heaps of level up strategies. here are some of my favorites...  \n  \n=== Style Chaining ===  \nThis is where you consecutively prompt with a series of different styles in a pre arranged fashion that significantly upgrades Claude's output as he progresses through the style chain. An example with some of my styles (that I'll explain later) is; EXPLORE -> PLAN -> SHOW WORKING -> BUILD.  \n\n\n=== Style Roulette ===  \nThis I use when I have taken some time to write what I think is an awesome prompt but Claude's response is underwhelming. I will simply change style and hit edit button then save. This gives me a completely new response to the same prompt. Often I'll end up revealing key information with one prompt that wasn't immediately available. You can also cross reference very easily for Hallucination or incongruence reveals.  An example might be EXPLAIN | EXPLORE | CASUAL | normal | explanatory  \n\n\n=== Perfect Formatting ===  \nBefore styles was introduced it was so frustrating trying to get Claude to output a plan when all he wanted to do write code. Now you can be very specific about how the next response is to take shape, this really accentuates the intended purpose of your prompt. Then in the next response a completely different style of output. eg prose, code, headings and paragraphs, no bullets, no code, etc, etc.  \n\n\n=== Context Shaping ===  \nThis is where you leave a particular styled response of Claudes in the chat stream that will enable referencing or response improvement later in the chat.\n\n**Other benefits:**  \nA huge upgrade has been getting all the generic guardrails and styling requirements out of project prompts (custom instructions). These prompts are now surgical in their purpose of setting efficient project context or account wide context (in the case of personal preferences), when before they where bloated with all kinds of tricks in order to keep Claude \"on the rails\".\n\n\\---------------------------------------\n\nOk so enough faffing, here are all of my style prompts. I keep them deliberately short, to save tokens and Claude vibes off them better than longer ones.\n\n**\\~ BUILD**  \n*This was a killer when I first introduced it into rotation. pure code output, or \"just write the document\" don't waste my tokens explaining your self or asking if you can proceed.*\n\n    MODE:\n    Focused Work\n    Minimal Distractions\n    Efficient Productivity\n    \n    STYLE:\n    Brief Interactions\n    Documents\n    Exact Formatting\n    \n    OUTPUT:\n    All documents in Code Blocks with the appropriate file-type formatting (e.g. ```txt or ```ruby).\n    Avoid MCP servers unless explicitly instructed.\n\n**\\~ CASUAL**  \n*This style is trying to replicate Claude's \"normal\" style except without the code responses. His unfiltered style is actually pretty effective. Sometimes non role played, simple chat, produces ideas and outputs unavailable with other styles.*\n\n    MODE:\n    Talking\n    Normal Interaction\n    \n    STYLE:\n    Standard\n    Prose\n    \n    OUTPUT:\n    Avoid using code examples.\n\n**\\~ EXPLAIN**  \n*This style produces a very considered structured response. Useful to leave in the context for Claude to later refer to. I also use it as a precursor to planning or building as he produces high quality reference outputs.*\n\n    MODE:\n    Explain Ideas\n    Instructional\n    Expert Opinions\n    \n    STYLE:\n    Informative\n    Comprehensive\n    Complete\n    \n    OUTPUT:\n    - Explain your choices and recommendations.\n    - Do NOT offer immediate fixes, summarise or use code examples.\n    - Use headings with paragraphs; or short sentence lists.\n\n**\\~ EXPLORE**  \n*This style is great for collaborating, choosing a direction, or revealing hidden knowledge. Disagreeable Claude often shows up after this style is dropped, challenging what you have said or revealing an edge case or unseen problem.*\n\n    MODE:\n    Exploration of Ideas\n    Brainstorming\n    Problem-Solving\n    Challenge Assumptions\n    \n    STYLE:\n    Flowing\n    Comprehensive\n    Branching\n    \n    OUTPUT:\n    - Explore varied Options or Solutions, Challenge the User's assumptions.\n    - Long flowing chat interactions are welcome, explain your choices and recommendations.\n    - Do NOT offer immediate fixes, summarise or use code examples.\n    - Try to minimise the use of lists, full sentences and paragraphs are preferred.\n\n**\\~ PLAN**  \n*This style is similar to EXPLAIN, except Claude usually produces a document you can save to your IDE or obsidian.*\n\n    MODE:\n    Planning\n    Structured Thinking\n    Best Practices\n    Collaboration\n    \n    STYLE:\n    Organised\n    Well-formatted\n    Full and Comprehensive\n    Alignment with (Project) Goals\n    \n    OUTPUT:\n    Each reply is either a Document or Thinking / Collaboration focused. Do NOT mix.\n    All Documents in Code Blocks with the appropriate file-type formatting (e.g. ```txt or ```md).\n    All thinking / collaboration use headings with paragraphs or short sentence lists.\n\n**\\~ REFLECT**  \n*A recent addition. I would commonly find some of my prompts where i was explaining my thoughts to Claude, would distill an idea i hadn't articulated before. However because it was one or more of his replies deep, it would be almost impossible to get him to succinctly rewrite my prompt in a non disorganised, non \"stream of consciousness\" manner. This style I can now drop on any previous prompts I have made and he will very nicely reflect it back for me to take away. sometimes I edit -> save a whole bunch of my replies to capture a full decision path.*\n\n    MODE:\n    Reflect back the users prompt.\n    \n    STYLE:\n    Organised\n    Formatted\n    \n    OUTPUT:\n    Avoid using code examples.\n    Use a txt code block with a summary title\n\n**\\~ SHOW WORKING**  \n*This is my absolute favorite for coding, its 10X vs <thinking> tags (which was the original inspiration for the style). He clearly explains all the steps he will use to complete the task. Also If Claude was going to make a mistake in his output either from misunderstanding your prompt or on his own, this will catch it, before he makes it. It will also capture his concerns/problems that might arise from his own implementations. Also he will show clearly that he has understood the context and you can begin to see how your prompts shape his understanding.*   \n*I combine this with a \"your task is\" prompt, as outlined in anthropics guides then pivot straight into a BUILD style on the next response, or adjust if necessary. This produces so much build speed its phenomenal. With a clean context history of successful task implementations until your feature is built, usually well before chat length warnings.*\n\n    When working on a task, before creating any code/document or when asked by the User, you must \"show your working\".\n    Do this by repeating your understanding (in your words) of the task in a \"=== My Task ===\" section, using a paragraph or two.\n    Then you indicate in short sentence bullets all the ideas you have to complete the task in a \"=== My Thinking ===\" section.\n    If you have any constraints or problems you foresee in your implementation, include them in a short \"=== Issues ===\" section, using a short sentence list.\n    If you are coding, include a \"=== File Paths ===\" section for each file you need to create.\n    Finally, ask the user \"is it OK to proceed with this implementation?\" After user confirmation, you can produce the code files.\n\n\\--------------------------\n\nSo to wrap up, these are my styles to produce all kinds of varied outputs and responses. You'll notice alot of them use very short one or two word statements. This is deliberate. I call these impact tokens. Its like a pirates treasure map. Detailed and well explained prompts lead Claude to the treasure location. But the impact tokens help him extract more treasure than he would've otherwise.\n\nAlso these styles behave very much like roles ( they rely on a similar concept). The \"expert opinions\" will produce very much the same results as \"you are a python coding expert\" except the impact token will having him being an expert in what ever it is that you prompted. The \"exploration of ideas\", \"brainstorming\" and \"challenge assumptions\" will create a response as if Claude was an experienced university lecturer.\n\nThat these can be changed on the fly and remove so much friction, has produced I believe the biggest upgrade in Claudes usefulness, than any other feature.",
+      "author": "dilberryhoundog",
+      "score": 88,
+      "date": "2025-01-18 17:12:26.000000",
+      "created_at": "2025-01-18 17:12:26.000000",
+      "url": "https://reddit.com/r/ClaudeAI/comments/1i4c6jx/my_guide_to_using_styles_effectively/",
+      "subreddit": "ClaudeAI",
+      "category": [
+        "vibe-coding",
+        "api-integration",
+        "prompting",
+        "context-management"
+      ],
+      "keyQuotes": [
+        "*\n\n    When working on a task, before creating any code/document or when asked by the User, you must \"show your working\""
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-31-2025-01-16",
+      "csvRow": 31,
+      "title": "Best AI Developer Tools & Workflows for Software Dev: Which Do You Recommend?",
+      "body": "Which is your favorite AI developer tool or combination of tools from below. Looking for suggestions for optimizing my software dev process even further by combining these better and also advice on anything I missed here.\n\n* **Web Apps/Prototyping**: Bolt (.new & .diy), v0, Replit, GPTEngineer (now Lovable)\n* **Dev Agents**: Cline, Roo-Cline, OpenHands\n* **IDE Assistants:** Cursor, Windsurf\n\nLooking to continue improving my AI toolkit/workflow for software dev so I can spend more of my time focusing on growing my skills and working on projects in machine learning and AI engineering.",
+      "author": "Bjornhub1",
+      "score": 22,
+      "date": "2025-01-16 23:11:09.000000",
+      "created_at": "2025-01-16 23:11:09.000000",
+      "url": "https://reddit.com/r/ChatGPTCoding/comments/1i3265w/best_ai_developer_tools_workflows_for_software/",
+      "subreddit": "ChatGPTCoding",
+      "category": [
+        "multi-agent"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-32-2024-12-29",
+      "csvRow": 32,
+      "title": "Absolutely Loving the workflow ever since i added these instructions to the cursor rules",
+      "body": "CusrorRules\n\n    ALWAYS update the Changelog.md under [Unreleased] when making changes and update the version number in ProjectSettings.asset (bundleVersion) when releasing a new version.\n    When Asked to Commit Staged Changes always check changelog to see if the changes in stagedfiles are represented in the changelog before commiting).\n    When releasing: Review [Unreleased] changes to determine version bump (features→minor, fixes→patch, breaking→major), move changes to new version section with date, update bundleVersion in ProjectSettings.asset, commit as \"release: Version X.Y.Z\", and create git tag.\n\nhere is the changelog files with the instructions.which cursor automatically read and ends up following the instructions inside it as well. what i added in the cursorrules kind of pushes it in the right direction.  \nit has been automatically updating it throughout my composer agent sessions, loving it. and when making a release i just say.  \nDo the Release Workflow\n\n# #Changelog\n\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\n\n# #Version Numbering\n\nThis project uses a three-number versioning system (X.Y.Z):\n\n* X (Major): Breaking changes, major feature overhauls\n* Y (Minor): New features, significant improvements\n* Z (Patch): Bug fixes, minor improvements\n\nExample: Version 1.2.3\n\n* 1: Major version\n* 2: Minor version\n* 3: Patch version\n\nWhen to increment:\n\n* Major (X): When making incompatible changes that might break existing functionality\n* Minor (Y): When adding functionality in a backward-compatible manner\n* Patch (Z): When making backward-compatible bug fixes\n\n# #Making Changelog Entries\n\n# #For New Changes in Development:\n\n1. Add changes under the `[Unreleased]` section\n2. Categorize them under appropriate headers:\n   * `Added` for new features\n   * `Changed` for changes in existing functionality\n   * `Deprecated` for soon-to-be removed features\n   * `Removed` for removed features\n   * `Fixed` for bug fixes\n   * `Security` for vulnerability fixes\n   * `Technical` for technical changes/dependencies\n3. Keep entries concise but descriptive\n\n# #When Releasing a Version:\n\n1. Convert the `[Unreleased]` section to a version number with date (e.g., `[1.0.0] - 2024-01-20`)\n2. Create a new empty `[Unreleased]` section at the top\n\n# #General Rules:\n\n* Newest changes always go at the top of the file\n* Each version should be in descending order (newest to oldest)\n* Group related changes under the same category\n* Use bullet points for each entry\n\n# #Development Workflow:\n\n1. **For Every Code Change:**\n   * ALWAYS add an entry to the `[Unreleased]` section in this changelog\n   * Write clear, descriptive change notes\n   * Categorize changes appropriately using the headers above\n   * Commit changes with meaningful commit messages\n2. **For Version Releases:**\n   * Move `[Unreleased]` changes to a new version section with today's date\n   * Update version number in `ProjectSettings.asset` (`bundleVersion`)\n   * Create a git tag for the version\n   * Create a new empty `[Unreleased]` section at the top\n\n# #Release Process:\n\nWhen asked to make a release, follow these steps:\n\n1. **Review Changes:**\n   * Review all changes under `[Unreleased]`\n   * Ensure all changes are properly categorized\n   * Verify all changes are documented\n2. **Choose Version Number:**\n   * For new features: increment minor version (0.1.0 → 0.2.0)\n   * For bug fixes: increment patch version (0.1.0 → 0.1.1)\n   * For breaking changes: increment major version (0.1.0 → 1.0.0)\n3. **Update Files:**\n   * Move `[Unreleased]` changes to new version section with today's date\n   * Update version in `ProjectSettings.asset` (`bundleVersion`)\n   * Create new empty `[Unreleased]` section\n4. **Commit and Tag:**\n   * Commit all changes with message \"release: Version X.Y.Z\"\n   * Create a git tag for the version (e.g., `v0.2.0`)\n\n# #[Unreleased]\n\n",
+      "author": "Sherisabre",
+      "score": 21,
+      "date": "2024-12-29 05:39:05.000000",
+      "created_at": "2024-12-29 05:39:05.000000",
+      "url": "https://reddit.com/r/cursor/comments/1hoths8/absolutely_loving_the_workflow_ever_since_i_added/",
+      "subreddit": "cursor",
+      "category": [
+        "multi-agent"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-33-2024-12-20",
+      "csvRow": 33,
+      "title": "The GOAT workflow",
+      "body": "I've been coding with AI more or less since it became a thing, and this is the first time I've actually found a workflow that can scale across larger projects (though large is relative) without turning into spaghetti. I thought I'd share since it may be of use to a bunch of folks here.\n\nTwo disclaimers: First, this isn't the cheapest route--it makes heavy use of Cline--but it is the best. And second, this really only works well if you have some foundational programming knowledge. If you find you have no idea why the model is doing what it's doing and you're just letting it run amok, you'll have a bad time no matter your method.\n\nThere are really just a few components:\n\n* A large context reasoning model for high-level planning (o1 or gemini-exp-1206)\n* Cline (or roo cline) with sonnet 3.5 latest\n* A tool that can combine your code base into a single file\n\nAnd here's the workflow:\n\n1.) Tell the reasoning model what you want to build and collaborate with it until you have the tech stack and app structure sorted out. Make sure you understand the structure the model is proposing and how it can scale.\n\n2.) Instruct the reasoning model to develop a comprehensive implementation plan, just to get the framework in place. This won't be the entire app (unless it's very small) but will be things like getting environment setup, models in place, databases created, perhaps important routes created as placeholders - stubs for the actual functionality. Tell the model you need a comprehensive plan you can \"hand off to your developer\" so they can hit the ground running. Tell the model to break it up into discrete phases (**important**).\n\n3.) Open VS Code in your project directory. Create a new file called `IMPLEMENTATION.md` and paste in the plan from the reasoning model. Tell Cline to carefully review the plan and then proceed with the implementation, starting with Phase 1.\n\n4.) Work with the model to implement Phase 1. Once it's done, tell Cline to create a `PROGRESS.md` file and update the file with its progress and to outline next steps (**important**).\n\n5.) Go test the Phase 1 functionality and make sure it works, debug any issues you have with Cline.\n\n6.) Create a new chat in Cline and tell it to review the implementation and progress markdown files and then proceed with Phase 2, since Phase 1 has already been completed.\n\n7.) Rinse and repeat until the initial implementation is complete.\n\n8.) Combine your code base into a single file (I created a simple Python script to do this). Go back to the reasoning model and decide which feature or component of the app you want to fully implement first. Then tell the model what you want to do and instruct it to examine your code base and return a comprehensive plan (broken up into phases) that you can hand off to your developer for implementation, including code samples where appropriate. The paste in your code base and run it.\n\n9.) Take the implementation plan and replace the contents of the implementation markdown file, also clear out the progress file. Instruct Cline to review the implementation plan then proceed with the first phase of the implementation.\n\n10.) Once the phase is complete, have Cline update the progress file and then test. Rinse and repeat this process/loop with the reasoning model and Cline as needed.\n\nThe important component here is the full-context planning that is done by the reasoning model. Go back to the reasoning model and do this anytime you need something done that requires more scope than Cline can deal with, otherwise you'll end up with a inconsistent / spaghetti code base that'll collapse under its own weight at some point.\n\nWhen you find your files are getting too long (longer than 300 lines), take the code back to the reasoning model and and instruct it to create a phased plan to refactor into shorter files. Then have Cline implement.\n\nAnd that's pretty much it. Keep it simple and this can scale across projects that are up to 2M tokens--the context limit for gemini-exp-1206.\n\nIf you have questions about how to handle particular scenarios, just ask!",
+      "author": "RonaldTheRight",
+      "score": 313,
+      "date": "2024-12-20 11:45:43.000000",
+      "created_at": "2024-12-20 11:45:43.000000",
+      "url": "https://reddit.com/r/ChatGPTCoding/comments/1hinwsr/the_goat_workflow/",
+      "subreddit": "ChatGPTCoding",
+      "category": [
+        "context-management"
+      ],
+      "keyQuotes": [
+        "Tell the model to break it up into discrete phases (**important**)",
+        "md` file and update the file with its progress and to outline next steps (**important**)",
+        "The important component here is the full-context planning that is done by the reasoning model"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-34-2024-12-15",
+      "csvRow": 34,
+      "title": "A \"Just use API\" Guide",
+      "body": "Created the below guide that hopefully will assist those who are interested in trying it out - especially those who are frustrated with the paid Anthropic monthly subscription:\n\n**What is an API?**\n\nAPI stands for Application Programming Interface. It's a software intermediary that allows two applications to communicate with each other. Think of it as a messenger that takes your request to a provider and delivers the response back to you. In simpler terms, an API is a set of rules and specifications that allows different software applications to interact and share data, regardless of their underlying technologies.\n\n**How to Obtain an Anthropic API Key**\n\nHere's a detailed guide to getting your Anthropic API key:\n\n1. **Create an Anthropic Account:**\n   * Go to the Anthropic website ([console.anthropic.com](https://www.google.com/url?sa=E&q=https%3A%2F%2Fconsole.anthropic.com%2Fdashboard)) and sign up for an account or log in if you already have one.\n2. **Access the API Keys Section:**\n   * Once you're logged into your account, navigate to your name/profile icon at the top right of your screen. Look for an option labeled \"API Keys\".\n3. **Generate a New API Key:**\n   * Click on the button \"+ Create Key\".\n   * You'll be prompted to give your key a name. Enter a name and click \"Create Key.\"\n4. **Copy and Secure Your API Key:**\n   * A long string will be displayed, which is your API key. **Copy this key immediately and store it in a safe location.** You will not be able to view it again, and you'll need to generate a new one if you lose it.\n5. **Set up Billing:**\n   * I put daily limits on usage – just in case. I recommend you do the same.\n\n**Important notes:**\n\n* **Security:** Treat your API key like a password. Do not share it publicly or embed it directly in your code (if applicable). Use secure methods to store and access it.\n* You can always disable your key and create new ones if you feel any have been compromised.\n\n**API Limits - Quick Definitions:**\n\n* **Rate (Requests Per Minute - RPM):** How often you can send requests (Low to Higher).\n* **Context (Max Input Tokens):** How much the AI remembers (Smaller to Larger).\n* **Output (Max Output Tokens):** How long the AI's response can be (Shorter to Longer).\n\n[Anthropic Tiers](https://docs.anthropic.com/en/api/rate-limits)**:**\n\n* **Tier 1:**\n   * Very low rate limits (50 RPM).\n   * Small per minute context input limit (40k-50K input tokens on 3.5 models). This is the real killer for single users.\n   * Shorter responses/output (per min).\n   * **This tier will make you tear your wig off - avoid.**\n* **Tier 2**\n   * Higher rate limits (1000 RPM).\n   * Moderate per minute context input limit (80k-100k input tokens on 3.5 models).\n   * Longer responses/output (per min).\n   * **I recommend spending the $40 to get to this at least. The majority of users will probably use up their $40 within 3-6 months. Just a guess on my part FYI. Power users can gobble this up in no time, however.**\n* **Tier 3:**\n   * Higher rate limits (2000 RPM).\n   * Large per minute context input limit (160k-200k input tokens on 3.5 models).\n   * Longer responses/output (per min).\n* **Tier 4:**\n   * Highest rate limits (4,000 RPM), which means it can handle more concurrent requests.\n   * Very large per minute context input limit (up to 400k input tokens on all models).\n   * Longer responses/output (per min).\n   * **Currently this is the only tier that allows for 3.5 Sonnet's max context window of 200k input tokens (check my hyper link above to see for yourself).**\n   * **You'll need $400 currently to reach this tier.**\n\n**WARNING - YOUR API CREDITS EXPIRE AFTER 12 MONTHS FROM PURCHASE.**\n\n**Anthropic Current Models & Context:**\n\n* **Claude 3 Opus:**\n   * Has a max context window of **200k input tokens.** 4K max output tokens.\n   * Available on all tiers.\n* **Claude 3.5 Sonnet:**\n   * Has a max context window of **200k input tokens.** 8K max output tokens.\n   * Available on all tiers.\n* **Claude 3.5 Haiku:**\n   * Has a max context window of **200k input tokens.** 8K max output tokens.\n   * Available on all tiers.\n\n**Tier 4 Advantages for Multiple Users:**\n\nTier 4's primary benefit is its high rate limits, allowing for a total of 400,000 input tokens per minute. This capacity means you could, for example, concurrently run multiple 200,000 input token context models at their maximum. This level of throughput is particularly important for applications that experience a high volume of requests.\n\n**Why Tier 4 Matters for High Traffic:**\n\n* **Handles Concurrent Requests:** Tier 4 is designed to efficiently manage simultaneous requests from many users.\n* **Prevents Overloads:** Lower tiers can become overwhelmed with a large number of users submitting queries, causing slowdowns. Tier 4 prevents these bottlenecks, ensuring smooth operation.\n* **Supports Sustained High Usage:** Tier 4 is ideal for applications requiring consistent support for heavy request loads.\n\n**Tier 4 for the Single User:**\n\nAs a single, \"power\" user, Tier 4 essentially removes all limitations on your usage.\n\n**To clarify - Tier 4 allows up to 400k input tokens of TOTAL context per minute. It does NOT allow for any particular model to extend its context input token window capability.**\n\n**Platforms for Using Anthropic API Keys**\n\nHere are some popular platforms, categorized by their nature:\n\n**Free Platforms (just a sample of some I use):**\n\n* **Anthropic Console Workbench:** The Anthropic website itself provides a Workbench where you can experiment with the API directly in your browser. This is a good place to start exploring.\n* [TypingMind (Limited)](https://www.typingmind.com/)**:** Decent number of features for free - but ads are annoying. Check it out. Free is browser based only I believe.\n* [ChatBox (Community Edition)](https://github.com/Bin-Huang/chatbox)**:** The commercial product is also free and easy to install locally - however read the privacy policy and be sure you are good with it (I'm serious). They have a browser based one here (again, read privacy policy): [Chatbox](https://web.chatboxai.app/).\n* [Msty (Limited)](https://msty.app/): Good free feature set. Nice UI. \n\n**Paid Platforms (just a sample of some I use):**\n\n* [TypingMind (Full Featured/Lifetime purchase)](https://www.typingmind.com/)**:** Onetime payment (try to catch it on sale sub $100) and also has a local install option if you are tech savvy enough. The unique thing about this is that you can utilize things like \"Canvas\" across multiple API vendors (Anthropic for example).\n* [16x Prompt](https://prompt.16x.engineer/): I use this for coding heavily. Check it out. \n* [Msty (Lifetime)](https://msty.app/): I have not used this, but I have a friend who loves the additional features that the paid version brings. \n\n**Open-Source Platforms (just a sample of some I use):**\n\n* [Open WebUI](https://docs.openwebui.com/)**:** An open-source platform for building AI agents and workflows that supports various model providers, including Claude. Install with [pinokio](https://pinokio.computer/) \\- far easier to get you set up on it if you are unfamiliar with Docker.\n* [LibreChat (Advanced Setup)](https://www.librechat.ai/docs)**:** No pinokio installation method as of yet but another incredibly featured free open-sourced product that just released Agents as well. They also released a code interpreter feature that is not free - however if you have a need for something like this you'd understand why (sandboxed environment).\n\nPlenty of vendor options out there I'm sure - just be sure your keys are stored securely and be sure to **actually** **read the Privacy Policy** with all of them (I can't stress this enough).\n\nWARNING: This is NOT a thread for devs to blatantly promote their product. I am not associated with ANY of the above recommendations. I have contributed to the Open WebUI platform by creating some popular functions - but that is about it.\n\nHope this helps!\n\nEdit: Modified some things. Removed my statement regarding my preference for keys not being stored in browsers - again, generally a non-issue for most. Unique issue just for me.",
+      "author": "Historical-Internal3",
+      "score": 190,
+      "date": "2024-12-15 01:56:45.000000",
+      "created_at": "2024-12-15 01:56:45.000000",
+      "url": "https://reddit.com/r/ClaudeAI/comments/1heibgb/a_just_use_api_guide/",
+      "subreddit": "ClaudeAI",
+      "category": [
+        "multi-agent",
+        "api-integration",
+        "prompting",
+        "context-management"
+      ],
+      "keyQuotes": [
+        "**Important notes:**\n\n* **Security:** Treat your API key like a password",
+        "* **Context (Max Input Tokens):** How much the AI remembers (Smaller to Larger)",
+        "This level of throughput is particularly important for applications that experience a high volume of requests"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-35-2024-11-22",
+      "csvRow": 35,
+      "title": "Bolt vs. v0 vs. Cursor: A Beginner’s Guide to AI Coding Tools",
+      "body": "Hi,\n\nI've seen many people struggle with understanding the differences between AI tools like Bolt, v0, and Cursor. Since I've been using all of them for several months now (with subscriptions to all except v0), I’m going to summarize their key points here.\n\nhttps://preview.redd.it/r7z3kinhqf2e1.png?width=1920&format=png&auto=webp&s=dddc0019e7bed70f20b293ff7d3229b095c3d947\n\n**Bolt:**\n\nBolt is an awesome tool I use it since day 1. You can quickly build your own specs in GPT/claude and fire it at bolt. You will get really good results. The team behind Bolt is also super fast at adding new features and improvements.\n\nIf you need to start a lot of projects like doing demos or building multiple apps in a month then bolt is a viable tool.\n\nBut if you're working on an existing codebase, keep in mind that it’s mostly a generator right now. At some point, you might hit a wall.\n\nThey’ve added helpful features like \"Lock\" and \"Target File,\" but as someone coding 8 hours a day, you’ll need more consistency to keep things smooth.\n\nAlso, Bolt and v0 work better with React than for example with some other framework like Nuxt/Vue. I’ve tested the same app repeatedly, and it always ran into issues with Nuxt. So, Vue/Nuxt support isn’t quite there yet, which also applies to most code generators.\n\nDeployments: Netlify Prefered\n\n**v0:**\n\nA few days ago, I would have said that v0, compared to Bolt, is stronger in building frontends (the shiny interface the user sees when opening an app or website).\n\nThis seems to be because they heavily rely on shadcn, a very popular framework-agnostic component design library. With this focus on the framework, you can consistently achieve a decent UI.\n\nSince v0 announced full stack a few days ago include acquire grep (which means having a database of over 500k+ github repos) it will be similar in features like bolt.\n\nDeployments: Vercel Prefered\n\n**Cursor:**\n\nFirst of all, Cursor is a programming IDE (a fork of Visual Studio), not a browser-based all-in-one code generator.\n\nLearning a programming IDE is very different from picking up software like Blender or Adobe Photoshop. For example, if you learn Blender, you'll spend months creating 3D renders. Not only will you master the tool, but you'll also be able to produce incredible 3D scenes.\n\nThe catch is you master the tool (Cursor), but you still don't know how to code. This is what frustrates people without programming knowledge.\n\nOn the other hand if you an experienced dev, Cursor will the main Tool you will be working with. Although, as I said, you can quickstart projects in v0 and bolt, but at least you will end up in the cursor.\n\nWith cursor you can add your own codebase like adding Nuxt UI or any specific framework. Adding extensions. Using file references and so on. Here is a thread which can help you: [https://twitter.com/kregenrek/status/1850950546955387006](https://twitter.com/kregenrek/status/1850950546955387006)\n\nDeployments: Anywhere\n\n**Summary:**\n\nThink of it like this: Bolt and v0 is like Canva. It’s great for everyone and gets fast results, but it’s not super customizable.\n\nAnd thats good - especially for beginners or certain use cases.\n\nAnd Cursor is like Figma a very customizable, pluggable Design Tool especially for developers.\n\nEven tough it seems that bolt and v0 are beginner friendly. Learn to code! They are like slot machines that give you a big win and a dopamine rush at the start.\n\nAnd then boom, you get stuck and every step now feels like someone has put some big stones in your way.\n\nAlso, when you are building a prototype, there are a lot of layers to consider. It is not just about building the shiny user interface and some logic. You have to deal with connecting all the pieces together, using APIs, backend, frontend and database.\n\nBut!\n\nYou learn much faster with AI because you can ask it anything and learn from the goal to the language itself. That's a pretty quick boost I've seen for beginners. So if you wanna go fast hit you project up with something like bolt new or v0 which gives you a good starting point. Then use this project and extend it in cursor.\n\nit is important that you compensate for your lack of programming skills with better prompting and file referencing.\n\nHope this helps.",
+      "author": "kevinkernx",
+      "score": 49,
+      "date": "2024-11-22 06:05:20.000000",
+      "created_at": "2024-11-22 06:05:20.000000",
+      "url": "https://reddit.com/r/cursor/comments/1gx5cxk/bolt_vs_v0_vs_cursor_a_beginners_guide_to_ai/",
+      "subreddit": "cursor",
+      "category": [
+        "api-integration",
+        "prompting"
+      ],
+      "keyQuotes": [
+        "it is important that you compensate for your lack of programming skills with better prompting and file referencing"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-36-2024-11-19",
+      "csvRow": 36,
+      "title": "How to Set Up Qwen2.5-Coder-32B in Cursor: A Step-by-Step Guide",
+      "body": "I've been seeing a lot of buzz on Reddit and X about Qwen2.5-Coder-32B-Instruct lately. Developers are raving about it as one of the strongest open-source programming models out there. It reportedly outperformed GPT-4o in 9 out of 12 major coding benchmarks! To enhance my development experience, I decided to integrate it into Cursor. If you're a Cursor member, you can use the Composer and tab completion features seamlessly. Here’s a straightforward guide with screenshots to get you started:\n\n1. **Add the Model**: Once added, you can select Qwen2.5-Coder-32B-Instruct in the Composer chat.\n2. **Create an API Key**: Head over to the Alibaba Cloud Bailian platform and create a new API key. The option is in the upper right corner—it's a bit hidden.\n3. **Configure Cursor**: Open the Cursor settings and add a custom model. Enter the model name: `qwen2.5-coder-32b-instruct`. Make sure to disable other models to avoid validation issues. After verification, you can re-enable the other models.\n4. **Enter Base URL and API Key**: Input the Base URL and API key, then click the “Verify” button. If there are no error messages, your configuration is successful. If you encounter errors, double-check that other models are disabled and that your API key is correct.\n5. **Skip Custom Key (if applicable)**: If you’re on a trial or Pro account, you might see an option to skip using a custom key. You can choose “Dismiss” to bypass this.\n6. **Re-enable Other Models**: Don't forget to enable your other commonly used models. Just a heads-up: even on a Pro account, using o1-preview incurs charges at $0.30 per request. Proceed with caution if you're not looking to spend!\n7. **Free Plan for New Users**: Alibaba Cloud Bailian offers a free plan for new users for the first six months. You can check the specific models in the model square for details on free quotas and validity periods.\n\nHappy coding!\n\nhttps://preview.redd.it/bjmit8uv7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=60558f76136633f2752bb7949c58b058be5f30c3\n\nhttps://preview.redd.it/jx2snd8f7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=8a0ea6efd2029c97c6726ae6b04d669750ba2e36\n\nhttps://preview.redd.it/nd1vzc8f7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=a888b00b2b657cc5ae0db9a485ca2e16935646d8\n\nhttps://preview.redd.it/x5pooe8f7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=dc0b196be2253997bb5eca07044516b9ef557118\n\nhttps://preview.redd.it/wcpg4e8f7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=7fd68c93d4fdd68612e8fc60e2c80d0813a397c8\n\nhttps://preview.redd.it/tl0mce8f7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=5599c03bbe69947cdf42a80f782370c05ec9ff3a\n\nhttps://preview.redd.it/oqknde8f7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=f819408c197f55050ad5a796ebaf5345a907b492\n\nhttps://preview.redd.it/os6yie8f7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=fdffe1a8c510239eb9af545605079a1a62eccd38\n\nhttps://preview.redd.it/4esnjh8f7z1e1.jpg?width=3119&format=pjpg&auto=webp&s=4c00f432a8e471302e5ad62c3a69b22bdd1df360\n\n",
+      "author": "Wei_Will",
+      "score": 29,
+      "date": "2024-11-19 22:32:26.000000",
+      "created_at": "2024-11-19 22:32:26.000000",
+      "url": "https://reddit.com/r/cursor/comments/1gvgbrz/how_to_set_up_qwen25coder32b_in_cursor_a/",
+      "subreddit": "cursor",
+      "category": [
+        "api-integration"
+      ],
+      "keyQuotes": [
+        "**Re-enable Other Models**: Don't forget to enable your other commonly used models"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-37-2024-10-16",
+      "csvRow": 37,
+      "title": "8 Tips for using Cursor in a pro workflow",
+      "body": "",
+      "author": "BeneficialAd3800",
+      "score": 44,
+      "date": "2024-10-16 14:45:47.000000",
+      "created_at": "2024-10-16 14:45:47.000000",
+      "url": "https://reddit.com/r/cursor/comments/1g56tlc/8_tips_for_using_cursor_in_a_pro_workflow/",
+      "subreddit": "cursor",
+      "category": [
+        "general"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-38-2024-10-10",
+      "csvRow": 38,
+      "title": "What does your AI workflow look like while coding?",
+      "body": "There’s a lot happening with tools like Cursor, ChatGPT Canvas, etc.\n\nI’m just curious—what does your AI workflow look like? Do you use Cursor? Or do you use extensions like [continue.dev](http://continue.dev) and claude-dev to kind of recreate Cursor? What are you using to be more efficient with AI while coding?",
+      "author": "CaliforniaHope",
+      "score": 48,
+      "date": "2024-10-10 12:25:06.000000",
+      "created_at": "2024-10-10 12:25:06.000000",
+      "url": "https://reddit.com/r/ChatGPTCoding/comments/1g0mrus/what_does_your_ai_workflow_look_like_while_coding/",
+      "subreddit": "ChatGPTCoding",
+      "category": [
+        "general"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-39-2024-09-07",
+      "csvRow": 39,
+      "title": "The lazy programmer's guide to AI coding. ",
+      "body": "I hear people complaining about Sonnet 3.5 and its struggles with writing code. I've been there too, but I think I've cracked the code (pun intended) on how to make it work like a charm almost every time. The key is to break things down into smaller, more manageable conversations instead of trying to get everything done in one go.\n\nStep 1: Act as a Software Engineer  \nFirst, ask the AI to be a software engineer. Pass all the relevant files and have it explain the code back to you. This is crucial because without understanding the code and the context, the AI's output will be subpar at best. It's like asking a real software engineer to fix code without giving them a chance to familiarize themselves with the codebase first.\n\nStep 2: Act as a Product Manager  \nNext, put on your product manager hat and ask the AI to do the same. This is where you lay out the new feature you want the AI to develop. Be clear, be specific, and don't be afraid to ask for a product requirement document. This helps the AI understand your requirements crystal clear.\n\nStep 3: Act as a tech lead. \nIf the feature is a bit on the complex side, consider writing pseudo code first. This gives the AI another opportunity to review the codebase, your requirements, and figure out which files and code sections need to be tweaked. It's like a practice run before the main event.\n\nStep 4: Act as a developer  \nFinally, ask the AI to write the actual code based on the pseudo code and the understanding gained from the previous steps. Once the coding is done, have the AI generate a git commit message to keep your version control history nice and tidy.\n\nRemember, always use a new chat for each new feature. Trying to cram multiple features or changing requirements mid-conversation is a recipe for confusion.  \n\nTools I use:\nCursor editor is a game-changer. Create prompts for different roles (software engineer, product manager, pseudo code writer) and use them as needed in your chats. When you're happy with the pseudo code, you can even pass the requirements to Cursor composer, which can write the actual code across multiple files.  \n\nI also use Cursor AI rules to give the model a heads up about my tech stack (MacOS 14 Sonoma, Cursor editor, Python, FastAPI, Postgres, etc.) and the best practices to follow while writing code.  \n\nGive it a shot, and let me know how it goes!  Good luck. ",
+      "author": "illusionst",
+      "score": 410,
+      "date": "2024-09-07 23:56:56.000000",
+      "created_at": "2024-09-07 23:56:56.000000",
+      "url": "https://reddit.com/r/ClaudeAI/comments/1fbp2a5/the_lazy_programmers_guide_to_ai_coding/",
+      "subreddit": "ClaudeAI",
+      "category": [
+        "api-integration",
+        "prompting",
+        "context-management"
+      ],
+      "keyQuotes": [
+        "The key is to break things down into smaller, more manageable conversations instead of trying to get everything done in one go",
+        "Remember, always use a new chat for each new feature"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-40-2024-08-29",
+      "csvRow": 40,
+      "title": "Workflow w/multiple tools",
+      "body": "I have to admit, I am not in the least bit normal in any sense of the word. I am usually working on multiple projects at once. It’s my vibe. That said, I want to start a conversation about using tools for their strengths and/or their ability to cover the gap.\n\nI have learned a few things over these last 9 months that might help someone else. My workflow is not perfect but that is more a limitation of the models at the moment.\n\nFirst of all, let me say that developing real apps with these tools requires development experience. You might get lucky but I doubt it. They are too prone to overwrite or straight obliterate something important or something you have worked on all day or more days… the tools are really only as good as the developer at the end of the day, in my honest opinion.\n\n====\n\nIf you are starting from scratch, it is somewhat easier to guide a model through the development tasks, however, the processes still end up the same.\n\n# Context\n\nOne of the promoted features of Cursor is the e indexing of your code base and the ability to add documentation.\n\n# EXISTING CODEBASE\n\nI find it very helpful to create my own global context of sorts. Rather than spamming CTRL-ENTER like a boomer, do that the first time BUT run your codebase through a linter that outputs all bugs or issues. Put that log into a file named [roadmap.md](http://roadmap.md) and add it to your project. Make sure it gets added to context.\n\nIf you don’t have any new features to add and are just fixing bugs, ask the model to review the linter log, think carefully and prioritize the items from the log, group them by file, create a list and output it to [devmap.md](http://devmap.md) with a task list under each file that has a checkbox next to it. You will have to create these files, and then apply the markdown from the chat.\n\nNow, review the list. Many times, they will add some stupid shit like “create a social community”… delete that shit.\n\nOk, the next thing is to add this at the top.\n\n    <thought>Nothing is complex. A wall is built brick by brick. Any big task is easily accomplished in well thought out steps.</thought>\n    <imperative>This is the real world. You are an expert at coding and trained beyond what a human coder can know, realistically. The human depends upon your expertise and you will only produce fully functional code that can be used in a production environment. Never use placeholder comments indicating future development. Implement the code instead and ask questions if you need more information about the implementation. Never remove functionality to fix a problem because it doesn’t make any logical sense to introduce breaking changes to fix a bug or solve a small problem. Ask questions if you need direction.</imperative>\n    <task>Start at the first item that has not been marked completed and iterate through the task list, completing each task with careful thought of how the change will impact the project as a whole. Before you begin a new task, mark previous one complete if it is not.</task>\n\nI am on the Pro plan for $20/mos with Cursor. I can code all day if I am willing to switch between my api keys and ChatGPT-4o or 3.5 Sonnet. I frequently hit token limits. This is how I defeated that issue. You can code a long time on cursors dime. It’s worth $20/month any day of the week.\n\nI hate how it works, tbh. 😂😂😂\n\nYou can use this same method to have it review your codebase and give you a list of features yet to be implemented based on your prompt of the end goal. Be verbose but organized in your initial prompt. Detail is king. Use an llm to help build your prompt.\n\nIf you have it create your list in conjunction with the linter log, you can knock down 2 birds with 1 stone and it makes the case for production ready code.\n\nLast but not least, the model works better without a shit ton of context. You keep context, it will have some from the initial blast. Add the context as it is needed and remove it when it isn’t. I can’t preach this enough. Manage the context and you will make your wife a happy man.\n\n# Aider\n\nAider is just simply my favorite because of the git/diff format. Being able to undo commits is beautiful. I would argue that Aider is more capable than Cursor at most tasks for me with the workflow above but all 3 are so close it’s crazy.\n\n# ClaudeDev\n\nIn terms of the composer feature of Composer, I find ClaudeDev to be much more useful. I can develop most of an app with it but context control can’t be 100% automated all the time. I love that it will ask me to open any file I tell it to. I wish I could give it a URL. Maybe I just haven’t figured that one out yet.\n\nI am in my groove now with these 3 tools but you have to be on your toes. They will still add sneaky little placeholder comments. They will duplicate methods and add unnecessary extra duplicated classes. You have to know what you are looking at and not just blindly approve or apply it. Pay attention.\n\nHope that helps somebody. If you can improve my workflow, give it to me you dirty animal. 😎",
+      "author": "stonedoubt",
+      "score": 21,
+      "date": "2024-08-29 23:21:42.000000",
+      "created_at": "2024-08-29 23:21:42.000000",
+      "url": "https://reddit.com/r/ChatGPTCoding/comments/1f4lfga/workflow_wmultiple_tools/",
+      "subreddit": "ChatGPTCoding",
+      "category": [
+        "vibe-coding",
+        "api-integration",
+        "prompting",
+        "context-management"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-41-2024-08-23",
+      "csvRow": 41,
+      "title": "Share your best coding workflow together with your AI subscriptions.",
+      "body": "Share the ultimate combination of your AI tools and coding workflow that makes you an unstoppable developer! Whether it's ChatGPT for brainstorming, GitHub Copilot for code completion, or another powerhouse duo, let’s exchange secrets and elevate our game together. What's your go-to setup?",
+      "author": "anonymous_2600",
+      "score": 38,
+      "date": "2024-08-23 16:49:28.000000",
+      "created_at": "2024-08-23 16:49:28.000000",
+      "url": "https://reddit.com/r/ChatGPTCoding/comments/1eznent/share_your_best_coding_workflow_together_with/",
+      "subreddit": "ChatGPTCoding",
+      "category": [
+        "general"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-42-2024-06-11",
+      "csvRow": 42,
+      "title": "Coding SaaS with AI: full workflow and experience notes",
+      "body": "Hey everyone,\n\nI wanted to share my experience as a non-tech solopreneur coding my SaaS project using ChatGPT and other AI tools. I launched the MVP in one month, and in two months, I already had some paying customers. That's not bad for a product with almost zero production costs.\n\n**The product**\n\nAI assistant builder where you can create chatbots to handle initial contacts and conduct in-depth interviews. 8D-1 asks follow-up questions, so you get comprehensive answers and can jump into the conversation when needed. If you want to try it, use the promo code **REDDITOR** to get 100 free messages.\n\nhttps://reddit.com/link/1ddiuyw/video/aa8f7fui0z5d1/player\n\nI know everyone hates posts with promotions, but this project is incredibly important to me. Even if 8D-1 isn’t for you, I’d love for you to give it a try.\n\n**Background and Motivation**\n\nI have a decade of product manager experience and have founded several startups (mostly commercial disasters). However, I was never the tech guy. I’m that creative type of product manager who developers often see as a mix between Andy Warhol and a piece of furniture. So I’m 100% not a developer.\n\n**How did I start GPT coding?**\n\nAt first, I just asked GPT to explain some code to me. Then I started asking it to correct small parts of business logic. Eventually, I began experimenting with simple Python scripts for repetitive tasks and finally tried building basic full-stack web applications.\n\n**My AI Toolkit**\n\n1. GPT-4/4o: My go-to for generating new code, brainstorming architecture, and technical solutions. It’s slow and has its bad days, but I’ve adapted to its quirks. I use a custom GPT model with presets, named after my first CTO.\n2. GPT-3.5: For simpler tasks and when I hit GPT-4’s limits. It’s faster and helps with terminal requests and Git management.\n3. Anthropic: A backup when GPT-4 is stuck. I use it sparingly due to the cost through my developer account.\n4. GitHub Copilot in VSCode: My most-used tool. Select the code, get what I need. Not the smartest, but incredibly helpful.\n5. GitHub In-line Copilot: I can’t imagine coding without it now.\n\n**How AI Changed My Development Process**\n\n1. No Design Phase: I don’t need to explain my ideas to anyone else. I use Figma just to create assets.\n2. Git is Useless: A single-user approach would be more user-friendly for solo projects.\n3. Backlog is Bullshit: I keep a task list and a general idea of what needs to be done.\n4. Creative Process: This is 100% a creative process from an engineering and conceptual standpoint.\n5. Isolation: I’ve become totally unsocialized. I rarely interact with others, which affects my communication skills and limits business opportunities.\n6. Identity Crisis: Sometimes I feel like neither a product manager nor a pro developer. If my projects fail, I worry about finding a normal job.\n\n**My Workflow and Stack**\n\nI start with Python to develop general business logic. I like Python because it's intuitive and GPT works perfectly with it. I use a microservice architecture, breaking the code into small pieces. This helps because ChatGPT loses context if the code is too large. My Python backend consists of around 20 interconnected modules with 2-15 standalone functions each.\n\n[Python Backend is a bit messy](https://preview.redd.it/nwamlakp0z5d1.png?width=1236&format=png&auto=webp&s=5e741a9f8aed2d65cb0d882d3e04b1bcaf1325f3)\n\nAnother important part of my setup is Strapi, a CMS I use for user-friendly database management and API. It's super user-friendly and free. In my setup, Strapi is the single source of truth, acting as a middleman between the backend and frontend and managing user access.\n\n[Strapi CMS](https://preview.redd.it/oy9cbyo31z5d1.png?width=1917&format=png&auto=webp&s=4414fde5d4e53011fa602a33eeac813a80c16bb4)\n\nOn the frontend, I use Vue.js. As I didn't know any frontend language, I tried Next, React, Angular, and finally decided that Vue is a bit more intuitive for me. For each framework, I looked for templates and boilerplates. For Vue, I recommend Vulk by CSS Ninja – a really good set of components.\n\nPayments: Stripe. Mailing service: reSend.\n\n**Infrastructure struggle**\n\nGoing into production was tricky. While everything seemed to work on localhost, deploying it was a different story. I spent almost three weeks figuring out how to deploy everything, which was very stressful. I HATE CORS!\n\nI can only say that I tried Vercel, Digital Ocean, Fly, Heroku. And everytime there were some problems. I don’t want to go deeper in this topic, but it seems like the next wave of internet needs some simple hosting platform for GPT Coders.\n\n**Plans**\n\nWhile I was never into coding before, now I love it so much. I can spend hours fixing bugs and adding new ones.\n\nI'm still trying to figure out if I want to hire real developers to help me with some quality issues. Probably, I'll wait for some traction first. But as far as I can see, 8D-1 is more than alive. I personally use it to handle incoming inquiries on LinkedIn.\n\n[Using my own creation](https://preview.redd.it/km4bwfbf1z5d1.png?width=466&format=png&auto=webp&s=b139b493bcbd9f0e47ffc78af05391e1bfd4a58a)\n\nI really hope this project will help me pay my bills. For $3k MRR, which is my current goal, I need around 200 paying customers. That seems doable, but wish me luck!",
+      "author": "JohannesSmith",
+      "score": 16,
+      "date": "2024-06-11 16:48:55.000000",
+      "created_at": "2024-06-11 16:48:55.000000",
+      "url": "https://reddit.com/r/ChatGPTCoding/comments/1ddiuyw/coding_saas_with_ai_full_workflow_and_experience/",
+      "subreddit": "ChatGPTCoding",
+      "category": [
+        "api-integration",
+        "context-management"
+      ],
+      "keyQuotes": [
+        "com/link/1ddiuyw/video/aa8f7fui0z5d1/player\n\nI know everyone hates posts with promotions, but this project is incredibly important to me",
+        "width=1236&format=png&auto=webp&s=5e741a9f8aed2d65cb0d882d3e04b1bcaf1325f3)\n\nAnother important part of my setup is Strapi, a CMS I use for user-friendly database management and API"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-43-2024-05-31",
+      "csvRow": 43,
+      "title": "Current state of AI coding in June 2024 ? Give me your workflows",
+      "body": "I am still doing the old\n\n1. Create prompt for simple v1\n2. Give to chat gpt and ask clarifying questions and adjust my prompt\n3. Break it into steps and go through each step at a high level\n4. If successful then bring into cursor AI and give it full context and make additional changes\n\n&#x200B;\n\nI use .NET/Blazor/Unity\n\n&#x200B;\n\nWhat about everyone else?  \n\nAny new tools out there that really make a difference ?  They all seem the same to me..\n\nAider is cool concept but never really works for me yet.",
+      "author": "punkouter23",
+      "score": 69,
+      "date": "2024-05-31 12:56:09.000000",
+      "created_at": "2024-05-31 12:56:09.000000",
+      "url": "https://reddit.com/r/ChatGPTCoding/comments/1d50eap/current_state_of_ai_coding_in_june_2024_give_me/",
+      "subreddit": "ChatGPTCoding",
+      "category": [
+        "prompting",
+        "context-management"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-44-2024-04-25",
+      "csvRow": 44,
+      "title": "Claude or GPT? Both, and Greptile. A lazy developers guide to remain comfortably lazy while developing.",
+      "body": "### Is one better than the other? \n\nPersonally, yes, I think Claude is a lot better at almost everything, but **only with sufficient prompting following Anthropic’s documentation**\n\nGPT is only better at understanding us when we are not very good at explaining what we want. That’s all about GPT is good for. So let’s get it to explain what we want for us!\n\nTo provide an analogy, GPT is an educated guy who speaks great english and is very helpful.\n\nClaude is that one megamind Chinese student who tries his best but still has a small language barrier with others (in this case, humans). \n\nThe English kid is smart, helpful and educated. The Chinese kid is the same, but much more enthusiastic and cooperative, and motivated. \n\nBoth are helpful, but if the Chinese kid was speaking the same language as you, it would appear as if he’s less helpful.\n\nThat’s what your problem with Claude is. Language. Specifically, XML. You’ve heard about it, but have you done it? You’re wasting your subscription if you aren’t. The difference is game changing.\n\nI see a lot of chatter about which should I use? Claude? GPT? The answer is both, for different tasks. Greptile too, but more on that down further.\n\n## Here's my workflow:\n\n1. Custom ChatGPT Claude Prompt Generator using Anthropic's prompt engineering documentation in uploaded reference material to craft prompts for Claude from my natural language.\n\n2. GPT generates XML formatted and structured instructions and tasks for Claude to easily digest and provide optimal output.\n\n### Step 1: \nFlesh out an idea and ask Opus to create a detailed explanation of the task at hand and propose a potential workflow to build a solution.\n\n### Step 2: \nFeed Opus' idea to my ChatGPT prompt generator and have it produce a prompt in XML format with code snippets as example outputs, roles (you are a senior software dev), and structured tasks and contexts.\n\n*ChatGPT is surprisingly good at generating Claude XML if you give it the documentation.*\n\n### Step 3: \nGet Sonnet to generate the initial solution and code with the ChatGPT formatted prompt.\n\n### Step 4:\nFeed the Sonnet code back to my ChatGPT Prompt to construct an XML prompt asking Claude to verify the code against the initial Sonnet prompt and review any errors, improvements, inaccuracies or other observations.\n\n### Step 5: \nFeed the validation prompt, the initial prompt, and the code into Opus. The XML formatted GPT prompt is actually essential for making sure Opus understands what each file is and what to do with it.\n\n### Step 6: \nUse Opus to regenerate certain parts of code or observations for improvement it has made in Sonnets code, with many-shot approach. Verify against chatGPT in a non-custom chat for an additional review of Opus changes (usually not helpful, but sometimes it spots something Claude can use to improve its code)\n\n### Step 7: \nIf any issues are not making progress, just fix and touch them up myself.\n\n### Step 8: \nVerify the finished code between a Non-custom GPT and Opus simultaneously, multiple times.\n\n### Step 9: \nDocument all of your steps in this process, feed the original idea to Opus, your documented steps, your desired output, and your entire codebase and ask it produce:\n\n*a summary and explanation of this code within the context of its role in the project and the code structure outlined, and for an audience that consists of AI who will use the explanation to expand the codebase without prior knowledge of this file but recognising its existence and compatibility considerations* or something along those lines.\n\n### Step Infinity: \nUse this summary as context for working on a fresh module or area of your code when repeating the process :)\n\n### Greptile:\n\nTo review a completed code base, use Greptile. Not Cursor, not aids (or whatever else it's called), not Codeium. Currently, codebases with these GPT or Claude assisted platforms will fuck with the quality of your output, and I haven’t figured out a way to avoid that. Multiple files, specifically. \n\nIt's worth aggregating everything into one or two files and then modularising it manually later. \nYou can denote each file in the aggregated file by headers and include the code base in your prompt is denoted by header files in an aggregated compilation.\n\nGreptile is the only platform that can actually productively use an entire code base. I highly suggest using Greptile at all advanced stages in your projects development, as Claude and GPT are not even close to Greptiles ability to contextualise code. Greptile can help generate prompts with contextual reminders.\n\nGreptile frequently identifies things for Claude or GPT to collaborate on fixing.\n\n### Notes\n\nYou'll know that the models can't do much more for you when they both start suggesting the same minor improvements. They'll usually suggest different improvements, which is good.\n\nI find that ChatGPT can sometimes spot things Opus can't, but using that information I can instruct Opus to correct the problem and it does so better than GPT.\n\nIn summary, GPT and Opus are a strong tag team at planning, small logical revisions and debugging, but you're wasting tokens using Opus to generate code, and you're wasting time using GPT to generate code.\n\nI don't really care what benchmarks say, because the benchmarked GPT models are definitely not what you get with a GPT subscription or API key.\n\nAnthropic's public models seem to be more aligned with their benchmarked models. Perhaps context window is key, or perhaps quality of training data surpasses quantity of training data, and perhaps the benchmarks we have currently are not as applicable for assisting developers who aren't PhD AI researchers conducting benchmark tests.\n\nClaude just has more energy. He's like that guy who wants to help and puts his hand up to answer questions in class. GPT acts like I'm not paying it enough to be at work. \n\nEven if GPT was benchmarked significantly higher than Claude, you're still going to get more done with the enthusiastic guy.\n\n### Collaboration \n\nThey also work very well together if you explain that you are using both of them to collaborate on a project.\n\nThey seem to understand the pitfalls and areas to focus on when they know an AI generated code from a prompt that they generated for that AI.\n\nThe context of being paired with each other in collaboration allows GPT to understand why Claude generated code that is different to how it would have generated code, given the prompt it had generated.\n\nFor example, for GPT: \"You are collaborating with Claude. You generated this prompt for Claude, and Claude responded with this output\" somewhere in your GPT prompts.\n\nSonnet is quite capable and fast, too. For less complex projects, even Haiku is very reliable.\n\n- Opus acts as a project director and supervisor. \n- GPT acts as a manager. \n- Sonnet and Haiku act as the developers. \n- Greptile acts as an external auditor\n\n### Confidence:\n\nWhen generating solutions with Opus or GPT, ask for a confidence score based on a number of factors relevant to your project, and ask Opus to elaborate on why the confidence score out of 100 is low or high. Make sure to inform Opus uncertainty of hallucinations are a confidence score crusher. **Every time**\n\n### Example CustomGPT with some knowledge files:\n\nhttps://pastebin.com/5tn0Ayxv\n\nThis is an example of a practical solution with some knowledge files, see my comment below for a baseline to create your own specific GPT from.\n\nYou want to condense the system prompt and information to only what is necessary. For GPT, less is more.\n\nYou can try this example here:\n\nhttps://chat.openai.com/g/g-F3UCT7Sa7-claude-code-gen-prompt-generator\n\nIt does not include custom api reference or prompt examples. They should be specific for your task.\n\nNote: Your knowledge base should be in markdown format, in txt files.",
+      "author": "ThePlotTwisterr----",
+      "score": 95,
+      "date": "2024-04-25 03:28:28.000000",
+      "created_at": "2024-04-25 03:28:28.000000",
+      "url": "https://reddit.com/r/ChatGPTCoding/comments/1cclxfh/claude_or_gpt_both_and_greptile_a_lazy_developers/",
+      "subreddit": "ChatGPTCoding",
+      "category": [
+        "api-integration",
+        "prompting",
+        "context-management"
+      ],
+      "keyQuotes": [
+        "I see a lot of chatter about which should I use",
+        "The XML formatted GPT prompt is actually essential for making sure Opus understands what each file is and what to do with it",
+        "They should be specific for your task"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-45-2024-03-25",
+      "csvRow": 45,
+      "title": "How have AI tools improved your workflow?",
+      "body": "For me it is:\n\n- copilot suggesting stuff. Although i have found out that one needs to be careful as suggestion often can contain bugs. I often use code comments to make request to copilot directly.\n\n- chat gpt replacing stack overflow to some extent. I just ask it to create some SMALL snippets of code i would be able to create myself anyway, but i'm just too lazy to look for specific function names and so on.\n\n- chat gpt debugging stuff. Great for just pasting stuff into it and asking why it doesnt work. Probably saved me many hours of work that way.\n\n- writing emails/messages or improving grammar. I sometimes just pass my random stream of consciousness into chat gpt and it creates a nice email for me that i can send to the client.\n\nRight now im looking into some tool that would generate css from graphical project or maybe even take adobe xd or figma as an input.",
+      "author": "Typical_Bear_264",
+      "score": 31,
+      "date": "2024-03-25 21:43:28.000000",
+      "created_at": "2024-03-25 21:43:28.000000",
+      "url": "https://reddit.com/r/webdev/comments/1bnq05x/how_have_ai_tools_improved_your_workflow/",
+      "subreddit": "webdev",
+      "category": [
+        "general"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-46-2024-01-30",
+      "csvRow": 46,
+      "title": "What is everyones workflow for creating a app from scratch ? What about external tools ?",
+      "body": "I have still been trying various tools but at the moment it is \n\nFor creating a new app:\n\n1. Create a detailed description with instructions to break it down into 10 steps and ask clarifying questions\n2. Get details for each of the 10 steps one at a time and work on it till it is complete and working \n3. Keep doing this until step 10 then I check it into github and deploy it to azure\n\nThen when making changed:\n\n 1. Load it into Cursor AI and ask for changes\n\n2. Use Copilot to give suggestions during manual coding.\n\n&#x200B;\n\n&#x200B;\n\nIs there anything better yet?  \n\nI see tools like [big-AGI](https://get.big-agi.com/) that seem to give different UIs but the same basic idea.\n\nI am doing .NET and making mini apps\n\nIf anyone wants to discuss in my tiny discord channel that could be helpful.\n\nWhat tools should I know about I am not using ? \n\n&#x200B;\n\n&#x200B;",
+      "author": "punkouter23",
+      "score": 18,
+      "date": "2024-01-30 20:13:34.000000",
+      "created_at": "2024-01-30 20:13:34.000000",
+      "url": "https://reddit.com/r/ChatGPTCoding/comments/1aey2b4/what_is_everyones_workflow_for_creating_a_app/",
+      "subreddit": "ChatGPTCoding",
+      "category": [
+        "general"
+      ],
+      "keyQuotes": [
+        "What tools should I know about I am not using"
+      ],
+      "validationStatus": "verified"
+    },
+    {
+      "id": "post-47-2024-01-03",
+      "csvRow": 47,
+      "title": "After months over trying various AI tools... what is workflow/tools are working for you in 2024?",
+      "body": "So far I have got it down to using 4 tools\n\n1. ChatGPT4 - For new projects.. Give a description.. say 'ask at least 15 clarifying questions'.. get the steps... get the details and code of each stop and go from there\n2. CoPilot - I quit it for awhile and tried others but went back when it got the \n3.  function\n4. Cosine - Still testing it.. suppose to read the code context also\n5. Cursor AI - Reads context and gives me best answers.. but sadly its not a VSCODE plugin so I gotta keep opening it and closing it..\n\n&#x200B;\n\nBeen using them all to test out making new simple projects... and then making modifications..\n\n  \nThere are tools that attempt to automate the entire thing but for what I do (.net) it can't seem to get anything right beyond a console app... one idea I had is maybe have it create console apps with the functionality i need and then bring in the pieces into the main program myself",
+      "author": "punkouter23",
+      "score": 55,
+      "date": "2024-01-03 20:06:07.000000",
+      "created_at": "2024-01-03 20:06:07.000000",
+      "url": "https://reddit.com/r/ChatGPTCoding/comments/18xzxfu/after_months_over_trying_various_ai_tools_what_is/",
+      "subreddit": "ChatGPTCoding",
+      "category": [
+        "context-management"
+      ],
+      "keyQuotes": [],
+      "validationStatus": "verified"
+    }
+  ],
+  "timeline": {
+    "2025-06": {
+      "posts": 1,
+      "avgScore": 35,
+      "topPost": {
+        "title": "Agentic Project Management - My AI workflow",
+        "score": 35,
+        "author": "Cobuter_Man"
+      }
+    },
+    "2025-05": {
+      "posts": 8,
+      "avgScore": 127,
+      "topPost": {
+        "title": "The Ultimate Vibe Coding Guide",
+        "score": 420,
+        "author": "PhraseProfessional54"
+      }
+    },
+    "2025-04": {
+      "posts": 8,
+      "avgScore": 87,
+      "topPost": {
+        "title": "Updated my cursor vibe coding guide (500 stars)",
+        "score": 354,
+        "author": "EnzeDfu"
+      }
+    },
+    "2025-03": {
+      "posts": 6,
+      "avgScore": 104,
+      "topPost": {
+        "title": "My Cursor AI Workflow That Actually Works",
+        "score": 300,
+        "author": "namanyayg"
+      }
+    },
+    "2025-02": {
+      "posts": 5,
+      "avgScore": 78,
+      "topPost": {
+        "title": "Cursor IDE: Setup and Workflow in Larger Projects",
+        "score": 137,
+        "author": "Kirmark"
+      }
+    },
+    "2025-01": {
+      "posts": 3,
+      "avgScore": 44,
+      "topPost": {
+        "title": "My guide to using Styles effectively.",
+        "score": 88,
+        "author": "dilberryhoundog"
+      }
+    },
+    "2024-12": {
+      "posts": 3,
+      "avgScore": 175,
+      "topPost": {
+        "title": "The GOAT workflow",
+        "score": 313,
+        "author": "RonaldTheRight"
+      }
+    },
+    "2024-11": {
+      "posts": 2,
+      "avgScore": 39,
+      "topPost": {
+        "title": "Bolt vs. v0 vs. Cursor: A Beginner’s Guide to AI Coding Tools",
+        "score": 49,
+        "author": "kevinkernx"
+      }
+    },
+    "2024-10": {
+      "posts": 2,
+      "avgScore": 46,
+      "topPost": {
+        "title": "What does your AI workflow look like while coding?",
+        "score": 48,
+        "author": "CaliforniaHope"
+      }
+    },
+    "2024-09": {
+      "posts": 1,
+      "avgScore": 410,
+      "topPost": {
+        "title": "The lazy programmer's guide to AI coding. ",
+        "score": 410,
+        "author": "illusionst"
+      }
+    },
+    "2024-08": {
+      "posts": 2,
+      "avgScore": 30,
+      "topPost": {
+        "title": "Share your best coding workflow together with your AI subscriptions.",
+        "score": 38,
+        "author": "anonymous_2600"
+      }
+    },
+    "2024-06": {
+      "posts": 1,
+      "avgScore": 16,
+      "topPost": {
+        "title": "Coding SaaS with AI: full workflow and experience notes",
+        "score": 16,
+        "author": "JohannesSmith"
+      }
+    },
+    "2024-05": {
+      "posts": 1,
+      "avgScore": 69,
+      "topPost": {
+        "title": "Current state of AI coding in June 2024 ? Give me your workflows",
+        "score": 69,
+        "author": "punkouter23"
+      }
+    },
+    "2024-04": {
+      "posts": 1,
+      "avgScore": 95,
+      "topPost": {
+        "title": "Claude or GPT? Both, and Greptile. A lazy developers guide to remain comfortably lazy while developing.",
+        "score": 95,
+        "author": "ThePlotTwisterr----"
+      }
+    },
+    "2024-03": {
+      "posts": 1,
+      "avgScore": 31,
+      "topPost": {
+        "title": "How have AI tools improved your workflow?",
+        "score": 31,
+        "author": "Typical_Bear_264"
+      }
+    },
+    "2024-01": {
+      "posts": 2,
+      "avgScore": 37,
+      "topPost": {
+        "title": "After months over trying various AI tools... what is workflow/tools are working for you in 2024?",
+        "score": 55,
+        "author": "punkouter23"
+      }
+    }
+  },
+  "contributors": {
+    "Cobuter_Man": {
+      "posts": 1,
+      "totalScore": 35,
+      "avgScore": 35,
+      "topPost": {
+        "title": "Agentic Project Management - My AI workflow",
+        "score": 35,
+        "url": "https://reddit.com/r/cursor/comments/1l2p2y6/agentic_project_management_my_ai_workflow/"
+      },
+      "firstPost": "2025-06-03 22:13:52.000000",
+      "lastPost": "2025-06-03 22:13:52.000000"
+    },
+    "aarontatlorg33k": {
+      "posts": 1,
+      "totalScore": 29,
+      "avgScore": 29,
+      "topPost": {
+        "title": "Manifest.md (workflow_state.md) + GitSHA’s = God Mode",
+        "score": 29,
+        "url": "https://reddit.com/r/cursor/comments/1l00f5y/manifestmd_workflow_statemd_gitshas_god_mode/"
+      },
+      "firstPost": "2025-05-31 15:56:10.000000",
+      "lastPost": "2025-05-31 15:56:10.000000"
+    },
+    "Temporary_Category93": {
+      "posts": 1,
+      "totalScore": 17,
+      "avgScore": 17,
+      "topPost": {
+        "title": "My Workflow for Generating and Maintaining Deep Context in Cursor",
+        "score": 17,
+        "url": "https://reddit.com/r/cursor/comments/1kvl1aw/my_workflow_for_generating_and_maintaining_deep/"
+      },
+      "firstPost": "2025-05-26 03:57:46.000000",
+      "lastPost": "2025-05-26 03:57:46.000000"
+    },
+    "gtgderek": {
+      "posts": 1,
+      "totalScore": 17,
+      "avgScore": 17,
+      "topPost": {
+        "title": "Guide to Using AI Agents with Existing Codebases",
+        "score": 17,
+        "url": "https://reddit.com/r/cursor/comments/1knnmj1/guide_to_using_ai_agents_with_existing_codebases/"
+      },
+      "firstPost": "2025-05-16 00:20:42.000000",
+      "lastPost": "2025-05-16 00:20:42.000000"
+    },
+    "MironPuzanov": {
+      "posts": 1,
+      "totalScore": 167,
+      "avgScore": 167,
+      "topPost": {
+        "title": "Guide on how you can think about selecting models by Cursor team",
+        "score": 167,
+        "url": "https://reddit.com/r/cursor/comments/1km9spy/guide_on_how_you_can_think_about_selecting_models/"
+      },
+      "firstPost": "2025-05-14 08:07:50.000000",
+      "lastPost": "2025-05-14 08:07:50.000000"
+    },
+    "gonnaz": {
+      "posts": 1,
+      "totalScore": 26,
+      "avgScore": 26,
+      "topPost": {
+        "title": "Claude Code, whats your workflow?",
+        "score": 26,
+        "url": "https://reddit.com/r/ClaudeAI/comments/1km4boi/claude_code_whats_your_workflow/"
+      },
+      "firstPost": "2025-05-14 02:28:25.000000",
+      "lastPost": "2025-05-14 02:28:25.000000"
+    },
+    "PhraseProfessional54": {
+      "posts": 2,
+      "totalScore": 720,
+      "avgScore": 360,
+      "topPost": {
+        "title": "The Ultimate Vibe Coding Guide",
+        "score": 420,
+        "url": "https://reddit.com/r/ClaudeAI/comments/1kivv0w/the_ultimate_vibe_coding_guide/"
+      },
+      "firstPost": "2025-05-09 20:22:33.000000",
+      "lastPost": "2025-05-09 23:01:18.000000"
+    },
+    "namanyayg": {
+      "posts": 4,
+      "totalScore": 564,
+      "avgScore": 141,
+      "topPost": {
+        "title": "My Cursor AI Workflow That Actually Works",
+        "score": 300,
+        "url": "https://reddit.com/r/cursor/comments/1jd4s83/my_cursor_ai_workflow_that_actually_works/"
+      },
+      "firstPost": "2025-03-17 04:42:42.000000",
+      "lastPost": "2025-05-05 20:07:44.000000"
+    },
+    "EnzeDfu": {
+      "posts": 1,
+      "totalScore": 354,
+      "avgScore": 354,
+      "topPost": {
+        "title": "Updated my cursor vibe coding guide (500 stars)",
+        "score": 354,
+        "url": "https://reddit.com/r/cursor/comments/1k6zosu/updated_my_cursor_vibe_coding_guide_500_stars/"
+      },
+      "firstPost": "2025-04-24 18:33:34.000000",
+      "lastPost": "2025-04-24 18:33:34.000000"
+    },
+    "eastwindtoday": {
+      "posts": 1,
+      "totalScore": 112,
+      "avgScore": 112,
+      "topPost": {
+        "title": "Cursor is like a junior dev, guide it step by step",
+        "score": 112,
+        "url": "https://reddit.com/r/cursor/comments/1k5826a/cursor_is_like_a_junior_dev_guide_it_step_by_step/"
+      },
+      "firstPost": "2025-04-22 14:44:14.000000",
+      "lastPost": "2025-04-22 14:44:14.000000"
+    },
+    "gplusplus314": {
+      "posts": 1,
+      "totalScore": 17,
+      "avgScore": 17,
+      "topPost": {
+        "title": "ELI5: AI-assisted coding workflow in Zed?",
+        "score": 17,
+        "url": "https://reddit.com/r/ZedEditor/comments/1k0olhi/eli5_aiassisted_coding_workflow_in_zed/"
+      },
+      "firstPost": "2025-04-16 16:25:51.000000",
+      "lastPost": "2025-04-16 16:25:51.000000"
+    },
+    "hottown": {
+      "posts": 1,
+      "totalScore": 16,
+      "avgScore": 16,
+      "topPost": {
+        "title": "Structured Workflow for “Vibe Coding” Fullstack Apps",
+        "score": 16,
+        "url": "https://reddit.com/r/cursor/comments/1k0hpsf/structured_workflow_for_vibe_coding_fullstack_apps/"
+      },
+      "firstPost": "2025-04-16 11:06:53.000000",
+      "lastPost": "2025-04-16 11:06:53.000000"
+    },
+    "BennyHungry": {
+      "posts": 1,
+      "totalScore": 43,
+      "avgScore": 43,
+      "topPost": {
+        "title": "My Workflow using Gemini 2.5 Pro as CTO",
+        "score": 43,
+        "url": "https://reddit.com/r/cursor/comments/1juhi7j/my_workflow_using_gemini_25_pro_as_cto/"
+      },
+      "firstPost": "2025-04-08 16:16:13.000000",
+      "lastPost": "2025-04-08 16:16:13.000000"
+    },
+    "TheKidd": {
+      "posts": 1,
+      "totalScore": 46,
+      "avgScore": 46,
+      "topPost": {
+        "title": "Here’s My Cursor Workflow – What’s Yours?",
+        "score": 46,
+        "url": "https://reddit.com/r/cursor/comments/1jtna0m/heres_my_cursor_workflow_whats_yours/"
+      },
+      "firstPost": "2025-04-07 14:57:53.000000",
+      "lastPost": "2025-04-07 14:57:53.000000"
+    },
+    "influbit": {
+      "posts": 1,
+      "totalScore": 16,
+      "avgScore": 16,
+      "topPost": {
+        "title": "Guide on MCP for GitHub Copilot",
+        "score": 16,
+        "url": "https://reddit.com/r/GithubCopilot/comments/1jrpena/guide_on_mcp_for_github_copilot/"
+      },
+      "firstPost": "2025-04-04 23:07:51.000000",
+      "lastPost": "2025-04-04 23:07:51.000000"
+    },
+    "thezachlandes": {
+      "posts": 1,
+      "totalScore": 89,
+      "avgScore": 89,
+      "topPost": {
+        "title": "A simple guide to setting up Gemini 2.5 Pro, free, without running into 3rd party rate limits",
+        "score": 89,
+        "url": "https://reddit.com/r/ChatGPTCoding/comments/1jrp1tj/a_simple_guide_to_setting_up_gemini_25_pro_free/"
+      },
+      "firstPost": "2025-04-04 22:51:26.000000",
+      "lastPost": "2025-04-04 22:51:26.000000"
+    },
+    "chongdashu": {
+      "posts": 1,
+      "totalScore": 34,
+      "avgScore": 34,
+      "topPost": {
+        "title": "A Practical Guide to Browser Tools MCP Server: Stop Manually Copy Pasting Logs / Screenshots from Chrome into Cursor - Beginner Friendly",
+        "score": 34,
+        "url": "https://reddit.com/r/cursor/comments/1j4h786/a_practical_guide_to_browser_tools_mcp_server/"
+      },
+      "firstPost": "2025-03-05 23:17:20.000000",
+      "lastPost": "2025-03-05 23:17:20.000000"
+    },
+    "7ven7o": {
+      "posts": 1,
+      "totalScore": 27,
+      "avgScore": 27,
+      "topPost": {
+        "title": "Not too keen about the \"Agent\" being shoehorned into my workflow",
+        "score": 27,
+        "url": "https://reddit.com/r/cursor/comments/1j2m1bo/not_too_keen_about_the_agent_being_shoehorned/"
+      },
+      "firstPost": "2025-03-03 16:04:01.000000",
+      "lastPost": "2025-03-03 16:04:01.000000"
+    },
+    "Relevant-Fix2159": {
+      "posts": 1,
+      "totalScore": 35,
+      "avgScore": 35,
+      "topPost": {
+        "title": "Quick Guide: Connecting Supabase to Cursor via MCP (talk to your database)",
+        "score": 35,
+        "url": "https://reddit.com/r/cursor/comments/1j17kgo/quick_guide_connecting_supabase_to_cursor_via_mcp/"
+      },
+      "firstPost": "2025-03-01 19:28:35.000000",
+      "lastPost": "2025-03-01 19:28:35.000000"
+    },
+    "ivposure": {
+      "posts": 1,
+      "totalScore": 28,
+      "avgScore": 28,
+      "topPost": {
+        "title": "A Cursor extension that guides you step by step in building apps and coding with AI",
+        "score": 28,
+        "url": "https://reddit.com/r/cursor/comments/1j0cvyu/a_cursor_extension_that_guides_you_step_by_step/"
+      },
+      "firstPost": "2025-02-28 17:15:41.000000",
+      "lastPost": "2025-02-28 17:15:41.000000"
+    },
+    "jasonzhou1993": {
+      "posts": 1,
+      "totalScore": 34,
+      "avgScore": 34,
+      "topPost": {
+        "title": "Those MCP totally 10x my Cursor workflow",
+        "score": 34,
+        "url": "https://reddit.com/r/cursor/comments/1ixsc8j/those_mcp_totally_10x_my_cursor_workflow/"
+      },
+      "firstPost": "2025-02-25 10:56:11.000000",
+      "lastPost": "2025-02-25 10:56:11.000000"
+    },
+    "AIAppHacker": {
+      "posts": 1,
+      "totalScore": 134,
+      "avgScore": 134,
+      "topPost": {
+        "title": "Maximizing Cursor AI – What’s Your Best Workflow Hack?",
+        "score": 134,
+        "url": "https://reddit.com/r/cursor/comments/1ipqiyg/maximizing_cursor_ai_whats_your_best_workflow_hack/"
+      },
+      "firstPost": "2025-02-15 01:31:34.000000",
+      "lastPost": "2025-02-15 01:31:34.000000"
+    },
+    "Kirmark": {
+      "posts": 1,
+      "totalScore": 137,
+      "avgScore": 137,
+      "topPost": {
+        "title": "Cursor IDE: Setup and Workflow in Larger Projects",
+        "score": 137,
+        "url": "https://reddit.com/r/cursor/comments/1ikq9m6/cursor_ide_setup_and_workflow_in_larger_projects/"
+      },
+      "firstPost": "2025-02-08 15:52:12.000000",
+      "lastPost": "2025-02-08 15:52:12.000000"
+    },
+    "kevinkernx": {
+      "posts": 2,
+      "totalScore": 106,
+      "avgScore": 53,
+      "topPost": {
+        "title": "A Guide to understand new .cursor/rules in 0.45 (.cursorrules)",
+        "score": 57,
+        "url": "https://reddit.com/r/cursor/comments/1ik06ol/a_guide_to_understand_new_cursorrules_in_045/"
+      },
+      "firstPost": "2024-11-22 06:05:20.000000",
+      "lastPost": "2025-02-07 17:16:39.000000"
+    },
+    "qwertyMu": {
+      "posts": 1,
+      "totalScore": 22,
+      "avgScore": 22,
+      "topPost": {
+        "title": "Slowly come to the realisation that I want a coding workflow augmented by machine intelligence.",
+        "score": 22,
+        "url": "https://reddit.com/r/ChatGPTCoding/comments/1i93dgo/slowly_come_to_the_realisation_that_i_want_a/"
+      },
+      "firstPost": "2025-01-24 19:13:41.000000",
+      "lastPost": "2025-01-24 19:13:41.000000"
+    },
+    "dilberryhoundog": {
+      "posts": 1,
+      "totalScore": 88,
+      "avgScore": 88,
+      "topPost": {
+        "title": "My guide to using Styles effectively.",
+        "score": 88,
+        "url": "https://reddit.com/r/ClaudeAI/comments/1i4c6jx/my_guide_to_using_styles_effectively/"
+      },
+      "firstPost": "2025-01-18 17:12:26.000000",
+      "lastPost": "2025-01-18 17:12:26.000000"
+    },
+    "Bjornhub1": {
+      "posts": 1,
+      "totalScore": 22,
+      "avgScore": 22,
+      "topPost": {
+        "title": "Best AI Developer Tools & Workflows for Software Dev: Which Do You Recommend?",
+        "score": 22,
+        "url": "https://reddit.com/r/ChatGPTCoding/comments/1i3265w/best_ai_developer_tools_workflows_for_software/"
+      },
+      "firstPost": "2025-01-16 23:11:09.000000",
+      "lastPost": "2025-01-16 23:11:09.000000"
+    },
+    "Sherisabre": {
+      "posts": 1,
+      "totalScore": 21,
+      "avgScore": 21,
+      "topPost": {
+        "title": "Absolutely Loving the workflow ever since i added these instructions to the cursor rules",
+        "score": 21,
+        "url": "https://reddit.com/r/cursor/comments/1hoths8/absolutely_loving_the_workflow_ever_since_i_added/"
+      },
+      "firstPost": "2024-12-29 05:39:05.000000",
+      "lastPost": "2024-12-29 05:39:05.000000"
+    },
+    "RonaldTheRight": {
+      "posts": 1,
+      "totalScore": 313,
+      "avgScore": 313,
+      "topPost": {
+        "title": "The GOAT workflow",
+        "score": 313,
+        "url": "https://reddit.com/r/ChatGPTCoding/comments/1hinwsr/the_goat_workflow/"
+      },
+      "firstPost": "2024-12-20 11:45:43.000000",
+      "lastPost": "2024-12-20 11:45:43.000000"
+    },
+    "Historical-Internal3": {
+      "posts": 1,
+      "totalScore": 190,
+      "avgScore": 190,
+      "topPost": {
+        "title": "A \"Just use API\" Guide",
+        "score": 190,
+        "url": "https://reddit.com/r/ClaudeAI/comments/1heibgb/a_just_use_api_guide/"
+      },
+      "firstPost": "2024-12-15 01:56:45.000000",
+      "lastPost": "2024-12-15 01:56:45.000000"
+    },
+    "Wei_Will": {
+      "posts": 1,
+      "totalScore": 29,
+      "avgScore": 29,
+      "topPost": {
+        "title": "How to Set Up Qwen2.5-Coder-32B in Cursor: A Step-by-Step Guide",
+        "score": 29,
+        "url": "https://reddit.com/r/cursor/comments/1gvgbrz/how_to_set_up_qwen25coder32b_in_cursor_a/"
+      },
+      "firstPost": "2024-11-19 22:32:26.000000",
+      "lastPost": "2024-11-19 22:32:26.000000"
+    },
+    "BeneficialAd3800": {
+      "posts": 1,
+      "totalScore": 44,
+      "avgScore": 44,
+      "topPost": {
+        "title": "8 Tips for using Cursor in a pro workflow",
+        "score": 44,
+        "url": "https://reddit.com/r/cursor/comments/1g56tlc/8_tips_for_using_cursor_in_a_pro_workflow/"
+      },
+      "firstPost": "2024-10-16 14:45:47.000000",
+      "lastPost": "2024-10-16 14:45:47.000000"
+    },
+    "CaliforniaHope": {
+      "posts": 1,
+      "totalScore": 48,
+      "avgScore": 48,
+      "topPost": {
+        "title": "What does your AI workflow look like while coding?",
+        "score": 48,
+        "url": "https://reddit.com/r/ChatGPTCoding/comments/1g0mrus/what_does_your_ai_workflow_look_like_while_coding/"
+      },
+      "firstPost": "2024-10-10 12:25:06.000000",
+      "lastPost": "2024-10-10 12:25:06.000000"
+    },
+    "illusionst": {
+      "posts": 1,
+      "totalScore": 410,
+      "avgScore": 410,
+      "topPost": {
+        "title": "The lazy programmer's guide to AI coding. ",
+        "score": 410,
+        "url": "https://reddit.com/r/ClaudeAI/comments/1fbp2a5/the_lazy_programmers_guide_to_ai_coding/"
+      },
+      "firstPost": "2024-09-07 23:56:56.000000",
+      "lastPost": "2024-09-07 23:56:56.000000"
+    },
+    "stonedoubt": {
+      "posts": 1,
+      "totalScore": 21,
+      "avgScore": 21,
+      "topPost": {
+        "title": "Workflow w/multiple tools",
+        "score": 21,
+        "url": "https://reddit.com/r/ChatGPTCoding/comments/1f4lfga/workflow_wmultiple_tools/"
+      },
+      "firstPost": "2024-08-29 23:21:42.000000",
+      "lastPost": "2024-08-29 23:21:42.000000"
+    },
+    "anonymous_2600": {
+      "posts": 1,
+      "totalScore": 38,
+      "avgScore": 38,
+      "topPost": {
+        "title": "Share your best coding workflow together with your AI subscriptions.",
+        "score": 38,
+        "url": "https://reddit.com/r/ChatGPTCoding/comments/1eznent/share_your_best_coding_workflow_together_with/"
+      },
+      "firstPost": "2024-08-23 16:49:28.000000",
+      "lastPost": "2024-08-23 16:49:28.000000"
+    },
+    "JohannesSmith": {
+      "posts": 1,
+      "totalScore": 16,
+      "avgScore": 16,
+      "topPost": {
+        "title": "Coding SaaS with AI: full workflow and experience notes",
+        "score": 16,
+        "url": "https://reddit.com/r/ChatGPTCoding/comments/1ddiuyw/coding_saas_with_ai_full_workflow_and_experience/"
+      },
+      "firstPost": "2024-06-11 16:48:55.000000",
+      "lastPost": "2024-06-11 16:48:55.000000"
+    },
+    "punkouter23": {
+      "posts": 3,
+      "totalScore": 142,
+      "avgScore": 47,
+      "topPost": {
+        "title": "Current state of AI coding in June 2024 ? Give me your workflows",
+        "score": 69,
+        "url": "https://reddit.com/r/ChatGPTCoding/comments/1d50eap/current_state_of_ai_coding_in_june_2024_give_me/"
+      },
+      "firstPost": "2024-01-03 20:06:07.000000",
+      "lastPost": "2024-05-31 12:56:09.000000"
+    },
+    "ThePlotTwisterr----": {
+      "posts": 1,
+      "totalScore": 95,
+      "avgScore": 95,
+      "topPost": {
+        "title": "Claude or GPT? Both, and Greptile. A lazy developers guide to remain comfortably lazy while developing.",
+        "score": 95,
+        "url": "https://reddit.com/r/ChatGPTCoding/comments/1cclxfh/claude_or_gpt_both_and_greptile_a_lazy_developers/"
+      },
+      "firstPost": "2024-04-25 03:28:28.000000",
+      "lastPost": "2024-04-25 03:28:28.000000"
+    },
+    "Typical_Bear_264": {
+      "posts": 1,
+      "totalScore": 31,
+      "avgScore": 31,
+      "topPost": {
+        "title": "How have AI tools improved your workflow?",
+        "score": 31,
+        "url": "https://reddit.com/r/webdev/comments/1bnq05x/how_have_ai_tools_improved_your_workflow/"
+      },
+      "firstPost": "2024-03-25 21:43:28.000000",
+      "lastPost": "2024-03-25 21:43:28.000000"
+    }
+  },
+  "validation": {
+    "summaryAccuracy": {
+      "timeline": {
+        "claimedPosts": 47,
+        "actualPosts": 47,
+        "match": true
+      },
+      "dateRange": {
+        "claimed": {
+          "start": "2024-01-04",
+          "end": "2025-06-04"
+        },
+        "actual": {
+          "start": "2024-01-04",
+          "end": "2025-06-04"
+        },
+        "match": true
+      },
+      "subredditDistribution": {
+        "claimed": {
+          "cursor": 25,
+          "ChatGPTCoding": 14,
+          "ClaudeAI": 5
+        },
+        "actual": {
+          "cursor": 25,
+          "ClaudeAI": 5,
+          "ZedEditor": 1,
+          "GitHubCopilot": 1,
+          "ChatGPTCoding": 14,
+          "webdev": 1
+        },
+        "match": true
+      },
+      "topPosts": {
+        "claimed": [],
+        "actual": [
+          {
+            "title": "The Ultimate Vibe Coding Guide",
+            "author": "PhraseProfessional54",
+            "score": 420,
+            "subreddit": "ClaudeAI",
+            "url": "https://reddit.com/r/ClaudeAI/comments/1kivv0w/the_ultimate_vibe_coding_guide/",
+            "created_at": "2025-05-09 23:01:18.000000"
+          },
+          {
+            "title": "The lazy programmer's guide to AI coding. ",
+            "author": "illusionst",
+            "score": 410,
+            "subreddit": "ClaudeAI",
+            "url": "https://reddit.com/r/ClaudeAI/comments/1fbp2a5/the_lazy_programmers_guide_to_ai_coding/",
+            "created_at": "2024-09-07 23:56:56.000000"
+          },
+          {
+            "title": "Updated my cursor vibe coding guide (500 stars)",
+            "author": "EnzeDfu",
+            "score": 354,
+            "subreddit": "cursor",
+            "url": "https://reddit.com/r/cursor/comments/1k6zosu/updated_my_cursor_vibe_coding_guide_500_stars/",
+            "created_at": "2025-04-24 18:33:34.000000"
+          },
+          {
+            "title": "The GOAT workflow",
+            "author": "RonaldTheRight",
+            "score": 313,
+            "subreddit": "ChatGPTCoding",
+            "url": "https://reddit.com/r/ChatGPTCoding/comments/1hinwsr/the_goat_workflow/",
+            "created_at": "2024-12-20 11:45:43.000000"
+          },
+          {
+            "title": "The Ultimate Vibe Coding Guide",
+            "author": "PhraseProfessional54",
+            "score": 300,
+            "subreddit": "cursor",
+            "url": "https://reddit.com/r/cursor/comments/1kisbaq/the_ultimate_vibe_coding_guide/",
+            "created_at": "2025-05-09 20:22:33.000000"
+          },
+          {
+            "title": "My Cursor AI Workflow That Actually Works",
+            "author": "namanyayg",
+            "score": 300,
+            "subreddit": "cursor",
+            "url": "https://reddit.com/r/cursor/comments/1jd4s83/my_cursor_ai_workflow_that_actually_works/",
+            "created_at": "2025-03-17 04:42:42.000000"
+          },
+          {
+            "title": "A \"Just use API\" Guide",
+            "author": "Historical-Internal3",
+            "score": 190,
+            "subreddit": "ClaudeAI",
+            "url": "https://reddit.com/r/ClaudeAI/comments/1heibgb/a_just_use_api_guide/",
+            "created_at": "2024-12-15 01:56:45.000000"
+          },
+          {
+            "title": "Guide on how you can think about selecting models by Cursor team",
+            "author": "MironPuzanov",
+            "score": 167,
+            "subreddit": "cursor",
+            "url": "https://reddit.com/r/cursor/comments/1km9spy/guide_on_how_you_can_think_about_selecting_models/",
+            "created_at": "2025-05-14 08:07:50.000000"
+          },
+          {
+            "title": "Cursor IDE: Setup and Workflow in Larger Projects",
+            "author": "Kirmark",
+            "score": 137,
+            "subreddit": "cursor",
+            "url": "https://reddit.com/r/cursor/comments/1ikq9m6/cursor_ide_setup_and_workflow_in_larger_projects/",
+            "created_at": "2025-02-08 15:52:12.000000"
+          },
+          {
+            "title": "Maximizing Cursor AI – What’s Your Best Workflow Hack?",
+            "author": "AIAppHacker",
+            "score": 134,
+            "subreddit": "cursor",
+            "url": "https://reddit.com/r/cursor/comments/1ipqiyg/maximizing_cursor_ai_whats_your_best_workflow_hack/",
+            "created_at": "2025-02-15 01:31:34.000000"
+          }
+        ],
+        "discrepancies": []
+      },
+      "metrics": {
+        "growthRate": {
+          "claimed": "517%",
+          "calculated": "466.7%",
+          "variance": "50.3%"
+        }
+      }
+    },
+    "additionalInsights": [
+      "Outlier post: \"The Ultimate Vibe Coding Guide\" scored 300 (3x above cursor average)",
+      "Outlier post: \"Updated my cursor vibe coding guide (500 stars)\" scored 354 (3x above cursor average)",
+      "Outlier post: \"My Cursor AI Workflow That Actually Works\" scored 300 (3x above cursor average)",
+      "Outlier post: \"The GOAT workflow\" scored 313 (3x above ChatGPTCoding average)",
+      "Most prolific contributors: namanyayg (4 posts), punkouter23 (3 posts)"
+    ],
+    "extractedQuotes": [
+      {
+        "post": "The Ultimate Vibe Coding Guide",
+        "score": 420,
+        "quote": "Through these 6 months and with a lot of fun projects personal and some production-level projects and after more than 2500+ prompts, I learned a lot of tips and tricks that make the development process much easier and faster and makes and help you vibe without so much pain when the codebase gets bigger and I wanted to make a guide for anyone who is new to this and want literally everything in one post and refer to it whenever need any guidance on what to do.  Define Your Vision Clearly\n\n**Start with a strong, detailed vision of what you want to build and how it should work"
+      },
+      {
+        "post": "The lazy programmer's guide to AI coding. ",
+        "score": 410,
+        "quote": "Step 1: Act as a Software Engineer  \nFirst, ask the AI to be a software engineer.  Pass all the relevant files and have it explain the code back to you"
+      },
+      {
+        "post": "Updated my cursor vibe coding guide (500 stars)",
+        "score": 354,
+        "quote": "Some weeks ago I made a game that went viral (3M+ views on X), and I decided to make a guide on my experience (4000 prompts according to my cursor bills) to build games with AI. com/EnzeD/vibe-coding)\n\nHappy to gather your feedback to test new technics and make it better"
+      },
+      {
+        "post": "The GOAT workflow",
+        "score": 313,
+        "quote": "I've been coding with AI more or less since it became a thing, and this is the first time I've actually found a workflow that can scale across larger projects (though large is relative) without turning into spaghetti. \n\nTwo disclaimers: First, this isn't the cheapest route--it makes heavy use of Cline--but it is the best"
+      },
+      {
+        "post": "The Ultimate Vibe Coding Guide",
+        "score": 300,
+        "quote": "Through these 6 months and with a lot of fun projects personal and some production-level projects and after more than 2500+ prompts, I learned a lot of tips and tricks that make the development process much easier and faster and makes and help you vibe without so much pain when the codebase gets bigger and I wanted to make a guide for anyone who is new to this and want literally everything in one post and refer to it whenever need any guidance on what to do.  Define Your Vision Clearly\n\n**Start with a strong, detailed vision of what you want to build and how it should work"
+      },
+      {
+        "post": "My Cursor AI Workflow That Actually Works",
+        "score": 300,
+        "quote": "I’ve been coding with Cursor AI since it was launched now while building my SaaS, and I’ve got some thoughts. \n\nThe internet seems split between “AI coding is a miracle” and “AI coding is garbage"
+      },
+      {
+        "post": "A \"Just use API\" Guide",
+        "score": 190,
+        "quote": "Created the below guide that hopefully will assist those who are interested in trying it out - especially those who are frustrated with the paid Anthropic monthly subscription:\n\n**What is an API. \n\n**How to Obtain an Anthropic API Key**\n\nHere's a detailed guide to getting your Anthropic API key:\n\n1"
+      },
+      {
+        "post": "Cursor IDE: Setup and Workflow in Larger Projects",
+        "score": 137,
+        "quote": "I have more than 10+ years of development experience and recently switched to coding only in Cursor IDE.  I spend about 6 hours every weekday coding in it, plus some extra time on weekends"
+      },
+      {
+        "post": "Maximizing Cursor AI – What’s Your Best Workflow Hack?",
+        "score": 134,
+        "quote": "I’m constantly trying out new ways to optimize my workflow to write code easier/faster. cursorrules` by having the agent \"self-improve\" the rules after a coding session"
+      },
+      {
+        "post": "My Cursor AI Workflow That Actually Works",
+        "score": 127,
+        "quote": "I’ve been coding with Cursor AI since it was launched, and I’ve got some thoughts. \n\nThe internet seems split between “AI coding is a miracle” and “AI coding is garbage"
+      }
+    ]
+  },
+  "metadata": {
+    "totalPosts": 47,
+    "dateRange": {
+      "start": 1704341167000,
+      "end": 1749014032000
+    },
+    "lastUpdated": "2025-06-05T22:52:59.958Z"
+  }
+};

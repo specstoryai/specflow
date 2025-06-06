@@ -1,0 +1,216 @@
+---
+title: "A \"Just use API\" Guide"
+description: "Score: 190 | Author: Historical-Internal3 | Subreddit: r/ClaudeAI"
+author: "Historical-Internal3"
+date: "2024-12-15"
+categories: ["multi-agent", "api-integration", "prompting", "context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">A \</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by Historical-Internal3</span>
+  <span class="date">December 15, 2024</span>
+  <span class="score">190 points</span>
+  <span class="subreddit">r/ClaudeAI</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/ClaudeAI/comments/1heibgb/a_just_use_api_guide/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+Created the below guide that hopefully will assist those who are interested in trying it out - especially those who are frustrated with the paid Anthropic monthly subscription:
+
+**What is an API?**
+
+API stands for Application Programming Interface. It's a software intermediary that allows two applications to communicate with each other. Think of it as a messenger that takes your request to a provider and delivers the response back to you. In simpler terms, an API is a set of rules and specifications that allows different software applications to interact and share data, regardless of their underlying technologies.
+
+**How to Obtain an Anthropic API Key**
+
+Here's a detailed guide to getting your Anthropic API key:
+
+1. **Create an Anthropic Account:**
+   * Go to the Anthropic website ([console.anthropic.com](https://www.google.com/url?sa=E&q=https%3A%2F%2Fconsole.anthropic.com%2Fdashboard)) and sign up for an account or log in if you already have one.
+1. **Access the API Keys Section:**
+   * Once you're logged into your account, navigate to your name/profile icon at the top right of your screen. Look for an option labeled "API Keys".
+1. **Generate a New API Key:**
+   * Click on the button "+ Create Key".
+   * You'll be prompted to give your key a name. Enter a name and click "Create Key."
+1. **Copy and Secure Your API Key:**
+   * A long string will be displayed, which is your API key. **Copy this key immediately and store it in a safe location.** You will not be able to view it again, and you'll need to generate a new one if you lose it.
+1. **Set up Billing:**
+   * I put daily limits on usage – just in case. I recommend you do the same.
+
+**Important notes:**
+
+- **Security:** Treat your API key like a password. Do not share it publicly or embed it directly in your code (if applicable). Use secure methods to store and access it.
+- You can always disable your key and create new ones if you feel any have been compromised.
+
+**API Limits - Quick Definitions:**
+
+- **Rate (Requests Per Minute - RPM):** How often you can send requests (Low to Higher).
+- **Context (Max Input Tokens):** How much the AI remembers (Smaller to Larger).
+- **Output (Max Output Tokens):** How long the AI's response can be (Shorter to Longer).
+
+[Anthropic Tiers](https://docs.anthropic.com/en/api/rate-limits)**:**
+
+- **Tier 1:**
+   * Very low rate limits (50 RPM).
+   * Small per minute context input limit (40k-50K input tokens on 3.5 models). This is the real killer for single users.
+   * Shorter responses/output (per min).
+   * **This tier will make you tear your wig off - avoid.**
+- **Tier 2**
+   * Higher rate limits (1000 RPM).
+   * Moderate per minute context input limit (80k-100k input tokens on 3.5 models).
+   * Longer responses/output (per min).
+   * **I recommend spending the $40 to get to this at least. The majority of users will probably use up their $40 within 3-6 months. Just a guess on my part FYI. Power users can gobble this up in no time, however.**
+- **Tier 3:**
+   * Higher rate limits (2000 RPM).
+   * Large per minute context input limit (160k-200k input tokens on 3.5 models).
+   * Longer responses/output (per min).
+- **Tier 4:**
+   * Highest rate limits (4,000 RPM), which means it can handle more concurrent requests.
+   * Very large per minute context input limit (up to 400k input tokens on all models).
+   * Longer responses/output (per min).
+   * **Currently this is the only tier that allows for 3.5 Sonnet's max context window of 200k input tokens (check my hyper link above to see for yourself).**
+   * **You'll need $400 currently to reach this tier.**
+
+**WARNING - YOUR API CREDITS EXPIRE AFTER 12 MONTHS FROM PURCHASE.**
+
+**Anthropic Current Models & Context:**
+
+- **Claude 3 Opus:**
+   * Has a max context window of **200k input tokens.** 4K max output tokens.
+   * Available on all tiers.
+- **Claude 3.5 Sonnet:**
+   * Has a max context window of **200k input tokens.** 8K max output tokens.
+   * Available on all tiers.
+- **Claude 3.5 Haiku:**
+   * Has a max context window of **200k input tokens.** 8K max output tokens.
+   * Available on all tiers.
+
+**Tier 4 Advantages for Multiple Users:**
+
+Tier 4's primary benefit is its high rate limits, allowing for a total of 400,000 input tokens per minute. This capacity means you could, for example, concurrently run multiple 200,000 input token context models at their maximum. This level of throughput is particularly important for applications that experience a high volume of requests.
+
+**Why Tier 4 Matters for High Traffic:**
+
+- **Handles Concurrent Requests:** Tier 4 is designed to efficiently manage simultaneous requests from many users.
+- **Prevents Overloads:** Lower tiers can become overwhelmed with a large number of users submitting queries, causing slowdowns. Tier 4 prevents these bottlenecks, ensuring smooth operation.
+- **Supports Sustained High Usage:** Tier 4 is ideal for applications requiring consistent support for heavy request loads.
+
+**Tier 4 for the Single User:**
+
+As a single, "power" user, Tier 4 essentially removes all limitations on your usage.
+
+**To clarify - Tier 4 allows up to 400k input tokens of TOTAL context per minute. It does NOT allow for any particular model to extend its context input token window capability.**
+
+**Platforms for Using Anthropic API Keys**
+
+Here are some popular platforms, categorized by their nature:
+
+**Free Platforms (just a sample of some I use):**
+
+- **Anthropic Console Workbench:** The Anthropic website itself provides a Workbench where you can experiment with the API directly in your browser. This is a good place to start exploring.
+- [TypingMind (Limited)](https://www.typingmind.com/)**:** Decent number of features for free - but ads are annoying. Check it out. Free is browser based only I believe.
+- [ChatBox (Community Edition)](https://github.com/Bin-Huang/chatbox)**:** The commercial product is also free and easy to install locally - however read the privacy policy and be sure you are good with it (I'm serious). They have a browser based one here (again, read privacy policy): [Chatbox](https://web.chatboxai.app/).
+- [Msty (Limited)](https://msty.app/): Good free feature set. Nice UI. 
+
+**Paid Platforms (just a sample of some I use):**
+
+- [TypingMind (Full Featured/Lifetime purchase)](https://www.typingmind.com/)**:** Onetime payment (try to catch it on sale sub $100) and also has a local install option if you are tech savvy enough. The unique thing about this is that you can utilize things like "Canvas" across multiple API vendors (Anthropic for example).
+- [16x Prompt](https://prompt.16x.engineer/): I use this for coding heavily. Check it out. 
+- [Msty (Lifetime)](https://msty.app/): I have not used this, but I have a friend who loves the additional features that the paid version brings. 
+
+**Open-Source Platforms (just a sample of some I use):**
+
+- [Open WebUI](https://docs.openwebui.com/)**:** An open-source platform for building AI agents and workflows that supports various model providers, including Claude. Install with [pinokio](https://pinokio.computer/) \- far easier to get you set up on it if you are unfamiliar with Docker.
+- [LibreChat (Advanced Setup)](https://www.librechat.ai/docs)**:** No pinokio installation method as of yet but another incredibly featured free open-sourced product that just released Agents as well. They also released a code interpreter feature that is not free - however if you have a need for something like this you'd understand why (sandboxed environment).
+
+Plenty of vendor options out there I'm sure - just be sure your keys are stored securely and be sure to **actually** **read the Privacy Policy** with all of them (I can't stress this enough).
+
+WARNING: This is NOT a thread for devs to blatantly promote their product. I am not associated with ANY of the above recommendations. I have contributed to the Open WebUI platform by creating some popular functions - but that is about it.
+
+Hope this helps!
+
+Edit: Modified some things. Removed my statement regarding my preference for keys not being stored in browsers - again, generally a non-issue for most. Unique issue just for me.
+
+## Key Takeaways
+
+- "**Important notes:**
+
+* **Security:** Treat your API key like a password"
+- "* **Context (Max Input Tokens):** How much the AI remembers (Smaller to Larger)"
+- "This level of throughput is particularly important for applications that experience a high volume of requests"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

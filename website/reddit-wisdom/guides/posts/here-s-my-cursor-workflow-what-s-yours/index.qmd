@@ -1,0 +1,161 @@
+---
+title: "Here’s My Cursor Workflow – What’s Yours?"
+description: "Score: 46 | Author: TheKidd | Subreddit: r/cursor"
+author: "TheKidd"
+date: "2025-04-07"
+categories: ["multi-agent", "context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Here’s My Cursor Workflow – What’s Yours?</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by TheKidd</span>
+  <span class="date">April 7, 2025</span>
+  <span class="score">46 points</span>
+  <span class="subreddit">r/cursor</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/cursor/comments/1jtna0m/heres_my_cursor_workflow_whats_yours/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+Over time, I’ve developed a structured, session-based workflow that helps me get the most out of Cursor. It’s designed to maintain focus, optimize context usage, and support continuous improvement.
+
+### Planning Process
+
+I start with a high-level planning document that outlines the entire project. This document evolves over time: early tasks are fleshed out with detailed steps, while long-term items remain flexible and lightweight.
+
+Cursor agents generate tasks from this outline using **task atomicity**—breaking work into small, focused units that each solve a single problem. This approach lets me complete most tasks within 1–2 focused sessions.
+
+Atomic tasks help optimize context usage: they contain just enough information for the agent to act effectively without overloading the context window, reducing the chances of hallucination or scope drift.
+
+### Session-Based Development
+
+I organize my workflow around **focused sessions**. Each session has a narrow scope and time limit, which has dramatically improved the quality of outputs since I started using Cursor.
+
+I follow an **adaptive planning** philosophy: I only plan 2–3 tasks ahead and revise frequently based on discoveries or blockers. Session insights often feed directly back into the planning doc.
+
+### Starting a Session
+
+At the beginning of a session, I tell the agent I want to start working. It loads the project context, reviews the current state, and identifies any pending improvements or relevant blockers. From there, it sets a clear initial focus.
+
+Each task tracks its **prerequisites and dependencies**, allowing the agent to optimize task order and flag anything that's currently blocked.
+
+The agent stays explicitly focused on the task at hand throughout the session. This minimizes scope creep and enforces a clear boundary between **planning** and **execution**. If new ideas or features arise, I ask the agent to create a new task rather than shifting focus mid-session.
+
+### Ending a Session
+
+I usually end a session once a task is complete. However, if a task results in heavy file changes or complex edits, I may initiate a "save" and split the remainder into a new session.
+
+To save, I use the [Aegis save command](https://buildsomething.ai/aegis/quick-start/basic-commands/#save-progress). This triggers the agent to:
+
+- Log the session,
+- Record key decisions,
+- Update task progress,
+- Generate improvement insights.
+
+### Task Lifecycle
+
+Tasks flow through these states: **Planned → Active (or Hold) → Completed**. The agent naturally moves tasks between these states and updates their metadata accordingly.
+
+Each task contains structured front matter with fields like:
+
+- Title + unique ID
+- Status
+- Priority
+- Dependencies
+- Timestamps (created/updated)
+- Memory type
+- Progress tracking
+
+Optional fields (e.g. tags, assignee) can be added as needed.
+
+The task description establishes shared understanding, the objectives define success criteria, and the steps provide actionable guidance. The progress section is continuously updated, with agent-generated notes or insights recorded for future reference.
+
+I treat each task as a **focused, self-contained conversation**. This setup ensures that both I and the agent stay aligned on what needs to be done, without overwhelming the context window.
+
+### Continuous Improvement
+
+The agent passively tracks how time is spent, which tasks get blocked, and what decisions are made. It then suggests **process improvements**, surfacing efficiency gains for future sessions.
+
+This workflow has radically improved how I collaborate with Cursor. It keeps things modular, focused, and adaptable—making it easier to trust the agent as a co-developer, not just a code assistant.
+
+This whole workflow is powered by a lightweight framework I built called [Aegis](https://github.com/BuildSomethingAI/aegis-framework). It helps structure tasks, planning, and session logs in a way that plays nicely with AI agents like Cursor—without adding friction to the creative flow.
+
+Happy to answer questions or hear how others approach this!
+
+## Key Takeaways
+
+- No key quotes extracted
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

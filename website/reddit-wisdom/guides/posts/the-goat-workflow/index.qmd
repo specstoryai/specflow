@@ -1,0 +1,138 @@
+---
+title: "The GOAT workflow"
+description: "Score: 313 | Author: RonaldTheRight | Subreddit: r/ChatGPTCoding"
+author: "RonaldTheRight"
+date: "2024-12-20"
+categories: ["context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">The GOAT workflow</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by RonaldTheRight</span>
+  <span class="date">December 20, 2024</span>
+  <span class="score">313 points</span>
+  <span class="subreddit">r/ChatGPTCoding</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/ChatGPTCoding/comments/1hinwsr/the_goat_workflow/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+I've been coding with AI more or less since it became a thing, and this is the first time I've actually found a workflow that can scale across larger projects (though large is relative) without turning into spaghetti. I thought I'd share since it may be of use to a bunch of folks here.
+
+Two disclaimers: First, this isn't the cheapest route--it makes heavy use of Cline--but it is the best. And second, this really only works well if you have some foundational programming knowledge. If you find you have no idea why the model is doing what it's doing and you're just letting it run amok, you'll have a bad time no matter your method.
+
+There are really just a few components:
+
+- A large context reasoning model for high-level planning (o1 or gemini-exp-1206)
+- Cline (or roo cline) with sonnet 3.5 latest
+- A tool that can combine your code base into a single file
+
+And here's the workflow:
+
+1.) Tell the reasoning model what you want to build and collaborate with it until you have the tech stack and app structure sorted out. Make sure you understand the structure the model is proposing and how it can scale.
+
+2.) Instruct the reasoning model to develop a comprehensive implementation plan, just to get the framework in place. This won't be the entire app (unless it's very small) but will be things like getting environment setup, models in place, databases created, perhaps important routes created as placeholders - stubs for the actual functionality. Tell the model you need a comprehensive plan you can "hand off to your developer" so they can hit the ground running. Tell the model to break it up into discrete phases (**important**).
+
+3.) Open VS Code in your project directory. Create a new file called `IMPLEMENTATION.md` and paste in the plan from the reasoning model. Tell Cline to carefully review the plan and then proceed with the implementation, starting with Phase 1.
+
+4.) Work with the model to implement Phase 1. Once it's done, tell Cline to create a `PROGRESS.md` file and update the file with its progress and to outline next steps (**important**).
+
+5.) Go test the Phase 1 functionality and make sure it works, debug any issues you have with Cline.
+
+6.) Create a new chat in Cline and tell it to review the implementation and progress markdown files and then proceed with Phase 2, since Phase 1 has already been completed.
+
+7.) Rinse and repeat until the initial implementation is complete.
+
+8.) Combine your code base into a single file (I created a simple Python script to do this). Go back to the reasoning model and decide which feature or component of the app you want to fully implement first. Then tell the model what you want to do and instruct it to examine your code base and return a comprehensive plan (broken up into phases) that you can hand off to your developer for implementation, including code samples where appropriate. The paste in your code base and run it.
+
+9.) Take the implementation plan and replace the contents of the implementation markdown file, also clear out the progress file. Instruct Cline to review the implementation plan then proceed with the first phase of the implementation.
+
+10.) Once the phase is complete, have Cline update the progress file and then test. Rinse and repeat this process/loop with the reasoning model and Cline as needed.
+
+The important component here is the full-context planning that is done by the reasoning model. Go back to the reasoning model and do this anytime you need something done that requires more scope than Cline can deal with, otherwise you'll end up with a inconsistent / spaghetti code base that'll collapse under its own weight at some point.
+
+When you find your files are getting too long (longer than 300 lines), take the code back to the reasoning model and and instruct it to create a phased plan to refactor into shorter files. Then have Cline implement.
+
+And that's pretty much it. Keep it simple and this can scale across projects that are up to 2M tokens--the context limit for gemini-exp-1206.
+
+If you have questions about how to handle particular scenarios, just ask!
+
+## Key Takeaways
+
+- "Tell the model to break it up into discrete phases (**important**)"
+- "md` file and update the file with its progress and to outline next steps (**important**)"
+- "The important component here is the full-context planning that is done by the reasoning model"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

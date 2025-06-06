@@ -1,0 +1,116 @@
+---
+title: "ELI5: AI-assisted coding workflow in Zed?"
+description: "Score: 17 | Author: gplusplus314 | Subreddit: r/ZedEditor"
+author: "gplusplus314"
+date: "2025-04-16"
+categories: ["vibe-coding", "context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">ELI5: AI-assisted coding workflow in Zed?</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by gplusplus314</span>
+  <span class="date">April 16, 2025</span>
+  <span class="score">17 points</span>
+  <span class="subreddit">r/ZedEditor</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/ZedEditor/comments/1k0olhi/eli5_aiassisted_coding_workflow_in_zed/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+I don't mind being the "dumb guy" asking dumb questions. So here we go.
+
+I'm old school, coming from Vim. I'm trialing Zed mainly as a Vim alternative, and so far, so good. I really like it! I've been coding for a long time and I've been avoiding AI assisted coding. I've had bad experiences with Copilot in VSCode and NeoVim, as well as bad experiences with ChatGPT.
+
+I have zero interest in Cursor due to *reasons*. That's off topic and I'm not interested in discussing why in this thread.
+
+I don't really "get it" when it comes to the AI workflow. Everything else is great; with my thousands of lines of custom keymap and configuration, Zed is doing exactly what I want it to do and I've coerced it into fitting my mental model, for the most part at least.
+
+I've looked for blog posts and YouTube videos covering how to, ahem, "vibe code", and they're all in Cursor. Zed related content barely scratches the surface and, at best, merely mentions that Zed has AI features, but doesn't demonstrate them.
+
+I know how to code, but I don't really know how to incorporate AI into my workflow. Assume I know nothing and I'm using Zed... **what should I do?** Sure, I've read the documentation covering the inline assistant and a context editor, but I don't really "get it," if that makes sense. I don't know *how to effectively promp* or *when to effectively use* these features. I haven't experienced any productivity boost because I don't really know how to take advantage of these tools.
+
+It's kind of like knowing how the chess pieces move, but now knowing how to play the game.
+
+I'm currently using the free Zed tier of Claude just for demo purposes. I'm not too terribly worried about the quality of the AI's output for now, knowing that I'm on a free tier and can swap out the underlying model later. I'm still not too sure what to do with the in-line assist, not sure what to do with the context editor sidebar, and I don't know what I don't know. 
+
+I'm also willing to bet that I'm not the only one wondering how to use Zed *effectively*. So here I am, unashamed at my ignorance, asking for guidance. A step-by-step tutorial for a small, contrived app that shows off Zed's intended AI workflow would be amazing. Also, examples for working with an existing code base (more common in the real world) would also be amazing.
+
+If there's a better place to ask this, please let me know. Thanks!
+
+## Key Takeaways
+
+- No key quotes extracted
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

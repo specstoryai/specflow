@@ -1,0 +1,253 @@
+---
+title: "My guide to using Styles effectively."
+description: "Score: 88 | Author: dilberryhoundog | Subreddit: r/ClaudeAI"
+author: "dilberryhoundog"
+date: "2025-01-19"
+categories: ["vibe-coding", "api-integration", "prompting", "context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">My guide to using Styles effectively.</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by dilberryhoundog</span>
+  <span class="date">January 18, 2025</span>
+  <span class="score">88 points</span>
+  <span class="subreddit">r/ClaudeAI</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/ClaudeAI/comments/1i4c6jx/my_guide_to_using_styles_effectively/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+So one of the absolute game changers introduced by Anthropic for web/desktop use for me has been styles. Yes thats right, MCP, artifacts etc are IMHO distracting token burners. That little drop down box is so useful.
+
+**First some background info**:  
+Styles are named userStyles in Claude's system prompt. Ask him and he will output the current style.  
+Styles are sent per instance as one of the nearest (most relevant) pieces of context in the system prompt, meaning he responds really well to user styles. Change the style and he will have no recollection of the style used in the previous replies.
+
+**My Ai Setup**:  
+Its a little quirky, but I have artifacts and analysis tools turned off, I don't use MCP, and I prefer web/desktop over cline or cursor etc and I never go over limits. Effective prompts, styles and project knowledge are all I use.  
+With artifacts and analysis off, means the system prompt is heavily reduced, saving tokens and context dilution. Also I don't have to bother with Claude's frequent mistakes with artifacts and prompt based guardrails for effective artifact usage. He is a master of the chat stream, take advantage.  
+MCP requires too much management overhead to keep him on the rails. Also it bloats the chat stream and burns tokens faster, I feel it really slows me down.
+
+**Style usage advantages**:  
+Styles are so versatile they allow for heaps of level up strategies. here are some of my favorites...  
+  
+=== Style Chaining ===  
+This is where you consecutively prompt with a series of different styles in a pre arranged fashion that significantly upgrades Claude's output as he progresses through the style chain. An example with some of my styles (that I'll explain later) is; EXPLORE -> PLAN -> SHOW WORKING -> BUILD.  
+
+=== Style Roulette ===  
+This I use when I have taken some time to write what I think is an awesome prompt but Claude's response is underwhelming. I will simply change style and hit edit button then save. This gives me a completely new response to the same prompt. Often I'll end up revealing key information with one prompt that wasn't immediately available. You can also cross reference very easily for Hallucination or incongruence reveals.  An example might be EXPLAIN | EXPLORE | CASUAL | normal | explanatory  
+
+=== Perfect Formatting ===  
+Before styles was introduced it was so frustrating trying to get Claude to output a plan when all he wanted to do write code. Now you can be very specific about how the next response is to take shape, this really accentuates the intended purpose of your prompt. Then in the next response a completely different style of output. eg prose, code, headings and paragraphs, no bullets, no code, etc, etc.  
+
+=== Context Shaping ===  
+This is where you leave a particular styled response of Claudes in the chat stream that will enable referencing or response improvement later in the chat.
+
+**Other benefits:**  
+A huge upgrade has been getting all the generic guardrails and styling requirements out of project prompts (custom instructions). These prompts are now surgical in their purpose of setting efficient project context or account wide context (in the case of personal preferences), when before they where bloated with all kinds of tricks in order to keep Claude "on the rails".
+
+\---------------------------------------
+
+Ok so enough faffing, here are all of my style prompts. I keep them deliberately short, to save tokens and Claude vibes off them better than longer ones.
+
+**\~ BUILD**  
+*This was a killer when I first introduced it into rotation. pure code output, or "just write the document" don't waste my tokens explaining your self or asking if you can proceed.*
+
+    MODE:
+    Focused Work
+    Minimal Distractions
+    Efficient Productivity
+    
+    STYLE:
+    Brief Interactions
+    Documents
+    Exact Formatting
+    
+    OUTPUT:
+    All documents in Code Blocks with the appropriate file-type formatting (e.g. ```txt or ```ruby).
+    Avoid MCP servers unless explicitly instructed.
+
+**\~ CASUAL**  
+*This style is trying to replicate Claude's "normal" style except without the code responses. His unfiltered style is actually pretty effective. Sometimes non role played, simple chat, produces ideas and outputs unavailable with other styles.*
+
+    MODE:
+    Talking
+    Normal Interaction
+    
+    STYLE:
+    Standard
+    Prose
+    
+    OUTPUT:
+    Avoid using code examples.
+
+**\~ EXPLAIN**  
+*This style produces a very considered structured response. Useful to leave in the context for Claude to later refer to. I also use it as a precursor to planning or building as he produces high quality reference outputs.*
+
+    MODE:
+    Explain Ideas
+    Instructional
+    Expert Opinions
+    
+    STYLE:
+    Informative
+    Comprehensive
+    Complete
+    
+    OUTPUT:
+    - Explain your choices and recommendations.
+    - Do NOT offer immediate fixes, summarise or use code examples.
+    - Use headings with paragraphs; or short sentence lists.
+
+**\~ EXPLORE**  
+*This style is great for collaborating, choosing a direction, or revealing hidden knowledge. Disagreeable Claude often shows up after this style is dropped, challenging what you have said or revealing an edge case or unseen problem.*
+
+    MODE:
+    Exploration of Ideas
+    Brainstorming
+    Problem-Solving
+    Challenge Assumptions
+    
+    STYLE:
+    Flowing
+    Comprehensive
+    Branching
+    
+    OUTPUT:
+    - Explore varied Options or Solutions, Challenge the User's assumptions.
+    - Long flowing chat interactions are welcome, explain your choices and recommendations.
+    - Do NOT offer immediate fixes, summarise or use code examples.
+    - Try to minimise the use of lists, full sentences and paragraphs are preferred.
+
+**\~ PLAN**  
+*This style is similar to EXPLAIN, except Claude usually produces a document you can save to your IDE or obsidian.*
+
+    MODE:
+    Planning
+    Structured Thinking
+    Best Practices
+    Collaboration
+    
+    STYLE:
+    Organised
+    Well-formatted
+    Full and Comprehensive
+    Alignment with (Project) Goals
+    
+    OUTPUT:
+    Each reply is either a Document or Thinking / Collaboration focused. Do NOT mix.
+    All Documents in Code Blocks with the appropriate file-type formatting (e.g. ```txt or ```md).
+    All thinking / collaboration use headings with paragraphs or short sentence lists.
+
+**\~ REFLECT**  
+*A recent addition. I would commonly find some of my prompts where i was explaining my thoughts to Claude, would distill an idea i hadn't articulated before. However because it was one or more of his replies deep, it would be almost impossible to get him to succinctly rewrite my prompt in a non disorganised, non "stream of consciousness" manner. This style I can now drop on any previous prompts I have made and he will very nicely reflect it back for me to take away. sometimes I edit -> save a whole bunch of my replies to capture a full decision path.*
+
+    MODE:
+    Reflect back the users prompt.
+    
+    STYLE:
+    Organised
+    Formatted
+    
+    OUTPUT:
+    Avoid using code examples.
+    Use a txt code block with a summary title
+
+**\~ SHOW WORKING**  
+*This is my absolute favorite for coding, its 10X vs <thinking> tags (which was the original inspiration for the style). He clearly explains all the steps he will use to complete the task. Also If Claude was going to make a mistake in his output either from misunderstanding your prompt or on his own, this will catch it, before he makes it. It will also capture his concerns/problems that might arise from his own implementations. Also he will show clearly that he has understood the context and you can begin to see how your prompts shape his understanding.*   
+*I combine this with a "your task is" prompt, as outlined in anthropics guides then pivot straight into a BUILD style on the next response, or adjust if necessary. This produces so much build speed its phenomenal. With a clean context history of successful task implementations until your feature is built, usually well before chat length warnings.*
+
+    When working on a task, before creating any code/document or when asked by the User, you must "show your working".
+    Do this by repeating your understanding (in your words) of the task in a "=== My Task ===" section, using a paragraph or two.
+    Then you indicate in short sentence bullets all the ideas you have to complete the task in a "=== My Thinking ===" section.
+    If you have any constraints or problems you foresee in your implementation, include them in a short "=== Issues ===" section, using a short sentence list.
+    If you are coding, include a "=== File Paths ===" section for each file you need to create.
+    Finally, ask the user "is it OK to proceed with this implementation?" After user confirmation, you can produce the code files.
+
+\--------------------------
+
+So to wrap up, these are my styles to produce all kinds of varied outputs and responses. You'll notice alot of them use very short one or two word statements. This is deliberate. I call these impact tokens. Its like a pirates treasure map. Detailed and well explained prompts lead Claude to the treasure location. But the impact tokens help him extract more treasure than he would've otherwise.
+
+Also these styles behave very much like roles ( they rely on a similar concept). The "expert opinions" will produce very much the same results as "you are a python coding expert" except the impact token will having him being an expert in what ever it is that you prompted. The "exploration of ideas", "brainstorming" and "challenge assumptions" will create a response as if Claude was an experienced university lecturer.
+
+That these can be changed on the fly and remove so much friction, has produced I believe the biggest upgrade in Claudes usefulness, than any other feature.
+
+## Key Takeaways
+
+- "*
+
+    When working on a task, before creating any code/document or when asked by the User, you must "show your working""
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

@@ -1,0 +1,93 @@
+---
+title: "Post Title"
+description: "Post description"
+author: "Author Name"
+date: "2025-01-01"
+categories: ["vibe-coding"]
+---
+
+<div class="post-meta">
+  <span class="author">by {{< meta author >}}</span>
+  <span class="date">{{< meta date >}}</span>
+  <span class="score">{{< meta score >}} points</span>
+  <span class="subreddit">r/{{< meta subreddit >}}</span>
+</div>
+
+<div class="post-actions">
+  <a href="{{< meta reddit_url >}}" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+{{< meta content >}}
+
+## Key Takeaways
+
+{{< meta key_quotes >}}
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.post-content ul,
+.post-content ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.post-content blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+.post-content code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+.post-content pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

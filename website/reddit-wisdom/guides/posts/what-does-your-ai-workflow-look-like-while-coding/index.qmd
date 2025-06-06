@@ -1,0 +1,100 @@
+---
+title: "What does your AI workflow look like while coding?"
+description: "Score: 48 | Author: CaliforniaHope | Subreddit: r/ChatGPTCoding"
+author: "CaliforniaHope"
+date: "2024-10-10"
+categories: ["general"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">What does your AI workflow look like while coding?</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by CaliforniaHope</span>
+  <span class="date">October 10, 2024</span>
+  <span class="score">48 points</span>
+  <span class="subreddit">r/ChatGPTCoding</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/ChatGPTCoding/comments/1g0mrus/what_does_your_ai_workflow_look_like_while_coding/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+There’s a lot happening with tools like Cursor, ChatGPT Canvas, etc.
+
+I’m just curious—what does your AI workflow look like? Do you use Cursor? Or do you use extensions like [continue.dev](http://continue.dev) and claude-dev to kind of recreate Cursor? What are you using to be more efficient with AI while coding?
+
+## Key Takeaways
+
+- No key quotes extracted
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

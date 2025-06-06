@@ -1,0 +1,139 @@
+---
+title: "A Guide to understand new .cursor/rules in 0.45 (.cursorrules)"
+description: "Score: 57 | Author: kevinkernx | Subreddit: r/cursor"
+author: "kevinkernx"
+date: "2025-02-08"
+categories: ["multi-agent"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">A Guide to understand new .cursor/rules in 0.45 (.cursorrules)</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by kevinkernx</span>
+  <span class="date">February 7, 2025</span>
+  <span class="score">57 points</span>
+  <span class="subreddit">r/cursor</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/cursor/comments/1ik06ol/a_guide_to_understand_new_cursorrules_in_045/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+https://preview.redd.it/5j7okcqn2rhe1.png?width=1600&format=png&auto=webp&s=6bf0e0777b4416bcbdd999fa8d9d00c5419bbc46
+
+Here is a complete thread on using cursor rules in 0.45 and especially the .cursor/rules dir
+
+**Blog Post:**
+
+[https://www.instructa.ai/en/blog/how-to-use-cursor-rules-in-version-0-45](https://www.instructa.ai/en/blog/how-to-use-cursor-rules-in-version-0-45)
+
+**X Thread (+ Updates)**
+
+[https://x.com/kregenrek/status/1887574770474229802](https://x.com/kregenrek/status/1887574770474229802)
+
+**Update 1:**
+
+You can "stack" your cursor  rules.
+
+In the screenshot you can see that I have a "global" rule and a specific rule for extensions.
+
+you can also see that in the reasoning step in the composer.
+
+**Sidenote:** Some User reports that it crashes cursor so use this with caution
+
+https://preview.redd.it/4uohiqe8nzhe1.png?width=3840&format=png&auto=webp&s=a6ac92154faf0524550572f4370f08e3308da852
+
+**Update 2:**
+
+Cursor Rules supports inheritance. If you have ever worked with CSS, this should be a familiar concept.
+
+For example, create a base .mdc rule and reference it in your other rules. Keeps everything clean and separate.
+
+https://preview.redd.it/7afrwoebnzhe1.png?width=2926&format=png&auto=webp&s=ebdd4b57e70420ff1d9080527aad0ee1a58ba684
+
+**Update 3:**
+
+Regarding deprecated .cursorrules. Smth. in me hopes that doesn't happen → everyone needs to migrate. In the long run, the name .cursorrules is an understatement of the agent's powerful capabilities.
+
+Workaround: Create an \[whateveryouwant\].mdc (agent was just an example) file as an replacement for the .cursorrules. Add the "\*" for global (missed it in the screenshot)
+
+https://preview.redd.it/9nqczhydnzhe1.png?width=2722&format=png&auto=webp&s=f738d76a4510f81b8f882cf9dd964f79d64c4b26
+
+## Key Takeaways
+
+- "**Sidenote:** Some User reports that it crashes cursor so use this with caution
+
+https://preview"
+- "If you have ever worked with CSS, this should be a familiar concept"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

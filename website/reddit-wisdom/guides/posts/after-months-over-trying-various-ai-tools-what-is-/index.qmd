@@ -1,0 +1,111 @@
+---
+title: "After months over trying various AI tools... what is workflow/tools are working for you in 2024?"
+description: "Score: 55 | Author: punkouter23 | Subreddit: r/ChatGPTCoding"
+author: "punkouter23"
+date: "2024-01-04"
+categories: ["context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">After months over trying various AI tools... what is workflow/tools are working for you in 2024?</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by punkouter23</span>
+  <span class="date">January 3, 2024</span>
+  <span class="score">55 points</span>
+  <span class="subreddit">r/ChatGPTCoding</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/ChatGPTCoding/comments/18xzxfu/after_months_over_trying_various_ai_tools_what_is/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+So far I have got it down to using 4 tools
+
+1. ChatGPT4 - For new projects.. Give a description.. say 'ask at least 15 clarifying questions'.. get the steps... get the details and code of each stop and go from there
+1. CoPilot - I quit it for awhile and tried others but went back when it got the 
+1. function
+1. Cosine - Still testing it.. suppose to read the code context also
+1. Cursor AI - Reads context and gives me best answers.. but sadly its not a VSCODE plugin so I gotta keep opening it and closing it..
+
+&#x200B;
+
+Been using them all to test out making new simple projects... and then making modifications..
+
+  
+There are tools that attempt to automate the entire thing but for what I do (.net) it can't seem to get anything right beyond a console app... one idea I had is maybe have it create console apps with the functionality i need and then bring in the pieces into the main program myself
+
+## Key Takeaways
+
+- No key quotes extracted
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

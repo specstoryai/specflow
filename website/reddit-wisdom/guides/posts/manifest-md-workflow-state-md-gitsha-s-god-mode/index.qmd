@@ -1,0 +1,136 @@
+---
+title: "Manifest.md (workflow_state.md) + GitSHA’s = God Mode"
+description: "Score: 29 | Author: aarontatlorg33k | Subreddit: r/cursor"
+author: "aarontatlorg33k"
+date: "2025-05-31"
+categories: ["context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Manifest.md (workflow_state.md) + GitSHA’s = God Mode</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by aarontatlorg33k</span>
+  <span class="date">May 31, 2025</span>
+  <span class="score">29 points</span>
+  <span class="subreddit">r/cursor</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/cursor/comments/1l00f5y/manifestmd_workflow_statemd_gitshas_god_mode/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+After a long day fighting with Cursor flaking out on a massive monolithic script I hadn’t decomposed yet, I kept seeing it drop code blocks, delete whole files, and struggle to make \_bak files to prevent regressions.
+
+Eventually, I hit a wall. The backups it was generating weren’t consistent. It was restoring old work we’d already revised past. Context was getting scrambled. I was getting frustrated.
+
+So I tried one last thing:
+
+>I told Cursor to **explicitly make a backup** before and after each task.
+
+>As it started churning through planning and ramping up for the task… I saw something weird:
+
+It made a **Git commit**. On its own. Directly to the repo.  
+  
+I thought:
+
+>“If Cursor is already committing, why don’t I **track those commit SHAs** right inside my .cursor/manifest.md (or workflow\_state.md) alongside each task?”
+
+  
+**But why Aaron?! Why track the GitSHA's?**
+
+For point in time reference silly! Point 👏 in 👏 time 👏 reference!   
+  
+Not just for *you* to roll back. For **the AI** to *understand*, compare, and rebase context like a goddamn memory surgeon. By embedding GitSHAs directly into the manifest beside each task, I’m not just tracking what got done, I’m anchoring it in time. Now when a feature fails or needs to be revisited, I don’t guess, no Cmd + Z panic hoping I get back to the right state after hours of work. I jump straight to the SHA from the last working phase, see exactly what was there, and tell the AI to pick up from that moment. The manifest becomes a timeline, not just a checklist, a versioned record of intent that both I and the AI can navigate like a map.
+
+  
+Example Manifest with SHA's
+
+    ## Task: Add Auth0 Login Flow
+    
+    - [x] Install SDK  
+      - GITSHA: `abc1234`
+    - [x] Build login form  
+      - GITSHA: `def5678`
+    - [ ] Integrate backend session
+
+Project Settings Rules
+
+    - Always track GITSHA after every meaningful task completion.
+    - Add it to the manifest as a Phase Checkpoint.
+    - Reference these SHAs when debugging, testing, or asking AI to resume from previous states.
+
+## Key Takeaways
+
+- No key quotes extracted
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

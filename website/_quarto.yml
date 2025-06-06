@@ -1,5 +1,9 @@
 project:
   type: website
+  resources:
+    - data/posts.json
+    - data/posts-data.js
+    - data/validation-report.json
 
 website:
   title: "Specflow is structure for building with software agents"
@@ -42,6 +46,8 @@ website:
             text: Videos
           - href: reference/index.qmd
             text: Reference
+          - href: reddit-wisdom/index.qmd
+            text: Reddit Wisdom
     right:
       - icon: github
         href: https://github.com/specstoryai/specflow

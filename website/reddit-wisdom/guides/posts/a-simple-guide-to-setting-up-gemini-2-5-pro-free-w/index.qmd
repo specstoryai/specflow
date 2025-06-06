@@ -1,0 +1,142 @@
+---
+title: "A simple guide to setting up Gemini 2.5 Pro, free, without running into 3rd party rate limits"
+description: "Score: 89 | Author: thezachlandes | Subreddit: r/ChatGPTCoding"
+author: "thezachlandes"
+date: "2025-04-05"
+categories: ["api-integration"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">A simple guide to setting up Gemini 2.5 Pro, free, without running into 3rd party rate limits</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by thezachlandes</span>
+  <span class="date">April 4, 2025</span>
+  <span class="score">89 points</span>
+  <span class="subreddit">r/ChatGPTCoding</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/ChatGPTCoding/comments/1jrp1tj/a_simple_guide_to_setting_up_gemini_25_pro_free/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+EDIT: The Open Router integration and google ai studio key method seems like the easiest way that works for everyone, especially if you already have an openrouter account. Pasting that method here for visibility:
+
+1. Get a Google AI Studio API key from https://aistudio.google.com/apikey
+1. Plug that API key into the Google AI Studio integration on https://openrouter.ai/settings/integrations, select enabled but not "Use as fallback"
+1. You can now use your Openrouter key anywhere and as long as you select Gemini 2.5 Pro Experimental as your model, it will use your key. 
+(4. If you also add a GCP key and have Vertex AI enabled for the project, obtained as per the instructions below, you can add that to your integrations as well, and you will have two sources of 2.5 Pro backing your Openrouter calls.)
+
+Hey all,  
+After dealing with Openrouter and Requesty giving me constant rate limits for Gemini 2.5 Pro, I got frustrated and decided to get things set up directly through Google's APIs. I have now sent over 60 million tokens in a single day without hitting any rate limits, all for $0—an equivalent usage with Claude would have cost $180. I also had a few other engineers confirm these steps. Here's how to do it and then integrate with Roo Code--but this should work for other tools like Cline, too:
+
+### Setting Up Google Cloud
+
+1. **Create or log into your** [**Google Cloud account**](https://console.cloud.google.com/)**.**
+1. **Open the** [**Google Cloud Console**](https://console.cloud.google.com/)**.**
+1. **Create a new Google Cloud project** (I named mine "Roo Code").
+1. **Enable billing** for your newly created Google Cloud project.
+1. **Enable the** [**Vertex AI API**](https://cloud.google.com/vertex-ai/docs/featurestore/setup).
+1. **Enable the Gemini API** from the API overview page.
+1. In your project dashboard, navigate to **APIs & Services → Credentials**.
+1. Click **"Create Credentials" → "API Key"**.
+1. Copy the generated API key and save it securely.
+
+### Integrating with Your IDE (Example: Roo Code)
+
+1. In VSCode or Cursor, navigate to the extensions marketplace (**Shift + Cmd + X** on Mac), search for and install **"Roo Code"** (or your preferred tool like Cline).
+1. Open Roo Code (**Cmd + Shift + P**, then type **"View: Show Roo Code"**).
+1. Click to configure a new API provider, selecting **"Google Gemini"**.
+1. Paste the API key you saved earlier into the API key field.
+1. Select **"google/gemini-2.5-pro-exp-03-25:free"** as the model.
+1. Click **Save**.
+
+There you go! Happy coding. Let me know if you run into any issues.
+
+https://preview.redd.it/rc4prhl0dwse1.png?width=414&format=png&auto=webp&s=77d7e3a1bbbc1d9dd4ba930ef041eb0559e9241c
+
+Edit: looks like some are having issues. A few ideas/alternatives:
+
+1. ~~Use a Vertex api key, but gemini api as provider in Roo Code.~~ There is only one key, ignore this alternative.
+1. Use vertex api as the provider in Roo Code--its just a little more complicated, you'll have to create a service account in the credentials page of the project, and paste the json in Roo Code when configuring the provider
+1. If you have an OpenRouter account, you can go to the integrations page [https://openrouter.ai/settings/integrations](https://openrouter.ai/settings/integrations) and add your vertex api key to the google vertex integration. You can also add a google ai studio api key to the Google AI Studio integration. In each setting window where you add the key, make sure it is enabled. Then, in Roo Code, you use your openrouter account, but whenever it uses Gemini 2.5 pro free, it will default to your API key, not one of theirs which is being rotated among many users.
+
+## Key Takeaways
+
+- "Here's how to do it and then integrate with Roo Code--but this should work for other tools like Cline, too:
+
+# Setting Up Google Cloud
+
+1"
+- "In each setting window where you add the key, make sure it is enabled"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

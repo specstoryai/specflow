@@ -1,0 +1,179 @@
+---
+title: "My Workflow for Generating and Maintaining Deep Context in Cursor"
+description: "Score: 17 | Author: Temporary_Category93 | Subreddit: r/cursor"
+author: "Temporary_Category93"
+date: "2025-05-26"
+categories: ["prompting", "context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">My Workflow for Generating and Maintaining Deep Context in Cursor</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by Temporary_Category93</span>
+  <span class="date">May 26, 2025</span>
+  <span class="score">17 points</span>
+  <span class="subreddit">r/cursor</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/cursor/comments/1kvl1aw/my_workflow_for_generating_and_maintaining_deep/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+Hey r/cursor!
+
+I've been working with Cursor on large modular projects and wanted to share a workflow I've developed for generating comprehensive context documentation that makes AI assistance much more effective.
+
+### The Problem
+
+When you're deep in complex projects with multiple modules, giving Cursor (or any AI) enough context is a real headache. You usually end up with:
+
+- Insufficient context → Useless AI suggestions
+- Too much irrelevant context → Confused AI, wasted tokens
+- Manual context prep → Time-consuming, error-prone, and inconsistent
+
+### My Solution: Semi-Automated Context Generation
+
+### Step 1: Create Analysis Templates
+
+In the root of each module, I create an `ai_module_update.md`file. This file is essentially a detailed prompt for an LLM. Here's the template:
+
+    Analyze the structure and all significant files of this project module comprehensively and create a .md file with all information about this module's functionality that would be useful for AI to quickly understand the essence and structure of the module.
+    
+    ## Must include in analysis:
+    1. Module name: [MODULE_NAME_HERE] // e.g., Admin Panel (Vue.js)
+    2. Purpose and business logic: Main purpose, what business problems it solves
+    3. Working logic: How the module functions overall, main processes and algorithms
+    4. File and folder structure: Hierarchy and organization of module files
+    5. Database table structure: Analysis based on migrations
+    6. Tech stack and library versions: Technologies, frameworks, libraries used
+    7. Architecture and code organization style: Design patterns, code organization approaches
+    8. Module routes: All routes, their purpose and controller connections
+    9. Controllers and their meaning: Analysis of all controllers and their methods
+    10. Module services and their logic: Description of all service classes and functionality
+    11. Interaction with other modules: How the module integrates with the rest of the project
+    
+    ## Analysis instructions:
+    - You can request any necessary context without limitations through available search and file analysis tools
+    - Keep requesting information until everything is absolutely clear to you
+    - Pay special attention to key files that define the module's working logic
+    - If you encounter complex or non-obvious code parts, analyze them in detail
+    
+    ## File paths for analysis:
+    - [LIST_RELEVANT_PATHS_HERE] // e.g., /src/Components/Admin, /src/Components/Blog
+
+### Step 2: Generate Documentation
+
+I feed this template to Claude or Gemini (btw Gemini Flash handles this straightforward task very well and quickly) and get a comprehensive `ai_module_summary.md` file that I save in the module root.
+
+### Step 3: Project-Level Documentation
+
+I create a similar `ai_project_update.md` in the project root that references all module summaries, then generate an `ai_project_summary.md`.
+
+### Step 4: Configure Cursor
+
+Add these lines to `.cursorignore`:
+
+    **/ai_module_update.md
+    **/ai_project_update.md
+
+This prevents Cursor from getting confused by the update instructions while keeping the summary files available.
+
+### Usage
+
+- **Module context**: Include the specific `ai_module_summary.md` when working on that module
+- **Global context**: Include `ai_project_summary.md` for cross-module work
+- **Updates**: Periodically regenerate summaries when functionality changes significantly
+
+### Benefits
+
+✅ **Consistent context**: Every module gets the same thorough analysis  
+✅ **Time-saving**: Generate once, use many times  
+✅ **Scalable**: Works for projects with dozens of modules  
+✅ **Up-to-date**: Easy to regenerate when code changes  
+✅ **Focused**: Cursor gets exactly the context it needs
+
+### Example Use Case
+
+When I need to add a feature that touches the Blog module, I just include blog's `ai_module_summary.md` in my Cursor prompt. The AI immediately understands the module's structure, database schema, routes, and business logic without me having to manually explain anything.
+
+Has anyone else tried similar approaches?
+
+**TL;DR**: Created template files that generate comprehensive module documentation via AI, then feed those summaries to Cursor for much better context awareness in modular projects.
+
+## Key Takeaways
+
+- "This file is essentially a detailed prompt for an LLM"
+- "## Must include in analysis:
+    1"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

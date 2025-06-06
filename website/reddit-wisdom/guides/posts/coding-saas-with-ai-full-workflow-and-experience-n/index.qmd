@@ -1,0 +1,168 @@
+---
+title: "Coding SaaS with AI: full workflow and experience notes"
+description: "Score: 16 | Author: JohannesSmith | Subreddit: r/ChatGPTCoding"
+author: "JohannesSmith"
+date: "2024-06-11"
+categories: ["api-integration", "context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Coding SaaS with AI: full workflow and experience notes</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by JohannesSmith</span>
+  <span class="date">June 11, 2024</span>
+  <span class="score">16 points</span>
+  <span class="subreddit">r/ChatGPTCoding</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/ChatGPTCoding/comments/1ddiuyw/coding_saas_with_ai_full_workflow_and_experience/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+Hey everyone,
+
+I wanted to share my experience as a non-tech solopreneur coding my SaaS project using ChatGPT and other AI tools. I launched the MVP in one month, and in two months, I already had some paying customers. That's not bad for a product with almost zero production costs.
+
+**The product**
+
+AI assistant builder where you can create chatbots to handle initial contacts and conduct in-depth interviews. 8D-1 asks follow-up questions, so you get comprehensive answers and can jump into the conversation when needed. If you want to try it, use the promo code **REDDITOR** to get 100 free messages.
+
+https://reddit.com/link/1ddiuyw/video/aa8f7fui0z5d1/player
+
+I know everyone hates posts with promotions, but this project is incredibly important to me. Even if 8D-1 isn’t for you, I’d love for you to give it a try.
+
+**Background and Motivation**
+
+I have a decade of product manager experience and have founded several startups (mostly commercial disasters). However, I was never the tech guy. I’m that creative type of product manager who developers often see as a mix between Andy Warhol and a piece of furniture. So I’m 100% not a developer.
+
+**How did I start GPT coding?**
+
+At first, I just asked GPT to explain some code to me. Then I started asking it to correct small parts of business logic. Eventually, I began experimenting with simple Python scripts for repetitive tasks and finally tried building basic full-stack web applications.
+
+**My AI Toolkit**
+
+1. GPT-4/4o: My go-to for generating new code, brainstorming architecture, and technical solutions. It’s slow and has its bad days, but I’ve adapted to its quirks. I use a custom GPT model with presets, named after my first CTO.
+1. GPT-3.5: For simpler tasks and when I hit GPT-4’s limits. It’s faster and helps with terminal requests and Git management.
+1. Anthropic: A backup when GPT-4 is stuck. I use it sparingly due to the cost through my developer account.
+1. GitHub Copilot in VSCode: My most-used tool. Select the code, get what I need. Not the smartest, but incredibly helpful.
+1. GitHub In-line Copilot: I can’t imagine coding without it now.
+
+**How AI Changed My Development Process**
+
+1. No Design Phase: I don’t need to explain my ideas to anyone else. I use Figma just to create assets.
+1. Git is Useless: A single-user approach would be more user-friendly for solo projects.
+1. Backlog is Bullshit: I keep a task list and a general idea of what needs to be done.
+1. Creative Process: This is 100% a creative process from an engineering and conceptual standpoint.
+1. Isolation: I’ve become totally unsocialized. I rarely interact with others, which affects my communication skills and limits business opportunities.
+1. Identity Crisis: Sometimes I feel like neither a product manager nor a pro developer. If my projects fail, I worry about finding a normal job.
+
+**My Workflow and Stack**
+
+I start with Python to develop general business logic. I like Python because it's intuitive and GPT works perfectly with it. I use a microservice architecture, breaking the code into small pieces. This helps because ChatGPT loses context if the code is too large. My Python backend consists of around 20 interconnected modules with 2-15 standalone functions each.
+
+[Python Backend is a bit messy](https://preview.redd.it/nwamlakp0z5d1.png?width=1236&format=png&auto=webp&s=5e741a9f8aed2d65cb0d882d3e04b1bcaf1325f3)
+
+Another important part of my setup is Strapi, a CMS I use for user-friendly database management and API. It's super user-friendly and free. In my setup, Strapi is the single source of truth, acting as a middleman between the backend and frontend and managing user access.
+
+[Strapi CMS](https://preview.redd.it/oy9cbyo31z5d1.png?width=1917&format=png&auto=webp&s=4414fde5d4e53011fa602a33eeac813a80c16bb4)
+
+On the frontend, I use Vue.js. As I didn't know any frontend language, I tried Next, React, Angular, and finally decided that Vue is a bit more intuitive for me. For each framework, I looked for templates and boilerplates. For Vue, I recommend Vulk by CSS Ninja – a really good set of components.
+
+Payments: Stripe. Mailing service: reSend.
+
+**Infrastructure struggle**
+
+Going into production was tricky. While everything seemed to work on localhost, deploying it was a different story. I spent almost three weeks figuring out how to deploy everything, which was very stressful. I HATE CORS!
+
+I can only say that I tried Vercel, Digital Ocean, Fly, Heroku. And everytime there were some problems. I don’t want to go deeper in this topic, but it seems like the next wave of internet needs some simple hosting platform for GPT Coders.
+
+**Plans**
+
+While I was never into coding before, now I love it so much. I can spend hours fixing bugs and adding new ones.
+
+I'm still trying to figure out if I want to hire real developers to help me with some quality issues. Probably, I'll wait for some traction first. But as far as I can see, 8D-1 is more than alive. I personally use it to handle incoming inquiries on LinkedIn.
+
+[Using my own creation](https://preview.redd.it/km4bwfbf1z5d1.png?width=466&format=png&auto=webp&s=b139b493bcbd9f0e47ffc78af05391e1bfd4a58a)
+
+I really hope this project will help me pay my bills. For $3k MRR, which is my current goal, I need around 200 paying customers. That seems doable, but wish me luck!
+
+## Key Takeaways
+
+- "com/link/1ddiuyw/video/aa8f7fui0z5d1/player
+
+I know everyone hates posts with promotions, but this project is incredibly important to me"
+- "width=1236&format=png&auto=webp&s=5e741a9f8aed2d65cb0d882d3e04b1bcaf1325f3)
+
+Another important part of my setup is Strapi, a CMS I use for user-friendly database management and API"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

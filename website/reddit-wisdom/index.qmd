@@ -1,0 +1,294 @@
+---
+title: "Reddit Wisdom"
+description: "Insights from the Reddit AI coding community - analyzing 47 posts from January 2024 to June 2025"
+---
+
+## Welcome to the Reddit AI Coding Wisdom Hub
+
+This section captures the evolution of AI-assisted software development practices based on insights from the Reddit community. These 47 posts represent a carefully curated sampling from over **10,000 posts** collected across 8 months of continuous monitoring.
+
+:::{.callout-important}
+**How This Connects to SpecFlow**: The patterns, struggles, and breakthroughs documented here directly informed the SpecFlow methodology. As the community discovered that successful AI development requires structured planning, clear context, and iterative refinement, these principles became the foundation of SpecFlow's approach to turning intent into working software.
+:::
+
+## Dataset Overview
+
+<div id="dataset-stats">
+<div class="stat-box">
+<h3>Posts Monitored</h3>
+<div class="metric-value">10.7K</div>
+<div class="metric-label">total posts tracked</div>
+</div>
+<div class="stat-box">
+<h3>Comments Analyzed</h3>
+<div class="metric-value">133K</div>
+<div class="metric-label">community discussions</div>
+</div>
+<div class="stat-box">
+<h3>Curated Selection</h3>
+<div class="metric-value">47</div>
+<div class="metric-label">top guides & workflows</div>
+</div>
+<div class="stat-box">
+<h3>Coverage</h3>
+<div class="metric-value">14</div>
+<div class="metric-label">subreddits monitored</div>
+</div>
+</div>
+
+## Explore the Reddit Wisdom
+
+::: {.navigation-grid}
+
+::: {.nav-card}
+### 🔄 [The Evolution of Agent-First Development](evolution/index.html)
+Discover how 18 months of community experimentation transformed AI from a code completion tool into sophisticated development partners. This journey directly informed the SpecFlow methodology.
+:::
+
+::: {.nav-card}
+### 📊 [Interactive Timeline](timeline/index.html)
+Explore the chronological progression of AI coding practices through three distinct phases: Foundation, Development, and Advanced Orchestration.
+:::
+
+::: {.nav-card}
+### 🎯 [Patterns & Best Practices](patterns/index.html)
+Distilled wisdom from thousands of developer experiences, revealing the four pillars of successful agent-first development and common anti-patterns to avoid.
+:::
+
+::: {.nav-card}
+### 📚 [Guide Repository](guides/index.html)
+Browse 47 community-created guides covering:
+
+- Vibe Coding Techniques
+- Multi-Agent Workflows
+- Context Management Strategies
+- Production-Ready Practices
+:::
+
+::: {.nav-card}
+### 💡 [Key Insights Dashboard](insights/index.html)
+Real-time metrics and analysis:
+
+- 466.7% growth in community engagement
+- Score distribution patterns
+- Emerging trends and future directions
+- Data-driven success metrics
+:::
+
+::: {.nav-card}
+### 👥 [Top Contributors](contributors/index.html)
+Meet the pioneers who shaped modern AI development practices through their innovative workflows and comprehensive guides.
+:::
+
+:::
+
+## Why These 47 Posts Matter
+
+From thousands of discussions about AI coding tools, certain posts rise above the noise. These aren't just popular posts—they're **inflection points** where the community collectively discovered better ways to work with AI. Each represents:
+
+* **Validated practices** tested by hundreds of developers
+* **Breakthrough insights** that changed how people approach AI coding
+* **Comprehensive guides** that became reference standards
+* **Novel techniques** that pushed the boundaries of what's possible
+
+The 466.7% growth in engagement around these topics shows this isn't just experimentation—it's a fundamental shift in how software gets built.
+
+## The Journey: From Prompts to Production
+
+The community's 18-month journey reveals a profound transformation in how developers work with AI:
+
+### 🌱 **Foundation Phase** (Late 2024)
+*"Why won't this AI understand what I want?"*
+
+* Initial frustration with inconsistent results
+* Discovery: AI needs structured roles, not vague requests
+* Breakthrough: The role-playing workflow revolution
+
+### 🚀 **Growth Phase** (Early-Mid 2025)
+*"Treat it like a junior developer who needs guidance"*
+
+* The rise of "Vibe Coding" methodology
+* Context architecture becomes critical
+* Community wisdom crystallizes into comprehensive guides
+
+### 🎯 **Orchestration Phase** (Mid 2025 - Present)
+*"Building software WITH agents, not just USING them"*
+
+* Multi-agent systems with specialized roles
+* Context as programmable infrastructure
+* The birth of truly autonomous development pipelines
+
+This evolution didn't just improve productivity - it fundamentally changed how we conceive software development. **[Explore the full evolution story →](evolution/index.html)**
+
+## Featured Posts
+
+::: {.post-grid}
+
+::: {.post-card}
+### The Ultimate Vibe Coding Guide
+**Author**: PhraseProfessional54  
+**Score**: 420 points  
+**Date**: May 9, 2025  
+
+The most comprehensive guide in our dataset, covering 18 detailed steps for building production-level applications with AI.
+
+[Read More →](guides/posts/the-ultimate-vibe-coding-guide/)
+:::
+
+::: {.post-card}
+### The GOAT Workflow
+**Author**: RonaldTheRight  
+**Score**: 313 points  
+**Date**: December 20, 2024  
+
+Introduced the sophisticated concept of using large-context reasoning models for planning, then handing off to implementation models.
+
+[Read More →](guides/posts/the-goat-workflow/)
+:::
+
+::: {.post-card}
+### Agentic Project Management
+**Author**: Cobuter_Man  
+**Score**: 35 points  
+**Date**: June 3, 2025  
+
+The latest evolution in AI workflows, featuring Manager Agents orchestrating Implementation Agents with formal handover procedures.
+
+[Read More →](guides/posts/agentic-project-management-my-ai-workflow/)
+:::
+
+:::
+
+## Data Transparency
+
+This analysis represents a curated sampling from a comprehensive dataset of 10,658 Reddit posts collected over 8 months. The 47 posts featured here were selected based on community upvotes, engagement metrics, and their contribution to advancing AI coding practices.
+
+### Data Collection Methodology
+
+**Full Dataset Stats**:
+
+* 10,658 posts monitored (92.4% coverage)
+* 132,519 comments analyzed (90.5% coverage)
+* 14 subreddits continuously tracked
+* Powered by [Reddit Data via SpecStory Editor Tracker](https://specstory.com/editor-tracker)
+
+**Selection Criteria**:
+
+* Top guides and workflows based on upvotes and community impact
+* Representative posts showcasing best practices and key innovations
+* 8 months of continuous monitoring
+* Last Updated: June 5, 2025
+
+**Primary Sources**:
+
+* r/cursor (4,431 posts)
+* r/ChatGPTCoding (1,707 posts)
+* r/ClaudeAI (1,065 posts)
+* Plus 11 other AI coding subreddits
+
+View our [validation report](validation-report.html) for detailed accuracy metrics on the curated selection.
+
+<style>
+#dataset-stats {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  #dataset-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-box {
+  background: var(--bs-light);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  height: 100%;
+  border: 1px solid var(--bs-border-color);
+  margin-bottom: 0;
+}
+
+.stat-box h3 {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--bs-secondary);
+  font-weight: normal;
+}
+
+.stat-box .metric-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--bs-primary);
+  margin: 0.5rem 0;
+}
+
+.stat-box .metric-label {
+  font-size: 0.875rem;
+  color: var(--bs-secondary);
+  text-transform: uppercase;
+}
+
+.navigation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0 3rem 0;
+}
+
+.nav-card {
+  background: var(--bs-light);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--bs-border-color);
+  transition: all 0.3s ease;
+}
+
+.nav-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-color: var(--bs-primary);
+}
+
+.nav-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.nav-card h3 a {
+  text-decoration: none;
+  color: var(--bs-body-color);
+}
+
+.nav-card h3 a:hover {
+  color: var(--bs-primary);
+}
+
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.post-card {
+  padding: 1.5rem;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.5rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.post-card h3 {
+  margin-top: 0;
+  color: var(--bs-primary);
+}
+</style>

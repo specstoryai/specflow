@@ -1,0 +1,20 @@
+{
+  "name": "specflow-community-validator",
+  "version": "1.0.0",
+  "description": "Validation and processing scripts for SpecFlow community wisdom data",
+  "main": "validate-community-data.ts",
+  "scripts": {
+    "validate": "tsx validate-community-data.ts",
+    "build-data": "tsx build-community-data.ts",
+    "build-posts": "tsx generate-post-pages.ts",
+    "build-data-js": "tsx build-data-js.ts"
+  },
+  "dependencies": {
+    "csv-parse": "^5.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.3"
+  }
+}

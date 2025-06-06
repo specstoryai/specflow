@@ -1,0 +1,167 @@
+---
+title: "My Cursor AI Workflow That Actually Works"
+description: "Score: 300 | Author: namanyayg | Subreddit: r/cursor"
+author: "namanyayg"
+date: "2025-03-17"
+categories: ["multi-agent", "context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">My Cursor AI Workflow That Actually Works</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by namanyayg</span>
+  <span class="date">March 17, 2025</span>
+  <span class="score">300 points</span>
+  <span class="subreddit">r/cursor</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/cursor/comments/1jd4s83/my_cursor_ai_workflow_that_actually_works/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+I’ve been coding with Cursor AI since it was launched now while building my SaaS, and I’ve got some thoughts.
+
+The internet seems split between “AI coding is a miracle” and “AI coding is garbage.” Honestly, it’s somewhere in between.
+
+Some days Cursor helps me complete tasks in record times. Other days I waste hours fighting its suggestions.
+
+After learning from my mistakes, I wanted to share what actually works for me as a solo developer. 
+
+### Setting Up a .cursorrules File That Actually Helps
+
+The biggest game-changer for me was creating a `.cursorrules` file. It’s basically a set of instructions that tells Cursor how to generate code for your specific project.
+
+Mine core file is pretty simple — just about 10 lines covering the most common issues I’ve encountered. For example, Cursor kept giving comments rather than writing the actual code. One line in my rules file fixed it forever.
+
+Here’s what the start of my file looks like:
+
+```text
+- Only modify code directly relevant to the specific request. Avoid changing unrelated functionality.
+- Never replace code with placeholders like `// ... rest of the processing ...`. Always include complete code.
+- Break problems into smaller steps. Think through each step separately before implementing.
+- Always provide a complete PLAN with REASONING based on evidence from code and logs before making changes.
+- Explain your OBSERVATIONS clearly, then provide REASONING to identify the exact issue. Add console logs when needed to gather more information.
+```
+
+Don’t overthink your rules file. Start small and add to it whenever you notice Cursor making the same mistake twice. You don’t need any long or complicated rules, Cursor is using state of the art models and already knows most of what there is to know.
+
+I continue the rest of the “rules” file with a detailed technical overview of my project. I describe what the project is for, how it works, what important files are there, what are the core algorithms used, and any other details depending on the project. I used to do that manually, but now I just use my own tool to generate it.
+
+### Giving Cursor the Context It Needs
+
+My biggest “aha moment” came when I realized Cursor works way better when it can see similar code I’ve already written.
+
+Now instead of just asking “Make a dropdown menu component,” I say “Make a dropdown menu component similar to the Select component in `u/components/Select.tsx`.”
+
+This tiny change made the quality of suggestions way better. The AI suddenly “gets” my coding style and project patterns. I don’t even have to tell it exactly what to reference — just pointing it to similar components helps a ton.
+
+For larger projects, you need to start giving it more context. Ask it to create rules files inside `.cursor/rules` folder that explain the code from different angles like backend, frontend, etc. 
+
+### My Daily Cursor Workflow
+
+In the morning when I’m sharp, I plan out complex features with minimal AI help. This ensures critical code is solid.
+
+I then work with the Agent mode to actually write them one by one, in order of most difficulty. I make sure to use the “Review” button to read all the code, and keep changes small and test them live to see if they actually work.
+
+For tedious tasks like creating standard components or writing tests, I lean heavily on Cursor. Fortunately, such boring tasks in software development are now history.
+
+For tasks more involved with security, payment, or auth; I make sure to test fully manually and also get Cursor to write automated unit tests, because those are places where I want full peace of mind.
+
+When Cursor suggests something, I often ask “Can you explain why you did it this way?” This has caught numerous subtle issues before they entered my codebase. 
+
+### Avoiding the Mistakes I Made
+
+If you’re trying Cursor for the first time, here’s what I wish I’d known:
+
+- Be super cautious with AI suggestions for authentication, payment processing, or security features. I manually review these character by character.
+- When debugging with Cursor, always ask it to explain its reasoning. I’ve had it confidently “fix” bugs by introducing even worse ones.
+- Keep your questions specific. “Fix this component” won’t work. “Update the onClick handler to prevent form submission” works much better.
+- Take breaks from AI assistance. I often code without Cursor and came back with a better sense of when to use it.
+
+### Moving Forward with AI Tools
+
+Despite the frustrations, I’m still using Cursor daily. It’s like having a sometimes-helpful junior developer on your team who works really fast but needs supervision.
+
+I’ve found that being specific, providing context, and always reviewing suggestions has transformed Cursor from a risky tool into a genuine productivity booster for my solo project.
+
+The key for me has been setting boundaries. Cursor helps me write code faster, but I’m still the one responsible for making sure that code works correctly.
+
+What about you? If you’re using Cursor or similar AI tools, I’d love to hear what’s working or not working in your workflow.
+
+## Key Takeaways
+
+- "I describe what the project is for, how it works, what important files are there, what are the core algorithms used, and any other details depending on the project"
+- "This ensures critical code is solid"
+- "The key for me has been setting boundaries"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

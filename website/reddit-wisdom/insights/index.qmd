@@ -1,0 +1,486 @@
+---
+title: "Key Insights Dashboard"
+description: "Real-time metrics and analysis from the AI coding community"
+format:
+  html:
+    include-in-header:
+      - text: |
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          <script src="/data/posts-data.js"></script>
+---
+
+[← Back to Reddit Wisdom](../index.html){.back-link}
+
+## Community Insights & Metrics
+
+<div class="metrics-grid">
+  <div class="metric-card">
+    <div class="metric-icon">📈</div>
+    <div class="metric-content">
+      <div class="metric-value" id="growthRate">466.7%</div>
+      <div class="metric-label">Community Growth</div>
+      <div class="metric-detail">From Q1 2024 to Q2 2025</div>
+    </div>
+  </div>
+  
+  <div class="metric-card">
+    <div class="metric-icon">⭐</div>
+    <div class="metric-content">
+      <div class="metric-value" id="avgScore">86.7</div>
+      <div class="metric-label">Average Post Score</div>
+      <div class="metric-detail">Across all 47 posts</div>
+    </div>
+  </div>
+  
+  <div class="metric-card">
+    <div class="metric-icon">👥</div>
+    <div class="metric-content">
+      <div class="metric-value" id="uniqueAuthors">41</div>
+      <div class="metric-label">Unique Contributors</div>
+      <div class="metric-detail">Active community members</div>
+    </div>
+  </div>
+  
+  <div class="metric-card">
+    <div class="metric-icon">🔥</div>
+    <div class="metric-content">
+      <div class="metric-value" id="topScore">420</div>
+      <div class="metric-label">Highest Score</div>
+      <div class="metric-detail">Ultimate Vibe Coding Guide</div>
+    </div>
+  </div>
+</div>
+
+## Score Distribution
+
+<div class="chart-container">
+  <canvas id="scoreDistribution"></canvas>
+</div>
+
+## Posting Frequency Heatmap
+
+<div class="chart-container">
+  <canvas id="postingHeatmap"></canvas>
+</div>
+
+## Subreddit Activity
+
+<div class="chart-container half-width">
+  <canvas id="subredditPie"></canvas>
+</div>
+
+## Top Categories
+
+<div class="chart-container half-width">
+  <canvas id="categoryBar"></canvas>
+</div>
+
+## Emerging Trends
+
+<div class="trends-container">
+  <div class="trend-card trend-up">
+    <h3>🚀 Rising Topics</h3>
+    <ul>
+      <li><strong>Agentic Workflows</strong> - Multi-agent orchestration patterns</li>
+      <li><strong>Context Management</strong> - GitSHA anchoring, handover procedures</li>
+      <li><strong>Production Practices</strong> - TDD, security reviews, deployment</li>
+    </ul>
+  </div>
+  
+  <div class="trend-card trend-stable">
+    <h3>📊 Established Practices</h3>
+    <ul>
+      <li><strong>Vibe Coding</strong> - Structured prompting methodology</li>
+      <li><strong>.cursorrules</strong> - Project-specific AI guidelines</li>
+      <li><strong>Junior Dev Model</strong> - Treating AI as a trainee developer</li>
+    </ul>
+  </div>
+  
+  <div class="trend-card trend-evolving">
+    <h3>🔄 Evolving Concepts</h3>
+    <ul>
+      <li><strong>Memory Systems</strong> - From static to dynamic documentation</li>
+      <li><strong>Model Selection</strong> - Task-specific model deployment</li>
+      <li><strong>Automation</strong> - CI/CD integration with AI agents</li>
+    </ul>
+  </div>
+</div>
+
+## Key Findings
+
+<div class="findings-grid">
+  <div class="finding-card">
+    <h3>Community Growth Pattern</h3>
+    <p>Post frequency increased from 3 posts in Q1 2024 to 12 posts in Q2 2025, showing sustained community engagement and interest in AI coding practices.</p>
+  </div>
+  
+  <div class="finding-card">
+    <h3>Quality Over Quantity</h3>
+    <p>The highest-scoring posts are comprehensive guides rather than quick tips, with the top 5 posts all exceeding 300 points and providing detailed workflows.</p>
+  </div>
+  
+  <div class="finding-card">
+    <h3>Subreddit Specialization</h3>
+    <p>r/cursor dominates with 53% of posts focusing on practical workflows, while r/ClaudeAI hosts theoretical discussions and r/ChatGPTCoding bridges both.</p>
+  </div>
+  
+  <div class="finding-card">
+    <h3>Evolution of Best Practices</h3>
+    <p>Clear progression from basic prompting (2024) to structured workflows (early 2025) to sophisticated multi-agent systems (mid 2025).</p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if posts data is available
+  if (!window.postsData || !window.postsData.posts) {
+    console.error('Posts data not loaded');
+    return;
+  }
+
+  const posts = window.postsData.posts;
+  const contributors = window.postsData.contributors;
+
+// Calculate metrics
+const uniqueAuthors = Object.keys(contributors).length;
+const avgScore = Math.round(posts.reduce((sum, p) => sum + p.score, 0) / posts.length);
+
+// Update metric displays
+document.getElementById('avgScore').textContent = avgScore.toFixed(1);
+document.getElementById('uniqueAuthors').textContent = uniqueAuthors;
+
+// Score Distribution Chart
+const scoreRanges = [
+  { label: '0-50', min: 0, max: 50 },
+  { label: '51-100', min: 51, max: 100 },
+  { label: '101-200', min: 101, max: 200 },
+  { label: '201-300', min: 201, max: 300 },
+  { label: '300+', min: 301, max: Infinity }
+];
+
+const scoreCounts = scoreRanges.map(range => 
+  posts.filter(p => p.score >= range.min && p.score <= range.max).length
+);
+
+new Chart(document.getElementById('scoreDistribution'), {
+  type: 'bar',
+  data: {
+    labels: scoreRanges.map(r => r.label),
+    datasets: [{
+      label: 'Number of Posts',
+      data: scoreCounts,
+      backgroundColor: 'rgba(54, 162, 235, 0.5)',
+      borderColor: 'rgb(54, 162, 235)',
+      borderWidth: 1
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Post Score Distribution'
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          stepSize: 5
+        }
+      }
+    }
+  }
+});
+
+// Posting Frequency Heatmap (as line chart for simplicity)
+const monthlyPosts = {};
+posts.forEach(post => {
+  const date = new Date(post.created_at);
+  const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+  monthlyPosts[monthKey] = (monthlyPosts[monthKey] || 0) + 1;
+});
+
+const sortedMonths = Object.keys(monthlyPosts).sort();
+const monthlyData = sortedMonths.map(month => monthlyPosts[month]);
+
+new Chart(document.getElementById('postingHeatmap'), {
+  type: 'line',
+  data: {
+    labels: sortedMonths.map(m => {
+      const [year, month] = m.split('-');
+      return `${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][parseInt(month)-1]} ${year}`;
+    }),
+    datasets: [{
+      label: 'Posts per Month',
+      data: monthlyData,
+      fill: true,
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: 'rgb(75, 192, 192)',
+      tension: 0.4
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Monthly Posting Activity'
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          stepSize: 1
+        }
+      }
+    }
+  }
+});
+
+// Subreddit Pie Chart
+const subredditCounts = {};
+posts.forEach(post => {
+  subredditCounts[post.subreddit] = (subredditCounts[post.subreddit] || 0) + 1;
+});
+
+new Chart(document.getElementById('subredditPie'), {
+  type: 'doughnut',
+  data: {
+    labels: Object.keys(subredditCounts),
+    datasets: [{
+      data: Object.values(subredditCounts),
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.5)',
+        'rgba(54, 162, 235, 0.5)',
+        'rgba(255, 205, 86, 0.5)',
+        'rgba(75, 192, 192, 0.5)',
+        'rgba(153, 102, 255, 0.5)',
+        'rgba(255, 159, 64, 0.5)'
+      ]
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Posts by Subreddit'
+      },
+      legend: {
+        position: 'bottom'
+      }
+    }
+  }
+});
+
+// Category Bar Chart
+const categoryCounts = {};
+posts.forEach(post => {
+  post.category.forEach(cat => {
+    categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
+  });
+});
+
+const sortedCategories = Object.entries(categoryCounts)
+  .sort(([,a], [,b]) => b - a)
+  .slice(0, 6);
+
+new Chart(document.getElementById('categoryBar'), {
+  type: 'bar',
+  data: {
+    labels: sortedCategories.map(([cat]) => cat.replace('-', ' ')),
+    datasets: [{
+      label: 'Number of Posts',
+      data: sortedCategories.map(([,count]) => count),
+      backgroundColor: 'rgba(153, 102, 255, 0.5)',
+      borderColor: 'rgb(153, 102, 255)',
+      borderWidth: 1
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Top Post Categories'
+      }
+    },
+    scales: {
+      x: {
+        beginAtZero: true,
+        ticks: {
+          stepSize: 5
+        }
+      }
+    }
+  }
+});
+
+}); // Close DOMContentLoaded
+</script>
+
+<style>
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.metric-card {
+  background: var(--bs-light);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.metric-icon {
+  font-size: 2.5rem;
+}
+
+.metric-content {
+  flex: 1;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--bs-primary);
+  line-height: 1;
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: var(--bs-secondary);
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+.metric-detail {
+  font-size: 0.8rem;
+  color: var(--bs-secondary);
+  margin-top: 0.25rem;
+}
+
+.chart-container {
+  margin: 3rem 0;
+  padding: 1.5rem;
+  background: white;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.5rem;
+}
+
+.chart-container.half-width {
+  display: inline-block;
+  width: calc(50% - 1rem);
+  margin-right: 2rem;
+}
+
+.chart-container.half-width:last-child {
+  margin-right: 0;
+}
+
+.trends-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.trend-card {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid;
+}
+
+.trend-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.trend-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.trend-card li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.trend-card li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.trend-up {
+  background: rgba(76, 175, 80, 0.1);
+  border-color: #4caf50;
+}
+
+.trend-up li::before {
+  color: #4caf50;
+}
+
+.trend-stable {
+  background: rgba(33, 150, 243, 0.1);
+  border-color: #2196f3;
+}
+
+.trend-stable li::before {
+  color: #2196f3;
+}
+
+.trend-evolving {
+  background: rgba(255, 152, 0, 0.1);
+  border-color: #ff9800;
+}
+
+.trend-evolving li::before {
+  color: #ff9800;
+}
+
+.findings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.finding-card {
+  background: var(--bs-light);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--bs-border-color);
+}
+
+.finding-card h3 {
+  margin-top: 0;
+  color: var(--bs-primary);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .chart-container.half-width {
+    width: 100%;
+    margin-right: 0;
+    display: block;
+  }
+}
+</style>

@@ -1,0 +1,104 @@
+---
+title: "Best AI Developer Tools & Workflows for Software Dev: Which Do You Recommend?"
+description: "Score: 22 | Author: Bjornhub1 | Subreddit: r/ChatGPTCoding"
+author: "Bjornhub1"
+date: "2025-01-17"
+categories: ["multi-agent"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Best AI Developer Tools & Workflows for Software Dev: Which Do You Recommend?</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by Bjornhub1</span>
+  <span class="date">January 16, 2025</span>
+  <span class="score">22 points</span>
+  <span class="subreddit">r/ChatGPTCoding</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/ChatGPTCoding/comments/1i3265w/best_ai_developer_tools_workflows_for_software/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+Which is your favorite AI developer tool or combination of tools from below. Looking for suggestions for optimizing my software dev process even further by combining these better and also advice on anything I missed here.
+
+- **Web Apps/Prototyping**: Bolt (.new & .diy), v0, Replit, GPTEngineer (now Lovable)
+- **Dev Agents**: Cline, Roo-Cline, OpenHands
+- **IDE Assistants:** Cursor, Windsurf
+
+Looking to continue improving my AI toolkit/workflow for software dev so I can spend more of my time focusing on growing my skills and working on projects in machine learning and AI engineering.
+
+## Key Takeaways
+
+- No key quotes extracted
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

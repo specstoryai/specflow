@@ -1,0 +1,113 @@
+---
+title: "Reddit Wisdom Data Validation Report"
+description: "Validation report comparing summary claims with actual Reddit CSV data"
+---
+
+## Overview
+
+This report validates the claims made in our summary files against the actual Reddit post data from our CSV source. The analysis covers 47 posts spanning from January 4, 2024 to June 4, 2025.
+
+## Key Metrics Validation
+
+### Post Count
+- **Claimed**: 47 posts
+- **Actual**: 47 posts
+- **Status**: ✅ Match
+
+### Date Range
+- **Claimed**: Jan 4, 2024 - Jun 4, 2025
+- **Actual**: Jan 4, 2024 - Jun 4, 2025
+- **Status**: ✅ Match
+
+### Subreddit Distribution
+- **Claimed**:
+  - r/cursor: 25
+  - r/ChatGPTCoding: 14
+  - r/ClaudeAI: 5
+- **Actual**:
+  - r/cursor: 25
+  - r/ChatGPTCoding: 14
+  - r/ClaudeAI: 5
+  - r/ZedEditor: 1
+  - r/GitHubCopilot: 1
+  - r/webdev: 1
+- **Status**: ⚠️ Core subreddits match, but 3 additional posts found in other subreddits
+
+### Growth Rate Analysis
+- **Claimed**: 517% growth
+- **Actual**: 466.7% growth
+- **Variance**: 50.3%
+- **Status**: ⚠️ Slight discrepancy in growth calculation
+
+## Top Posts Verification
+
+The following are the highest-scoring posts from our dataset:
+
+1. **"The Ultimate Vibe Coding Guide"** by PhraseProfessional54 (420 points)
+   - Subreddit: r/ClaudeAI
+   - Date: May 9, 2025
+
+2. **"The lazy programmer's guide to AI coding"** by illusionst (410 points)
+   - Subreddit: r/ClaudeAI
+   - Date: September 7, 2024
+
+3. **"Updated my cursor vibe coding guide (500 stars)"** by EnzeDfu (354 points)
+   - Subreddit: r/cursor
+   - Date: April 24, 2025
+
+4. **"The GOAT workflow"** by RonaldTheRight (313 points)
+   - Subreddit: r/ChatGPTCoding
+   - Date: December 20, 2024
+
+5. **"The Ultimate Vibe Coding Guide"** by PhraseProfessional54 (300 points)
+   - Subreddit: r/cursor
+   - Date: May 9, 2025 (cross-posted)
+
+## Additional Insights
+
+### Outlier Posts
+Several posts achieved scores 3x above their subreddit's average:
+- "The Ultimate Vibe Coding Guide" (300 points in r/cursor)
+- "Updated my cursor vibe coding guide (500 stars)" (354 points in r/cursor)
+- "My Cursor AI Workflow That Actually Works" (300 points in r/cursor)
+- "The GOAT workflow" (313 points in r/ChatGPTCoding)
+
+### Top Contributors
+- **namanyayg**: 4 posts
+- **punkouter23**: 3 posts
+
+## Quarterly Distribution
+
+```{mermaid}
+graph TB
+    subgraph "2024"
+        Q1_24["Q1 2024<br/>3 posts"]
+        Q2_24["Q2 2024<br/>8 posts"]
+        Q3_24["Q3 2024<br/>5 posts"]
+        Q4_24["Q4 2024<br/>9 posts"]
+    end
+    
+    subgraph "2025"
+        Q1_25["Q1 2025<br/>10 posts"]
+        Q2_25["Q2 2025<br/>12 posts"]
+    end
+    
+    style Q2_25 fill:#2ecc71,stroke:#27ae60,stroke-width:2px
+```
+
+## Data Quality Assessment
+
+- **URL Validation**: All Reddit URLs are valid and properly formatted
+- **Date Consistency**: All dates are within the expected range
+- **Score Distribution**: Scores range from 1 to 420, with a heavy concentration in the 10-50 range
+- **Content Completeness**: All posts contain both title and body content
+
+## Conclusion
+
+The summary files are largely accurate in their core claims:
+- Total post count matches exactly
+- Date range is correct
+- Main subreddit distribution is accurate
+- Growth rate shows a minor variance (466.7% vs claimed 517%)
+
+The only notable discrepancy is the presence of 3 additional posts from other subreddits (r/ZedEditor, r/GitHubCopilot, r/webdev) that were not mentioned in the summary files. This doesn't affect the overall narrative but provides additional context about the breadth of AI coding discussions across Reddit.

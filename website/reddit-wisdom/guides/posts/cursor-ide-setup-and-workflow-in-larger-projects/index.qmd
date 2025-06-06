@@ -1,0 +1,139 @@
+---
+title: "Cursor IDE: Setup and Workflow in Larger Projects"
+description: "Score: 137 | Author: Kirmark | Subreddit: r/cursor"
+author: "Kirmark"
+date: "2025-02-08"
+categories: ["multi-agent", "api-integration", "prompting", "context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Cursor IDE: Setup and Workflow in Larger Projects</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by Kirmark</span>
+  <span class="date">February 8, 2025</span>
+  <span class="score">137 points</span>
+  <span class="subreddit">r/cursor</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/cursor/comments/1ikq9m6/cursor_ide_setup_and_workflow_in_larger_projects/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+I want to share my development setup and workflow. I have more than 10+ years of development experience and recently switched to coding only in Cursor IDE. I spend about 6 hours every weekday coding in it, plus some extra time on weekends. Let me show you how I've set this up.
+
+### Writing Code Through Tests First
+
+Initially, I wrote code directly in Cursor. While this worked for small repos, it became risky in larger projects - AI-generated code could easily break existing functionality. Being overly careful defeated Cursor's primary benefit: rapid implementation with review during PR.
+
+My colleague Dmitry suggested test-driven development. While I tried full TDD, writing many tests before implementation, while reliable, was too time-consuming. Especially when refactoring interfaces, as I had to rewrite all test cases.
+
+I found a sweet spot with 1-2 integration tests using real credentials. Write one failing test, implement the feature, and get a checkpoint. Add more tests only after the interface stabilizes. When working on feature #16, a quick test run confirms I haven't broken features #1-15.
+
+This creates an efficient AI feedback loop. The test lets AI write code, check results, and fix issues automatically. It's faster than manual verification while keeping the code reliable, even when Cursor rewrites multiple files.
+
+### Breaking Tasks Into Small Steps
+
+Finding the right task size is the most crucial skill I've developed while working with Cursor. The test-first approach works especially well when you write a test for each small, well-defined piece of work. But what's "small enough"?
+
+It is too big, and the Cursor might go off track, requiring you to roll back everything. Too small, and you'll spend more time writing tests than solving the actual problem. This sweet spot between too big and too small is the most complex skill to explain, but it's what I've been learning the most.
+
+That's why the same task might seem impossible for one developer using Cursor but completely doable for another - even when coding purely by voice. An experienced Cursor user knows how to break down features into the right-sized steps and cover them with tests in a way that builds up the complete feature with minimal human intervention.
+
+### Preserving Thought Process as Documentation
+
+I used to rely heavily on chat history with the AI. Starting a new chat felt risky - I might lose important context or solutions, especially when breaking down an oversized task into smaller pieces. Explaining everything again in a new chat was time-consuming.
+
+Now, I save all our discussions and decisions in design documents and commit to the code. Before PR, I often refine these documents into cleaner documentation, removing some of the intermediate thinking. But by committing even the intermediate files, my colleagues can see my thought process, decision points, and reasoning if they're interested. I can also track the history of these changes.
+
+Documenting our dialogue, overall goals, task breakdowns, and their statuses has made working with Cursor much smoother. I can freely start a new chat, add my design doc for context, and continue from any point. Chat session length no longer worries me.
+
+### Working Exclusively Through Composer Agent
+
+I started with just the chat interface - it supported more models and seemed to give better control over code changes. I was convinced that Composer Agent was just a simplified tool for junior developers learning Cursor IDE. As an experienced developer, I dismissed it as too basic for my needs.
+
+My colleague Daniel kept suggesting I try switching completely to Composer Agent. At first, I maintained my stance - I was too "advanced" for such tools. But the ability to roll back to any point in our dialogue, modify the prompt, automatically restore files to that state, and try again turned out to be incredibly powerful. The integrated terminal commands and automatic result viewing made everything faster.
+
+I started using Agent mode occasionally, then more frequently. For the past month, I haven't opened chat or normal Composer mode once - I work exclusively in Composer Agent. I highly recommend trying it, even if you're a seasoned developer. It takes some getting used to, but you maintain full code control, and the benefits are worth it.
+
+### Voice Dictation to Chat Text
+
+I know this part won't resonate with everyone. Many of my developer friends are excellent typists who hate voice interfaces or work in offices where speaking isn't practical. But I've always enjoyed voice interfaces despite being a developer. For me, it just feels natural.
+
+I often work from home, and now I do all my programming in Cursor IDE with 99% of my input through voice using SuperWhisper. For me, it's a perfect setup that works incredibly well. But I understand this approach isn't universal - some developers are much more comfortable expressing themselves through text, and that's perfectly fine.
+
+
+## Key Takeaways
+
+- "Starting a new chat felt risky - I might lose important context or solutions, especially when breaking down an oversized task into smaller pieces"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

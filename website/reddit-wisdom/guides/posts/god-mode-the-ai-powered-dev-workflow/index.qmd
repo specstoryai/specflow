@@ -1,0 +1,157 @@
+---
+title: "God Mode: The AI-Powered Dev Workflow"
+description: "Score: 98 | Author: namanyayg | Subreddit: r/ChatGPTCoding"
+author: "namanyayg"
+date: "2025-03-23"
+categories: ["api-integration"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">God Mode: The AI-Powered Dev Workflow</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by namanyayg</span>
+  <span class="date">March 23, 2025</span>
+  <span class="score">98 points</span>
+  <span class="subreddit">r/ChatGPTCoding</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/ChatGPTCoding/comments/1jhn5ao/god_mode_the_aipowered_dev_workflow/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+I'm a SWE who's spent the last 2 years in a committed relationship with every AI coding tool on the market. My mission? Build entire products without touching a single line of code myself. Yes, I'm that lazy. Yes, it actually works.
+
+### What you need to know first
+
+You don't need to code, but you should at least know what code *is*. Understanding React, Node.js, and basic version control will save you from staring blankly at error messages that might as well be written in hieroglyphics.
+
+Also, know how to use GitHub Desktop. Not because you'll be pushing commits like a responsible developer, but because you'll need somewhere to store all those failed attempts.
+
+### Step 1: Start with Lovable for UI
+
+Lovable creates UIs that make my design-challenged attempts look like crayon drawings. But here's the catch: Lovable is not *that* great for complete apps.
+
+So just use it for static UI screens. Nothing else. No databases. No auth. Just pretty buttons that don't do anything.
+
+### Step 2: Document everything
+
+After connecting to GitHub and cloning locally, I open the repo in Cursor ($20/month) or Cline (potentially $500/month if you enjoy financial pain).
+
+First order of business: Have the AI document what we're building. Why? Because these AIs are unable to understand complete requirements, they work best in small steps. They'll forget your entire project faster than I forget people's names at networking events.
+
+### Step 3: Build feature by feature
+
+Create a Notion board. List all your features. Then feed them one by one to your AI assistant like you're training a particularly dim puppy.
+
+Always ask for error handling and console logging for every feature. Yes, it's overkill. Yes, you'll thank me when everything inevitably breaks.
+
+For auth and databases, use Supabase. Not because it's necessarily the best, but because it'll make debugging slightly less soul-crushing.
+
+### Step 4: Handling the inevitable breakdown
+
+Expect a 50% error rate. That's not pessimism; that's optimism.
+
+Here's what you need to do:
+
+- Test each feature individually
+- Check console logs (you did add those, right?)
+- Feed errors back to AI (and pray)
+
+### Step 5: Security check
+
+Before deploying, have a powerful model review your codebase to find all those API keys you accidentally hard-coded. Use RepoMix and paste the results into Claude, O1, whatever. (If there's interest I'll write a detailed guide on this soon. Lmk)
+
+### Why this actually works
+
+The current AI tools won't replace real devs anytime soon. They're like junior developers and mostly need close supervision.
+
+However, they're incredible amplifiers if you have basic knowledge. I can build in days what used to take weeks.
+
+I'm developing an AI tool myself to improve code generation quality, which feels a bit like using one robot to build a better robot. The future is weird, friends.
+
+TL;DR: Use AI builders for UI, AI coding assistants for features, more powerful models for debugging, and somehow convince people you actually know what you're doing. Works 60% of the time, every time.
+
+So what's your experience been with AI coding tools? Have you found any workflows or combinations that actually work?
+
+**EDIT:** This blew up! Here's what I've been working on recently:
+
+- Stop AI from hallucinating and making mistakes: [https://gigamind.dev/](https://gigamind.dev/) 
+- Guides on using AI to ship faster with production-grade quality: [https://nmn.gl/blog](https://nmn.gl/blog) 
+
+## Key Takeaways
+
+- "# What you need to know first
+
+You don't need to code, but you should at least know what code *is*"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>

@@ -1,0 +1,165 @@
+---
+title: "Agentic Project Management - My AI workflow"
+description: "Score: 35 | Author: Cobuter_Man | Subreddit: r/cursor"
+author: "Cobuter_Man"
+date: "2025-06-04"
+categories: ["vibe-coding", "multi-agent", "prompting", "context-management"]
+---
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../../index.html">Reddit Wisdom</a></li>
+    <li class="breadcrumb-item"><a href="../../index.html">Guides</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Agentic Project Management - My AI workflow</li>
+  </ol>
+</nav>
+
+<div class="post-meta">
+  <span class="author">by Cobuter_Man</span>
+  <span class="date">June 3, 2025</span>
+  <span class="score">35 points</span>
+  <span class="subreddit">r/cursor</span>
+</div>
+
+<div class="post-actions">
+  <a href="https://reddit.com/r/cursor/comments/1l2p2y6/agentic_project_management_my_ai_workflow/" target="_blank" class="btn btn-primary">View on Reddit →</a>
+  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
+</div>
+
+## Post Content
+
+### [Agentic Project Management](https://github.com/sdi2200262/agentic-project-management) (APM) Overview
+
+This is not a post about vibe coding, or a tips and tricks post about what works and what doesn't. Its a post about a workflow that utilizes all the things that **do work**:
+
+- \- **Strategic Planning**
+- \- **Having a structured Memory System**
+- \- **Separating workload into small, actionable tasks for LLMs to complete easily**
+- \- **Transferring context to new "fresh" Agents with Handover Procedures**
+
+These are the 4 core principles that this workflow utilizes that have been proven to work well when it comes to **tackling context drift**, and **defer hallucinations** as much as possible. So this is how it works:
+
+### Initiation Phase
+
+You initiate a new chat session on your AI IDE (VScode with Copilot, Cursor, Windsurf etc) and paste in the **Manager Initiation Prompt**. This chat session would act as your "Manager Agent" in this workflow, the **general orchestrator** that would be overviewing the entire project's progress. It is preferred to use a thinking model for this chat session to utilize the CoT efficiency (good performance has been seen with Claude 3.7 & 4 Sonnet Thinking, GPT-o3 or o4-mini and also DeepSeek R1). The Initiation Prompt sets up this Agent to query you ( the User ) about your project to get a high-level contextual understanding of its task(s) and goal(s). After that you have 2 options:
+
+- you either choose to manually explain your project's requirements to the LLM, leaving the level of detail up to you
+- or you choose to proceed to a **codebase and project requirements exploration phase,** which consists of the Manager Agent querying you about the project's details and its requirements *in a strategic way that the LLM would find most efficient!*  (Recommended)
+
+This phase usually lasts about 3-4 exchanges with the LLM.
+
+Once it has a complete contextual understanding of your project and its goals it proceeds to create a **detailed Implementation Plan,** breaking it down to Phases, Tasks and subtasks depending on its complexity. Each Task is assigned to one or more **Implementation Agent** to complete. Phases may be assigned to **Groups of Agents.** Regardless of the structure of the Implementation Plan, the goal here is to divide the project into small actionable steps that smaller and cheaper models can complete easily ( ideally oneshot ).
+
+The User then reviews/ modifies the Implementation Plan and when they confirm that its in their liking the Manager Agent proceeds to initiate the **Dynamic Memory Bank.** This memory system takes the [traditional Memory Bank concept](https://docs.cline.bot/prompting/cline-memory-bank) one step further! **It evolves** **as the APM framework and the User** **progress on the Implementation Plan** and adapts to its potential changes.  For example at this current stage where nothing from the Implementation Plan has been completed, the Manager Agent would go on to construct only the Memory Logs for the first Phase/Task of it, as later Phases/Tasks might change in the future. Whenever a Phase/Task has been completed the designated Memory Logs for the next one must be constructed before proceeding to its implementation.
+
+Once these first steps have been completed the main multi-agent loop begins.
+
+### Main Loop
+
+**The User now asks the Manager Agent (MA) to construct the Task Assignment Prompt** for the first Task of the first Phase of the Implementation Plan. This markdown prompt is then copy-pasted to a new chat session which will work as our first **Implementation Agent,** as defined in our Implementation Plan. This prompt contains the task assignment, details of it, previous context required to complete it and also **a mandatory log to the designated Memory Log of said Task.** Once the Implementation Agent completes the Task or faces a serious bug/issue, they log their work to the Memory Log and report back to the User.
+
+The User then returns to the MA and asks them to **review the recent Memory Log.** Depending on the state of the Task (success, blocked etc) and the details provided by the Implementation Agent **the MA will either provide a follow-up prompt to tackle the bug,** maybe instruct the assignment of a Debugger Agent **or confirm its validity and proceed to the creation of the Task Assignment Prompt for the next Task of the Implementation Plan.**
+
+>The Task Assignment Prompts will be passed on to all the Agents as described in the Implementation Plan, all Agents are to log their work in the Dynamic Memory Bank and the Manager is to review these Memory Logs along with their actual implementations for validity.... **until project completion!**
+
+### Context Handovers
+
+When using AI IDEs, **context windows of even the premium models are cut to a point where context management is essential** for actually benefiting from such a system. For this reason this is the Implementation that APM provides:
+
+When an Agent (Eg. Manager Agent) is nearing its context window limit, **instruct the Agent to perform a Handover Procedure** (defined in the Guides). The Agent will proceed to create **two Handover Artifacts:**
+
+- Handover\_File.md containing all required context information for the incoming Agent replacement.
+- Handover\_Prompt.md a light-weight context transfer prompt that actually guides the incoming Agent to utilize the Handover\_File.md efficiently and effectively.
+
+Once these Handover Artifacts are complete, the user proceeds to **open a new chat session** (replacement Agent) and there they paste the Handover\_Prompt. **The replacement Agent will complete the Handover Procedure by reading the Handover\_File as guided in the Handover\_Prompt and then the project can continue from where it left off!!!**
+
+*Tip: LLMs will fail to inform you that they are nearing their context window limits 90% if the time. You can notice it early on from small hallucinations, or a degrade in performance. However its good practice to perform regular context Handovers to make sure no critical context is lost during sessions (Eg. every 20-30 exchanges).*
+
+### Summary
+
+This is was a high-level description of this workflow. **It works.** Its efficient and its a less expensive alternative than many other MCP-based solutions since it avoids the MCP tool calls which count as an extra request from your subscription. In this method context retention is achieved by User input assisted through the Manager Agent!
+
+Many people have reached out with good feedback, but many felt lost and failed to understand the sequence of the critical steps of it so i made this post to explain it further as currently my documentation kinda sucks.
+
+Im currently entering my finals period so i wont be actively testing it out for the next 2-3 weeks, however ive already received important and useful advice and feedback on how to improve it even further, adding my own ideas as well.
+
+Its free. Its Open Source. Any feedback is welcome!
+
+[https://github.com/sdi2200262/agentic-project-management](https://github.com/sdi2200262/agentic-project-management)
+
+https://preview.redd.it/zx9veqoybs4f1.png?width=1179&format=png&auto=webp&s=6702d38382706ed2145d53f4f03124a5af598c33
+
+## Key Takeaways
+
+- "Whenever a Phase/Task has been completed the designated Memory Logs for the next one must be constructed before proceeding to its implementation"
+- "**
+
+# Context Handovers
+
+When using AI IDEs, **context windows of even the premium models are cut to a point where context management is essential** for actually benefiting from such a system"
+- "**
+
+*Tip: LLMs will fail to inform you that they are nearing their context window limits 90% if the time"
+
+<style>
+.post-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: var(--bs-light);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.post-meta span {
+  color: var(--bs-secondary);
+}
+
+.post-meta .score {
+  color: var(--bs-success);
+  font-weight: bold;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+h2, h3, h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+code {
+  background: var(--bs-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+pre {
+  background: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+</style>
