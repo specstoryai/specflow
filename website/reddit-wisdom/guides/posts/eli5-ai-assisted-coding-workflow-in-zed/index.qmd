@@ -17,14 +17,11 @@ categories: ["vibe-coding", "context-management"]
 <div class="post-meta">
   <span class="author">by gplusplus314</span>
   <span class="date">April 16, 2025</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/ZedEditor/comments/1k0olhi/eli5_aiassisted_coding_workflow_in_zed/" target="_blank">View on Reddit →</a></span>
   <span class="score">17 points</span>
   <span class="subreddit">r/ZedEditor</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/ZedEditor/comments/1k0olhi/eli5_aiassisted_coding_workflow_in_zed/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

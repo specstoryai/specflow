@@ -17,14 +17,11 @@ categories: ["general"]
 <div class="post-meta">
   <span class="author">by punkouter23</span>
   <span class="date">January 30, 2024</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/ChatGPTCoding/comments/1aey2b4/what_is_everyones_workflow_for_creating_a_app/" target="_blank">View on Reddit →</a></span>
   <span class="score">18 points</span>
   <span class="subreddit">r/ChatGPTCoding</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/ChatGPTCoding/comments/1aey2b4/what_is_everyones_workflow_for_creating_a_app/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

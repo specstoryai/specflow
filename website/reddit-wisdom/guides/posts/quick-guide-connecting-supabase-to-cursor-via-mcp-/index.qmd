@@ -17,14 +17,11 @@ categories: ["context-management"]
 <div class="post-meta">
   <span class="author">by Relevant-Fix2159</span>
   <span class="date">March 1, 2025</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/cursor/comments/1j17kgo/quick_guide_connecting_supabase_to_cursor_via_mcp/" target="_blank">View on Reddit →</a></span>
   <span class="score">35 points</span>
   <span class="subreddit">r/cursor</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/cursor/comments/1j17kgo/quick_guide_connecting_supabase_to_cursor_via_mcp/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

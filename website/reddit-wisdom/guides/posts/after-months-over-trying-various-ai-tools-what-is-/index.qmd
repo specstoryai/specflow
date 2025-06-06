@@ -17,14 +17,11 @@ categories: ["context-management"]
 <div class="post-meta">
   <span class="author">by punkouter23</span>
   <span class="date">January 3, 2024</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/ChatGPTCoding/comments/18xzxfu/after_months_over_trying_various_ai_tools_what_is/" target="_blank">View on Reddit →</a></span>
   <span class="score">55 points</span>
   <span class="subreddit">r/ChatGPTCoding</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/ChatGPTCoding/comments/18xzxfu/after_months_over_trying_various_ai_tools_what_is/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

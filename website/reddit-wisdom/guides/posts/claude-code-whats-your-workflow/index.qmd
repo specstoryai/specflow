@@ -17,14 +17,11 @@ categories: ["general"]
 <div class="post-meta">
   <span class="author">by gonnaz</span>
   <span class="date">May 14, 2025</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/ClaudeAI/comments/1km4boi/claude_code_whats_your_workflow/" target="_blank">View on Reddit →</a></span>
   <span class="score">26 points</span>
   <span class="subreddit">r/ClaudeAI</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/ClaudeAI/comments/1km4boi/claude_code_whats_your_workflow/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

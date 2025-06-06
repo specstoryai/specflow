@@ -17,14 +17,11 @@ categories: ["api-integration", "context-management"]
 <div class="post-meta">
   <span class="author">by BennyHungry</span>
   <span class="date">April 8, 2025</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/cursor/comments/1juhi7j/my_workflow_using_gemini_25_pro_as_cto/" target="_blank">View on Reddit →</a></span>
   <span class="score">43 points</span>
   <span class="subreddit">r/cursor</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/cursor/comments/1juhi7j/my_workflow_using_gemini_25_pro_as_cto/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

@@ -1,6 +1,6 @@
 ---
-title: "Top Contributors"
-description: "Meet the community leaders shaping AI coding practices"
+title: "Pioneers of agent-first coding"
+description: "Meet the Redditors shaping agent-first coding practices"
 format:
   html:
     include-in-header:
@@ -11,26 +11,7 @@ format:
 
 [← Back to Reddit Wisdom](../index.html){.back-link}
 
-## Community Leaders & Contributors
-
-These are the individuals who have contributed the most impactful guides and workflows to the AI coding community.
-
-<div class="contributor-stats">
-  <div class="stat-card">
-    <div class="stat-value">41</div>
-    <div class="stat-label">Unique Contributors</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-value">5</div>
-    <div class="stat-label">Power Users (3+ posts)</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-value">86.7</div>
-    <div class="stat-label">Avg Score per Post</div>
-  </div>
-</div>
-
-## Hall of Fame
+## Top Contributors
 
 <div id="contributorsContainer" class="contributors-grid">
   <!-- Contributors will be dynamically loaded here -->

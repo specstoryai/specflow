@@ -19,19 +19,83 @@ Through analyzing 47 posts and thousands of developer experiences, clear pattern
 
 ```{mermaid}
 flowchart TB
-    A[Project Vision & Goals] --> B[Architecture & Design Docs]
-    B --> C[Module Summaries]
-    C --> D[Current Task Context]
-    D --> E[Immediate Code Context]
+    subgraph "Strategic Context"
+        A[Project Vision & Goals]
+        A1[Business Requirements]
+        A2[Success Metrics]
+        A --> A1
+        A --> A2
+    end
+    
+    subgraph "System Context"
+        B[Architecture & Design]
+        B1[Tech Stack Decisions]
+        B2[API Contracts]
+        B3[Database Schema]
+        B --> B1
+        B --> B2
+        B --> B3
+    end
+    
+    subgraph "Module Context"
+        C[Component Summaries]
+        C1[ai_module_summary.md]
+        C2[Dependencies Map]
+        C3[Test Coverage]
+        C --> C1
+        C --> C2
+        C --> C3
+    end
+    
+    subgraph "Task Context"
+        D[Current Workplan]
+        D1[Task Objectives]
+        D2[Acceptance Criteria]
+        D3[Edge Cases]
+        D --> D1
+        D --> D2
+        D --> D3
+    end
+    
+    subgraph "Code Context"
+        E[Implementation Details]
+        E1[Similar Examples]
+        E2[.cursorrules]
+        E3[Recent Changes]
+        E --> E1
+        E --> E2
+        E --> E3
+    end
+    
+    A -.->|Informs| B
+    B -.->|Guides| C
+    C -.->|Shapes| D
+    D -.->|Directs| E
     
     style A fill:#e3f2fd
     style B fill:#bbdefb
     style C fill:#90caf9
     style D fill:#64b5f6
     style E fill:#42a5f5
+    
+    style A1 fill:#e3f2fd
+    style A2 fill:#e3f2fd
+    style B1 fill:#bbdefb
+    style B2 fill:#bbdefb
+    style B3 fill:#bbdefb
+    style C1 fill:#90caf9
+    style C2 fill:#90caf9
+    style C3 fill:#90caf9
+    style D1 fill:#64b5f6
+    style D2 fill:#64b5f6
+    style D3 fill:#64b5f6
+    style E1 fill:#42a5f5
+    style E2 fill:#42a5f5
+    style E3 fill:#42a5f5
 ```
 
 **Implementation**:
+
 - **Project Level**: Maintain a clear README and architecture document
 - **Module Level**: Create `ai_module_summary.md` files for each component
 - **Task Level**: Use detailed workplans that preserve decision rationale
@@ -48,6 +112,7 @@ flowchart TB
 :::
 
 Examples of well-scoped tasks:
+
 - ✅ "Add email validation to the signup form"
 - ✅ "Create a reusable Button component with hover states"
 - ❌ "Build the entire authentication system"
@@ -58,16 +123,95 @@ Examples of well-scoped tasks:
 
 ```{mermaid}
 flowchart LR
-    A[Basic Structure] --> B[Core Functionality]
-    B --> C[Edge Cases]
-    C --> D[Performance]
-    D --> E[Polish]
+    subgraph "1. Foundation"
+        A[Basic Structure]
+        A1[File Setup]
+        A2[Type Definitions]
+        A3[Minimal UI]
+    end
     
-    style A fill:#c8e6c9
-    style E fill:#4caf50
+    subgraph "2. Core"
+        B[Core Functionality]
+        B1[Happy Path]
+        B2[Basic Tests]
+        B3[API Integration]
+    end
+    
+    subgraph "3. Robustness"
+        C[Edge Cases]
+        C1[Error Handling]
+        C2[Validation]
+        C3[Loading States]
+    end
+    
+    subgraph "4. Optimization"
+        D[Performance]
+        D1[Caching]
+        D2[Lazy Loading]
+        D3[Bundle Size]
+    end
+    
+    subgraph "5. Refinement"
+        E[Polish]
+        E1[Animations]
+        E2[Accessibility]
+        E3[Documentation]
+    end
+    
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    
+    A --> A1
+    A --> A2
+    A --> A3
+    
+    B --> B1
+    B --> B2
+    B --> B3
+    
+    C --> C1
+    C --> C2
+    C --> C3
+    
+    D --> D1
+    D --> D2
+    D --> D3
+    
+    E --> E1
+    E --> E2
+    E --> E3
+    
+    style A fill:#e8f5e9
+    style B fill:#c8e6c9
+    style C fill:#a5d6a7
+    style D fill:#81c784
+    style E fill:#66bb6a
+    
+    style A1 fill:#f1f8e9
+    style A2 fill:#f1f8e9
+    style A3 fill:#f1f8e9
+    
+    style B1 fill:#dcedc8
+    style B2 fill:#dcedc8
+    style B3 fill:#dcedc8
+    
+    style C1 fill:#c5e1a5
+    style C2 fill:#c5e1a5
+    style C3 fill:#c5e1a5
+    
+    style D1 fill:#aed581
+    style D2 fill:#aed581
+    style D3 fill:#aed581
+    
+    style E1 fill:#9ccc65
+    style E2 fill:#9ccc65
+    style E3 fill:#9ccc65
 ```
 
 This approach:
+
 - Provides immediate feedback
 - Maintains a working state
 - Allows for course correction
@@ -77,6 +221,7 @@ This approach:
 **Pattern**: Tell AI what NOT to do as clearly as what TO do.
 
 Common constraint patterns:
+
 ```markdown
 ## Constraints for this task:
 - Do NOT modify any existing tests
@@ -177,11 +322,13 @@ The community has discovered that different AI models excel at different tasks:
    ```
 
 2. **Git-Anchored Context**
+
    - Tag significant milestones
    - Reference commits in workplans
    - Use branches for experimental AI work
 
 3. **Session Handovers**
+
    - Create handover documents when switching between AI sessions
    - Include: current state, recent changes, next steps
    - Reference specific file versions
@@ -191,16 +338,19 @@ The community has discovered that different AI models excel at different tasks:
 The community has identified key indicators of healthy AI-assisted development:
 
 ### Velocity Metrics
+
 - **Task Completion Rate**: 80%+ of AI attempts should succeed first try
 - **Iteration Count**: Average 1-3 iterations per feature
 - **Context Switches**: Minimize by batching related work
 
 ### Quality Metrics
+
 - **Test Coverage**: AI-generated code should include tests
 - **Review Changes**: <20% of AI code should need significant revision
 - **Bug Introduction Rate**: Should be lower than manual coding
 
 ### Process Metrics
+
 - **Context Preparation Time**: 10-20% of total development time
 - **Prompt Refinement**: 2-3 iterations to get desired output
 - **Documentation Ratio**: 1:4 (docs to code)

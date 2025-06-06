@@ -11,7 +11,7 @@ The journey from treating AI as a code completion tool to orchestrating sophisti
 
 ## The Three Phases of Evolution
 
-### Phase 1: Foundation (Late 2024 - Early 2025)
+### Early Adoption (Late 2024 - Early 2025)
 #### "From Autocomplete to Collaborator"
 
 The early period was marked by frustration and experimentation. Developers initially approached AI coding assistants as enhanced autocomplete tools, only to discover that this mental model led to inconsistent results and "hallucinations." The breakthrough came when the community realized AI should be treated as a **programmable collaborator** rather than a magic oracle.
@@ -30,7 +30,7 @@ This phase established two foundational principles that would shape everything t
 1. **Structured Interaction**: AI performs best when given clear roles and sequential tasks
 2. **Verification Loops**: Using Test-Driven Development (TDD) as an AI feedback mechanism ensures quality
 
-### Phase 2: Development (March - May 2025)
+### Growth Phase (March - May 2025)
 #### "The Rise of Vibe Coding"
 
 As the community gained experience, a new paradigm emerged: **"Vibe Coding"** - the art of guiding AI through complex development tasks with the same care you'd use to mentor a junior developer. This period saw an explosion of comprehensive guides that codified best practices into repeatable workflows.
@@ -53,7 +53,7 @@ The mental model shift was profound. Instead of expecting AI to read minds, deve
 
 The [Ultimate Vibe Coding Guide](../guides/posts/the-ultimate-vibe-coding-guide/index.html) (420 points) became the de facto standard, presenting an 18-step workflow that covered everything from initial planning to production deployment.
 
-### Phase 3: Advanced (Late May 2025 - Present)
+### Current State (Late May 2025 - Present)
 #### "Agentic Orchestration"
 
 The current phase represents a quantum leap in sophistication. Developers are no longer just using AI - they're **engineering AI-driven development systems**. This phase is characterized by:
@@ -91,14 +91,98 @@ The TDD-as-feedback-loop innovation from the community became a core principle i
 The single most important lesson from 18 months of community experimentation: **context management separates successful AI development from frustrating failures**.
 
 ```{mermaid}
-flowchart LR
-    A[Poor Context] --> B[AI Hallucinations]
-    A --> C[Inconsistent Output]
-    A --> D[Scope Creep]
+flowchart TB
+    subgraph "Early Adoption"
+        EA1[AI as Magic Tool]
+        EA2[Ad-hoc Prompting]
+        EA3[Frustration & Hallucinations]
+        EA4[Discovery: Role-Playing]
+        
+        EA1 --> EA2
+        EA2 --> EA3
+        EA3 --> EA4
+    end
     
-    E[Rich Context] --> F[Predictable Results]
-    E --> G[Maintainable Code]
-    E --> H[Scalable Workflows]
+    subgraph "Growth Phase"
+        GP1[AI as Junior Developer]
+        GP2[Structured Workflows]
+        GP3[.cursorrules & Context]
+        GP4[Vibe Coding Emerges]
+        
+        GP1 --> GP2
+        GP2 --> GP3
+        GP3 --> GP4
+    end
+    
+    subgraph "Current State"
+        CS1[AI as System Component]
+        CS2[Multi-Agent Orchestration]
+        CS3[Context as Infrastructure]
+        CS4[Semi-Autonomous Pipelines]
+        
+        CS1 --> CS2
+        CS2 --> CS3
+        CS3 --> CS4
+    end
+    
+    EA4 -.-> GP1
+    GP4 -.-> CS1
+    
+    style EA1 fill:#ffebee
+    style EA2 fill:#ffcdd2
+    style EA3 fill:#ef9a9a
+    style EA4 fill:#e57373
+    
+    style GP1 fill:#e3f2fd
+    style GP2 fill:#bbdefb
+    style GP3 fill:#90caf9
+    style GP4 fill:#64b5f6
+    
+    style CS1 fill:#e8f5e9
+    style CS2 fill:#c8e6c9
+    style CS3 fill:#a5d6a7
+    style CS4 fill:#81c784
+```
+
+### Evolution of Key Concepts
+
+```{mermaid}
+flowchart LR
+    subgraph "Mental Model"
+        MM1[Tool] --> MM2[Assistant] --> MM3[Partner]
+    end
+    
+    subgraph "Context Approach"
+        CA1[None] --> CA2[Manual] --> CA3[Programmatic]
+    end
+    
+    subgraph "Workflow"
+        W1[Linear] --> W2[Iterative] --> W3[Orchestrated]
+    end
+    
+    subgraph "Quality Control"
+        Q1[Hope] --> Q2[Review] --> Q3[TDD + Verification]
+    end
+    
+    MM1 -.->|Early Adoption| CA1
+    MM2 -.->|Growth Phase| CA2
+    MM3 -.->|Current State| CA3
+    
+    style MM1 fill:#ffcdd2
+    style MM2 fill:#90caf9
+    style MM3 fill:#a5d6a7
+    
+    style CA1 fill:#ffcdd2
+    style CA2 fill:#90caf9
+    style CA3 fill:#a5d6a7
+    
+    style W1 fill:#ffcdd2
+    style W2 fill:#90caf9
+    style W3 fill:#a5d6a7
+    
+    style Q1 fill:#ffcdd2
+    style Q2 fill:#90caf9
+    style Q3 fill:#a5d6a7
 ```
 
 ### The Evolution Continues

@@ -17,14 +17,11 @@ categories: ["general"]
 <div class="post-meta">
   <span class="author">by Typical_Bear_264</span>
   <span class="date">March 25, 2024</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/webdev/comments/1bnq05x/how_have_ai_tools_improved_your_workflow/" target="_blank">View on Reddit →</a></span>
   <span class="score">31 points</span>
   <span class="subreddit">r/webdev</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/webdev/comments/1bnq05x/how_have_ai_tools_improved_your_workflow/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

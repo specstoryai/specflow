@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Charts</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script src="../data/posts-data.js"></script>
+</head>
+<body>
+    <h1>Chart.js Test</h1>
+    <canvas id="testChart" width="400" height="200"></canvas>
+    <div id="status"></div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const status = document.getElementById('status');
+        
+        // Test 1: Check if Chart.js loaded
+        if (typeof Chart !== 'undefined') {
+            status.innerHTML += '<p>✓ Chart.js loaded</p>';
+        } else {
+            status.innerHTML += '<p>✗ Chart.js NOT loaded</p>';
+        }
+        
+        // Test 2: Check if posts data loaded
+        if (window.postsData) {
+            status.innerHTML += '<p>✓ Posts data loaded</p>';
+            status.innerHTML += '<p>Posts count: ' + (window.postsData.posts ? window.postsData.posts.length : 0) + '</p>';
+        } else {
+            status.innerHTML += '<p>✗ Posts data NOT loaded</p>';
+        }
+        
+        // Test 3: Create a simple chart
+        try {
+            const ctx = document.getElementById('testChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Test Data',
+                        data: [
+                            {x: new Date('2024-09-01').getTime(), y: 100},
+                            {x: new Date('2024-12-01').getTime(), y: 200},
+                            {x: new Date('2025-03-01').getTime(), y: 300}
+                        ],
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'month'
+                            }
+                        }
+                    }
+                }
+            });
+            status.innerHTML += '<p>✓ Chart created successfully</p>';
+        } catch (error) {
+            status.innerHTML += '<p>✗ Chart creation failed: ' + error.message + '</p>';
+        }
+    });
+    </script>
+</body>
+</html>

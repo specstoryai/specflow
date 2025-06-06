@@ -183,9 +183,9 @@ function createPhasesChart() {
   if (chart) chart.destroy();
   
   const phases = [
-    { name: 'Early Adoption\n(Late 2024)', posts: 17, color: 'rgba(255, 99, 132, 0.5)' },
-    { name: 'Growth Phase\n(Early-Mid 2025)', posts: 22, color: 'rgba(54, 162, 235, 0.5)' },
-    { name: 'Current State\n(Mid 2025)', posts: 8, color: 'rgba(75, 192, 192, 0.5)' }
+    { name: 'Early Adoption\n(Late 2024 - Early 2025)', posts: 17, color: 'rgba(255, 99, 132, 0.5)' },
+    { name: 'Growth Phase\n(March - May 2025)', posts: 22, color: 'rgba(54, 162, 235, 0.5)' },
+    { name: 'Current State\n(Late May 2025 - Present)', posts: 8, color: 'rgba(75, 192, 192, 0.5)' }
   ];
   
   chart = new Chart(ctx, {

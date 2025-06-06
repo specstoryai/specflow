@@ -17,14 +17,11 @@ categories: ["vibe-coding", "api-integration", "prompting", "context-management"
 <div class="post-meta">
   <span class="author">by dilberryhoundog</span>
   <span class="date">January 18, 2025</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/ClaudeAI/comments/1i4c6jx/my_guide_to_using_styles_effectively/" target="_blank">View on Reddit →</a></span>
   <span class="score">88 points</span>
   <span class="subreddit">r/ClaudeAI</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/ClaudeAI/comments/1i4c6jx/my_guide_to_using_styles_effectively/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

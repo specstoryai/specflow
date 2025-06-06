@@ -17,14 +17,11 @@ categories: ["vibe-coding", "multi-agent", "prompting", "context-management"]
 <div class="post-meta">
   <span class="author">by gtgderek</span>
   <span class="date">May 16, 2025</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/cursor/comments/1knnmj1/guide_to_using_ai_agents_with_existing_codebases/" target="_blank">View on Reddit →</a></span>
   <span class="score">17 points</span>
   <span class="subreddit">r/cursor</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/cursor/comments/1knnmj1/guide_to_using_ai_agents_with_existing_codebases/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

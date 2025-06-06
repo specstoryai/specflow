@@ -17,14 +17,11 @@ categories: ["api-integration"]
 <div class="post-meta">
   <span class="author">by thezachlandes</span>
   <span class="date">April 4, 2025</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/ChatGPTCoding/comments/1jrp1tj/a_simple_guide_to_setting_up_gemini_25_pro_free/" target="_blank">View on Reddit →</a></span>
   <span class="score">89 points</span>
   <span class="subreddit">r/ChatGPTCoding</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/ChatGPTCoding/comments/1jrp1tj/a_simple_guide_to_setting_up_gemini_25_pro_free/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

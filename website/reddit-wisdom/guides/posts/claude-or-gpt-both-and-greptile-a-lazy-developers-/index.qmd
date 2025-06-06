@@ -17,14 +17,11 @@ categories: ["api-integration", "prompting", "context-management"]
 <div class="post-meta">
   <span class="author">by ThePlotTwisterr----</span>
   <span class="date">April 25, 2024</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/ChatGPTCoding/comments/1cclxfh/claude_or_gpt_both_and_greptile_a_lazy_developers/" target="_blank">View on Reddit →</a></span>
   <span class="score">95 points</span>
   <span class="subreddit">r/ChatGPTCoding</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/ChatGPTCoding/comments/1cclxfh/claude_or_gpt_both_and_greptile_a_lazy_developers/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

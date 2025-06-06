@@ -17,14 +17,11 @@ categories: ["vibe-coding", "api-integration", "prompting", "context-management"
 <div class="post-meta">
   <span class="author">by stonedoubt</span>
   <span class="date">August 29, 2024</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/ChatGPTCoding/comments/1f4lfga/workflow_wmultiple_tools/" target="_blank">View on Reddit →</a></span>
   <span class="score">21 points</span>
   <span class="subreddit">r/ChatGPTCoding</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/ChatGPTCoding/comments/1f4lfga/workflow_wmultiple_tools/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

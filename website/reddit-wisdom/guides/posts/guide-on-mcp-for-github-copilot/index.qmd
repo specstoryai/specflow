@@ -17,14 +17,11 @@ categories: ["general"]
 <div class="post-meta">
   <span class="author">by influbit</span>
   <span class="date">April 4, 2025</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/GithubCopilot/comments/1jrpena/guide_on_mcp_for_github_copilot/" target="_blank">View on Reddit →</a></span>
   <span class="score">16 points</span>
   <span class="subreddit">r/GitHubCopilot</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/GithubCopilot/comments/1jrpena/guide_on_mcp_for_github_copilot/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

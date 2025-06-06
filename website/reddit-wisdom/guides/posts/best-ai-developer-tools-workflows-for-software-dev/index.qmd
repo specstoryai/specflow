@@ -17,14 +17,11 @@ categories: ["multi-agent"]
 <div class="post-meta">
   <span class="author">by Bjornhub1</span>
   <span class="date">January 16, 2025</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/ChatGPTCoding/comments/1i3265w/best_ai_developer_tools_workflows_for_software/" target="_blank">View on Reddit →</a></span>
   <span class="score">22 points</span>
   <span class="subreddit">r/ChatGPTCoding</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/ChatGPTCoding/comments/1i3265w/best_ai_developer_tools_workflows_for_software/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

@@ -17,14 +17,11 @@ categories: ["api-integration", "prompting"]
 <div class="post-meta">
   <span class="author">by eastwindtoday</span>
   <span class="date">April 22, 2025</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/cursor/comments/1k5826a/cursor_is_like_a_junior_dev_guide_it_step_by_step/" target="_blank">View on Reddit →</a></span>
   <span class="score">112 points</span>
   <span class="subreddit">r/cursor</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/cursor/comments/1k5826a/cursor_is_like_a_junior_dev_guide_it_step_by_step/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

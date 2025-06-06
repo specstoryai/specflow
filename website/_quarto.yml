@@ -48,6 +48,14 @@ website:
             text: Reference
           - href: reddit-wisdom/index.qmd
             text: Reddit Wisdom
+          - href: reddit-wisdom/evolution/index.qmd
+            text: "  → Evolution Story"
+          - href: reddit-wisdom/guides/index.qmd
+            text: "  → Breakthrough Guides"
+          - href: reddit-wisdom/patterns/index.qmd
+            text: "  → Patterns"
+          - href: reddit-wisdom/contributors/index.qmd
+            text: "  → Contributors"
     right:
       - icon: github
         href: https://github.com/specstoryai/specflow

@@ -17,14 +17,11 @@ categories: ["api-integration"]
 <div class="post-meta">
   <span class="author">by namanyayg</span>
   <span class="date">May 5, 2025</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/cursor/comments/1kfliem/god_mode_the_aipowered_dev_workflow_for/" target="_blank">View on Reddit →</a></span>
   <span class="score">39 points</span>
   <span class="subreddit">r/cursor</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/cursor/comments/1kfliem/god_mode_the_aipowered_dev_workflow_for/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

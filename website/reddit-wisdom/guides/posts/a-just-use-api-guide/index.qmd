@@ -17,14 +17,11 @@ categories: ["multi-agent", "api-integration", "prompting", "context-management"
 <div class="post-meta">
   <span class="author">by Historical-Internal3</span>
   <span class="date">December 15, 2024</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/ClaudeAI/comments/1heibgb/a_just_use_api_guide/" target="_blank">View on Reddit →</a></span>
   <span class="score">190 points</span>
   <span class="subreddit">r/ClaudeAI</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/ClaudeAI/comments/1heibgb/a_just_use_api_guide/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

@@ -17,14 +17,11 @@ categories: ["api-integration", "context-management"]
 <div class="post-meta">
   <span class="author">by JohannesSmith</span>
   <span class="date">June 11, 2024</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/ChatGPTCoding/comments/1ddiuyw/coding_saas_with_ai_full_workflow_and_experience/" target="_blank">View on Reddit →</a></span>
   <span class="score">16 points</span>
   <span class="subreddit">r/ChatGPTCoding</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/ChatGPTCoding/comments/1ddiuyw/coding_saas_with_ai_full_workflow_and_experience/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

@@ -8,7 +8,7 @@
 .cursorindexingignore
 
 # Exclude workplans directory
-workplans/
+ workplans/
 
 # Exclude .DS_Store files (macOS)
 .DS_Store

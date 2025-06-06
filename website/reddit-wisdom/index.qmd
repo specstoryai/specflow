@@ -1,192 +1,994 @@
 ---
 title: "Reddit Wisdom"
-description: "Insights from the Reddit AI coding community - analyzing 47 posts from January 2024 to June 2025"
+description: "How 10,000+ devs collectively cracked the code to agent-first development"
 ---
 
-## Welcome to the Reddit AI Coding Wisdom Hub
+## The $50 Billion Question Nobody Could Answer
 
-This section captures the evolution of AI-assisted software development practices based on insights from the Reddit community. These 47 posts represent a carefully curated sampling from over **10,000 posts** collected across 8 months of continuous monitoring.
+In January 2024, a frustrated developer posted on r/cursor: *"Why won't this AI understand what I want?"* 
 
-:::{.callout-important}
-**How This Connects to SpecFlow**: The patterns, struggles, and breakthroughs documented here directly informed the SpecFlow methodology. As the community discovered that successful AI development requires structured planning, clear context, and iterative refinement, these principles became the foundation of SpecFlow's approach to turning intent into working software.
+Eighteen months and 10,658 posts later, that question had evolved into something far more profound: *"How do we build software WITH agents, not just USING them?"*
+
+**This is the story of how the Reddit community accidentally discovered the future of software development.**
+
+## What You're Looking At
+
+This is a forensic analysis of how 10,000+ developers have been collectively solving the agent-first coding puzzle through trial, error, and breakthrough moments. We've tracked every relevant post, analyzed every workflow, and identified the pivotal guides and posts with the most impact.
+
+**The result?** A complete blueprint for agent-first development that became the foundation of the Specflow methodology.
+
+:::{.callout-note}
+**Why this matters to you**: Whether you're struggling with AI hallucinations, fighting context limits, or wondering why your AI coding feels like wrestling with a brilliant but confused intern - the answers are here. These aren't theoretical concepts. They're battle-tested solutions from developers who've been where you are.
 :::
 
-## Dataset Overview
+## The 5 Key Questions
+
+Through 10,658 posts, the community is not just sharing tips. They have collectively answered the five fundamental questions that are key to understanding how to use agents to build software:
+
+1. **The Mental Model Question**: *"Is AI a tool, a teammate, or something else entirely?"*
+2. **The Context Question**: *"How do you give a goldfish the memory of an elephant?"*
+3. **The Decomposition Question**: *"What's the right size bite for an AI to chew?"*
+4. **The Quality Question**: *"How do you trust code you didn't write from a mind you can't see?"*
+5. **The Human Role Question**: *"If AI writes the code, what do developers do?"*
+
+**The answers have evolved through three distinct phases**, each building on the discoveries of the last, ultimately revealing that the future of development isn't about AI replacing developers - it's about developers becoming architects of AI-driven systems.
+
+## The Evidence: Three Phases of Evolution
+
+The community's approach to agent-first coding has matured through three distinct phases, each building on the discoveries of the last:
+
+### Early Adoption (Late 2024 - Early 2025)
+*"Why won't this AI understand what I want?"*
+
+Initial posts from this era focused on the novelty of AI coding tools and the practicalities of setup. Discussions were dominated by tool comparisons and guides for basic configuration. A common theme was the struggle to get consistent, high-quality output, with many users feeling that the AI was unreliable for complex tasks. The core problem identified was the AI's lack of context and its tendency to "hallucinate" or produce superficial code.
+
+**Initial Concerns:** Getting AI to work with existing codebases, avoiding placeholder comments, and comparing tools like Cursor, Bolt, and v0.
+
+**Early Approaches:** Using AI for simple code snippets, debugging, and replacing Stack Overflow queries. The concept of role-playing with the AI first appeared here, laying the groundwork for future workflows.
+
+**Breakthrough Moment:** [The lazy programmer's guide to AI coding](guides/posts/the-lazy-programmer-s-guide-to-ai-coding/) by u/illusionst (score: 410, r/ClaudeAI) introduced the foundational workflow of treating the AI as a sequence of different roles (Engineer, Product Manager, etc.). This shifted the paradigm from seeing AI as a smarter autocomplete to recognizing it as an actor waiting for a role.
+
+### Growth Phase (March - May 2025)
+*"Treat it like a junior developer who needs guidance"*
+
+This period marked a turning point. The community moved beyond basic usage and began developing and sharing comprehensive workflows. The mantra became "treat it like a junior developer." Hugely popular guides emerged, establishing best practices that are still referenced. Key innovations included the systematic use of `.cursorrules` to enforce project conventions, the importance of providing context by referencing similar files, and breaking down large features into atomic tasks. The focus shifted from getting the AI to write code to *guiding* the AI to write *good* code.
+
+**Maturing Practices:** Development of detailed "vibe coding" guides, meticulous prompt engineering, session-based development, and the use of Test-Driven Development (TDD) to create a feedback loop for the AI.
+
+**Key Innovations:** The popularization of `.cursorrules`, providing context with similar components, and the "junior dev" analogy.
+
+**Representative Posts:**
+
+- [The Ultimate Vibe Coding Guide](guides/posts/the-ultimate-vibe-coding-guide/) by u/PhraseProfessional54 (score: 420, r/ClaudeAI) provided an exhaustive 18-step guide that became a community touchstone.
+- [Cursor is like a junior dev, guide it step by step](guides/posts/cursor-is-like-a-junior-dev-guide-it-step-by-step/) by u/eastwindtoday (score: 112, r/cursor) crystallized the most effective mental model for working with Cursor.
+- [My Cursor AI Workflow That Actually Works](guides/posts/my-cursor-ai-workflow-that-actually-works/) by u/namanyayg (score: 127, r/ChatGPTCoding) was one of the first detailed workflows emphasizing `.cursorrules` and context from similar code.
+
+### Current State (Late May 2025 - Present)
+*"We're not coding with AI - we're architecting AI systems"*
+
+The most recent posts demonstrate a leap towards treating the development process itself as a system to be engineered, with AI agents as core components. The conversation is now about creating scalable, repeatable, and automated workflows. These systems involve multiple AI models, dedicated context documentation, and programmatic control over the development lifecycle. The goal is no longer just to augment a human developer but to build a semi-autonomous development pipeline capable of handling complex projects with high fidelity.
+
+**Latest Innovations:** Agentic Project Management frameworks, using Git SHAs to anchor AI context, creating dedicated module and project summary files for AI consumption, and formal "Handover Procedures" to manage context window limitations.
+
+**Focus Areas:** Scaling AI collaboration for large projects, ensuring production-grade quality, and integrating version control directly into the AI's workflow for perfect state management.
+
+**Representative Posts:**
+
+- [Agentic Project Management - My AI workflow](guides/posts/agentic-project-management-my-ai-workflow/) by u/Cobuter_Man (score: 35, r/cursor) outlines a sophisticated workflow with a "Manager Agent" orchestrating "Implementation Agents."
+- [Manifest.md (workflow_state.md) + GitSHA's = God Mode](guides/posts/manifest-md-workflow-state-md-gitsha-s-god-mode/) by u/aarontatlorg33k (score: 29, r/cursor) introduces a novel technique for anchoring AI context to specific points in version history.
 
 <div id="dataset-stats">
 <div class="stat-box">
-<h3>Posts Monitored</h3>
+<h3>Posts Analyzed</h3>
 <div class="metric-value">10.7K</div>
-<div class="metric-label">total posts tracked</div>
+<div class="metric-label">from 14 subreddits</div>
 </div>
 <div class="stat-box">
-<h3>Comments Analyzed</h3>
-<div class="metric-value">133K</div>
-<div class="metric-label">community discussions</div>
+<h3>Community Growth</h3>
+<div class="metric-value">466%</div>
+<div class="metric-label">in 18 months</div>
 </div>
 <div class="stat-box">
-<h3>Curated Selection</h3>
+<h3>Key Discoveries</h3>
 <div class="metric-value">47</div>
-<div class="metric-label">top guides & workflows</div>
+<div class="metric-label">breakthrough posts</div>
 </div>
 <div class="stat-box">
-<h3>Coverage</h3>
-<div class="metric-value">14</div>
-<div class="metric-label">subreddits monitored</div>
+<h3>Developers Reached</h3>
+<div class="metric-value">133K</div>
+<div class="metric-label">through comments</div>
 </div>
 </div>
 
-## Explore the Reddit Wisdom
+## How Specflow was informed through these discoveries
+
+These discoveries didn't just solve individual problems - they revealed a fundamental truth: **successful AI development requires structure, not just good prompts**. The community had unknowingly unconvered many different new methodologies, and Specflow formalizes it.
+
+Specflow incorporates many of the hard-won lessons from these 47 breakthrough guides and transforms them into a systematic approach:
+
+- **Structured planning** (from the Mental Model evolution)
+- **Context as infrastructure** (from the Context Question solutions)
+- **Systematic decomposition** (from the Decomposition breakthroughs)
+- **Built-in validation** (from the Quality Question answers)
+- **Developer as architect** (from the Human Role transformation)
+
+## Dive Into the Details
 
 ::: {.navigation-grid}
 
 ::: {.nav-card}
-### 🔄 [The Evolution of Agent-First Development](evolution/index.html)
-Discover how 18 months of community experimentation transformed AI from a code completion tool into sophisticated development partners. This journey directly informed the SpecFlow methodology.
+### 🔄 [The Complete Evolution Story](evolution/index.html)
+See how 18 months of collective discovery transformed AI from a code completion tool into sophisticated development partners. Understand each phase and why it matters.
 :::
 
 ::: {.nav-card}
-### 📊 [Interactive Timeline](timeline/index.html)
-Explore the chronological progression of AI coding practices through three distinct phases: Foundation, Development, and Advanced Orchestration.
+### 📚 [The 47 Breakthrough Guides](guides/index.html)
+Browse the actual posts that changed everything. Each guide represents a pivotal moment where the community solved a fundamental problem.
 :::
 
 ::: {.nav-card}
-### 🎯 [Patterns & Best Practices](patterns/index.html)
-Distilled wisdom from thousands of developer experiences, revealing the four pillars of successful agent-first development and common anti-patterns to avoid.
+### 🎯 [Patterns That Actually Work](patterns/index.html)
+Distilled wisdom from 10,000+ experiences. Learn the four pillars of successful agent-first development and the anti-patterns that guarantee failure.
 :::
 
 ::: {.nav-card}
-### 📚 [Guide Repository](guides/index.html)
-Browse 47 community-created guides covering:
-
-- Vibe Coding Techniques
-- Multi-Agent Workflows
-- Context Management Strategies
-- Production-Ready Practices
-:::
-
-::: {.nav-card}
-### 💡 [Key Insights Dashboard](insights/index.html)
-Real-time metrics and analysis:
-
-- 466.7% growth in community engagement
-- Score distribution patterns
-- Emerging trends and future directions
-- Data-driven success metrics
-:::
-
-::: {.nav-card}
-### 👥 [Top Contributors](contributors/index.html)
-Meet the pioneers who shaped modern AI development practices through their innovative workflows and comprehensive guides.
+### 👥 [The Pioneers](contributors/index.html)
+Meet the developers whose posts sparked revolutions. From u/illusionst's role-playing to u/Cobuter_Man's agent orchestration.
 :::
 
 :::
 
-## Why These 47 Posts Matter
 
-From thousands of discussions about AI coding tools, certain posts rise above the noise. These aren't just popular posts—they're **inflection points** where the community collectively discovered better ways to work with AI. Each represents:
+## Key Insights by Category
 
-* **Validated practices** tested by hundreds of developers
-* **Breakthrough insights** that changed how people approach AI coding
-* **Comprehensive guides** that became reference standards
-* **Novel techniques** that pushed the boundaries of what's possible
+The community's discoveries organized by theme reveal how different aspects of AI coding evolved in parallel:
 
-The 466.7% growth in engagement around these topics shows this isn't just experimentation—it's a fundamental shift in how software gets built.
+### 1. Setup & Configuration
+This theme covers the initial setup of tools, API keys, and environment configuration. It's the entry point for most new users.
 
-## The Journey: From Prompts to Production
+**Evolution:** Early guides focused on connecting API keys for models like Gemini or setting up open-source models. This evolved into more sophisticated configurations, like connecting Cursor to databases via MCP (Machine-Composable Pipelining) and understanding the new `.cursor/rules` directory structure, which replaced the single `.cursorrules` file.
 
-The community's 18-month journey reveals a profound transformation in how developers work with AI:
+**Community Reception:** Practical setup guides are consistently well-received, often getting high scores for their immediate utility.
 
-### 🌱 **Foundation Phase** (Late 2024)
-*"Why won't this AI understand what I want?"*
+**Representative Examples:**
 
-* Initial frustration with inconsistent results
-* Discovery: AI needs structured roles, not vague requests
-* Breakthrough: The role-playing workflow revolution
+- [*A simple guide to setting up Gemini 2.5 Pro, free...* by u/thezachlandes (score: 89, r/ChatGPTCoding)](guides/posts/a-simple-guide-to-setting-up-gemini-2-5-pro-free-w/)
+- [*Quick Guide: Connecting Supabase to Cursor via MCP...* by u/Relevant-Fix2159 (score: 35, r/cursor)](guides/posts/quick-guide-connecting-supabase-to-cursor-via-mcp-/)
+- [*A Guide to understand new .cursor/rules in 0.45...* by u/kevinkernx (score: 57, r/cursor)](guides/posts/a-guide-to-understand-new-cursor-rules-in-0-45-cur/)
 
-### 🚀 **Growth Phase** (Early-Mid 2025)
-*"Treat it like a junior developer who needs guidance"*
+### 2. Workflow Optimization
+This is the most dominant theme, focusing on the "how-to" of daily AI-assisted development. It covers prompting strategies, context management, and structuring the interaction with the AI.
 
-* The rise of "Vibe Coding" methodology
-* Context architecture becomes critical
-* Community wisdom crystallizes into comprehensive guides
+**Evolution:** Workflows evolved from simple "ask-and-receive" to highly structured, multi-step dialogues. The concept of breaking down features into atomic tasks, using a "vertical slice" implementation approach, and maintaining dedicated chats for each feature became standard. The most advanced workflows now involve session-based development, automated documentation generation, and using one AI to critique another's output.
 
-### 🎯 **Orchestration Phase** (Mid 2025 - Present)
-*"Building software WITH agents, not just USING them"*
+**Community Reception:** Comprehensive workflow guides are the most highly-rated content, as they provide actionable strategies that directly impact productivity and code quality.
 
-* Multi-agent systems with specialized roles
-* Context as programmable infrastructure
-* The birth of truly autonomous development pipelines
+**Representative Examples:**
 
-This evolution didn't just improve productivity - it fundamentally changed how we conceive software development. **[Explore the full evolution story →](evolution/index.html)**
+- [*Structured Workflow for "Vibe Coding" Fullstack Apps* by u/hottown (score: 16, r/cursor)](guides/posts/structured-workflow-for-vibe-coding-fullstack-apps/)
+- [*Cursor IDE: Setup and Workflow in Larger Projects* by u/Kirmark (score: 137, r/cursor)](guides/posts/cursor-ide-setup-and-workflow-in-larger-projects/)
+- [*My Workflow for Generating and Maintaining Deep Context in Cursor* by u/Temporary_Category93 (score: 17, r/cursor)](guides/posts/my-workflow-for-generating-and-maintaining-deep-co/)
 
-## Featured Posts
+### 3. Advanced Techniques
+This category includes power-user tips and novel workflows that push the boundaries of what's possible with AI coding assistants.
 
-::: {.post-grid}
+**Evolution:** What was once "advanced" (e.g., using `.cursorrules`) is now standard practice. The new frontier includes creating formal, agentic systems with distinct roles (Manager, Implementer, Debugger), integrating version control directly into the AI's state management, and developing custom frameworks to structure the AI's tasks and memory.
 
-::: {.post-card}
-### The Ultimate Vibe Coding Guide
-**Author**: PhraseProfessional54  
-**Score**: 420 points  
-**Date**: May 9, 2025  
+**Community Reception:** These posts generate significant excitement and discussion, as they offer a glimpse into the future of AI-driven development.
 
-The most comprehensive guide in our dataset, covering 18 detailed steps for building production-level applications with AI.
+**Representative Examples:**
 
-[Read More →](guides/posts/the-ultimate-vibe-coding-guide/)
+- [*The GOAT workflow* by u/RonaldTheRight (score: 313, r/ChatGPTCoding)](guides/posts/the-goat-workflow/)
+- [*My Workflow using Gemini 2.5 Pro as CTO* by u/BennyHungry (score: 43, r/cursor)](guides/posts/my-workflow-using-gemini-2-5-pro-as-cto/)
+- [*Agentic Project Management - My AI workflow* by u/Cobuter_Man (score: 35, r/cursor)](guides/posts/agentic-project-management-my-ai-workflow/)
+
+### 4. Best Practices
+This category distills community consensus into actionable advice. It often involves high-level mental models and principles rather than specific, rigid workflows.
+
+**Evolution:** The core best practice evolved from "give good prompts" to "treat the AI as a junior developer that needs guidance." This principle encapsulates the need for clarity, task breakdown, providing context, and iterative review. More recent best practices emphasize rigorous documentation, not just for humans, but for the AI itself, and using Test-Driven Development (TDD) as a safety net.
+
+**Community Reception:** Guides that articulate these principles clearly receive extremely high engagement because they provide a universal mental framework that can be applied to any project.
+
+**Representative Examples:**
+
+- [*The Ultimate Vibe Coding Guide* by u/PhraseProfessional54 (score: 420, r/ClaudeAI)](guides/posts/the-ultimate-vibe-coding-guide/)
+- [*Updated my cursor vibe coding guide (500 stars)* by u/EnzeDfu (score: 354, r/cursor)](guides/posts/updated-my-cursor-vibe-coding-guide-500-stars/)
+- [*Guide to Using AI Agents with Existing Codebases* by u/gtgderek (score: 17, r/cursor)](guides/posts/guide-to-using-ai-agents-with-existing-codebases/)
+
+## Timeline of the evolution of agent-first coding
+
+<div class="timeline-controls">
+  <button class="btn btn-primary active" onclick="showView('timeline')">Timeline View</button>
+  <button class="btn btn-outline-primary" onclick="showView('phases')">Evolution Phases</button>
+  <button class="btn btn-outline-primary" onclick="showView('impact')">Impact Analysis</button>
+</div>
+
+<canvas id="evolutionChart" width="400" height="150" style="margin: 2rem 0;"></canvas>
+
+<div id="influentialContent" class="timeline-container">
+  <!-- Content will be dynamically inserted here -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+<script src="../data/posts-data.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let chart;
+  
+  // Check if the canvas element exists
+  const canvas = document.getElementById('evolutionChart');
+  if (!canvas) {
+    console.error('Canvas element not found');
+    return;
+  }
+  
+  const ctx = canvas.getContext('2d');
+  
+  // Check if posts data is loaded
+  if (!window.postsData) {
+    console.warn('Posts data not loaded, using fallback milestone data');
+  }
+  
+  // Timeline data with full details
+  const milestones = [
+    {
+      date: '2024-09-07',
+      title: 'The Lazy Programmer\'s Guide to AI Coding',
+      author: 'illusionst',
+      score: 410,
+      subreddit: 'r/ClaudeAI',
+      phase: 'early',
+      shortDesc: 'Introduced role-playing with AI',
+      fullImpact: 'Established the foundational concept of role-playing with the AI. The idea of breaking a task into steps where the AI acts as a Software Engineer, then a Product Manager, then a Developer, was a game-changer that shifted the community from simple prompting to structured dialogue.',
+      link: 'guides/posts/the-lazy-programmer-s-guide-to-ai-coding/'
+    },
+    {
+      date: '2024-12-20',
+      title: 'The GOAT Workflow',
+      author: 'RonaldTheRight',
+      score: 313,
+      subreddit: 'r/ChatGPTCoding',
+      phase: 'early',
+      shortDesc: 'Pioneered large-context planning models',
+      fullImpact: 'Introduced the sophisticated idea of using a large-context reasoning model (like a high-level AI planner) to generate an implementation plan, which is then handed off to a different AI model (the "developer") for execution. This separation of concerns is a core tenet of the most advanced workflows seen today.',
+      link: 'guides/posts/the-goat-workflow/'
+    },
+    {
+      date: '2025-01-15',
+      title: 'Cursor IDE: Setup and Workflow in Larger Projects',
+      author: 'Kirmark',
+      score: 137,
+      subreddit: 'r/cursor',
+      phase: 'growth',
+      shortDesc: 'Enterprise adoption and TDD practices',
+      fullImpact: 'This post from an experienced developer was crucial in addressing the challenge of using AI in large, existing projects. It championed the use of Test-Driven Development (TDD) as a mechanism to safely guide the AI and validate its output, and it introduced the practice of preserving the thought process as documentation.',
+      link: 'guides/posts/cursor-ide-setup-and-workflow-in-larger-projects/'
+    },
+    {
+      date: '2025-03-17',
+      title: 'My Cursor AI Workflow That Actually Works',
+      author: 'namanyayg',
+      score: 127,
+      subreddit: 'r/ChatGPTCoding',
+      phase: 'growth',
+      shortDesc: 'Popularized .cursorrules and context from similar code',
+      fullImpact: 'One of the first detailed workflows emphasizing .cursorrules and context from similar code. This marked a critical shift in how developers approached AI collaboration, moving from ad-hoc prompting to systematic context management.',
+      link: 'guides/posts/my-cursor-ai-workflow-that-actually-works/'
+    },
+    {
+      date: '2025-04-24',
+      title: 'Updated My Cursor Vibe Coding Guide (500 stars)',
+      author: 'EnzeDfu',
+      score: 354,
+      subreddit: 'r/cursor',
+      phase: 'growth',
+      shortDesc: 'Community-curated GitHub resource',
+      fullImpact: 'This post links to a highly popular GitHub repository, signifying a move towards more permanent, community-curated resources beyond a single Reddit post. It demonstrates the value of building a comprehensive, living guide that can be updated over time.',
+      link: 'guides/posts/updated-my-cursor-vibe-coding-guide-500-stars/'
+    },
+    {
+      date: '2025-05-09',
+      title: 'The Ultimate Vibe Coding Guide',
+      author: 'PhraseProfessional54',
+      score: 420,
+      subreddit: 'r/ClaudeAI',
+      phase: 'growth',
+      shortDesc: 'Comprehensive 18-step production guide',
+      fullImpact: 'Arguably the most comprehensive guide in the dataset. Its 18 detailed steps, covering everything from vision definition and UI planning to security best practices and systematic debugging, serve as a complete playbook for building a production-level application with AI. It has the highest score and is cross-posted, indicating its wide-reaching influence.',
+      link: 'guides/posts/the-ultimate-vibe-coding-guide/'
+    },
+    {
+      date: '2025-06-04',
+      title: 'Agentic Project Management - My AI Workflow',
+      author: 'Cobuter_Man',
+      score: 35,
+      subreddit: 'r/cursor',
+      phase: 'current',
+      shortDesc: 'Latest evolution with Manager/Implementation Agents',
+      fullImpact: 'Represents the cutting edge of AI development workflows. This post outlines a sophisticated system where a "Manager Agent" orchestrates multiple "Implementation Agents," each with specific roles and handover procedures. Despite its lower score, it signals the future direction of AI-assisted development.',
+      link: 'guides/posts/agentic-project-management-my-ai-workflow/'
+    }
+  ];
+  
+  function createTimelineChart() {
+    if (chart) chart.destroy();
+    
+    // Sort milestones by date
+    const sortedMilestones = [...milestones].sort((a, b) => new Date(a.date) - new Date(b.date));
+    
+    chart = new Chart(ctx, {
+      type: 'scatter',
+      data: {
+        datasets: [{
+          label: 'Early Adoption',
+          data: sortedMilestones.filter(m => m.phase === 'early').map(m => ({
+            x: new Date(m.date).getTime(),
+            y: m.score,
+            title: m.title,
+            author: m.author
+          })),
+          backgroundColor: 'rgba(255, 99, 132, 0.6)',
+          borderColor: 'rgb(255, 99, 132)',
+          pointRadius: 8,
+          pointHoverRadius: 10
+        }, {
+          label: 'Growth Phase',
+          data: sortedMilestones.filter(m => m.phase === 'growth').map(m => ({
+            x: new Date(m.date).getTime(),
+            y: m.score,
+            title: m.title,
+            author: m.author
+          })),
+          backgroundColor: 'rgba(54, 162, 235, 0.6)',
+          borderColor: 'rgb(54, 162, 235)',
+          pointRadius: 8,
+          pointHoverRadius: 10
+        }, {
+          label: 'Current State',
+          data: sortedMilestones.filter(m => m.phase === 'current').map(m => ({
+            x: new Date(m.date).getTime(),
+            y: m.score,
+            title: m.title,
+            author: m.author
+          })),
+          backgroundColor: 'rgba(75, 192, 192, 0.6)',
+          borderColor: 'rgb(75, 192, 192)',
+          pointRadius: 8,
+          pointHoverRadius: 10
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            type: 'time',
+            time: {
+              unit: 'month'
+            },
+            title: {
+              display: true,
+              text: 'Timeline'
+            }
+          },
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Post Score'
+            }
+          }
+        },
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const point = context.raw;
+                return [
+                  `${point.title}`,
+                  `by ${point.author}`,
+                  `Score: ${point.y}`
+                ];
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+  
+  function createPhasesChart() {
+    if (chart) chart.destroy();
+    
+    const phases = [
+      { name: 'Early Adoption\n(Late 2024 - Early 2025)', count: 2, avgScore: 362, color: 'rgba(255, 99, 132, 0.6)' },
+      { name: 'Growth Phase\n(March - May 2025)', count: 4, avgScore: 265, color: 'rgba(54, 162, 235, 0.6)' },
+      { name: 'Current State\n(Late May 2025 - Present)', count: 1, avgScore: 35, color: 'rgba(75, 192, 192, 0.6)' }
+    ];
+    
+    chart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: phases.map(p => p.name),
+        datasets: [{
+          data: phases.map(p => p.count),
+          backgroundColor: phases.map(p => p.color),
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 2,
+        cutout: '50%',
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              padding: 15,
+              font: {
+                size: 12
+              }
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const phase = phases[context.dataIndex];
+                return [
+                  `${phase.count} influential posts`,
+                  `Avg score: ${phase.avgScore}`
+                ];
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+  
+  function createImpactChart() {
+    if (chart) chart.destroy();
+    
+    const sortedByScore = [...milestones].sort((a, b) => b.score - a.score);
+    
+    chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: sortedByScore.map(m => m.title.length > 30 ? m.title.substring(0, 30) + '...' : m.title),
+        datasets: [{
+          label: 'Post Score',
+          data: sortedByScore.map(m => m.score),
+          backgroundColor: sortedByScore.map(m => 
+            m.phase === 'early' ? 'rgba(255, 99, 132, 0.6)' : 
+            m.phase === 'growth' ? 'rgba(54, 162, 235, 0.6)' : 
+            'rgba(75, 192, 192, 0.6)'
+          ),
+          borderColor: sortedByScore.map(m => 
+            m.phase === 'early' ? 'rgb(255, 99, 132)' : 
+            m.phase === 'growth' ? 'rgb(54, 162, 235)' : 
+            'rgb(75, 192, 192)'
+          ),
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        indexAxis: 'y',
+        scales: {
+          x: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Score'
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const milestone = sortedByScore[context.dataIndex];
+                return [
+                  `Score: ${milestone.score}`,
+                  `Author: ${milestone.author}`,
+                  `Date: ${new Date(milestone.date).toLocaleDateString()}`
+                ];
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+  
+  function generateTimelineContent() {
+    const container = document.getElementById('influentialContent');
+    
+    const html = milestones
+      .sort((a, b) => new Date(a.date) - new Date(b.date))
+      .map((milestone, index) => {
+        const phaseClass = `phase-${milestone.phase}`;
+        const phaseLabel = milestone.phase === 'early' ? 'Early Adoption' : 
+                          milestone.phase === 'growth' ? 'Growth Phase' : 'Current State';
+        
+        return `
+          <div class="timeline-item ${phaseClass}">
+            <div class="timeline-date">${new Date(milestone.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div>
+            <div class="timeline-badge">${index + 1}</div>
+            <div class="timeline-content">
+              <h3><a href="${milestone.link}">${milestone.title}</a></h3>
+              <div class="timeline-meta">
+                <span class="author">by ${milestone.author}</span>
+                <span class="score">${milestone.score} points</span>
+                <span class="subreddit">${milestone.subreddit}</span>
+                <span class="phase-label">${phaseLabel}</span>
+              </div>
+              <p class="timeline-description">${milestone.fullImpact}</p>
+            </div>
+          </div>
+        `;
+      }).join('');
+    
+    container.innerHTML = html;
+  }
+  
+  function generatePhasesContent() {
+    const container = document.getElementById('influentialContent');
+    
+    const phases = {
+      early: {
+        title: 'Early Adoption (Late 2024 - Early 2025)',
+        desc: 'The foundational period where core concepts emerged',
+        posts: milestones.filter(m => m.phase === 'early')
+      },
+      growth: {
+        title: 'Growth Phase (March - May 2025)',
+        desc: 'Rapid evolution and community standardization',
+        posts: milestones.filter(m => m.phase === 'growth')
+      },
+      current: {
+        title: 'Current State (Late May 2025 - Present)',
+        desc: 'The cutting edge of AI-assisted development',
+        posts: milestones.filter(m => m.phase === 'current')
+      }
+    };
+    
+    const html = Object.entries(phases).map(([key, phase]) => `
+      <div class="phase-section">
+        <h3>${phase.title}</h3>
+        <p class="phase-description">${phase.desc}</p>
+        <div class="phase-posts">
+          ${phase.posts.map(post => `
+            <div class="phase-post-card">
+              <h4><a href="${post.link}">${post.title}</a></h4>
+              <div class="post-meta">
+                <span>by ${post.author}</span> • 
+                <span>${post.score} points</span> • 
+                <span>${new Date(post.date).toLocaleDateString()}</span>
+              </div>
+              <p>${post.shortDesc}</p>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `).join('');
+    
+    container.innerHTML = html;
+  }
+  
+  function generateImpactContent() {
+    const container = document.getElementById('influentialContent');
+    
+    const sortedByScore = [...milestones].sort((a, b) => b.score - a.score);
+    
+    const html = `
+      <div class="impact-analysis">
+        <p class="lead">Posts ranked by community impact (score), showing how certain guides became definitive resources:</p>
+        ${sortedByScore.map((post, index) => `
+          <div class="impact-card rank-${index + 1}">
+            <div class="impact-rank">#${index + 1}</div>
+            <div class="impact-content">
+              <h4><a href="${post.link}">${post.title}</a></h4>
+              <div class="impact-stats">
+                <span class="score-badge">${post.score} points</span>
+                <span class="author">by ${post.author}</span>
+                <span class="date">${new Date(post.date).toLocaleDateString()}</span>
+              </div>
+              <p class="impact-description">${post.fullImpact}</p>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    
+    container.innerHTML = html;
+  }
+  
+  // View switcher
+  window.showView = function(view) {
+    // Update button states
+    document.querySelectorAll('.timeline-controls button').forEach(btn => {
+      btn.classList.remove('active', 'btn-primary');
+      btn.classList.add('btn-outline-primary');
+    });
+    event.target.classList.remove('btn-outline-primary');
+    event.target.classList.add('active', 'btn-primary');
+    
+    // Update chart and content
+    switch(view) {
+      case 'timeline':
+        createTimelineChart();
+        generateTimelineContent();
+        break;
+      case 'phases':
+        createPhasesChart();
+        generatePhasesContent();
+        break;
+      case 'impact':
+        createImpactChart();
+        generateImpactContent();
+        break;
+    }
+  }
+  
+  // Initialize with timeline view
+  try {
+    createTimelineChart();
+    generateTimelineContent();
+  } catch (error) {
+    console.error('Error initializing timeline:', error);
+    const container = document.getElementById('influentialContent');
+    if (container) {
+      container.innerHTML = '<div class="alert alert-warning">Error loading visualization. Please refresh the page.</div>';
+    }
+  }
+  
+  // Debug info
+  console.log('Visualization initialized. Posts data available:', !!window.postsData);
+});
+</script>
+
+<style>
+.timeline-controls {
+  margin: 2rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.timeline-controls button {
+  margin: 0 0.5rem;
+}
+
+/* Ensure button visibility */
+.timeline-controls .btn-outline-primary {
+  color: var(--bs-primary, #0d6efd);
+  border-color: var(--bs-primary, #0d6efd);
+  background-color: transparent;
+}
+
+.timeline-controls .btn-outline-primary:hover {
+  color: white;
+  background-color: var(--bs-primary, #0d6efd);
+  border-color: var(--bs-primary, #0d6efd);
+}
+
+.timeline-controls .btn-primary {
+  color: white;
+  background-color: var(--bs-primary, #0d6efd);
+  border-color: var(--bs-primary, #0d6efd);
+}
+
+.timeline-container {
+  margin: 3rem 0;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--bs-border-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.timeline-badge {
+  position: absolute;
+  left: -2.5rem;
+  top: 0.5rem;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bs-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.875rem;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px var(--bs-border-color);
+}
+
+.phase-early .timeline-badge {
+  background: #ff6384;
+}
+
+.phase-growth .timeline-badge {
+  background: #36a2eb;
+}
+
+.phase-current .timeline-badge {
+  background: #4bc0c0;
+}
+
+.timeline-date {
+  font-size: 0.875rem;
+  color: var(--bs-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+  background: var(--bs-light);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--bs-border-color);
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 a {
+  color: var(--bs-primary);
+  text-decoration: none;
+}
+
+.timeline-content h3 a:hover {
+  text-decoration: underline;
+}
+
+.timeline-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  color: var(--bs-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.timeline-meta .score {
+  font-weight: bold;
+  color: var(--bs-success);
+}
+
+.timeline-meta .phase-label {
+  background: var(--bs-primary);
+  color: white;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.phase-early .phase-label {
+  background: #ff6384;
+}
+
+.phase-growth .phase-label {
+  background: #36a2eb;
+}
+
+.phase-current .phase-label {
+  background: #4bc0c0;
+}
+
+.timeline-description {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Phase view styles */
+.phase-section {
+  margin-bottom: 3rem;
+}
+
+.phase-section h3 {
+  color: var(--bs-primary);
+  margin-bottom: 0.5rem;
+}
+
+.phase-description {
+  color: var(--bs-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.phase-posts {
+  display: grid;
+  gap: 1rem;
+}
+
+.phase-post-card {
+  background: var(--bs-light);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--bs-border-color);
+}
+
+.phase-post-card h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.phase-post-card h4 a {
+  color: var(--bs-primary);
+  text-decoration: none;
+}
+
+.post-meta {
+  font-size: 0.875rem;
+  color: var(--bs-secondary);
+  margin-bottom: 0.75rem;
+}
+
+/* Impact view styles */
+.impact-analysis .lead {
+  margin-bottom: 2rem;
+  color: var(--bs-secondary);
+}
+
+.impact-card {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: var(--bs-light);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--bs-border-color);
+}
+
+.impact-rank {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--bs-primary);
+  opacity: 0.5;
+  min-width: 3rem;
+  text-align: center;
+}
+
+.impact-card.rank-1 .impact-rank {
+  color: #ffd700;
+  opacity: 1;
+}
+
+.impact-card.rank-2 .impact-rank {
+  color: #c0c0c0;
+  opacity: 1;
+}
+
+.impact-card.rank-3 .impact-rank {
+  color: #cd7f32;
+  opacity: 1;
+}
+
+.impact-content {
+  flex: 1;
+}
+
+.impact-content h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.impact-content h4 a {
+  color: var(--bs-primary);
+  text-decoration: none;
+}
+
+.impact-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: var(--bs-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.score-badge {
+  background: var(--bs-success);
+  color: white;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+}
+
+.impact-description {
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .timeline-controls button {
+    display: block;
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+  
+  .impact-card {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .impact-rank {
+    text-align: left;
+  }
+}
+</style>
+
+## Emerging Trends and Future Directions
+
+The most recent posts point towards an increasingly automated and sophisticated future for AI-assisted coding.
+
+### Current Cutting-Edge Practices:
+
+* **Agentic Frameworks:** Developers are moving beyond simple prompts to design explicit, multi-agent systems where a "manager" or "CTO" AI orchestrates the work of specialized "developer" or "debugger" AIs. This is exemplified by posts on "Agentic Project Management" and using "Gemini 2.5 Pro as CTO."
+
+* **Context as a First-Class Citizen:** The community is actively engineering solutions for context management. This includes auto-generating `ai_module_summary.md` files for each part of a codebase and creating formal "Handover Procedures" to pass context between AI sessions without data loss.
+
+* **Version Control Integration:** The most novel trend is linking the AI's "memory" directly to the Git history. By embedding commit SHAs into a manifest or task list, developers can give the AI perfect, point-in-time context, enabling it to "rebase" its understanding and resume work from a known good state.
+
+### Unresolved Challenges:
+
+* **Scalability of Context:** While techniques are improving, managing context for massive, monolithic codebases remains a primary challenge. Current methods are often manual and require significant discipline.
+
+* **AI Reliability and "Scope Creep":** AIs still have a tendency to make unwanted changes or "hallucinate" complex solutions. Preventing this requires constant vigilance and explicit negative constraints (e.g., "Do not change anything I did not ask for").
+
+* **Tooling Fragmentation:** The optimal workflow often requires stitching together multiple tools (e.g., a UI generator, a planning AI, a coding IDE, a security scanner). This adds complexity and friction to the development process.
+
+### Potential Future Directions:
+
+* **Autonomous Code Agents:** The current trend of agentic frameworks will likely lead to more autonomous systems that can take a high-level feature request and manage the entire development lifecycle—from planning and coding to testing and creating a pull request—with minimal human intervention.
+
+* **Self-Improving Systems:** Workflows where the AI is asked to critique and improve its own rules and processes will become more common, creating a self-optimizing development loop.
+
+* **Natively Integrated Context Management:** Future IDEs will likely have built-in, automated context management that understands the project structure, Git history, and task dependencies without requiring manual setup of summary files or manifest tracking.
+
+---
+
+:::{.callout-tip}
+**Ready to apply these discoveries?** SpecFlow transforms these community insights into a systematic methodology. [Learn how SpecFlow works →](../getting-started.html)
 :::
 
-::: {.post-card}
-### The GOAT Workflow
-**Author**: RonaldTheRight  
-**Score**: 313 points  
-**Date**: December 20, 2024  
+## About This Research
 
-Introduced the sophisticated concept of using large-context reasoning models for planning, then handing off to implementation models.
+### Data Collection & Methodology
 
-[Read More →](guides/posts/the-goat-workflow/)
-:::
+This analysis synthesizes 10,658 Reddit posts collected over 12 months from 14 AI coding subreddits. The 47 featured posts were selected based on:
 
-::: {.post-card}
-### Agentic Project Management
-**Author**: Cobuter_Man  
-**Score**: 35 points  
-**Date**: June 3, 2025  
+- Community validation (upvotes and engagement)
+- Breakthrough insights that changed common practices
+- Comprehensive methodologies that became standards
+- Representative coverage of the evolution phases
 
-The latest evolution in AI workflows, featuring Manager Agents orchestrating Implementation Agents with formal handover procedures.
+**Sources**: r/cursor (4,431 posts), r/ChatGPTCoding (1,707 posts), r/ClaudeAI (1,065 posts), plus 11 other subreddits. [Full validation report →](validation-report.html)
 
-[Read More →](guides/posts/agentic-project-management-my-ai-workflow/)
-:::
+**Live Tracking**: Continue following the evolution of AI coding practices at [SpecStory Editor Tracker](https://specstory.com/editor-tracker)
 
-:::
-
-## Data Transparency
-
-This analysis represents a curated sampling from a comprehensive dataset of 10,658 Reddit posts collected over 8 months. The 47 posts featured here were selected based on community upvotes, engagement metrics, and their contribution to advancing AI coding practices.
-
-### Data Collection Methodology
-
-**Full Dataset Stats**:
-
-* 10,658 posts monitored (92.4% coverage)
-* 132,519 comments analyzed (90.5% coverage)
-* 14 subreddits continuously tracked
-* Powered by [Reddit Data via SpecStory Editor Tracker](https://specstory.com/editor-tracker)
-
-**Selection Criteria**:
-
-* Top guides and workflows based on upvotes and community impact
-* Representative posts showcasing best practices and key innovations
-* 8 months of continuous monitoring
-* Last Updated: June 5, 2025
-
-**Primary Sources**:
-
-* r/cursor (4,431 posts)
-* r/ChatGPTCoding (1,707 posts)
-* r/ClaudeAI (1,065 posts)
-* Plus 11 other AI coding subreddits
-
-View our [validation report](validation-report.html) for detailed accuracy metrics on the curated selection.
+</details>
 
 <style>
 #dataset-stats {

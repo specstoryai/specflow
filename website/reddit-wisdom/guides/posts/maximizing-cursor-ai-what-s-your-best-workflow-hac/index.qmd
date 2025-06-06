@@ -17,14 +17,11 @@ categories: ["multi-agent", "context-management"]
 <div class="post-meta">
   <span class="author">by AIAppHacker</span>
   <span class="date">February 15, 2025</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/cursor/comments/1ipqiyg/maximizing_cursor_ai_whats_your_best_workflow_hack/" target="_blank">View on Reddit →</a></span>
   <span class="score">134 points</span>
   <span class="subreddit">r/cursor</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/cursor/comments/1ipqiyg/maximizing_cursor_ai_whats_your_best_workflow_hack/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

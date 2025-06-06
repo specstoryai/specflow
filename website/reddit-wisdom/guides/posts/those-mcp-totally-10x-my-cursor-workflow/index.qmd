@@ -17,14 +17,11 @@ categories: ["general"]
 <div class="post-meta">
   <span class="author">by jasonzhou1993</span>
   <span class="date">February 25, 2025</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/cursor/comments/1ixsc8j/those_mcp_totally_10x_my_cursor_workflow/" target="_blank">View on Reddit →</a></span>
   <span class="score">34 points</span>
   <span class="subreddit">r/cursor</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/cursor/comments/1ixsc8j/those_mcp_totally_10x_my_cursor_workflow/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 

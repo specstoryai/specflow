@@ -17,14 +17,11 @@ categories: ["general"]
 <div class="post-meta">
   <span class="author">by chongdashu</span>
   <span class="date">March 5, 2025</span>
+  <span class="reddit-link"><a href="https://reddit.com/r/cursor/comments/1j4h786/a_practical_guide_to_browser_tools_mcp_server/" target="_blank">View on Reddit →</a></span>
   <span class="score">34 points</span>
   <span class="subreddit">r/cursor</span>
 </div>
 
-<div class="post-actions">
-  <a href="https://reddit.com/r/cursor/comments/1j4h786/a_practical_guide_to_browser_tools_mcp_server/" target="_blank" class="btn btn-primary">View on Reddit →</a>
-  <a href="../../" class="btn btn-outline-secondary">← Back to Guides</a>
-</div>
 
 ## Post Content
 
