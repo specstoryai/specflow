@@ -255,6 +255,24 @@ th {
   min-height: 48px;
 }
 
+/* WIP Notification in Navbar */
+.navbar-wip {
+  background-color: #dc3545;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 0 0.5rem;
+  vertical-align: middle;
+}
+
+.nav-item .navbar-wip {
+  line-height: 1.5;
+}
+
+
 .navbar-container {
   min-height: 48px;
   display: flex;

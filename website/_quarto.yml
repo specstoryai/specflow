@@ -83,6 +83,28 @@ format:
             window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
           </script>
           <script defer src="/_vercel/insights/script.js"></script>
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              // Create WIP notification element
+              const wipNotification = document.createElement('li');
+              wipNotification.className = 'nav-item';
+              wipNotification.innerHTML = '<span class="navbar-wip">🚧 WIP as of <span id="wip-date"></span> - content may change until official release</span>';
+              
+              // Find the navbar and insert the notification
+              const navbar = document.querySelector('.navbar-nav');
+              if (navbar) {
+                navbar.appendChild(wipNotification);
+              }
+              
+              // Update the date
+              const dateElement = document.getElementById('wip-date');
+              if (dateElement) {
+                const today = new Date();
+                const options = { month: 'long', day: 'numeric', year: 'numeric' };
+                dateElement.textContent = today.toLocaleDateString('en-US', options);
+              }
+            });
+          </script>
 
 
 
