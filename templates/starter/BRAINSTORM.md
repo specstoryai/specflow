@@ -9,7 +9,7 @@ Voice record, dictate, copy-paste, or just type your thoughts here.
 Don't worry about organization - that comes later in SPEC.md
 -->
 
-## Some prompts to get your thinking
+## Some prompts to get you thinking
 
 What am I trying to build?
 
