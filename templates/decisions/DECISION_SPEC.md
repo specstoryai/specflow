@@ -3,6 +3,16 @@
 ## Overview
 A streamlined decision tracking system for product development, optimized for product managers working with AI-powered implementation. Focuses on strategic, architectural, and design decisions that shape the product, not implementation details.
 
+## How to Use This Spec
+
+This specification enables you to extract and document decisions from various sources, such as AI chat transcripts captured with [SpecStory](https://specstory.com):
+
+**With AI Assistants:**
+```
+Review <transcript/document> and based on @DECISION_SPEC.md extract decisions
+that were made and write them to DECISIONS.md
+```
+
 ## Core Schema
 
 ### Required Fields (All Decisions)
