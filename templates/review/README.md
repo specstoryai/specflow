@@ -85,7 +85,7 @@ The implementation happens first (often quickly with AI assistance), then intent
 
 Intent review answers: **Are we building the right thing for the right reasons?**
 
-This is often a **document review**—evaluating an architecture spec, technical design, or functional design before significant implementation begins. The goal is alignment: does the team agree on what we're building, why, and in what order?
+This is often a **document review**—evaluating an architecture spec, technical design, or functional design before significant implementation begins. The goal is shared understanding: helping each other see things we might miss, surfacing concerns early, and building enough common context to move forward confidently.
 
 #### What Gets Reviewed
 
