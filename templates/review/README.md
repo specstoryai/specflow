@@ -1,8 +1,23 @@
 # Review Templates for AI-Assisted Development
 
+Software development has always balanced two fundamental challenges: **building the right thing** and **building the thing right**. These aren't competing concerns—they're complementary, and both require deliberate attention.
+
+In AI-assisted development, we address these through two types of review:
+
+| Challenge | Review Type | Focus |
+|-----------|-------------|-------|
+| **Build the right thing** | Intent Review | Are we solving the right problem? Did we make good decisions about scope, approach, and tradeoffs? |
+| **Build the thing right** | Code Review | Is the implementation correct, maintainable, secure, and well-tested? |
+
+These review types work together in different combinations depending on what the work requires.
+
+---
+
+## Why Reviews Matter More Now
+
 Code reviews have always been about more than catching bugs. They're a knowledge-sharing mechanism, a teaching moment, and a checkpoint for architectural decisions. When AI writes our code, these purposes don't disappear—they become more important.
 
-## The Knowledge Sharing Problem
+### The Knowledge Sharing Problem
 
 In traditional development, the author of a PR can explain their reasoning. They understand the tradeoffs they made, the alternatives they considered, and why they chose a particular approach. Reviewers ask questions, learn context, and build shared understanding.
 
@@ -12,53 +27,67 @@ When an AI agent writes the code, this dynamic changes:
 - **Context gets lost** — The reasoning behind specific choices lives in a conversation transcript, not in the developer's head
 - **Tribal knowledge doesn't accumulate** — If no human deeply understands the code, the team's collective knowledge stagnates
 
-## Rethinking Reviews for AI-Written Code
+### The Review IS the Learning
 
-These review templates encode a different philosophy: **the review IS the learning**.
+These templates encode a different philosophy: reviews aren't just quality gates—they're the primary mechanism for building shared mental models.
 
-### Line-by-Line Comprehension
+Intent reviews ensure the team is aligned on *what* we're building and *why*. Code reviews ensure we understand *how* it works. Together, they transfer knowledge from "code that exists" to "code the team genuinely comprehends."
 
-The review commands require explaining each change's purpose with line number references. This isn't bureaucracy—it's forcing genuine understanding:
+Without this deliberate attention, AI-assisted development creates a new kind of technical debt: *knowledge debt*. The code works, but nobody truly understands it.
+
+---
+
+## How Intent and Code Reviews Work Together
+
+The balance between intent review and code review shifts based on risk, domain, and team needs. Here are three common patterns:
+
+### Pattern 1: Intent First, Then Code Review (Traditional)
 
 ```
-Lines 164-189 (new): Added remote status check before disabling
-- Good UX - Detects current connection state to provide better feedback
-- Type assertions use the two-value form (ok pattern) for safety
-- Variable names wasConnected, oldURL are descriptive
-- Missing error handling - if remote.status call fails, we continue anyway. Should we?
+Intent Review → Implementation → Code Review → Merge
 ```
 
-When you (or your AI reviewer) articulate *why* each line exists, you transfer that knowledge into your own understanding.
+**When to use:** High-risk changes, security-sensitive code, core infrastructure, or when the team needs deep understanding of the implementation.
 
-### Verify It Should Exist
+The intent review ensures alignment on *what* to build before work begins. The code review ensures the implementation is sound. This is the most thorough approach—appropriate when getting it wrong is costly.
 
-AI agents are prone to over-engineering. They add error handling for impossible cases, create abstractions for single uses, and implement features nobody asked for. The review checklist includes:
+**Examples:** Payment processing, authentication systems, data migration, public API changes.
 
-> "verify the code has to exist, is actually needed, and is in use"
+### Pattern 2: Intent Review with Optimistic Implementation (Iterative)
 
-This shifts the reviewer's mindset from "is this code correct?" to "should this code exist at all?"
+```
+Intent Review → Implementation → Course Correction (as needed) → Merge
+```
 
-### "Why" Comments, Not "How" Comments
+**When to use:** Serious feature work where the implementation approach is less critical than the outcome. Business logic, UI features, integrations.
 
-AI-generated code often lacks the crucial context of *why* a decision was made. The code explains what it does (the "how"), but not the reasoning. Reviews should flag missing "why" comments and add them—this is how institutional knowledge gets preserved.
+The intent review establishes goals and constraints. Implementation proceeds optimistically, with course corrections based on what emerges. Code review happens selectively—when something seems off or when specific areas warrant scrutiny.
 
-### Test Verification Through Inversion
+**Examples:** New dashboard features, workflow automation, reporting systems, complex UI interactions.
 
-The templates include an unusual practice: flip test assertions to confirm they fail. This catches tautological tests that pass regardless of correctness—a common pattern in AI-generated test suites that optimize for coverage metrics rather than actual verification.
+### Pattern 3: Intent Review Only (Lightweight)
 
-## Intent Reviews: A Higher-Level Paradigm
+```
+Implementation → Intent Review → Merge
+```
 
-The code review templates above improve knowledge sharing within the traditional review model. But there's a more fundamental question: **should we be reviewing code at all?**
+**When to use:** Prototypes, modest UI changes, exploratory work, or changes where automated quality signals provide sufficient verification.
 
-When one developer with AI assistance can generate 10x the code they could write manually, traditional line-by-line code review becomes a bottleneck. Reviewing thousands of lines of AI-generated code is slow, exhausting, and often misses the forest for the trees.
+The implementation happens first (often quickly with AI assistance), then intent review verifies the outcome matches expectations. Detailed code review is skipped—the team trusts automated checks and accepts that the code may be revised later.
 
-**Intent Review** represents a paradigm shift: **intent, not code, is the unit of work that matters.**
+**Examples:** Prototype features, styling changes, copy updates, internal tools, experiments.
 
-### What is an Intent Review?
+---
 
-Instead of reviewing the specific code that was generated, you review the outcome of a high-level goal. An intent like "Implement basic subscription billing" gets approved in 5-10 minutes based on whether the goal was achieved correctly—not by scrutinizing every line of implementation.
+## What Each Review Type Involves
 
-The review surfaces what humans actually need to evaluate:
+### Intent Review
+
+Intent review answers: **Did we build the right thing for the right reasons?**
+
+Instead of reviewing specific code, you review the outcome of a high-level goal. An intent like "Implement basic subscription billing" gets approved based on whether the goal was achieved correctly—not by scrutinizing every line.
+
+The review surfaces what humans need to evaluate:
 
 | Element | Purpose |
 |---------|---------|
@@ -68,37 +97,64 @@ The review surfaces what humans actually need to evaluate:
 | **Changes Summary** | LLM-generated human-readable summary of what changed |
 | **Risks & Tradeoffs** | Outstanding items, deferred work, potential issues |
 
-### Why Intent Reviews Work
+**Why this works:**
+- **Focus on what and why, not how.** Implementation details matter less than whether the right thing was built for the right reasons.
+- **Preserve critical context.** Key decisions get captured during development, not reconstructed during review.
+- **Explicit gates enforce alignment.** The team explicitly agrees on direction, preventing late-discovery disagreements.
+- **Artifact linkage creates interrogable history.** Each intent links to transcripts, diffs, decisions, and quality signals.
 
-**Focus on what and why, not how.** The implementation details matter less than whether the right thing was built for the right reasons. Quality signals and automated checks verify the "how" is sound.
+### Code Review
 
-**Preserve critical context.** Key decisions get captured during development, not reconstructed during review. When someone chose Stripe over PayPal, that reasoning is recorded—not lost in a conversation transcript.
+Code review answers: **Is the implementation correct, secure, and maintainable?**
 
-**Explicit gates enforce alignment.** An "Approve Intent" or "Request Changes" action replaces the traditional PR model. The team explicitly agrees on direction before code merges, preventing late-discovery disagreements.
+In AI-assisted development, code review serves a dual purpose: quality assurance *and* knowledge transfer. The person who guided the AI may not fully understand the output. The review process fills that gap.
 
-**Artifact linkage creates interrogable history.** Each intent links to pairing transcripts, code diffs, decisions, and quality signals. New team members can understand not just what the code does, but why it exists and how it evolved.
+**Line-by-line comprehension.** The review requires explaining each change's purpose:
 
-### When to Use Each Approach
+```
+Lines 164-189 (new): Added remote status check before disabling
+- Good UX - Detects current connection state to provide better feedback
+- Type assertions use the two-value form (ok pattern) for safety
+- Variable names wasConnected, oldURL are descriptive
+- Missing error handling - if remote.status call fails, we continue anyway. Should we?
+```
 
-Intent Reviews and code-level reviews serve different purposes:
+When you articulate *why* each line exists, you transfer that knowledge into your own understanding.
 
-**Use Intent Reviews when:**
-- Work is scoped as a coherent goal or feature
-- Automated quality signals can verify correctness
-- The team needs to stay aligned on direction, not implementation details
-- Velocity matters and code volume would overwhelm traditional review
+**Verify it should exist.** AI agents are prone to over-engineering. The review checklist includes: "verify the code has to exist, is actually needed, and is in use." This shifts the mindset from "is this code correct?" to "should this code exist at all?"
 
-**Use Code Reviews when:**
-- You need to deeply understand specific implementation choices
-- Security-sensitive code requires line-by-line scrutiny
-- Teaching moments—a junior developer (human or AI) needs detailed feedback
-- The intent was achieved but you suspect the approach has issues
+**"Why" comments, not "how" comments.** AI-generated code often lacks context for *why* a decision was made. Reviews should flag missing "why" comments—this is how institutional knowledge gets preserved.
 
-### The Hybrid Model
+**Test verification through inversion.** Flip test assertions to confirm they fail. This catches tautological tests that pass regardless of correctness—a common pattern in AI-generated test suites.
 
-In practice, most teams will use both. Intent Reviews become the primary gate for merging work—fast, focused on outcomes, preserving context. Code reviews become a selective tool for situations requiring deeper inspection.
+---
 
-The goal isn't to eliminate code review but to make it optional rather than mandatory. When everything must go through line-by-line review, the process breaks down at AI-agent scale. When intent-level review is the default and code-level review is strategic, the team maintains both velocity and quality.
+## Choosing the Right Balance
+
+The question isn't "intent review or code review?" but "how much of each?"
+
+| Scenario | Intent Review | Code Review |
+|----------|---------------|-------------|
+| Security-sensitive changes | Thorough (upfront) | Thorough |
+| Core infrastructure | Thorough (upfront) | Thorough |
+| Major feature work | Thorough (upfront) | Selective |
+| Standard business logic | Standard | Selective |
+| UI/UX improvements | Standard | Light or none |
+| Prototypes | Light (at end) | None |
+| Experiments | Light (at end) | None |
+
+**Signals that warrant more code review:**
+- Security implications
+- Complex algorithms or state management
+- Changes to shared infrastructure
+- Something feels off about the approach
+- Teaching opportunity for the team
+
+**Signals that intent review alone suffices:**
+- Strong automated quality signals (tests, lint, security scans)
+- Well-understood problem domain
+- Changes are easily reversible
+- Team has high trust in the implementation patterns
 
 ---
 
@@ -142,11 +198,19 @@ The review becomes the moment where knowledge transfers from "code that exists" 
 
 ## Key Takeaways
 
-**The fundamental shift:** In AI-assisted development, reviews aren't just quality gates—they're the primary mechanism for knowledge transfer. The person who guided the AI may not fully understand the output. The review process must fill that gap.
+**The core principle:** Software development requires both building the right thing and building the thing right. Intent reviews address the first; code reviews address the second. They're complementary, not competing.
 
-**Two levels of review:**
-1. **Intent Reviews** — Fast, outcome-focused, preserves decisions and context. The new default for most work.
-2. **Code Reviews** — Deep, line-by-line comprehension. Strategic use for security, teaching, or when something seems off.
+**Two types of review, one goal:**
+
+| Review Type | Question Answered | When Critical |
+|-------------|-------------------|---------------|
+| **Intent Review** | Did we build the right thing? | Always—ensures alignment on goals, decisions, and tradeoffs |
+| **Code Review** | Did we build it right? | When correctness, security, or learning matters |
+
+**Three patterns for combining them:**
+1. **Traditional** — Intent review upfront, code review after implementation. For high-risk work.
+2. **Iterative** — Intent review upfront, selective code review as needed. For most feature work.
+3. **Lightweight** — Intent review at the end, skip code review. For prototypes and low-risk changes.
 
 **What gets captured matters:**
 - Key decisions and their reasoning
@@ -157,7 +221,7 @@ The review becomes the moment where knowledge transfers from "code that exists" 
 **Success looks like:**
 - Team members can explain code they didn't write
 - New joiners can understand historical decisions
-- Reviews take minutes, not hours
+- Reviews match the risk level of the work
 - Knowledge accumulates rather than evaporates
 
-The goal isn't to review less—it's to review *smarter*. Intent-level review for velocity and alignment, code-level review for depth and learning. Both serve the same purpose: ensuring humans genuinely understand the systems they're building, even when AI does most of the typing.
+The goal isn't to review less—it's to review appropriately. Match review rigor to the risk and complexity of the work. Use intent review to stay aligned on direction, code review to ensure quality and transfer knowledge. Both serve the same ultimate purpose: ensuring humans genuinely understand the systems they're building, even when AI does most of the typing.
