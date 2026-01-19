@@ -117,6 +117,8 @@ The hardest part of intent review isn't reading the document—it's understandin
 
 - **Provide the AI chat history** — Let reviewers see the paths you've already explored. What alternatives were considered? What questions did you ask? What did you try and reject? This context prevents reviewers from re-asking questions you've already answered.
 
+  > **Tip:** [SpecStory Cloud](https://specstory.com) makes sharing AI chat transcripts easy. See [this example transcript](https://cloud.specstory.com/share/1507c0f5-ae2c-442d-83ed-1f825b2b6346) from the conversation that shaped this very README.
+
 #### Why This Works
 
 - **Alignment before implementation.** Catching direction problems early is cheaper than fixing them in code.
