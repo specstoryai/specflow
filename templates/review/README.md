@@ -83,25 +83,46 @@ The implementation happens first (often quickly with AI assistance), then intent
 
 ### Intent Review
 
-Intent review answers: **Did we build the right thing for the right reasons?**
+Intent review answers: **Are we building the right thing for the right reasons?**
 
-Instead of reviewing specific code, you review the outcome of a high-level goal. An intent like "Implement basic subscription billing" gets approved based on whether the goal was achieved correctly—not by scrutinizing every line.
+This is often a **document review**—evaluating an architecture spec, technical design, or functional design before significant implementation begins. The goal is alignment: does the team agree on what we're building, why, and in what order?
 
-The review surfaces what humans need to evaluate:
+#### What Gets Reviewed
 
 | Element | Purpose |
 |---------|---------|
-| **Description** | The high-level intent and its goals |
-| **Quality Signals** | Automated checks—tests passing, lint clean, security scans, agent critique |
-| **Key Decisions** | Auto-captured reasoning from pairing conversations (e.g., "Use Stripe over PayPal") |
-| **Changes Summary** | LLM-generated human-readable summary of what changed |
-| **Risks & Tradeoffs** | Outstanding items, deferred work, potential issues |
+| **Design Document** | Architecture, technical approach, functional requirements |
+| **Priority & Sequencing** | What gets built first, what can wait, dependencies between pieces |
+| **Key Decisions** | Major choices and their reasoning (e.g., "Use Stripe over PayPal because...") |
+| **Risks & Tradeoffs** | Known limitations, deferred work, potential issues |
+| **Working Prototype** | If available—instructions to run it, or a video walkthrough |
 
-**Why this works:**
-- **Focus on what and why, not how.** Implementation details matter less than whether the right thing was built for the right reasons.
-- **Preserve critical context.** Key decisions get captured during development, not reconstructed during review.
-- **Explicit gates enforce alignment.** The team explicitly agrees on direction, preventing late-discovery disagreements.
-- **Artifact linkage creates interrogable history.** Each intent links to transcripts, diffs, decisions, and quality signals.
+When a prototype exists, the intent review includes **functional testing**: does the prototype actually demonstrate the intended behavior? This grounds the document review in reality.
+
+#### The Challenge: Understanding the Thinking
+
+The hardest part of intent review isn't reading the document—it's understanding the thinking that produced it. In AI-assisted work, documents are often drafted quickly, and the reasoning may live in conversation transcripts rather than the author's head.
+
+**As an author, make your process visible:**
+
+- **Indicate authorship level:**
+  - "AI-authored draft" — minimal human editing, needs scrutiny
+  - "AI-authored, human reviewed" — I've validated the content
+  - "AI-authored, heavily human edited" — I've shaped this significantly
+
+- **Indicate document status:**
+  - "This is what I think we should implement" — seeking approval
+  - "These are two approaches I'm deciding between" — seeking input on direction
+  - "This is an initial set of ideas" — early exploration, expect iteration
+
+- **Provide the AI chat history** — Let reviewers see the paths you've already explored. What alternatives were considered? What questions did you ask? What did you try and reject? This context prevents reviewers from re-asking questions you've already answered.
+
+#### Why This Works
+
+- **Alignment before implementation.** Catching direction problems early is cheaper than fixing them in code.
+- **Explicit reasoning.** Decisions and their rationale are captured, not assumed.
+- **Shared mental models.** The team understands not just *what* but *why*.
+- **Appropriate depth.** Reviewing a design doc takes minutes; reviewing thousands of lines of implementation takes hours.
 
 ### Code Review
 
