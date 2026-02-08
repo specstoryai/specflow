@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbf8f5;
+  --foreground: #1f1a17;
+  --muted: #6f6259;
+  --border: #e7dfd7;
+  --accent: #3d7489;
+  --card: #ffffff;
+  --wash-teal: rgba(81, 183, 214, 0.12);
+  --wash-orange: rgba(235, 113, 58, 0.1);
+  --wash-yellow: rgba(247, 199, 104, 0.16);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-card: var(--card);
+  --font-sans: var(--font-space-mono);
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, var(--wash-teal), transparent 55%),
+    radial-gradient(900px 500px at 90% 5%, var(--wash-yellow), transparent 55%),
+    radial-gradient(800px 500px at 70% 90%, var(--wash-orange), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, transparent 40%),
+    var(--background);
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: var(--font-space-mono), ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  letter-spacing: -0.01em;
+}
+
+html {
+  background: var(--background);
+}
+
+::selection {
+  background: rgba(95, 75, 62, 0.18);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.markdown p {
+  margin: 1rem 0;
+  line-height: 1.9;
+  color: var(--foreground);
+}
+
+.markdown ul {
+  list-style: square;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.markdown li {
+  margin: 0.5rem 0;
+  color: var(--foreground);
+}
+
+.markdown blockquote {
+  border-left: 2px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--muted);
+  margin: 1.5rem 0;
+}
+
+.markdown code {
+  background: rgba(95, 75, 62, 0.08);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.markdown pre {
+  background: #f3ece6;
+  padding: 1.25rem;
+  border-radius: 12px;
+  overflow: auto;
+}
+
+.markdown pre code {
+  background: transparent;
+  padding: 0;
+}

@@ -1,9 +1,29 @@
 {
-  "name": "specflow-website",
-  "version": "1.0.0",
-  "description": "Specflow methodology website",
+  "name": "website",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build": "quarto render",
-    "preview": "quarto preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
