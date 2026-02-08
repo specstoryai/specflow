@@ -10,6 +10,20 @@
   --wash-teal: rgba(81, 183, 214, 0.12);
   --wash-orange: rgba(235, 113, 58, 0.1);
   --wash-yellow: rgba(247, 199, 104, 0.16);
+  --wash-top: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] {
+  --background: #0f0d0c;
+  --foreground: #f2ece8;
+  --muted: #b8aca3;
+  --border: #2b2420;
+  --accent: #79b8cd;
+  --card: #151211;
+  --wash-teal: rgba(81, 183, 214, 0.16);
+  --wash-orange: rgba(235, 113, 58, 0.12);
+  --wash-yellow: rgba(247, 199, 104, 0.18);
+  --wash-top: rgba(18, 16, 15, 0.7);
 }
 
 @theme inline {
@@ -20,6 +34,7 @@
   --color-accent: var(--accent);
   --color-card: var(--card);
   --font-sans: var(--font-space-mono);
+  --font-serif: var(--font-playfair);
 }
 
 body {
@@ -27,7 +42,7 @@ body {
     radial-gradient(1200px 600px at 10% -10%, var(--wash-teal), transparent 55%),
     radial-gradient(900px 500px at 90% 5%, var(--wash-yellow), transparent 55%),
     radial-gradient(800px 500px at 70% 90%, var(--wash-orange), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, transparent 40%),
+    linear-gradient(180deg, var(--wash-top) 0%, transparent 40%),
     var(--background);
   background-attachment: fixed;
   color: var(--foreground);
@@ -57,6 +72,7 @@ a {
   letter-spacing: -0.02em;
   margin-top: 2.2rem;
   margin-bottom: 1rem;
+  font-family: var(--font-playfair), "Times New Roman", serif;
 }
 
 .markdown p {
@@ -84,14 +100,14 @@ a {
 }
 
 .markdown code {
-  background: rgba(95, 75, 62, 0.08);
+  background: color-mix(in srgb, var(--card) 85%, var(--foreground));
   padding: 0.15rem 0.35rem;
   border-radius: 4px;
   font-size: 0.9em;
 }
 
 .markdown pre {
-  background: #f3ece6;
+  background: color-mix(in srgb, var(--card) 88%, var(--foreground));
   padding: 1.25rem;
   border-radius: 12px;
   overflow: auto;

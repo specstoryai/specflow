@@ -15,7 +15,7 @@ export default function Home() {
         <p className="text-xs uppercase tracking-[0.3em] text-muted">
           Specflow Guides
         </p>
-        <h1 className="mt-6 text-4xl font-bold leading-tight">
+        <h1 className="mt-6 text-4xl font-bold leading-tight md:text-5xl">
           A quiet library for builders working with AI.
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted">
@@ -23,16 +23,16 @@ export default function Home() {
           ship with clarity. Each piece is short, practical, and tuned for
           real-world execution.
         </p>
-        <div className="mt-10 flex flex-wrap gap-4">
+        <div className="mt-10 flex flex-wrap gap-2">
           <Link
             href="/blog"
-            className="rounded-full border border-accent/70 bg-accent px-6 py-2 text-xs uppercase tracking-[0.2em] text-white transition hover:opacity-90"
+            className="rounded-full border border-accent/35 bg-accent/15 px-5 py-2 text-xs uppercase tracking-[0.1em] transition hover:border-accent hover:text-accen"
           >
             Explore the blog
           </Link>
           <a
             href="https://www.specstory.com"
-            className="rounded-full border border-border/80 px-6 py-2 text-xs uppercase tracking-[0.2em] text-muted transition hover:border-accent hover:text-accent"
+            className="rounded-full border border-accent/45 bg-accent/5 px-5 py-2 text-xs uppercase tracking-[0.2em] text-muted transition hover:border-accent hover:text-accent"
             target="_blank"
             rel="noreferrer"
           >
@@ -49,7 +49,7 @@ export default function Home() {
               <p className="text-xs uppercase tracking-[0.2em] text-muted">
                 {featured.category}
               </p>
-              <h2 className="mt-3 text-2xl font-bold leading-snug">
+              <h2 className="mt-3 font-sans text-2xl font-semibold leading-snug">
                 <Link href={`/blog/${featured.slug}`} className="hover:text-accent">
                   {featured.title}
                 </Link>
@@ -80,7 +80,7 @@ export default function Home() {
                 </p>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="mt-2 block text-sm font-bold leading-snug hover:text-accent"
+                  className="mt-2 block font-sans text-sm font-semibold leading-snug hover:text-accent"
                 >
                   {post.title}
                 </Link>

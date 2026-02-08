@@ -22,28 +22,28 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-16">
+    <div className="mx-auto max-w-3xl px-6 py-16">
       <Link
         href="/blog"
-        className="text-sm text-text-muted hover:text-text-secondary transition-colors"
+        className="text-sm text-muted transition-colors hover:text-accent"
       >
         ← Back
       </Link>
 
-      <header className="mt-10 mb-12">
-        <p className="text-xs text-text-muted mb-4">
+      <header className="mb-12 mt-10">
+        <p className="text-xs uppercase tracking-[0.2em] text-muted mb-4">
           {post.category} · {formatDate(post.date)}
         </p>
-        <h1 className="text-2xl font-medium tracking-tight leading-snug">
+        <h1 className="font-sans text-3xl font-semibold leading-snug tracking-tight md:text-4xl">
           {post.title}
         </h1>
-        <p className="mt-4 text-text-secondary leading-relaxed">
+        <p className="mt-4 leading-relaxed text-muted">
           {post.summary}
         </p>
       </header>
 
       <article
-        className="prose"
+        className="markdown"
         dangerouslySetInnerHTML={{ __html: post.contentHtml }}
       />
 
