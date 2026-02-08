@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { formatDate } from "@/lib/format";
@@ -40,6 +41,19 @@ export default async function PostPage({ params }: PostPageProps) {
         <p className="mt-4 leading-relaxed text-muted">
           {post.summary}
         </p>
+        {post.image && (
+          <div className="mt-8 overflow-hidden rounded-2xl border border-border/70 bg-border/20">
+            <div className="relative aspect-[16/9] w-full">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                sizes="(min-width: 768px) 700px, 100vw"
+                className="object-contain"
+              />
+            </div>
+          </div>
+        )}
       </header>
 
       <article

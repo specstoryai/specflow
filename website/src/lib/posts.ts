@@ -12,6 +12,7 @@ export type PostMeta = {
   category: string;
   tags: string[];
   author: string;
+  image?: string;
 };
 
 export type Post = PostMeta & {
@@ -26,6 +27,9 @@ const normalizeTags = (value: unknown) =>
 const normalizeString = (value: unknown, fallback: string) =>
   typeof value === "string" && value.trim().length > 0 ? value.trim() : fallback;
 
+const normalizeOptionalString = (value: unknown) =>
+  typeof value === "string" && value.trim().length > 0 ? value.trim() : undefined;
+
 const parsePost = (slug: string, fileContents: string) => {
   const { data, content } = matter(fileContents);
 
@@ -37,6 +41,7 @@ const parsePost = (slug: string, fileContents: string) => {
     category: normalizeString(data.category, "General"),
     tags: normalizeTags(data.tags),
     author: normalizeString(data.author, "Specflow"),
+    image: normalizeOptionalString(data.image),
   };
 
   return { meta, content };

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import PostCard from "@/components/PostCard";
 import { getAllPosts } from "@/lib/posts";
@@ -10,40 +11,102 @@ export default function Home() {
   const gridPosts = posts.slice(0, 3);
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-6 pb-20 pt-16">
-      <section className="rounded-3xl border border-border/80 bg-card px-10 py-16 shadow-[0_20px_60px_rgba(31,26,23,0.06)]">
-        <p className="text-xs uppercase tracking-[0.3em] text-muted">
-          Specflow Guides
-        </p>
-        <h1 className="mt-6 text-4xl font-bold leading-tight md:text-5xl">
-          A quiet library for builders working with AI.
-        </h1>
-        <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted">
-          Specflow collects guides, essays, and field notes that help teams
-          ship with clarity. Each piece is short, practical, and tuned for
-          real-world execution.
-        </p>
-        <div className="mt-10 flex flex-wrap gap-2">
-          <Link
-            href="/blog"
-            className="rounded-full border border-accent/35 bg-accent/15 px-5 py-2 text-xs uppercase tracking-[0.1em] transition hover:border-accent hover:text-accen"
-          >
-            Explore the blog
-          </Link>
-          <a
-            href="https://www.specstory.com"
-            className="rounded-full border border-accent/45 bg-accent/5 px-5 py-2 text-xs uppercase tracking-[0.2em] text-muted transition hover:border-accent hover:text-accent"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Visit SpecStory
-          </a>
+    <div className="mx-auto w-full max-w-6xl px-2 pb-10 pt-5">
+      <section className="rounded-3xl border border-border/80 bg-card px-8 py-12 shadow-[0_20px_60px_rgba(31,26,23,0.06)] md:px-10 md:py-8">
+        <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-muted">
+              Specflow Guides
+            </p>
+            <div className="mt-6 border-b border-border/70 pb-6">
+              <h1 className="text-5xl font-light leading-[0.95] tracking-[-0.02em] md:text-5xl">
+                A library of guides
+              </h1>
+              <p className="mt-3 text-xl leading-snug text-foreground/80 md:text-2xl">
+                for builders working with AI
+              </p>
+            </div>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
+              From the SpecStory team sharing practical guides, learnings, opinions, and updates on coding agents to help teams
+              ship with clarity. Each piece is short, practical, and tuned for
+              real-world execution.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <Link
+                href="/blog"
+                className="rounded-full border border-accent/35 bg-accent/15 px-5 py-2 text-xs uppercase tracking-[0.1em] transition hover:border-accent hover:text-accent"
+              >
+                Explore the blog
+              </Link>
+              <a
+                href="https://www.specstory.com"
+                className="rounded-full border border-accent/45 bg-accent/5 px-5 py-2 text-xs uppercase tracking-[0.2em] text-muted transition hover:border-accent hover:text-accent"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visit SpecStory
+              </a>
+            </div>
+          </div>
+          <div className="relative aspect-[5/4] w-full overflow-hidden rounded-2xl border border-border/100 bg-border/200">
+            <Image
+              src="/images/hero_banner.png"
+              alt="Specflow hero banner"
+              fill
+              priority
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
-      <section className="mt-20 grid gap-10 lg:grid-cols-[2.1fr_1fr]">
+      <section className="mt-12 grid gap-8 md:grid-cols-3">
+        {[
+          {
+            title: "Guides",
+            copy: "Planning rituals, prompt architecture, and execution playbooks.",
+          },
+          {
+            title: "Meditations",
+            copy: "Short, opinionated takes on what is changing in product work.",
+          },
+          {
+            title: "Field notes",
+            copy: "Weekly insights from shipping with SpecStory and Specflow.",
+          },
+        ].map((item) => (
+          <div
+            key={item.title}
+            className="rounded-2xl border border-border/80 bg-card p-6"
+          >
+            <p className="text-xs uppercase tracking-[0.2em] text-accent">
+              {item.title}
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-muted">
+              {item.copy}
+            </p>
+          </div>
+        ))}
+      </section>
+
+      <section className="mt-10 grid gap-10 lg:grid-cols-[2.1fr_1fr]">
         <div className="rounded-3xl border border-border/80 bg-card p-8 shadow-[0_20px_60px_rgba(31,26,23,0.06)]">
-          <div className="aspect-[16/9] rounded-2xl border border-border/70 bg-gradient-to-br from-[rgba(81,183,214,0.18)] via-white to-[rgba(247,199,104,0.2)]" />
+          {featured?.image ? (
+            <div className="overflow-hidden rounded-2xl border border-border/70 bg-border/20">
+              <div className="relative aspect-[16/9] w-full">
+                <Image
+                  src={featured.image}
+                  alt={featured.title}
+                  fill
+                  sizes="(min-width: 1024px) 520px, (min-width: 768px) 60vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="aspect-[5/3] rounded-2xl border border-border/70 bg-gradient-to-br from-[rgba(81,183,214,0.18)] via-white to-[rgba(247,199,104,0.2)]" />
+          )}
           {featured && (
             <div className="mt-6">
               <p className="text-xs uppercase tracking-[0.2em] text-muted">
@@ -91,35 +154,6 @@ export default function Home() {
             ))}
           </div>
         </aside>
-      </section>
-
-      <section className="mt-16 grid gap-8 md:grid-cols-3">
-        {[
-          {
-            title: "Guides",
-            copy: "Planning rituals, prompt architecture, and execution playbooks.",
-          },
-          {
-            title: "Essays",
-            copy: "Short, opinionated takes on what is changing in product work.",
-          },
-          {
-            title: "Field notes",
-            copy: "Weekly insights from shipping with SpecStory and Specflow.",
-          },
-        ].map((item) => (
-          <div
-            key={item.title}
-            className="rounded-2xl border border-border/80 bg-card p-6"
-          >
-            <p className="text-xs uppercase tracking-[0.2em] text-muted">
-              {item.title}
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-muted">
-              {item.copy}
-            </p>
-          </div>
-        ))}
       </section>
 
       <section className="mt-20">

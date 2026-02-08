@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Playfair_Display, Space_Mono } from "next/font/google";
 import "./globals.css";
@@ -46,17 +47,21 @@ export default function RootLayout({
       <body className={`${spaceMono.variable} ${playfair.variable} antialiased`}>
         <ThemeProvider>
           <div className="min-h-screen bg-background text-foreground">
-            <header className="sticky top-0 z-40 border-b border-border/70 bg-background/80 backdrop-blur">
-              <nav className="mx-auto w-full max-w-6xl px-6 py-5">
+            <header className="sticky top-0 z-20 border-b border-border/70 bg-background/80 backdrop-blur">
+              <nav className="mx-auto w-full max-w-6xl px-6 py-4">
                 <div className="grid grid-cols-3 items-center text-xs uppercase tracking-[0.3em]">
                   <div className="flex items-center gap-6">
-                    <Link href="/blog" className="hover:text-accent">
-                      Blog
-                    </Link>
+                    <Image
+                      src="/images/specstory-icon-mono.png"
+                      alt="SpecStory icon"
+                      width={10}
+                      height={10}
+                      className="h-6 w-6 opacity-100 dark:invert"
+                    />
                   </div>
                   <Link
                     href="/"
-                    className="justify-self-center text-sm tracking-[0.55em]"
+                    className="justify-self-center text-sm tracking-[0.75em]"
                   >
                     Specflow
                   </Link>
