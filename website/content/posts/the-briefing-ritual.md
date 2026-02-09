@@ -8,6 +8,7 @@ tags:
   - prompts
   - workflow
 author: "Specflow"
+image: "/images/guides/agents_aligned_banner.png"
 ---
 
 The fastest way to lose momentum is to skip the briefing. A clear, repeatable ritual keeps your team and your AI sessions aligned as the project evolves.

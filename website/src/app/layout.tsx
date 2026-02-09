@@ -48,33 +48,33 @@ export default function RootLayout({
         <ThemeProvider>
           <div className="min-h-screen bg-background text-foreground">
             <header className="sticky top-0 z-20 border-b border-border/70 bg-background/80 backdrop-blur">
-              <nav className="mx-auto w-full max-w-6xl px-6 py-4">
-                <div className="grid grid-cols-3 items-center text-xs uppercase tracking-[0.3em]">
-                  <div className="flex items-center gap-6">
+              <nav className="mx-auto w-full max-w-6xl px-4 py-3 sm:px-6 sm:py-4">
+                <div className="grid grid-cols-3 items-center uppercase">
+                  <a
+                    href="https://www.specstory.com"
+                    className="flex items-center gap-2 text-muted transition hover:text-accent sm:gap-3"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <Image
                       src="/images/specstory-icon-mono.png"
                       alt="SpecStory icon"
-                      width={10}
-                      height={10}
-                      className="h-6 w-6 opacity-100 dark:invert"
+                      width={20}
+                      height={20}
+                      className="h-4 w-4 opacity-90 dark:invert sm:h-5 sm:w-5"
                     />
-                  </div>
+                    <span className="text-[10px] tracking-[0.2em] sm:text-xs sm:tracking-[0.25em] md:text-sm">
+                      SpecStory
+                    </span>
+                  </a>
                   <Link
                     href="/"
-                    className="justify-self-center text-sm tracking-[0.75em]"
+                    className="justify-self-center text-[10px] tracking-[0.4em] sm:text-xs sm:tracking-[0.6em] md:text-sm md:tracking-[0.75em]"
                   >
                     Specflow
                   </Link>
-                  <div className="flex items-center justify-self-end gap-4">
+                  <div className="flex items-center justify-self-end">
                     <ThemeToggle />
-                    <a
-                      href="https://www.specstory.com"
-                      className="rounded-full border border-border/80 px-4 py-1.5 text-[10px] uppercase tracking-[0.2em] transition hover:border-accent hover:text-accent"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      SpecStory
-                    </a>
                   </div>
                 </div>
               </nav>

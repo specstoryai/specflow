@@ -6,9 +6,19 @@ import { formatDate } from "@/lib/format";
 
 export default function Home() {
   const posts = getAllPosts();
-  const featured = posts[0];
-  const recent = posts.slice(1, 5);
-  const gridPosts = posts.slice(0, 3);
+  const latestGuide = posts.find(
+    (post) => post.category.toLowerCase() === "guides",
+  );
+  const recentPosts = posts.slice(0, 6);
+  const guidePosts = posts
+    .filter((post) => post.category.toLowerCase() === "guides")
+    .slice(0, 3);
+  const meditationPosts = posts
+    .filter((post) => post.category.toLowerCase() === "essays")
+    .slice(0, 3);
+  const fieldNotePosts = posts
+    .filter((post) => post.category.toLowerCase() === "field notes")
+    .slice(0, 3);
 
   return (
     <div className="mx-auto w-full max-w-6xl px-2 pb-10 pt-5">
@@ -40,11 +50,24 @@ export default function Home() {
               </Link>
               <a
                 href="https://www.specstory.com"
-                className="rounded-full border border-accent/45 bg-accent/5 px-5 py-2 text-xs uppercase tracking-[0.2em] text-muted transition hover:border-accent hover:text-accent"
+                className="inline-flex items-center gap-2 rounded-full border border-accent/45 bg-accent/5 px-5 py-2 text-xs uppercase tracking-[0.2em] text-muted transition hover:border-accent hover:text-accent"
                 target="_blank"
                 rel="noreferrer"
               >
                 Visit SpecStory
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="h-3.5 w-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
               </a>
             </div>
           </div>
@@ -92,12 +115,12 @@ export default function Home() {
 
       <section className="mt-10 grid gap-10 lg:grid-cols-[2.1fr_1fr]">
         <div className="rounded-3xl border border-border/80 bg-card p-8 shadow-[0_20px_60px_rgba(31,26,23,0.06)]">
-          {featured?.image ? (
+          {latestGuide?.image ? (
             <div className="overflow-hidden rounded-2xl border border-border/70 bg-border/20">
               <div className="relative aspect-[16/9] w-full">
                 <Image
-                  src={featured.image}
-                  alt={featured.title}
+                  src={latestGuide.image}
+                  alt={latestGuide.title}
                   fill
                   sizes="(min-width: 1024px) 520px, (min-width: 768px) 60vw, 100vw"
                   className="object-cover"
@@ -107,22 +130,22 @@ export default function Home() {
           ) : (
             <div className="aspect-[5/3] rounded-2xl border border-border/70 bg-gradient-to-br from-[rgba(81,183,214,0.18)] via-white to-[rgba(247,199,104,0.2)]" />
           )}
-          {featured && (
+          {latestGuide && (
             <div className="mt-6">
               <p className="text-xs uppercase tracking-[0.2em] text-muted">
-                {featured.category}
+                {latestGuide.category}
               </p>
               <h2 className="mt-3 font-sans text-2xl font-semibold leading-snug">
-                <Link href={`/blog/${featured.slug}`} className="hover:text-accent">
-                  {featured.title}
+                <Link href={`/blog/${latestGuide.slug}`} className="hover:text-accent">
+                  {latestGuide.title}
                 </Link>
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                {featured.summary}
+                {latestGuide.summary}
               </p>
               <div className="mt-6 flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-muted">
-                <span>{formatDate(featured.date)}</span>
-                <span>{featured.author}</span>
+                <span>{formatDate(latestGuide.date)}</span>
+                <span>{latestGuide.author}</span>
               </div>
             </div>
           )}
@@ -130,13 +153,13 @@ export default function Home() {
 
         <aside className="rounded-3xl border border-border/80 bg-card p-8">
           <div className="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-muted">
-            <span>Recent essays</span>
+            <span>Recent posts</span>
             <Link href="/blog" className="hover:text-accent">
               View all
             </Link>
           </div>
           <div className="mt-6 space-y-6">
-            {recent.map((post) => (
+            {recentPosts.map((post) => (
               <div key={post.slug} className="border-b border-border/60 pb-6 last:border-b-0 last:pb-0">
                 <p className="text-[10px] uppercase tracking-[0.2em] text-muted">
                   {post.category}
@@ -156,19 +179,36 @@ export default function Home() {
         </aside>
       </section>
 
-      <section className="mt-20">
-        <div className="flex items-center justify-between">
+      <section className="mt-20 space-y-12">
+        <div>
           <h2 className="text-lg font-bold uppercase tracking-[0.2em]">
-            Latest posts
+            Guides
           </h2>
-          <Link href="/blog" className="text-xs uppercase tracking-[0.2em]">
-            View all
-          </Link>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {guidePosts.map((post) => (
+              <PostCard key={post.slug} post={post} />
+            ))}
+          </div>
         </div>
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
-          {gridPosts.map((post) => (
-            <PostCard key={post.slug} post={post} />
-          ))}
+        <div>
+          <h2 className="text-lg font-bold uppercase tracking-[0.2em]">
+            Meditations
+          </h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {meditationPosts.map((post) => (
+              <PostCard key={post.slug} post={post} />
+            ))}
+          </div>
+        </div>
+        <div>
+          <h2 className="text-lg font-bold uppercase tracking-[0.2em]">
+            Field notes
+          </h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {fieldNotePosts.map((post) => (
+              <PostCard key={post.slug} post={post} />
+            ))}
+          </div>
         </div>
       </section>
     </div>
