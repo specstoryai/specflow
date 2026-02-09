@@ -27,26 +27,26 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
   const categories = getAllCategories();
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-6 pb-20 pt-16">
-      <section className="rounded-3xl border border-border/80 bg-card px-8 py-12 shadow-[0_20px_60px_rgba(31,26,23,0.06)]">
-        <p className="text-xs uppercase tracking-[0.3em] text-muted">Blog</p>
-        <h1 className="mt-4 text-3xl font-bold">Specflow Notes</h1>
-        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
-          Short, practical writing on planning, prompting, and shipping with AI.
-        </p>
-      </section>
-
-      <section className="mt-10 grid gap-6 lg:grid-cols-[1fr_240px]">
+    <div className="mx-auto w-full max-w-6xl px-6 pb-20 pt-10">
+      <div className="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-muted">
+        <Link
+          href="/"
+          className="text-sm text-muted transition-colors hover:text-accent"
+        >
+          ← Back to home
+        </Link>
+        <div className="flex items-center gap-4">
+          <span>{posts.length} posts</span>
+          {(tagFilter || categoryFilter) && (
+            <Link href="/blog" className="hover:text-accent">
+              Clear filters
+            </Link>
+          )}
+        </div>
+      </div>
+      <section className="mt-6 grid gap-6 lg:grid-cols-[1fr_240px]">
         <div>
-          <div className="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-muted">
-            <span>{posts.length} posts</span>
-            {(tagFilter || categoryFilter) && (
-              <Link href="/blog" className="hover:text-accent">
-                Clear filters
-              </Link>
-            )}
-          </div>
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2">
             {posts.map((post) => (
               <PostCard key={post.slug} post={post} />
             ))}

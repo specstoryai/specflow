@@ -8,6 +8,7 @@ tags:
   - writing
   - clarity
 author: "Specflow"
+image: "/images/meditations/technical_writing_banner.png"
 ---
 
 When the page is quiet, the ideas feel louder. Minimal design removes friction and lets readers focus on the argument.

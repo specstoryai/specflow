@@ -8,6 +8,7 @@ tags:
   - handoff
   - execution
 author: "Specflow"
+image: "/images/field_notes/first_30_min_banner.png"
 ---
 
 Most teams lose time because they start building before they understand the constraints. The first 30 minutes should feel quiet and deliberate.

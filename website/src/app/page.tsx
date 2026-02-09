@@ -89,19 +89,24 @@ export default function Home() {
           {
             title: "Guides",
             copy: "Planning rituals, prompt architecture, and execution playbooks.",
+            href: "#guides",
           },
           {
             title: "Meditations",
             copy: "Short, opinionated takes on what is changing in product work.",
+            href: "#meditations",
           },
           {
             title: "Field notes",
             copy: "Weekly insights from shipping with SpecStory and Specflow.",
+            href: "#field-notes",
           },
         ].map((item) => (
-          <div
+          <Link
             key={item.title}
-            className="rounded-2xl border border-border/80 bg-card p-6"
+            href={item.href}
+            className="rounded-2xl border border-border/80 bg-card p-6 transition hover:border-accent/60 hover:shadow-[0_12px_30px_rgba(31,26,23,0.12)]"
+            aria-label={`Jump to ${item.title}`}
           >
             <p className="text-xs uppercase tracking-[0.2em] text-accent">
               {item.title}
@@ -109,7 +114,7 @@ export default function Home() {
             <p className="mt-4 text-sm leading-relaxed text-muted">
               {item.copy}
             </p>
-          </div>
+          </Link>
         ))}
       </section>
 
@@ -179,32 +184,41 @@ export default function Home() {
         </aside>
       </section>
 
-      <section className="mt-20 space-y-12">
+      <section className="mt-10 space-y-10">
         <div>
-          <h2 className="text-lg font-bold uppercase tracking-[0.2em]">
+          <h2
+            id="guides"
+            className="text-lg font-bold uppercase tracking-[0.2em]"
+          >
             Guides
           </h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
             {guidePosts.map((post) => (
               <PostCard key={post.slug} post={post} />
             ))}
           </div>
         </div>
         <div>
-          <h2 className="text-lg font-bold uppercase tracking-[0.2em]">
+          <h2
+            id="meditations"
+            className="text-lg font-bold uppercase tracking-[0.2em]"
+          >
             Meditations
           </h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
             {meditationPosts.map((post) => (
               <PostCard key={post.slug} post={post} />
             ))}
           </div>
         </div>
         <div>
-          <h2 className="text-lg font-bold uppercase tracking-[0.2em]">
+          <h2
+            id="field-notes"
+            className="text-lg font-bold uppercase tracking-[0.2em]"
+          >
             Field notes
           </h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
             {fieldNotePosts.map((post) => (
               <PostCard key={post.slug} post={post} />
             ))}

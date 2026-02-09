@@ -33,7 +33,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
       <header className="mb-12 mt-10">
         <p className="text-xs uppercase tracking-[0.2em] text-muted mb-4">
-          {post.category} · {formatDate(post.date)} · {post.author}
+          {formatDate(post.date)} · {post.author}
         </p>
         <h1 className="font-sans text-3xl font-semibold leading-snug tracking-tight md:text-4xl">
           {post.title}
