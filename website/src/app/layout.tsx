@@ -172,12 +172,15 @@ export default function RootLayout({
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-4">
-                  <Link href="/about-specstory" className="transition hover:text-accent">
+                  <Link
+                    href="/about-specstory"
+                    className="text-muted transition-colors hover:text-[#3d7489] dark:hover:text-[#79b8cd]"
+                  >
                     About
                   </Link>
                   <a
                     href="https://docs.specstory.com/"
-                    className="transition hover:text-accent"
+                    className="text-muted transition-colors hover:text-[#3d7489] dark:hover:text-[#79b8cd]"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -185,7 +188,7 @@ export default function RootLayout({
                   </a>
                   <a
                     href="https://www.intent.build/"
-                    className="transition hover:text-accent"
+                    className="text-muted transition-colors hover:text-[#3d7489] dark:hover:text-[#79b8cd]"
                     target="_blank"
                     rel="noreferrer"
                   >

@@ -23,7 +23,7 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-16">
+    <div className="mx-auto max-w-3xl px-6 py-8">
       <Link
         href="/blog"
         className="text-sm text-muted transition-colors hover:text-accent"
@@ -31,7 +31,7 @@ export default async function PostPage({ params }: PostPageProps) {
         ← Back
       </Link>
 
-      <header className="mb-12 mt-10">
+      <header className="mb-12 mt-6">
         <p className="text-xs uppercase tracking-[0.2em] text-muted mb-4">
           {formatDate(post.date)} · {post.author}
         </p>

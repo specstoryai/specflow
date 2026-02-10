@@ -9,7 +9,11 @@ type PostCardProps = {
 
 export default function PostCard({ post }: PostCardProps) {
   return (
-    <article className="flex h-full flex-col justify-between rounded-2xl border border-border/80 bg-card p-6 transition hover:border-accent/60">
+    <Link
+      href={`/blog/${post.slug}`}
+      className="flex h-full flex-col justify-between rounded-2xl border border-border/80 bg-card p-6 transition hover:border-accent/60"
+      aria-label={post.title}
+    >
       <div>
         {post.image && (
           <div className="mb-4 overflow-hidden rounded-xl border border-border/70 bg-border/20">
@@ -28,9 +32,7 @@ export default function PostCard({ post }: PostCardProps) {
           {post.category}
         </p>
         <h3 className="mt-3 text-lg font-bold leading-snug">
-          <Link href={`/blog/${post.slug}`} className="hover:text-accent">
-            {post.title}
-          </Link>
+          {post.title}
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-muted">
           {post.summary}
@@ -40,6 +42,6 @@ export default function PostCard({ post }: PostCardProps) {
         <span>{formatDate(post.date)}</span>
         <span>{post.author}</span>
       </div>
-    </article>
+    </Link>
   );
 }

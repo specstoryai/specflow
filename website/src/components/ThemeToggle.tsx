@@ -10,6 +10,7 @@ export default function ThemeToggle() {
       type="button"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       className="rounded-full border border-border/80 p-2 text-muted transition hover:border-accent hover:text-accent"
+      suppressHydrationWarning
       aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
     >
       {theme === "dark" ? (
